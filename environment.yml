@@ -1,0 +1,23 @@
+name: faultproduct
+channels:
+- conda-forge
+- defaults
+dependencies:
+- ipython
+- jupyter
+- libcomcat
+- lxml
+- matplotlib
+- numpy
+- obspy
+- pandas
+- pytest
+- pytest-cov
+- python=3.5
+- pyyaml
+- spyder
+- xlrd
+- xlwt
+- openpyxl
+- obspy
+- xlsxwriter

@@ -1,11 +1,11 @@
-catalog-loader
+finite-fault-product
 =====
 
-Load finite fault data and create JSON products.
+Load finite fault data and createproducts.
 
 # Introduction
 
-fault-loader is a project designed to finite fault data from fsp, dat, and syn files.
+fault is a package designed to read finite fault data from fsp, dat, and syn files.
 
- * `fsp.py` Load rupture model and output GeoJSON. (Under construction)
- * `timeseries.py` Load data and synthetic seismograms and output JSON. (Under construction)
+ * `fsp.py` Load rupture model. (Under construction)
+ * `timeseries.py` Load data and synthetic seismograms. (Under construction)

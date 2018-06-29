@@ -1,0 +1,32 @@
+{
+  "name": "finite-fault-product",
+  "organization": "U.S. Geological Survey",
+  "description": "Create finite fault products for web pages and ShakeMap.",
+  "status": "Beta",
+  "homepage": "https://github.com/hschovanec-usgs/finite-fault-product",
+  "downloadURL": "https://github.com/hschovanec-usgs/finite-fault-product/archive/master.zip",
+
+  "openSourceProject": 1,
+  "license": "https://github.com/hschovanec-usgs/finite-fault-product/blob/master/LICENSE.md",
+  "vcs": "git",
+  "repository": "https://github.com/hschovanec-usgs/finite-fault-product.git",
+
+  "tags": [
+    "earthquake",
+    "fault",
+    "fault model",
+    "rupture",
+    "earthquake"
+  ],
+  "languages": [
+    "python"
+  ],
+
+  "contact": {
+    "name": "Heather Schovnaec",
+    "email": "hschovanec@usgs.gov"
+  },
+  "updated": {
+    "metadataLastUpdated": "2018-06-29"
+  }
+}
