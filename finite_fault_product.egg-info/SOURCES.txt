@@ -1,9 +1,0 @@
-README.md
-fault/__init__.py
-fault/io/__init__.py
-fault/io/fsp.py
-fault/io/timeseries.py
-finite_fault_product.egg-info/PKG-INFO
-finite_fault_product.egg-info/SOURCES.txt
-finite_fault_product.egg-info/dependency_links.txt
-finite_fault_product.egg-info/top_level.txt
