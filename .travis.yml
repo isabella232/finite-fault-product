@@ -4,10 +4,10 @@ python:
     - "3.5"
 
 install:
-    # Install shakemap and requirements
+    # Install faultproduct and requirements
     - bash install.sh
     - . $HOME/miniconda/etc/profile.d/conda.sh
-    - conda activate smdb
+    - conda activate faultproduct
 before_script:
     # This is to take care of Invalid DISPLAY variable
     - "export DISPLAY=:99.0"

@@ -4,13 +4,8 @@
 import os
 import glob
 
-# third party imports
-import pandas as pd
-import numpy as np
-
-
 # local imports
-from fault.io.fsp import FSPFILE
+from fault.io.fsp import FSPFile
 
 
 def test_fsp():
@@ -22,8 +17,7 @@ def test_fsp():
     for fspfile in fsp_locations:
         # Get filename and initialize plotting objects
         fsp = FSPFile(fspfile)
-        fig = plt.figure(figsize=(20, 20))
-        counter = 0;
+
         # Loop through segments
         for num in range(fsp.getNumSegments()):
             # Get segment
@@ -44,9 +38,11 @@ def test_fsp():
                             segment['length'], segment['width'])
             # Get corners as coordinates for primary segment
             if num == 0:
-                corners = fsp.getCornerCoordinates(left, right, top, bottom,
+                fsp.getCornerCoordinates(left, right, top, bottom,
                         segment['lon'], segment['lat'])
-
+            fsp.getRuptureCorners(segment['width'],
+                    segment['length']/len(sum_rows),
+                    segment['length'], sum_rows, sum_columns)
 
 
 if __name__ == '__main__':
