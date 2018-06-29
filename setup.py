@@ -1,5 +1,4 @@
 from distutils.core import setup
-import glob
 
 setup(name='finite-fault-product',
       version='0.1dev',
