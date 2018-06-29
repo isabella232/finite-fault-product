@@ -7,5 +7,5 @@ build
 .coverage
 .coverage.xml
 htmlcov
-amptools.egg-info/
+finite_fault_product.egg-info.egg-info/
 .pytest_cache
