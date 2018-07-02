@@ -7,14 +7,24 @@ Status
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/81d612b63c864f3fb894f4e5bec90b49)](https://www.codacy.com/app/hschovanec-usgs/finite-fault-product?utm_source=github.com&utm_medium=referral&utm_content=hschovanec-usgs/finite-fault-product&utm_campaign=Badge_Coverage)
 
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/hschovanec-usgs/finite-fault-product.svg?columns=all)](https://waffle.io/hschovanec-usgs/finite-fault-product)
+
 
 # finite-fault-product
 
-Load finite fault data and createproducts.
+Load finite fault data and create products.
 
-## Introduction
+## fault
+Designed to analyze finite fault models and time series.
+* `fault.py` Class to analyze fault models. (Under construction)
 
-fault is a package designed to read finite fault data from fsp, dat, and syn files.
+### fault.io
+fault.io is designed to read finite fault data from fsp, dat, and syn files.
 
  * `fsp.py` Load rupture model. (Under construction)
  * `timeseries.py` Load data and synthetic seismograms. (Under construction)
+
+## product
+product is designed to create web and shakemapt products.
+* `web_product.py` Create web product from time series and fault data. (Under construction)
+* `shakemap_product.py` Create shakemap product from time series and fault data. (Under construction)
