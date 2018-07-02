@@ -8,5 +8,6 @@ setup(name='finite-fault-product',
       author_email='hschovanec@usgs.gov',
       url='',
       packages=['fault',
-                'fault/io']
+                'fault/io',
+                'product']
       )

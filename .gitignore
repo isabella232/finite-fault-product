@@ -6,6 +6,7 @@ build
 .cache
 .coverage
 .coverage.xml
+coverage.xml
 htmlcov
-finite_fault_product.egg-info.egg-info/
+finite_fault_product.egg-info/
 .pytest_cache

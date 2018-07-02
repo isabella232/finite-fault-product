@@ -3,6 +3,9 @@ channels:
 - conda-forge
 - defaults
 dependencies:
+- jupyter
+- ipython
+- spyder
 - libcomcat
 - lxml
 - matplotlib
