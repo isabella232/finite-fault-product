@@ -93,13 +93,13 @@ def read_from_file(fspfile):
 
     # Store segment
     segment = {'strike':strike,
-               'dip':dip,
-               'lat':lat.copy(),
-               'lon':lon.copy(),
-               'depth':depth.copy(),
-               'slip':slip.copy(),
-               'length': length,
-               'width': width}
+       'dip':dip,
+       'lat':lat.copy(),
+       'lon':lon.copy(),
+       'depth':depth.copy(),
+       'slip':slip.copy(),
+       'length': length,
+       'width': width}
     segments = [segment]
 
     # Get multiple segments
