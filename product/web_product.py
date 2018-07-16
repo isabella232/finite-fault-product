@@ -192,20 +192,6 @@ class WebProduct(object):
         tree = etree.ElementTree(contents)
         self._contents = tree
 
-    def writeContents(self, directory):
-        """
-        Write the contents.xml file.
-
-        Args:
-            directory (str): Path to directory where contents.xml will be
-                    written.
-        """
-        if  self.contents is None:
-            self.createContents(directory)
-        tree = self.contents
-        outdir = os.path.join(directory, 'contents.xml')
-        tree.write(outdir, pretty_print=True, encoding="utf8")
-
     @property
     def downloads(self):
         """
@@ -369,10 +355,26 @@ class WebProduct(object):
             directory (str): Directory where the file will be written.
         """
         write_path = os.path.join(directory, 'comments.json')
-        comments = {'analysis': self.analysis, 'result': self.result,
-                'inversion_process': self.inversion_process}
+        comments = OrderedDict()
+        comments['inversion_process'] = self.inversion_process
+        comments['result'] =  self.result
+        comments['analysis'] = self.analysis
         with open(write_path, 'w') as outfile:
             json.dump(comments, outfile)
+
+    def writeContents(self, directory):
+        """
+        Write the contents.xml file.
+
+        Args:
+            directory (str): Path to directory where contents.xml will be
+                    written.
+        """
+        if  self.contents is None:
+            self.createContents(directory)
+        tree = self.contents
+        outdir = os.path.join(directory, 'contents.xml')
+        tree.write(outdir, pretty_print=True, encoding="utf8")
 
     def writeGrid(self, directory):
         """
@@ -385,7 +387,7 @@ class WebProduct(object):
             raise Exception('The FFM grid dictionary has not been set.')
         write_path = os.path.join(directory, 'FFM.geojson')
         with open(write_path, 'w') as outfile:
-            json.dump(self.timeseries_dict, outfile)
+            json.dump(self.grid, outfile)
 
     def writeTimeseries(self, directory):
         """
