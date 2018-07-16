@@ -46,7 +46,7 @@ def _add_data(data_paths, synth_paths, wave_type, wave_dict):
     # Loop through all data paths of a certain type
     for idx, data_path in enumerate(data_paths):
         data_station, time, displacement = read_file(data_path)
-        data_dict = {}
+        data_dict = OrderedDict()
         data_dict['time'] = time.tolist()
         data_dict['displacement'] = displacement.tolist()
         # Check if the station key already exists in the dictionary
@@ -55,12 +55,12 @@ def _add_data(data_paths, synth_paths, wave_type, wave_dict):
             metadata = _get_metadata(data_station)
             wave_dict[data_station]['metadata'] = metadata
         if wave_type not in wave_dict[data_station]:
-            wave_dict[data_station][wave_type] = {}
+            wave_dict[data_station][wave_type] = OrderedDict()
         wave_dict[data_station][wave_type]['data'] = data_dict
     # Loop through all synthetic paths of a certain type
     for idx, synth_path in enumerate(synth_paths):
         synth_station, time, displacement = read_file(synth_path)
-        synth_dict = {}
+        synth_dict = OrderedDict()
         synth_dict['time'] = time.tolist()
         synth_dict['displacement'] = displacement.tolist()
         # Check if the station key already exists in the dictionary
@@ -69,7 +69,7 @@ def _add_data(data_paths, synth_paths, wave_type, wave_dict):
             metadata = _get_metadata(synth_station)
             wave_dict[synth_station]['metadata'] = metadata
         if wave_type not in wave_dict[synth_station]:
-            wave_dict[synth_station][wave_type] = {}
+            wave_dict[synth_station][wave_type] = OrderedDict()
         wave_dict[synth_station][wave_type]['synthetic'] = synth_dict
     return wave_dict
 
@@ -118,7 +118,7 @@ def create_wave_dict(s_data_paths, s_synth_paths, p_data_paths,
             ...
         }
     """
-    wave_dict = {}
+    wave_dict = OrderedDict()
     # Add S-Data
     wave_dict = _add_data(s_data_paths, s_synth_paths, 'S', wave_dict)
     # Add P-Data
@@ -135,7 +135,7 @@ def _get_metadata(station):
     Args:
         station (str): Station code.
     """
-    metadata_dict = {}
+    metadata_dict = OrderedDict()
     metadata_dict['station'] = station
     return metadata_dict
 

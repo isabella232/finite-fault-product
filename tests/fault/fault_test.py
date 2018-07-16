@@ -8,11 +8,11 @@ import glob
 from fault.fault import Fault
 
 
-def test_from_files():
+def test_fromFiles():
     homedir = os.path.dirname(os.path.abspath(__file__))
     ts_directory = os.path.join(homedir, '..', 'data', 'timeseries')
-    fspfile = os.path.join(homedir, '..', 'data', 'fsp', '1000dyad.fsp')
-    fault = Fault.from_files(fspfile, ts_directory)
+    fspfile = os.path.join(homedir, '..', 'data', 'timeseries', '1000dyad.fsp')
+    fault = Fault.fromFiles(fspfile, ts_directory)
     # Loop through segments
     for num in range(fault.getNumSegments()):
         # Get segment
@@ -39,9 +39,12 @@ def test_from_files():
                 segment['length']/len(sum_rows),
                 segment['length'], sum_rows, sum_columns)
     assert isinstance(fault.timeseries_dict, dict)
-    fault = Fault.from_fsp(fspfile)
-    fault = Fault.from_timeseries(ts_directory)
+    fault.createGeoJSON()
+    fault = Fault.fromFsp(fspfile)
+    fault = Fault.fromTimeseries(ts_directory)
+
+
 
 
 if __name__ == '__main__':
-    test_from_files()
+    test_fromFiles()
