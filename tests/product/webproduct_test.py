@@ -5,6 +5,7 @@ import glob
 import os
 import shutil
 import tempfile
+import warnings
 
 # third party imports
 from lxml import etree
@@ -18,7 +19,9 @@ def test_fromFault():
     homedir = os.path.dirname(os.path.abspath(__file__))
     ts_directory = os.path.join(homedir, '..', 'data', 'timeseries')
     fspfile = os.path.join(homedir, '..', 'data', 'timeseries', '1000dyad.fsp')
-    product = WebProduct.fromDirectory(ts_directory, '1000dyad')
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        product = WebProduct.fromDirectory(ts_directory, '1000dyad')
     product.createContents(ts_directory)
     xml = """<contents>
 	<file id="basemap" title="Base Map ">
@@ -80,9 +83,11 @@ def test_exceptions():
     homedir = os.path.dirname(os.path.abspath(__file__))
     ts_directory = os.path.join(homedir, '..', 'data', 'timeseries')
     fspfile = os.path.join(homedir, '..', 'data', 'timeseries', '1000dyad.fsp')
-    product = WebProduct.fromDirectory(ts_directory, '1000dyad')
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        product = WebProduct.fromDirectory(ts_directory, '1000dyad')
     product.writeContents(ts_directory)
-    
+
     os.remove(ts_directory + '/comments.json')
     try:
         product.createContents(ts_directory)
