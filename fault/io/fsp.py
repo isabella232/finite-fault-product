@@ -7,8 +7,11 @@ from datetime import datetime
 # Third party imports
 import numpy as np
 
+DEFAULT_HEADERS = ['LAT', 'LON', 'X==EW', 'Y==NS', 'Z', 'SLIP', 'RAKE',
+        'TRUP', 'RISE', 'SF_MOMENT']
 
-def read_from_file(fspfile):
+
+def read_from_file(fspfile, headers=DEFAULT_HEADERS):
     """
     Read all relevant data from Finite Fault FSP file.
 
@@ -85,21 +88,15 @@ def read_from_file(fspfile):
     for _ in range(lc):
         line = next(_fspfile)
 
-    # Reshape data to proper dimensions
-    lat = data[0].reshape(nz,nx)
-    lon = data[1].reshape(nz,nx)
-    slip = data[5].reshape(nz,nx)
-    depth = data[4].reshape(nz,nx)
-
     # Store segment
     segment = {'strike':strike,
        'dip':dip,
-       'lat':lat.copy(),
-       'lon':lon.copy(),
-       'depth':depth.copy(),
-       'slip':slip.copy(),
        'length': length,
        'width': width}
+    for idx, header in enumerate(headers):
+        if header.lower() == 'z':
+            header = 'depth'
+        segment[header.lower()] = data[idx].reshape(nz,nx).copy()
     segments = [segment]
 
     # Get multiple segments
@@ -131,20 +128,16 @@ def read_from_file(fspfile):
             _fspfile = open(fspfile,'r')
             for _ in range(lc):
                 next(_fspfile)
-            lat = data[0].reshape(nz,nx)
-            lon = data[1].reshape(nz,nx)
-            slip = data[5].reshape(nz,nx)
-            depth = data[4].reshape(nz,nx)
 
             # Store segment
             segment = {'strike':strike,
                'dip':dip,
-               'lat':lat.copy(),
-               'lon':lon.copy(),
-               'depth':depth.copy(),
-               'slip':slip.copy(),
                'length': length,
                'width': width}
+            for idx, header in enumerate(headers):
+                if header.lower() == 'z':
+                    header = 'depth'
+                segment[header.lower()] = data[idx].reshape(nz,nx).copy()
             segments.append(segment)
 
     # close fspfile object when done

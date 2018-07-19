@@ -1,4 +1,4 @@
- #!/usr/bin/env
+#!/usr/bin/env
 
 # stdlib imports
 from collections import OrderedDict
@@ -16,109 +16,19 @@ from fault.fault import Fault
 
 class WebProduct(object):
     """Class for creating web products."""
-    def __init__(self, inversion_process, result, analysis):
-        self._result = result
-        self._inversion_process = inversion_process
-        self._analysis = analysis
+    def __init__(self):
         self._timeseries_dict = None
+        self._timeseries_geojson = None
         self._event = None
         self._segments = None
         self._grid = None
-        self._downloads = None
         self._contents = None
-
-    @property
-    def analysis(self):
-        """
-        Helper to return analysis information.
-
-        Returns:
-            string: _analysis information.
-        """
-        return self._analysis
-
-    def collectDownloads(self, directory, eventid):
-        """
-        Create a dictionary of the downloads for web pages.
-
-        Args:
-            directory (string): Path to directory.
-            eventid (string): Eventid used for file naming.
-
-        Returns:
-            dictionary: dictionary of downloads.
-
-        Notes:
-            Currently assumes one fault model per event.
-        """
-        eventid = eventid.lower()
-        # Look for  and add basemap
-        basemap = self._setDownload(
-                "Map of finite fault showing it's geographic context ",
-                "web/" + eventid + ".png", directory, "/*_basemap.png",
-                "Base Map ", "image/png")
-        # CMT solution
-        cmt = self._setDownload(
-                "Full CMT solution for every point in finite fault region ",
-                "web/CMTSOLUTION", directory, "/*CMTSOLUTION*",
-                "CMT Solution ", "text/plain")
-        # inversion files
-        basic_inversion = self._setDownload(
-                "Basic inversion parameters for each node in the finite fault ",
-                "web/" + eventid + ".param", directory, "/*.param",
-                "Inversion Parameters File 1 ", "text/plain")
-        full_inversion = self._setDownload(
-                "Complete inversion parameters for the finite fault, "
-                "following the SRCMOD FSP format (http://equake-rc.info/) ",
-                "web/" + eventid + ".fsp", directory, "/*.fsp",
-                "Inversion Parameters File 2 ", "text/plain")
-        # Coulomb inp
-        coulomb = self._setDownload(
-                "Format necessary for compatibility with Coulomb3 "
-                "(http://earthquake.usgs.gov/research/software/coulomb/) ",
-                "web/" + eventid + "_coulomb.inp", directory,
-                "/*_coulomb.inp", "Coulomb Input File ", "text/plain")
-        # Moment rate
-        rate = self._setDownload(
-                "Ascii file of time vs. moment rate, used for plotting "
-                "source time function ",
-                "web/" + eventid + ".mr", directory, "/*.mr",
-                "Moment Rate Function File ", "text/plain")
-        # surface displacement
-        displacement = self._setDownload(
-                "Surface displacement resulting from finite fault, "
-                "calculated using Okada-style deformation codes ",
-                "web/" + eventid + ".disp", directory, "/*.disp",
-                "Surface Deformation File ", "text/plain")
-        # store information
-        downloads = OrderedDict()
-        downloads['basemap'] = basemap
-        downloads['basemap']['id'] = 'basemap'
-        downloads['cmtsolution1'] = cmt
-        downloads['cmtsolution1']['id'] = 'cmtsolution1'
-        downloads['inpfile1_1'] = basic_inversion
-        downloads['inpfile1_1']['id'] = 'inpfile1_1'
-        downloads['inpfile2_1'] = full_inversion
-        downloads['inpfile2_1']['id'] = 'inpfile2_1'
-        downloads['coulomb_1'] = coulomb
-        downloads['coulomb_1']['id'] = 'coulomb_1'
-        downloads['momentrate1'] = rate
-        downloads['momentrate1']['id'] = 'momentrate1'
-        downloads['surface1'] = displacement
-        downloads['surface1']['id'] = 'surface1'
-        for file_id in downloads:
-            download_file = downloads[file_id]['file'].lower()
-            if file_id.find('cmt') < 0 :
-                assert download_file.find(eventid) >= 0
-        self.downloads = downloads
+        self._pdl_information = None
 
     @property
     def contents(self):
         """
-        Helper to return contents information.
-
-        Returns:
-            string: contents information.
+        Helper to return the contents:
         """
         return self._contents
 
@@ -128,88 +38,190 @@ class WebProduct(object):
 
         Args:
             directory (str): Directory path to validate existance of files.
-        """
-        if (self.timeseries_dict is None or self.grid is None or
-                self.result is None or self.analysis is None or
-                self.segments is None or self.inversion_process is None or
-                self.downloads is None):
-            raise Exception('All attributes of WebProduct must be populated '
-                    'before the contents.xml can ve created.')
-        contents = etree.Element('contents')
 
-        for id in self.downloads:
-            params = self.downloads[id].copy()
-            file_attributes = {'id': params['id'], 'title': params['title']}
-            download_file = etree.SubElement(contents, 'file',
-                    file_attributes)
-            caption = etree.SubElement(download_file, 'caption')
-            caption.text = etree.CDATA(params['caption'])
-            format_attributes = {'href': params['file'],
-                    'type': params['type']}
-            etree.SubElement(download_file, 'format', format_attributes)
+        Returns:
+            Element Tree
+        """
+        contents = etree.Element('contents')
+        # Look for  and add basemap
+        basemap = self._checkDownload(directory, "*_basemap.png")
+        if len(basemap) > 0:
+            file_attrib, format_attrib = self._getAttributes('basemap',
+                    "Base Map ", basemap[0], "image/png")
+            file_tree = etree.SubElement(contents, 'file', file_attrib)
+            caption = etree.SubElement(file_tree, 'caption')
+            caption.text = etree.CDATA(
+                    "Map of finite fault showing it's geographic context ")
+            etree.SubElement(file_tree, 'format', format_attrib)
+
+        # Look for body and surace wave plots
+        plots = self._checkDownload(directory, "waveplots.zip")
+        if len(plots) > 0:
+            file_attrib, format_attrib = self._getAttributes('waveplots',
+                    "Wave Plots ", plots[0], "application/zip")
+            file_tree = etree.SubElement(contents, 'file', file_attrib)
+            caption = etree.SubElement(file_tree, 'caption')
+            caption.text = etree.CDATA(
+                    "Body and surface wave plots ")
+            etree.SubElement(file_tree, 'format', format_attrib)
+
+        # CMT solution
+        cmt = self._checkDownload(directory, "*CMTSOLUTION*")
+        if len(cmt) > 0:
+            file_attrib, format_attrib = self._getAttributes('cmtsolution1',
+                    "CMT Solution ", cmt[0], "text/plain")
+            file_tree = etree.SubElement(contents, 'file', file_attrib)
+            caption = etree.SubElement(file_tree, 'caption')
+            caption.text = etree.CDATA(
+                    "Full CMT solution for every point in finite fault "
+                    "region ")
+            etree.SubElement(file_tree, 'format', format_attrib)
+
+        # inversion files
+        param = self._checkDownload(directory, "*.param")
+        fsp = self._checkDownload(directory, "*.fsp")
+        if len(fsp) > 0 or len(param) > 0:
+            if len(param) > 0:
+                file_attrib, format_attrib = self._getAttributes('inpfiles',
+                        "Inversion Parameters ", param[0], "text/plain")
+                file_tree = etree.SubElement(contents, 'file', file_attrib)
+                caption = etree.SubElement(file_tree, 'caption')
+                caption.text = etree.CDATA(
+                        "Files of inversion parameters for the finite fault ")
+                etree.SubElement(file_tree, 'format', format_attrib)
+                if len(fsp) > 0:
+                    file_attrib, format_attrib = self._getAttributes(
+                            'inpfiles', "Inversion Parameters ", fsp[0],
+                            "text/plain")
+                    etree.SubElement(file_tree, 'format', format_attrib)
+            elif len(fsp) > 0:
+                file_attrib, format_attrib = self._getAttributes('inpfiles',
+                        "Inversion Parameters ", fsp[0], "text/plain")
+                file_tree = etree.SubElement(contents, 'file', file_attrib)
+                caption = etree.SubElement(file_tree, 'caption')
+                caption.text = etree.CDATA(
+                        "Files of inversion parameters for the finite fault ")
+                etree.SubElement(file_tree, 'format', format_attrib)
+                if len(param) > 0:
+                    file_attrib, format_attrib = self._getAttributes(
+                            'inpfiles', "Inversion Parameters ", param[0],
+                            "text/plain")
+                    etree.SubElement(file_tree, 'format', format_attrib)
+
+        # Coulomb inp
+        coul = self._checkDownload(directory, "*_coulomb.inp")
+        if len(coul) > 0:
+            file_attrib, format_attrib = self._getAttributes('coulomb',
+                    "Coulomb Input File ", coul[0], "text/plain")
+            file_tree = etree.SubElement(contents, 'file', file_attrib)
+            caption = etree.SubElement(file_tree, 'caption')
+            caption.text = etree.CDATA(
+                    "Format necessary for compatibility with Coulomb3 "
+                    "(http://earthquake.usgs.gov/research/software/coulomb/) ")
+            etree.SubElement(file_tree, 'format', format_attrib)
+
+        # Moment rate
+        mr_plot = self._checkDownload(directory, "*mr*.png")
+        mr_ascii = self._checkDownload(directory, "*.mr")
+        if len(mr_ascii) > 0:
+            file_attrib, format_attrib = self._getAttributes(
+                    'momentrate', "Moment Rate Function Files ", mr_ascii[0],
+                    "text/plain")
+            file_tree = etree.SubElement(contents, 'file', file_attrib)
+            caption = etree.SubElement(file_tree, 'caption')
+            caption.text = etree.CDATA(
+                    "Files of time vs. moment rate for source time "
+                    "functions ")
+            etree.SubElement(file_tree, 'format', format_attrib)
+            file_attrib, format_attrib = self._getAttributes('momentrate',
+                    "Moment Rate Function Files ", mr_plot[0],
+                    "image/png")
+            etree.SubElement(file_tree, 'format', format_attrib)
+        else:
+            file_attrib, format_attrib = self._getAttributes('momentrate',
+                    "Moment Rate Function Files ", mr_plot[0],
+                    "image/png")
+            file_tree = etree.SubElement(contents, 'file', file_attrib)
+            caption = etree.SubElement(file_tree, 'caption')
+            caption.text = etree.CDATA(
+                    "Files of time vs. moment rate for source time "
+                    "functions ")
+            etree.SubElement(file_tree, 'format', format_attrib)
+
+        # surface displacement
+        surf = self._checkDownload(directory, "*.disp")
+        if len(surf) > 0:
+            file_attrib, format_attrib = self._getAttributes('surface',
+                    "Surface Deformation File ", surf[0], "text/plain")
+            file_tree = etree.SubElement(contents, 'file', file_attrib)
+            caption = etree.SubElement(file_tree, 'caption')
+            caption.text = etree.CDATA(
+                    "Surface displacement resulting from finite fault, "
+                    "calculated using Okada-style deformation codes ")
+            etree.SubElement(file_tree, 'format', format_attrib)
+
         # GeoJSON grid
         if not os.path.exists(os.path.join(directory, 'FFM.geojson')):
             raise FileNotFoundError('Missing FFM geojson file.')
-        grid_attributes = {'id': 'geojson', 'title': 'FFM GeoJSON '}
+        file_attrib, format_attrib = self._getAttributes('geojson',
+                "FFM GeoJSON ", 'web/FFM.geojson', "text/plain")
         grid_file = etree.SubElement(contents, 'file',
-                grid_attributes)
+                file_attrib)
         grid_caption = etree.SubElement(grid_file, 'caption')
-        caption_str = ("GeoJSON file of the finite fault model grid and "
-                "earthquake location ")
+        caption_str = ("GeoJSON file of the finite fault model grid ")
         grid_caption.text = etree.CDATA(caption_str)
-        grid_format = {'href': 'web/FFM.geojson',
-                'type': "text/plain"}
-        etree.SubElement(grid_file, 'format', grid_format)
+        etree.SubElement(grid_file, 'format', format_attrib)
 
         # Time series JSON
-        if not os.path.exists(os.path.join(directory, 'timeseries.json')):
+        if not os.path.exists(os.path.join(directory, 'timeseries.geojson')):
             raise FileNotFoundError('Missing timeseries file.')
-        timeseries_attributes = {'id': 'timeseries',
-                'title': 'Time Series JSON '}
-        timeseries_file = etree.SubElement(contents, 'file',
-                timeseries_attributes)
+        file_attrib, format_attrib = self._getAttributes('timeseries',
+                "Time Series JSON ", 'web/timeseries.geojson', "text/plain")
+        timeseries_file = etree.SubElement(contents, 'file', file_attrib)
         timeseries_caption = etree.SubElement(timeseries_file, 'caption')
         caption_str = "JSON file of time series data and synthetic models "
         timeseries_caption.text = etree.CDATA(caption_str)
-        timeseries_format = {'href': 'web/timeseries.json',
-                'type': "text/plain"}
-        etree.SubElement(timeseries_file, 'format', timeseries_format)
+        etree.SubElement(timeseries_file, 'format', format_attrib)
 
         # Comment JSON
-        if not os.path.exists(os.path.join(directory, 'comments.json')):
-            raise FileNotFoundError('Missing comments file.')
-        timeseries_attributes = {'id': 'comments', 'title': 'Comment JSON '}
-        timeseries_file = etree.SubElement(contents, 'file',
-                timeseries_attributes)
-        timeseries_caption = etree.SubElement(timeseries_file, 'caption')
-        caption_str = ("JSON file of processing and result comments for this "
-                "finite fault model ")
-        timeseries_caption.text = etree.CDATA(caption_str)
-        timeseries_format = {'href': 'web/comments.json',
+        if not os.path.exists(os.path.join(directory, 'analysis.html')):
+            raise FileNotFoundError('Missing analysis html file.')
+        file_attrib, format_attrib = self._getAttributes('analysis',
+                "Analysis HTML ", 'web/analysis.html', "text/plain")
+        analysis_file = etree.SubElement(contents, 'file', file_attrib)
+        analysis_caption = etree.SubElement(analysis_file, 'caption')
+        caption_str = ("Analysis of results ")
+        analysis_caption.text = etree.CDATA(caption_str)
+        timeseries_format = {'href': 'web/analysis.html',
                 'type': "text/plain"}
-        etree.SubElement(timeseries_file, 'format', timeseries_format)
+        etree.SubElement(analysis_file, 'format', format_attrib)
 
         tree = etree.ElementTree(contents)
         self._contents = tree
+        return tree
 
-    @property
-    def downloads(self):
-        """
-        Helper to return downloads dictionary.
+    def createTimeseriesGeoJSON(self):
+        station_points = []
+        for key in self.timeseries_dict:
+            props = {}
+            props['station'] = key
+            station = self.timeseries_dict[key]
+            props['data'] = station['data']
+            props['metadata'] = station['data']
 
-        Returns:
-            dictionary: Downloads information.
-        """
-        return self._downloads
-
-    @downloads.setter
-    def downloads(self, downloads):
-        """
-        Helper to set downloads dictionary.
-
-        downloads (dictionary): Downloads information.
-        """
-        self._downloads = downloads
+            station_points += [{
+              "type": "Feature",
+              "properties": props,
+              "geometry": {
+                "type": "Point",
+                "coordinates": []
+              }
+            }]
+        geo = {
+          "type": "FeatureCollection",
+          "features": station_points
+        }
+        self._timeseries_geojson = geo
 
     @property
     def event(self):
@@ -249,16 +261,6 @@ class WebProduct(object):
         """
         self._grid = grid
 
-    @property
-    def inversion_process(self):
-        """
-        Helper to return inversion information.
-
-        Returns:
-            string: Inversion information.
-        """
-        return self._inversion_process
-
     @classmethod
     def fromDirectory(cls, directory, eventid='', include_downloads=True):
         """
@@ -273,40 +275,25 @@ class WebProduct(object):
         Returns:
             WebProduct: Instance set for information for the web product.
         """
-        inversion_file = os.path.join(directory, 'inversion_process.txt')
-        with open (inversion_file, "r") as myfile:
-            inversion = myfile.readlines()
-        analysis_file = os.path.join(directory, 'analysis.txt')
-        with open (analysis_file, "r") as myfile:
-            analysis = myfile.readlines()
-        result_file = os.path.join(directory, 'result.txt')
-        with open (result_file, "r") as myfile:
-            result = myfile.readlines()
+        product = cls()
+        unavailable, files = product._files_unavailable(directory)
+        if unavailable is True:
+            raise Exception('Missing required files: %r' % files)
+        with open(directory + '/analysis.txt', 'r') as f:
+                analysis = "".join(f.readlines())
+        product.writeAnalysis(analysis, directory)
         fsp_file = glob.glob(directory + "/" + "*.fsp")[0]
-        assert fsp_file.find(eventid) >= 0
         fault = Fault.fromFiles(fsp_file, directory)
-        product = cls(inversion, result, analysis)
-        product.writeComments(directory)
         product.timeseries_dict = fault.timeseries_dict
+        product.createTimeseriesGeoJSON()
         product.writeTimeseries(directory)
         product.event = fault.event
         product.segments = fault.segments
         fault.createGeoJSON()
         product.grid = fault.corners
         product.writeGrid(directory)
-        if include_downloads:
-            product.collectDownloads(directory, eventid)
+        product.writeContents(directory)
         return product
-
-    @property
-    def result(self):
-        """
-        Helper to return result information.
-
-        Returns:
-            string: Result information.
-        """
-        return self._result
 
     @property
     def segments(self):
@@ -337,6 +324,16 @@ class WebProduct(object):
         """
         return self._timeseries_dict
 
+    @property
+    def timeseries_geojson(self):
+        """
+        Helper to return time series geojson.
+
+        Returns:
+            dictionary: geojson of time series for each station.
+        """
+        return self._timeseries_geojson
+
     @timeseries_dict.setter
     def timeseries_dict(self, timeseries_dict):
         """
@@ -347,20 +344,21 @@ class WebProduct(object):
         """
         self._timeseries_dict = timeseries_dict
 
-    def writeComments(self, directory):
+    def writeAnalysis(self, analysis, directory):
         """
-        Writes comments on inversion, analysis, and results in a JSON format.
+        Write the analysis.html file.
 
         Args:
-            directory (str): Directory where the file will be written.
+            analysis (str): Analysis string.
+            directory (str): Path to directory where contents.xml will be
+                    written.
         """
-        write_path = os.path.join(directory, 'comments.json')
-        comments = OrderedDict()
-        comments['inversion_process'] = self.inversion_process
-        comments['result'] =  self.result
-        comments['analysis'] = self.analysis
-        with open(write_path, 'w') as outfile:
-            json.dump(comments, outfile)
+        outfile = os.path.join(directory, 'analysis.html')
+        if os.path.exists(outfile):
+            return
+        with open(outfile, 'w') as analysis_file:
+            analysis_file.write('<h3>Scientific Analysis</h3>')
+            analysis_file.write(analysis)
 
     def writeContents(self, directory):
         """
@@ -370,9 +368,7 @@ class WebProduct(object):
             directory (str): Path to directory where contents.xml will be
                     written.
         """
-        if  self.contents is None:
-            self.createContents(directory)
-        tree = self.contents
+        tree = self.createContents(directory)
         outdir = os.path.join(directory, 'contents.xml')
         tree.write(outdir, pretty_print=True, encoding="utf8")
 
@@ -387,7 +383,8 @@ class WebProduct(object):
             raise Exception('The FFM grid dictionary has not been set.')
         write_path = os.path.join(directory, 'FFM.geojson')
         with open(write_path, 'w') as outfile:
-            json.dump(self.grid, outfile)
+            json.dump(self.grid, outfile, indent=4)
+
 
     def writeTimeseries(self, directory):
         """
@@ -396,36 +393,60 @@ class WebProduct(object):
         Args:
             directory (str): Directory where the file will be written.
         """
-        if self.timeseries_dict is None:
-            raise Exception('The time series dictionary has not been set.')
-        write_path = os.path.join(directory, 'timeseries.json')
+        if self.timeseries_geojson is None:
+            raise Exception('The time series geojson has not been set.')
+        write_path = os.path.join(directory, 'timeseries.geojson')
         with open(write_path, 'w') as outfile:
-            json.dump(self.timeseries_dict, outfile)
+            json.dump(self.timeseries_dict, outfile, indent=4)
 
-    def _setDownload(self, caption, default, directory, file_pattern,
-            title, file_type):
+    def _files_unavailable(self, directory):
+        """
+        Helper to check for required files.
+
+        Args:
+            directory (string): Path to directory of FFM data.
+        """
+        required = {
+            'Moment Rate PNG': '*mr*.png',
+            'Base Map PNG': '*base*.png',
+            'Slip PNG': '*base*.png',
+            'FSP Files': '*.fsp',
+            'Analysis Text File': 'analysis.txt'
+        }
+        unavailable = []
+        for file_type in required:
+            path = os.path.join(directory, required[file_type])
+            if len(glob.glob(path)) < 1:
+                unavailable += [file_type]
+        if len(unavailable) > 0:
+            return (True, unavailable)
+        else:
+            return (False, [])
+
+    def _checkDownload(self, directory, pattern):
         """
         Helper to check for a file and set download dictionary section.
 
         Args:
-            caption (string): Caption for download file.
-            default (string): Default file path.
-            directory (string): Path to directory of download data.
-            file_pattern (string): Pattern of file name.
-            title (string): Title of download file.
-            file_type (string): Type of file.
+            directory (str): Path to directory.
+            pattern (string): File patterns to check.
         """
+        files = []
         # attempt to find file or use default
-        try:
-            file_path = os.path.join('web', os.path.basename(
-                    glob.glob(directory + file_pattern)[0]))
-        except IndexError:
-            warnings.warn('Missing file %r file. Setting to '
-                    'default file path: %r' % (title, default))
-            file_path = default
-        download = {}
-        download['file'] = file_path
-        download['caption'] = caption
-        download['title'] = title
-        download['type'] = file_type
-        return download
+        file_paths = glob.glob(os.path.join(directory, pattern))
+        if len(file_paths) > 0:
+            file_path = os.path.join('web',
+                    os.path.basename(file_paths[0]))
+            files += [file_path]
+        return files
+
+    def _getAttributes(self, id, title, href, type):
+        """
+        Created contents attributes.
+
+        Args:
+            file_patterns (string): File patterns to check.
+        """
+        file_attrib = {'id': id, 'title': title}
+        format_attrib = {'href': href, 'type': type}
+        return file_attrib, format_attrib

@@ -36,30 +36,16 @@ def test_sendproduct():
     indir = os.path.join(homedir, '..', 'data', 'timeseries')
     send_product = os.path.join(homedir, '..', '..', 'bin', 'sendproduct')
     eventid = '100dyad'
+    net = 'us'
     try:
-        cmd = '%s %s' % (send_product, indir)
+        cmd = '%s %s %s %s' % (send_product, net, eventid, indir)
         res, stdout, stderr = get_command_output(cmd)
+        print(res, 'OUTTTT', stdout, 'ERRRRRRR', stderr)
         if not res:
             raise AssertionError(
                 'sendproduct command %s failed with errors "%s"' % (cmd,
                         stderr))
         print(stdout)
-    except Exception as e:
-        raise(e)
-
-    # TEST for creation of files
-    homedir = os.path.dirname(os.path.abspath(
-        __file__))  # where is this script?
-    indir = os.path.join(homedir, '..', 'data', 'timeseries')
-    send_product = os.path.join(homedir, '..', '..', 'bin', 'sendproduct')
-    eventid = '100dyad'
-    try:
-        cmd = '%s %s -c' % (send_product, indir)
-        res, stdout, stderr = get_command_output(cmd)
-        if not res:
-            raise AssertionError(
-                'sendproduct command %s failed with errors "%s"' % (cmd,
-                        stderr))
     except Exception as e:
         raise(e)
 

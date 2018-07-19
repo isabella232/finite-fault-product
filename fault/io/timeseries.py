@@ -43,34 +43,34 @@ def _add_data(data_paths, synth_paths, wave_type, wave_dict):
         wave_type (str): Phase of time series.
         wave_dict (list): Dictionary or time series.
     """
+    wave_type = wave_type.upper()
     # Loop through all data paths of a certain type
     for idx, data_path in enumerate(data_paths):
         data_station, time, displacement = read_file(data_path)
         data_dict = OrderedDict()
+        data_dict['id'] = data_station + '_' + wave_type.upper()
+        data_dict['component'] =  wave_type.upper()
+        if wave_type == 'T' or wave_type == 'Z':
+            data_dict['waveform-type'] = 'long period surface wave'
+        elif wave_type == 'S' or wave_type == 'P':
+            data_dict['waveform-type'] = 'teleseismic broadband body wave'
         data_dict['time'] = time.tolist()
-        data_dict['displacement'] = displacement.tolist()
+        data_dict['displacement'] = np.around(displacement,
+                decimals=6).tolist()
+        syn_path = data_path.replace('.dat', '.syn')
+        if syn_path in synth_paths:
+            data_station, syn_time, syn_displacement = read_file(syn_path)
+            data_dict['synthetic-time'] = syn_displacement.tolist()
+            data_dict['synthetic-displacement'] = np.around(syn_displacement,
+                    decimals=6).tolist()
         # Check if the station key already exists in the dictionary
         if data_station not in wave_dict:
             wave_dict[data_station] =  OrderedDict()
             metadata = _get_metadata(data_station)
             wave_dict[data_station]['metadata'] = metadata
-        if wave_type not in wave_dict[data_station]:
-            wave_dict[data_station][wave_type] = OrderedDict()
-        wave_dict[data_station][wave_type]['data'] = data_dict
-    # Loop through all synthetic paths of a certain type
-    for idx, synth_path in enumerate(synth_paths):
-        synth_station, time, displacement = read_file(synth_path)
-        synth_dict = OrderedDict()
-        synth_dict['time'] = time.tolist()
-        synth_dict['displacement'] = displacement.tolist()
-        # Check if the station key already exists in the dictionary
-        if synth_station not in wave_dict:
-            wave_dict[synth_station] = OrderedDict()
-            metadata = _get_metadata(synth_station)
-            wave_dict[synth_station]['metadata'] = metadata
-        if wave_type not in wave_dict[synth_station]:
-            wave_dict[synth_station][wave_type] = OrderedDict()
-        wave_dict[synth_station][wave_type]['synthetic'] = synth_dict
+        if 'data' not in wave_dict[data_station]:
+            wave_dict[data_station]['data'] = []
+        wave_dict[data_station]['data'] += [data_dict]
     return wave_dict
 
 
@@ -137,6 +137,9 @@ def _get_metadata(station):
     """
     metadata_dict = OrderedDict()
     metadata_dict['station'] = station
+    metadata_dict['time-units'] = 'seconds'
+    metadata_dict['displacement-units'] = 'micrometers'
+    metadata_dict['comments'] = 'Rounded to 6 decimal places.'
     return metadata_dict
 
 def read_file(path):
