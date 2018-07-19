@@ -3,40 +3,34 @@
     <caption><![CDATA[Map of finite fault showing it's geographic context ]]></caption>
     <format href="web/1000dyad_basemap.png" type="image/png"/>
   </file>
-  <file id="cmtsolution1" title="CMT Solution ">
-    <caption><![CDATA[Full CMT solution for every point in finite fault region ]]></caption>
-    <format href="web/CMTSOLUTION" type="text/plain"/>
+  <file id="waveplots" title="Wave Plots ">
+    <caption><![CDATA[Body and surface wave plots ]]></caption>
+    <format href="web/waveplots.zip" type="application/zip"/>
   </file>
-  <file id="inpfile1_1" title="Inversion Parameters File 1 ">
-    <caption><![CDATA[Basic inversion parameters for each node in the finite fault ]]></caption>
+  <file id="inpfiles" title="Inversion Parameters ">
+    <caption><![CDATA[Files of inversion parameters for the finite fault ]]></caption>
     <format href="web/1000dyad.param" type="text/plain"/>
-  </file>
-  <file id="inpfile2_1" title="Inversion Parameters File 2 ">
-    <caption><![CDATA[Complete inversion parameters for the finite fault, following the SRCMOD FSP format (http://equake-rc.info/) ]]></caption>
     <format href="web/1000dyad.fsp" type="text/plain"/>
   </file>
-  <file id="coulomb_1" title="Coulomb Input File ">
+  <file id="coulomb" title="Coulomb Input File ">
     <caption><![CDATA[Format necessary for compatibility with Coulomb3 (http://earthquake.usgs.gov/research/software/coulomb/) ]]></caption>
     <format href="web/1000dyad_coulomb.inp" type="text/plain"/>
   </file>
-  <file id="momentrate1" title="Moment Rate Function File ">
-    <caption><![CDATA[Ascii file of time vs. moment rate, used for plotting source time function ]]></caption>
+  <file id="momentrate" title="Moment Rate Function Files ">
+    <caption><![CDATA[Files of time vs. moment rate for source time functions ]]></caption>
     <format href="web/1000dyad.mr" type="text/plain"/>
-  </file>
-  <file id="surface1" title="Surface Deformation File ">
-    <caption><![CDATA[Surface displacement resulting from finite fault, calculated using Okada-style deformation codes ]]></caption>
-    <format href="web/1000dyad.disp" type="text/plain"/>
+    <format href="web/mr.png" type="image/png"/>
   </file>
   <file id="geojson" title="FFM GeoJSON ">
-    <caption><![CDATA[GeoJSON file of the finite fault model grid and earthquake location ]]></caption>
+    <caption><![CDATA[GeoJSON file of the finite fault model grid ]]></caption>
     <format href="web/FFM.geojson" type="text/plain"/>
   </file>
   <file id="timeseries" title="Time Series JSON ">
     <caption><![CDATA[JSON file of time series data and synthetic models ]]></caption>
-    <format href="web/timeseries.json" type="text/plain"/>
+    <format href="web/timeseries.geojson" type="text/plain"/>
   </file>
-  <file id="comments" title="Comment JSON ">
-    <caption><![CDATA[JSON file of processing and result comments for this finite fault model ]]></caption>
-    <format href="web/comments.json" type="text/plain"/>
+  <file id="analysis" title="Analysis HTML ">
+    <caption><![CDATA[Analysis of results ]]></caption>
+    <format href="web/analysis.html" type="text/plain"/>
   </file>
 </contents>

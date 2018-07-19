@@ -1,5 +1,11 @@
 #!/usr/bin/env
 
+# stdlib imports
+import copy
+from matplotlib import colors
+import matplotlib.cm as cm
+import matplotlib.colors as colors
+
 # third party imports
 import numpy as np
 from openquake.hazardlib.geo.geodetic import point_at
@@ -40,6 +46,7 @@ class Fault(object):
             dictionary: GeoJSON formatted dictionary.
         """
         segment_cells = []
+
         for segment in self.segments:
             arr_size = len(segment['lat'].flatten())
             dx = [self.event['dx']/2] * arr_size
@@ -48,33 +55,28 @@ class Fault(object):
             width = [self.event['dz']] * arr_size
             strike = [segment['strike']] * arr_size
             dip = [segment['dip']] * arr_size
+            optional_properties = copy.deepcopy(segment)
+            for key in ['dip', 'strike', 'lon', 'depth',
+                    'slip', 'lat', 'length', 'width']:
+                del optional_properties[key]
+            for key in optional_properties:
+                optional_properties[key] = optional_properties[key].flatten()
             polygons = self.cornersFromOrientation(segment['lon'].flatten(),
                     segment['lat'].flatten(), segment['depth'].flatten(),
                     dx, dy, length, width, strike, dip,
-                    segment['slip'].flatten())
+                    segment['slip'].flatten(), optional_properties=optional_properties)
             segment_cells += polygons
-        # Add earthquake point
-        origin = {
-          "type": "Feature",
-          "properties": {
-                      'location': self.event['location'],
-                      'date': self.event['date'].strftime('%Y-%m-%dT%H:%M:%S.%fZ'),
-                      'depth': self.event['depth'],
-                      'moment': self.event['moment'],
-                      'mag': self.event['mag']
-          },
-          "geometry": {
-            "type": "Point",
-            "coordinates": [
-              self.event['lon'],
-              self.event['lat']
-            ]
-          }
-        }
-        segment_cells += [origin]
         features = {"type": "FeatureCollection",
              "metadata": {
-                 "reference": 'us'
+                'epicenter': {
+                 'location': self.event['location'],
+                 'date': self.event['date'].strftime('%Y-%m-%dT%H:%M:%S.%fZ'),
+                 'depth': self.event['depth'],
+                 'moment': self.event['moment'],
+                 'mag': self.event['mag'],
+                 'lon': self.event['lon'],
+                 'lat': self.event['lat']
+                 }
              },
              "features": segment_cells
              }
@@ -82,7 +84,7 @@ class Fault(object):
 
 
     def cornersFromOrientation(self, px, py, pz, dx, dy, length, width,
-                        strike, dip, slips):
+                        strike, dip, slips, optional_properties=None):
         """
         Create a set of polygons from a known point, shape, and orientation.
         A point is defined as a set of latitude, longitude, and depth, which
@@ -142,7 +144,8 @@ class Fault(object):
         # Verify that all are numpy arrays
         px = np.array(px, dtype='d')
         py = np.array(py, dtype='d')
-        pz = np.array(pz, dtype='d')
+        # depth should be in meters not in km
+        pz = np.array(pz, dtype='d') * 1000
         dx = np.array(dx, dtype='d')
         dy = np.array(dy, dtype='d')
         length = np.array(length, dtype='d')
@@ -174,11 +177,12 @@ class Fault(object):
         top_horizontal_depth = pz - np.abs(dy * np.sin(np.deg2rad(dip)))
         # Get polygons
         corners = self.cornersFromTrace(P1_lon, P1_lat, P2_lon, P2_lat,
-                top_horizontal_depth, width, dip, strike=strike, slips=slips)
+                top_horizontal_depth, width, dip, strike=strike, slips=slips,
+                optional_properties=optional_properties)
         return corners
 
     def cornersFromTrace(self, xp0, yp0, xp1, yp1, zp, widths, dips,
-                  strike, slips):
+                  strike, slips, optional_properties=None):
         """
         Create a list of polygons from a set of vertices that define the
         top of the rupture, and an array of widths/dips.
@@ -310,6 +314,8 @@ class Fault(object):
         u_groups = np.unique(group_index)
         n_groups = len(u_groups)
         polygons = []
+        norm = colors.Normalize(vmin=0, vmax=np.max(slips) + 0.5)
+        f2rgb = cm.ScalarMappable(norm=norm, cmap=cm.get_cmap('cubehelix_r'))
         for i in range(n_groups):
             ind = np.where(u_groups[i] == group_index)[0]
             lons = np.concatenate(
@@ -334,13 +340,22 @@ class Fault(object):
 
             poly = []
             for lon, lat, dep in zip(lons, lats, deps):
-                poly.append([lon, lat, dep])
+                coordinates = np.around(np.asarray([lon, lat, dep]),
+                        decimals=5)
+                poly.append(coordinates.tolist())
 
+            properties = {}
+            for property in optional_properties:
+                properties[property] = optional_properties[property][i]
+            rgb = f2rgb.to_rgba(slips[i])[:3]
+            h = '#%02x%02x%02x' % tuple([int(255*fc) for fc in rgb])
+            properties["slip"] = slips[i]
+            properties["fill"] = h
+            properties["stroke-width"] = 1.5
+            properties["fill-opacity"] = 1
             d = {
                      "type": "Feature",
-                     "properties": {
-                             "slip": slips[i]
-                     },
+                     "properties": properties,
                      "geometry": {
                          "type": "Polygon",
                          "coordinates": [poly]

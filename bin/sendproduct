@@ -10,19 +10,43 @@ from product.web_product import WebProduct
 def get_parser():
     description = '''Send a finite fault product for event pages.'''
     parser = argparse.ArgumentParser(description=description)
-    parser.add_argument('directory', help='Directory where all finite fault '
-            'files are contained.')
-    parser.add_argument('-c', '--create-product',
-            help='Create products if not already contained within the directory',
-            action='store_true', default=False)
+    parser.add_argument('net', help='Network code (exmaple: us).')
+    parser.add_argument('eventid', help='Event identification code.')
+    parser.add_argument('ffm1', help='Directory where all files are '
+            'contained for the finite fault model.')
+    parser.add_argument('-ffm2', dest="ffm2", type=str, default='',
+            help='Directory where all files are contained for the second '
+            'finite fault model.')
+    parser.add_argument("-v", "--version", dest="version",
+                      help="Add a version number to the finite fault output",
+                      metavar="COMMENT")
+    parser.add_argument("-r", "--review",action="store_true",
+                      dest="doReview", default=False,
+                      help="don't send products to PDL")
     return parser
 
 def main(args):
-    directory = args.directory
-    if args.create_product:
-        product = WebProduct.fromDirectory(directory)
-        product.writeContents(directory)
-    send_product(directory)
+    two_faults = False
+    comment = 'Not available yet.'
+
+    if args.version is None:
+        version = 1
+    else:
+        version = int(args.version)
+        if version < 1:
+            raise Exception(
+                    'Version number less than one %r.' % args.version)
+
+    ffm1dir = args.ffm1
+    product1 = WebProduct.fromDirectory(ffm1dir)
+    if args.ffm2 != '':
+        ffm2dir = args.ffm2
+        product2 = WebProduct.fromDirectory(ffm2dir)
+        two_faults = True
+    if not args.doReview:
+        send_product(ffm1dir)
+    else:
+        print('Output was written to %s' % pdlfolder)
 
 def send_product(directory):
     """
