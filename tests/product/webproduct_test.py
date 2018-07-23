@@ -58,8 +58,6 @@ def test_fromFault():
     tree = product.contents
     geojson = tree.xpath("//file[@id='geojson']")[0]
     geojson.getparent().remove(geojson)
-    timeseries = tree.xpath("//file[@id='timeseries']")[0]
-    timeseries.getparent().remove(timeseries)
     comments = tree.xpath("//file[@id='analysis']")[0]
     comments.getparent().remove(comments)
     tree = etree.tostring(tree).decode()
@@ -75,15 +73,6 @@ def test_exceptions():
         warnings.simplefilter("ignore")
         product = WebProduct.fromDirectory(ts_directory, '1000dyad')
     product.writeContents(ts_directory)
-
-    os.remove(ts_directory + '/timeseries.geojson')
-    try:
-        product.writeContents(ts_directory)
-        success = True
-    except FileNotFoundError:
-        success = False
-    assert success == False
-    product.writeTimeseries(ts_directory)
 
     os.remove(ts_directory + '/FFM.geojson')
     try:

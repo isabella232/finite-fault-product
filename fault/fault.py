@@ -396,12 +396,15 @@ class Fault(object):
         Returns:
             Fault: Fault object with all information set.
         """
-        event, segments = read_from_file(fault_file)
-        timeseries_dict = read_from_directory(timeseries_directory)
         fault = cls()
+        event, segments = read_from_file(fault_file)
+        try:
+            timeseries_dict = read_from_directory(timeseries_directory)
+            fault.timeseries_dict = timeseries_dict
+        except:
+            warnings.warn('Time series files unavailable.')
         fault.segments = segments
         fault.event = event
-        fault.timeseries_dict = timeseries_dict
         return fault
 
     @classmethod
