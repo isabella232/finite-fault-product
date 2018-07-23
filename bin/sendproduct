@@ -38,10 +38,10 @@ def main(args):
                     'Version number less than one %r.' % args.version)
 
     ffm1dir = args.ffm1
-    product1 = WebProduct.fromDirectory(ffm1dir)
+    product1 = WebProduct.fromDirectory(ffm1dir, args.eventid)
     if args.ffm2 != '':
         ffm2dir = args.ffm2
-        product2 = WebProduct.fromDirectory(ffm2dir)
+        product2 = WebProduct.fromDirectory(ffm2dir, args.eventid)
         two_faults = True
     if not args.doReview:
         send_product(ffm1dir)
@@ -57,4 +57,5 @@ def send_product(directory):
 if __name__ == '__main__':
     parser = get_parser()
     pargs, unknown = parser.parse_known_args()
+    print(pargs)
     main(pargs)

@@ -40,7 +40,6 @@ def test_sendproduct():
     try:
         cmd = '%s %s %s %s' % (send_product, net, eventid, indir)
         res, stdout, stderr = get_command_output(cmd)
-        print(res, 'OUTTTT', stdout, 'ERRRRRRR', stderr)
         if not res:
             raise AssertionError(
                 'sendproduct command %s failed with errors "%s"' % (cmd,
