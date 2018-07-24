@@ -1,1 +1,0 @@
-After comparing waveform fits based on the two planes of the input moment tensor, we find that the nodal plane (strike= 240.0 deg., dip= 20.0 deg.) fits the data better. The seismic moment release based upon this plane is 2.8e+26 dyne.cm (Mw = 6.9) using a 1D crustal model interpolated from CRUST2.0 (Bassin et al., 2000).

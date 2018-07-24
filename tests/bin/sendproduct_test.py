@@ -1,7 +1,11 @@
 #!/usr/bin/env python
 
-import subprocess
+# stdlib imports
 import os.path
+import subprocess
+
+# local imports
+from product.constants import CFG
 
 
 def get_command_output(cmd):
@@ -30,23 +34,37 @@ def get_command_output(cmd):
 
 
 def test_sendproduct():
-    # TEST for sending
-    homedir = os.path.dirname(os.path.abspath(
-        __file__))  # where is this script?
-    indir = os.path.join(homedir, '..', 'data', 'timeseries')
-    send_product = os.path.join(homedir, '..', '..', 'bin', 'sendproduct')
-    eventid = '100dyad'
-    net = 'us'
-    try:
-        cmd = '%s %s %s %s' % (send_product, net, eventid, indir)
-        res, stdout, stderr = get_command_output(cmd)
-        if not res:
-            raise AssertionError(
-                'sendproduct command %s failed with errors "%s"' % (cmd,
-                        stderr))
-        print(stdout)
-    except Exception as e:
-        raise(e)
+    if os.path.exists(CFG):
+        # TEST for sending
+        homedir = os.path.dirname(os.path.abspath(
+            __file__))  # where is this script?
+        indir = os.path.join(homedir, '..', 'data', 'products', '1000dyad')
+        send_product = os.path.join(homedir, '..', '..', 'bin', 'sendproduct')
+        eventid = '100dyad'
+        net = 'us'
+        try:
+            cmd = '%s %s %s %s' % (send_product, net, eventid, indir)
+            res, stdout, stderr = get_command_output(cmd)
+            if not res:
+                raise AssertionError(
+                    'sendproduct command %s failed with errors "%s"' % (cmd,
+                            stderr))
+            print(stdout)
+        except Exception as e:
+            raise(e)
+
+        # Send multiple products
+        try:
+            cmd = '%s %s %s %s -ffm2 %s -v 2 -r' % (send_product, net, eventid,
+                    indir, indir)
+            res, stdout, stderr = get_command_output(cmd)
+            if not res:
+                raise AssertionError(
+                    'sendproduct command %s failed with errors "%s"' % (cmd,
+                            stderr))
+            print(stdout)
+        except Exception as e:
+            raise(e)
 
 
 if __name__ == '__main__':

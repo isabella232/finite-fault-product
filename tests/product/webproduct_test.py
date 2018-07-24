@@ -17,8 +17,7 @@ from product.web_product import WebProduct
 
 def test_fromFault():
     homedir = os.path.dirname(os.path.abspath(__file__))
-    ts_directory = os.path.join(homedir, '..', 'data', 'timeseries')
-    fspfile = os.path.join(homedir, '..', 'data', 'timeseries', '1000dyad.fsp')
+    ts_directory = os.path.join(homedir, '..', 'data', 'products', '1000dyad')
     with warnings.catch_warnings():
         warnings.simplefilter("ignore")
         product = WebProduct.fromDirectory(ts_directory, '1000dyad')
@@ -58,8 +57,6 @@ def test_fromFault():
     tree = product.contents
     geojson = tree.xpath("//file[@id='geojson']")[0]
     geojson.getparent().remove(geojson)
-    comments = tree.xpath("//file[@id='analysis']")[0]
-    comments.getparent().remove(comments)
     tree = etree.tostring(tree).decode()
     tree = tree.strip().replace('\n', '').replace('\t', '').replace(' ', '')
     target_xml = xml.strip().replace('\n', '').replace('\t', '').replace(' ', '')
@@ -67,12 +64,14 @@ def test_fromFault():
 
 def test_exceptions():
     homedir = os.path.dirname(os.path.abspath(__file__))
-    ts_directory = os.path.join(homedir, '..', 'data', 'timeseries')
-    fspfile = os.path.join(homedir, '..', 'data', 'timeseries', '1000dyad.fsp')
+    ts_directory = os.path.join(homedir, '..', 'data', 'products', '000714t')
     with warnings.catch_warnings():
         warnings.simplefilter("ignore")
-        product = WebProduct.fromDirectory(ts_directory, '1000dyad')
+        product = WebProduct.fromDirectory(ts_directory, '000714t', version=2,
+                pwaves=14, shwaves=3, longwaves=22)
     product.writeContents(ts_directory)
+    product.createTimeseriesGeoJSON()
+    product.writeTimeseries(ts_directory)
 
     os.remove(ts_directory + '/FFM.geojson')
     try:

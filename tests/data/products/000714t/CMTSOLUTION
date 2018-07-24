@@ -1,0 +1,1872 @@
+
+event name:      174715B_1
+time shift:         0.0000
+half duration:      8.0000
+latitude:         -23.2345
+longitude:        -70.2042
+depth:          39.7500
+Mrr:         1.808000e+26
+Mtt:         2.265000e+24
+Mpp:        -1.831000e+26
+Mrt:         3.064000e+25
+Mrp:        -1.915000e+26
+Mtp:         1.155000e+24
+
+event name:      174715B_2
+time shift:         0.0000
+half duration:      8.0000
+latitude:         -23.3687
+longitude:        -70.2196
+depth:          39.7500
+Mrr:         1.589000e+26
+Mtt:         1.254000e+24
+Mpp:        -1.602000e+26
+Mrt:         1.820000e+25
+Mrp:        -1.674000e+26
+Mtp:        -2.452000e+24
+
+event name:      174715B_3
+time shift:         0.0000
+half duration:      8.0000
+latitude:         -23.3513
+longitude:        -70.4004
+depth:          32.2500
+Mrr:         7.061000e+25
+Mtt:         5.266000e+24
+Mpp:        -7.588000e+25
+Mrt:         6.384000e+25
+Mrp:        -8.023000e+25
+Mtp:         2.107000e+25
+
+event name:      174715B_4
+time shift:         4.0000
+half duration:      4.0000
+latitude:         -23.2432
+longitude:        -70.1139
+depth:          43.4900
+Mrr:         2.087000e+26
+Mtt:         9.528000e+24
+Mpp:        -2.183000e+26
+Mrt:         1.172000e+26
+Mrp:        -2.297000e+26
+Mtp:         3.386000e+25
+
+event name:      174715B_5
+time shift:         4.0000
+half duration:      4.0000
+latitude:         -23.5117
+longitude:        -70.1446
+depth:          43.4900
+Mrr:         1.586000e+26
+Mtt:        -5.785000e+24
+Mpp:        -1.528000e+26
+Mrt:        -6.514000e+25
+Mrp:        -1.582000e+26
+Mtp:        -3.555000e+25
+
+event name:      174715B_6
+time shift:         4.0000
+half duration:      4.0000
+latitude:         -23.3424
+longitude:        -70.4904
+depth:          28.8400
+Mrr:         3.730000e+25
+Mtt:         2.991000e+24
+Mpp:        -4.029000e+25
+Mrt:         4.466000e+25
+Mrp:        -5.631000e+25
+Mtp:         1.211000e+25
+
+event name:      174715B_7
+time shift:         4.0000
+half duration:      8.0000
+latitude:         -23.5030
+longitude:        -70.2350
+depth:          39.7500
+Mrr:         1.386000e+26
+Mtt:        -7.921000e+24
+Mpp:        -1.307000e+26
+Mrt:        -9.086000e+25
+Mrp:        -1.348000e+26
+Mtp:        -4.455000e+25
+
+event name:      174715B_8
+time shift:         4.0000
+half duration:      8.0000
+latitude:         -23.3600
+longitude:        -70.3100
+depth:          36.0000
+Mrr:         1.139000e+26
+Mtt:         7.014000e+24
+Mpp:        -1.209000e+26
+Mrt:         8.544000e+25
+Mrp:        -1.276000e+26
+Mtp:         2.701000e+25
+
+event name:      174715B_9
+time shift:         8.0000
+half duration:      4.0000
+latitude:         -23.2519
+longitude:        -70.0235
+depth:          47.2400
+Mrr:         1.737000e+26
+Mtt:         6.486000e+24
+Mpp:        -1.802000e+26
+Mrt:         8.046000e+25
+Mrp:        -1.893000e+26
+Mtp:         2.139000e+25
+
+event name:      174715B_10
+time shift:         8.0000
+half duration:      4.0000
+latitude:         -23.5204
+longitude:        -70.0542
+depth:          47.2400
+Mrr:         1.633000e+26
+Mtt:        -6.266000e+24
+Mpp:        -1.570000e+26
+Mrt:        -7.074000e+25
+Mrp:        -1.626000e+26
+Mtp:        -3.806000e+25
+
+event name:      174715B_11
+time shift:         8.0000
+half duration:      4.0000
+latitude:         -23.1002
+longitude:        -70.1889
+depth:          39.7500
+Mrr:         7.075000e+25
+Mtt:         5.603000e+24
+Mpp:        -7.635000e+25
+Mrt:         6.782000e+25
+Mrp:        -8.080000e+25
+Mtp:         2.264000e+25
+
+event name:      174715B_12
+time shift:         8.0000
+half duration:      8.0000
+latitude:         -23.3862
+longitude:        -70.0388
+depth:          47.2400
+Mrr:         1.847000e+26
+Mtt:         7.554000e+23
+Mpp:        -1.855000e+26
+Mrt:         1.284000e+25
+Mrp:        -1.937000e+26
+Mtp:        -6.154000e+24
+
+event name:      174715B_13
+time shift:         8.0000
+half duration:      8.0000
+latitude:         -23.1089
+longitude:        -70.0985
+depth:          43.4900
+Mrr:         9.462000e+25
+Mtt:         7.544000e+24
+Mpp:        -1.022000e+26
+Mrt:         9.132000e+25
+Mrp:        -1.081000e+26
+Mtp:         3.052000e+25
+
+event name:      174715B_14
+time shift:         8.0000
+half duration:      8.0000
+latitude:         -23.6459
+longitude:        -70.1600
+depth:          43.4900
+Mrr:         1.518000e+26
+Mtt:         3.695000e+24
+Mpp:        -1.555000e+26
+Mrt:         4.695000e+25
+Mrp:        -1.630000e+26
+Mtp:         9.404000e+24
+
+event name:      174715B_15
+time shift:         8.0000
+half duration:      8.0000
+latitude:         -23.2258
+longitude:        -70.2946
+depth:          36.0000
+Mrr:         7.613000e+25
+Mtt:         5.590000e+24
+Mpp:        -8.172000e+25
+Mrt:         6.779000e+25
+Mrp:        -8.640000e+25
+Mtp:         2.230000e+25
+
+event name:      174715B_16
+time shift:         8.0000
+half duration:      8.0000
+latitude:         -23.2170
+longitude:        -70.3850
+depth:          32.2500
+Mrr:         1.002000e+25
+Mtt:         7.052000e+23
+Mpp:        -1.073000e+25
+Mrt:         8.561000e+24
+Mrp:        -1.134000e+25
+Mtp:         2.791000e+24
+
+event name:      174715B_17
+time shift:         8.0000
+half duration:      8.0000
+latitude:         -23.4855
+longitude:        -70.4158
+depth:          32.2500
+Mrr:         9.216000e+25
+Mtt:         1.434000e+24
+Mpp:        -9.360000e+25
+Mrt:         1.892000e+25
+Mrp:        -9.795000e+25
+Mtp:         1.903000e+24
+
+event name:      174715B_18
+time shift:        12.0000
+half duration:      4.0000
+latitude:         -23.7540
+longitude:        -70.4465
+depth:          32.2500
+Mrr:         1.934000e+26
+Mtt:         7.851000e+24
+Mpp:        -2.013000e+26
+Mrt:         9.703000e+25
+Mrp:        -2.116000e+26
+Mtp:         2.677000e+25
+
+event name:      174715B_19
+time shift:        12.0000
+half duration:      4.0000
+latitude:         -23.6109
+longitude:        -70.5215
+depth:          28.8400
+Mrr:         1.554000e+26
+Mtt:         3.305000e+24
+Mpp:        -1.587000e+26
+Mrt:         5.129000e+25
+Mrp:        -2.204000e+26
+Mtp:         7.383000e+24
+
+event name:      174715B_20
+time shift:        12.0000
+half duration:      4.0000
+latitude:         -23.1992
+longitude:        -70.5687
+depth:          25.7500
+Mrr:         1.219000e+25
+Mtt:        -7.194000e+23
+Mpp:        -1.147000e+25
+Mrt:        -1.038000e+25
+Mrp:        -1.578000e+25
+Mtp:        -4.025000e+24
+
+event name:      174715B_21
+time shift:        12.0000
+half duration:      8.0000
+latitude:         -23.2606
+longitude:        -69.9331
+depth:          50.9800
+Mrr:         1.031000e+26
+Mtt:        -9.245000e+23
+Mpp:        -1.022000e+26
+Mrt:        -8.768000e+24
+Mrp:        -1.064000e+26
+Mtp:        -9.767000e+24
+
+event name:      174715B_22
+time shift:        12.0000
+half duration:      8.0000
+latitude:         -23.6198
+longitude:        -70.4311
+depth:          32.2500
+Mrr:         1.335000e+26
+Mtt:         6.553000e+24
+Mpp:        -1.400000e+26
+Mrt:         8.040000e+25
+Mrp:        -1.474000e+26
+Mtp:         2.381000e+25
+
+event name:      174715B_23
+time shift:        12.0000
+half duration:     12.0000
+latitude:         -23.3774
+longitude:        -70.1292
+depth:          43.4900
+Mrr:         1.867000e+26
+Mtt:         1.157000e+24
+Mpp:        -1.879000e+26
+Mrt:         1.764000e+25
+Mrp:        -1.962000e+26
+Mtp:        -4.366000e+24
+
+event name:      174715B_24
+time shift:        12.0000
+half duration:     12.0000
+latitude:         -23.4942
+longitude:        -70.3253
+depth:          36.0000
+Mrr:         1.023000e+26
+Mtt:         1.668000e+24
+Mpp:        -1.039000e+26
+Mrt:         2.191000e+25
+Mrp:        -1.088000e+26
+Mtp:         2.473000e+24
+
+event name:      174715B_25
+time shift:        12.0000
+half duration:     12.0000
+latitude:         -23.4767
+longitude:        -70.5059
+depth:          28.8400
+Mrr:         9.256000e+25
+Mtt:         1.225000e+24
+Mpp:        -9.379000e+25
+Mrt:         1.961000e+25
+Mrp:        -1.302000e+26
+Mtp:         9.010000e+23
+
+event name:      174715B_26
+time shift:        16.0000
+half duration:      4.0000
+latitude:         -23.7802
+longitude:        -70.1753
+depth:          43.4900
+Mrr:         1.183000e+26
+Mtt:         5.886000e+24
+Mpp:        -1.242000e+26
+Mrt:         7.218000e+25
+Mrp:        -1.308000e+26
+Mtp:         2.147000e+25
+
+event name:      174715B_27
+time shift:        16.0000
+half duration:      4.0000
+latitude:         -23.0650
+longitude:        -70.5531
+depth:          25.7500
+Mrr:         8.434000e+24
+Mtt:        -7.507000e+23
+Mpp:        -7.683000e+24
+Mrt:        -1.091000e+25
+Mrp:        -1.053000e+25
+Mtp:        -3.975000e+24
+
+event name:      174715B_28
+time shift:        16.0000
+half duration:      8.0000
+latitude:         -23.1177
+longitude:        -70.0081
+depth:          47.2400
+Mrr:         9.878000e+25
+Mtt:         4.190000e+24
+Mpp:        -1.030000e+26
+Mrt:         5.170000e+25
+Mrp:        -1.083000e+26
+Mtp:         1.452000e+25
+
+event name:      174715B_29
+time shift:        16.0000
+half duration:      8.0000
+latitude:         -23.6547
+longitude:        -70.0696
+depth:          47.2400
+Mrr:         1.409000e+26
+Mtt:        -7.841000e+24
+Mpp:        -1.330000e+26
+Mrt:        -8.986000e+25
+Mrp:        -1.372000e+26
+Mtp:        -4.429000e+25
+
+event name:      174715B_30
+time shift:        16.0000
+half duration:      8.0000
+latitude:         -23.6372
+longitude:        -70.2503
+depth:          39.7500
+Mrr:         1.397000e+26
+Mtt:         2.782000e+24
+Mpp:        -1.425000e+26
+Mrt:         3.588000e+25
+Mrp:        -1.493000e+26
+Mtp:         5.743000e+24
+
+event name:      174715B_31
+time shift:        16.0000
+half duration:      8.0000
+latitude:         -23.7715
+longitude:        -70.2657
+depth:          39.7500
+Mrr:         1.322000e+26
+Mtt:         4.648000e+24
+Mpp:        -1.369000e+26
+Mrt:         5.782000e+25
+Mrp:        -1.438000e+26
+Mtp:         1.492000e+25
+
+event name:      174715B_32
+time shift:        16.0000
+half duration:      8.0000
+latitude:         -23.0915
+longitude:        -70.2793
+depth:          36.0000
+Mrr:         2.369000e+25
+Mtt:         3.518000e+23
+Mpp:        -2.404000e+25
+Mrt:         4.665000e+24
+Mrp:        -2.516000e+25
+Mtp:         4.101000e+23
+
+event name:      174715B_33
+time shift:        16.0000
+half duration:      8.0000
+latitude:         -23.6285
+longitude:        -70.3407
+depth:          36.0000
+Mrr:         1.017000e+26
+Mtt:         6.968000e+24
+Mpp:        -1.087000e+26
+Mrt:         8.464000e+25
+Mrp:        -1.148000e+26
+Mtp:         2.743000e+25
+
+event name:      174715B_34
+time shift:        16.0000
+half duration:      8.0000
+latitude:         -23.0828
+longitude:        -70.3697
+depth:          32.2500
+Mrr:         2.249000e+25
+Mtt:        -2.478000e+23
+Mpp:        -2.225000e+25
+Mrt:        -2.459000e+24
+Mrp:        -2.316000e+25
+Mtp:        -2.348000e+24
+
+event name:      174715B_35
+time shift:        16.0000
+half duration:      8.0000
+latitude:         -23.0739
+longitude:        -70.4593
+depth:          28.8400
+Mrr:         5.924000e+24
+Mtt:        -1.102000e+23
+Mpp:        -5.814000e+24
+Mrt:        -1.522000e+24
+Mrp:        -8.039000e+24
+Mtp:        -8.299000e+23
+
+event name:      174715B_36
+time shift:        16.0000
+half duration:      8.0000
+latitude:         -23.4677
+longitude:        -70.5998
+depth:          25.7500
+Mrr:         5.007000e+25
+Mtt:         1.804000e+24
+Mpp:        -5.187000e+25
+Mrt:         2.742000e+25
+Mrp:        -7.217000e+25
+Mtp:         5.858000e+24
+
+event name:      174715B_37
+time shift:        16.0000
+half duration:      8.0000
+latitude:         -23.1903
+longitude:        -70.6625
+depth:          22.6600
+Mrr:         2.722000e+25
+Mtt:         1.963000e+24
+Mpp:        -2.918000e+25
+Mrt:         2.937000e+25
+Mrp:        -4.076000e+25
+Mtp:         7.806000e+24
+
+event name:      174715B_38
+time shift:        16.0000
+half duration:     12.0000
+latitude:         -23.5291
+longitude:        -69.9638
+depth:          50.9800
+Mrr:         1.203000e+26
+Mtt:        -1.133000e+25
+Mpp:        -1.089000e+26
+Mrt:        -1.316000e+26
+Mrp:        -1.114000e+26
+Mtp:        -5.962000e+25
+
+event name:      174715B_39
+time shift:        16.0000
+half duration:     12.0000
+latitude:         -23.7627
+longitude:        -70.3561
+depth:          36.0000
+Mrr:         1.439000e+26
+Mtt:         6.911000e+24
+Mpp:        -1.508000e+26
+Mrt:         8.486000e+25
+Mrp:        -1.587000e+26
+Mtp:         2.495000e+25
+
+event name:      174715B_40
+time shift:        16.0000
+half duration:     12.0000
+latitude:         -23.2082
+longitude:        -70.4748
+depth:          28.8400
+Mrr:         1.716000e+25
+Mtt:        -3.423000e+23
+Mpp:        -1.682000e+25
+Mrt:        -4.747000e+24
+Mrp:        -2.325000e+25
+Mtp:        -2.512000e+24
+
+event name:      174715B_41
+time shift:        20.0000
+half duration:      4.0000
+latitude:         -23.9057
+longitude:        -70.2811
+depth:          39.7500
+Mrr:         8.750000e+25
+Mtt:         3.241000e+24
+Mpp:        -9.074000e+25
+Mrt:         4.022000e+25
+Mrp:        -9.533000e+25
+Mtp:         1.065000e+25
+
+event name:      174715B_42
+time shift:        20.0000
+half duration:      4.0000
+latitude:         -23.4588
+longitude:        -70.6936
+depth:          22.6600
+Mrr:         2.682000e+25
+Mtt:        -1.395000e+24
+Mpp:        -2.543000e+25
+Mrt:        -2.008000e+25
+Mrp:        -3.501000e+25
+Mtp:        -7.971000e+24
+
+event name:      174715B_43
+time shift:        20.0000
+half duration:      8.0000
+latitude:         -23.6634
+longitude:        -69.9792
+depth:          50.9800
+Mrr:         8.085000e+25
+Mtt:        -7.725000e+24
+Mpp:        -7.313000e+25
+Mrt:        -8.976000e+25
+Mrp:        -7.475000e+25
+Mtp:        -4.059000e+25
+
+event name:      174715B_44
+time shift:        20.0000
+half duration:      8.0000
+latitude:         -23.8970
+longitude:        -70.3715
+depth:          36.0000
+Mrr:         1.562000e+26
+Mtt:         9.539000e+24
+Mpp:        -1.658000e+26
+Mrt:         1.162000e+26
+Mrp:        -1.749000e+26
+Mtp:         3.667000e+25
+
+event name:      174715B_45
+time shift:        20.0000
+half duration:      8.0000
+latitude:         -23.8883
+longitude:        -70.4619
+depth:          32.2500
+Mrr:         2.557000e+26
+Mtt:         1.528000e+25
+Mpp:        -2.710000e+26
+Mrt:         1.863000e+26
+Mrp:        -2.858000e+26
+Mtp:         5.845000e+25
+
+event name:      174715B_46
+time shift:        20.0000
+half duration:      8.0000
+latitude:         -23.7452
+longitude:        -70.5370
+depth:          28.8400
+Mrr:         2.091000e+26
+Mtt:         7.668000e+24
+Mpp:        -2.167000e+26
+Mrt:         1.164000e+26
+Mrp:        -3.016000e+26
+Mtp:         2.509000e+25
+
+event name:      174715B_47
+time shift:        20.0000
+half duration:      8.0000
+latitude:         -23.6020
+longitude:        -70.6153
+depth:          25.7500
+Mrr:         9.930000e+25
+Mtt:         6.761000e+24
+Mpp:        -1.061000e+26
+Mrt:         1.012000e+26
+Mrp:        -1.481000e+26
+Mtp:         2.659000e+25
+
+event name:      174715B_48
+time shift:        20.0000
+half duration:     12.0000
+latitude:         -23.3335
+longitude:        -70.5842
+depth:          25.7500
+Mrr:         1.897000e+25
+Mtt:         1.304000e+24
+Mpp:        -2.027000e+25
+Mrt:         1.951000e+25
+Mrp:        -2.831000e+25
+Mtp:         5.136000e+24
+
+event name:      174715B_49
+time shift:        24.0000
+half duration:      4.0000
+latitude:         -23.7976
+longitude:        -69.9945
+depth:          50.9800
+Mrr:         6.045000e+25
+Mtt:        -5.234000e+24
+Mpp:        -5.522000e+25
+Mrt:        -6.069000e+25
+Mrp:        -5.657000e+25
+Mtp:        -2.780000e+25
+
+event name:      174715B_50
+time shift:        24.0000
+half duration:      8.0000
+latitude:         -23.9144
+longitude:        -70.1907
+depth:          43.4900
+Mrr:         4.272000e+25
+Mtt:        -7.462000e+23
+Mpp:        -4.197000e+25
+Mrt:        -7.933000e+24
+Mrp:        -4.365000e+25
+Mtp:        -5.756000e+24
+
+event name:      174715B_51
+time shift:        24.0000
+half duration:      8.0000
+latitude:         -24.0312
+longitude:        -70.3869
+depth:          36.0000
+Mrr:         1.478000e+26
+Mtt:         1.056000e+25
+Mpp:        -1.584000e+26
+Mrt:         1.282000e+26
+Mrp:        -1.674000e+26
+Mtp:         4.192000e+25
+
+event name:      174715B_52
+time shift:        24.0000
+half duration:      8.0000
+latitude:         -24.0225
+longitude:        -70.4772
+depth:          32.2500
+Mrr:         2.987000e+26
+Mtt:         1.670000e+25
+Mpp:        -3.154000e+26
+Mrt:         2.040000e+26
+Mrp:        -3.324000e+26
+Mtp:         6.288000e+25
+
+event name:      174715B_53
+time shift:        24.0000
+half duration:      8.0000
+latitude:         -23.7362
+longitude:        -70.6309
+depth:          25.7500
+Mrr:         1.904000e+26
+Mtt:         6.896000e+24
+Mpp:        -1.973000e+26
+Mrt:         1.048000e+26
+Mrp:        -2.745000e+26
+Mtp:         2.244000e+25
+
+event name:      174715B_54
+time shift:        24.0000
+half duration:     12.0000
+latitude:         -23.7889
+longitude:        -70.0849
+depth:          47.2400
+Mrr:         7.350000e+25
+Mtt:        -6.633000e+24
+Mpp:        -6.687000e+25
+Mrt:        -7.698000e+25
+Mrp:        -6.844000e+25
+Mtp:        -3.507000e+25
+
+event name:      174715B_55
+time shift:        24.0000
+half duration:     12.0000
+latitude:         -23.5931
+longitude:        -70.7091
+depth:          22.6600
+Mrr:         6.242000e+25
+Mtt:         3.358000e+24
+Mpp:        -6.578000e+25
+Mrt:         5.049000e+25
+Mrp:        -9.170000e+25
+Mtp:         1.252000e+25
+
+event name:      174715B_56
+time shift:        24.0000
+half duration:     16.0000
+latitude:         -23.3949
+longitude:        -69.9484
+depth:          50.9800
+Mrr:         1.094000e+26
+Mtt:        -8.226000e+24
+Mpp:        -1.011000e+26
+Mrt:        -9.508000e+25
+Mrp:        -1.039000e+26
+Mtp:        -4.445000e+25
+
+event name:      174715B_57
+time shift:        28.0000
+half duration:      4.0000
+latitude:         -24.0137
+longitude:        -70.5681
+depth:          28.8400
+Mrr:         3.035000e+26
+Mtt:         7.752000e+24
+Mpp:        -3.113000e+26
+Mrt:         1.193000e+26
+Mrp:        -4.326000e+26
+Mtp:         2.052000e+25
+
+event name:      174715B_58
+time shift:        28.0000
+half duration:      4.0000
+latitude:         -23.4409
+longitude:        -70.8813
+depth:          16.4800
+Mrr:         2.068000e+25
+Mtt:        -9.217000e+23
+Mpp:        -1.976000e+25
+Mrt:        -1.322000e+25
+Mrp:        -2.724000e+25
+Mtp:        -5.423000e+24
+
+event name:      174715B_59
+time shift:        28.0000
+half duration:      8.0000
+latitude:         -23.9232
+longitude:        -70.1003
+depth:          47.2400
+Mrr:         3.556000e+25
+Mtt:        -2.896000e+24
+Mpp:        -3.266000e+25
+Mrt:        -3.354000e+25
+Mrp:        -3.350000e+25
+Mtp:        -1.549000e+25
+
+event name:      174715B_60
+time shift:        28.0000
+half duration:      8.0000
+latitude:         -24.0400
+longitude:        -70.2965
+depth:          39.7500
+Mrr:         5.373000e+25
+Mtt:         2.308000e+24
+Mpp:        -5.604000e+25
+Mrt:         2.846000e+25
+Mrp:        -5.894000e+25
+Mtp:         8.036000e+24
+
+event name:      174715B_61
+time shift:        28.0000
+half duration:      8.0000
+latitude:         -23.8705
+longitude:        -70.6465
+depth:          25.7500
+Mrr:         2.295000e+26
+Mtt:         6.002000e+24
+Mpp:        -2.355000e+26
+Mrt:         9.226000e+25
+Mrp:        -3.274000e+26
+Mtp:         1.618000e+25
+
+event name:      174715B_62
+time shift:        28.0000
+half duration:      8.0000
+latitude:         -23.0560
+longitude:        -70.6469
+depth:          22.6600
+Mrr:         9.813000e+24
+Mtt:         7.888000e+23
+Mpp:        -1.060000e+25
+Mrt:         1.178000e+25
+Mrp:        -1.482000e+25
+Mtp:         3.196000e+24
+
+event name:      174715B_63
+time shift:        28.0000
+half duration:      8.0000
+latitude:         -23.7273
+longitude:        -70.7247
+depth:          22.6600
+Mrr:         1.244000e+26
+Mtt:         3.607000e+24
+Mpp:        -1.280000e+26
+Mrt:         5.521000e+25
+Mrp:        -1.780000e+26
+Mtp:         1.043000e+25
+
+event name:      174715B_64
+time shift:        28.0000
+half duration:      8.0000
+latitude:         -23.0471
+longitude:        -70.7408
+depth:          19.5700
+Mrr:         2.230000e+25
+Mtt:        -1.921000e+24
+Mpp:        -2.038000e+25
+Mrt:        -2.790000e+25
+Mrp:        -2.793000e+25
+Mtp:        -1.021000e+25
+
+event name:      174715B_65
+time shift:        28.0000
+half duration:     12.0000
+latitude:         -23.8794
+longitude:        -70.5526
+depth:          28.8400
+Mrr:         2.881000e+26
+Mtt:         8.132000e+24
+Mpp:        -2.962000e+26
+Mrt:         1.246000e+26
+Mrp:        -4.118000e+26
+Mtp:         2.312000e+25
+
+event name:      174715B_66
+time shift:        28.0000
+half duration:     16.0000
+latitude:         -23.1264
+longitude:        -69.9177
+depth:          50.9800
+Mrr:         6.055000e+25
+Mtt:        -6.105000e+24
+Mpp:        -5.445000e+25
+Mrt:        -7.101000e+25
+Mrp:        -5.559000e+25
+Mtp:        -3.191000e+25
+
+event name:      174715B_67
+time shift:        32.0000
+half duration:      4.0000
+latitude:         -24.1655
+longitude:        -70.4022
+depth:          36.0000
+Mrr:         1.046000e+26
+Mtt:         6.512000e+24
+Mpp:        -1.111000e+26
+Mrt:         7.931000e+25
+Mrp:        -1.173000e+26
+Mtp:         2.514000e+25
+
+event name:      174715B_68
+time shift:        32.0000
+half duration:      4.0000
+latitude:         -23.4320
+longitude:        -70.9751
+depth:          13.3800
+Mrr:         3.326000e+25
+Mtt:         1.504000e+24
+Mpp:        -3.477000e+25
+Mrt:         2.270000e+25
+Mrp:        -4.842000e+25
+Mtp:         5.325000e+24
+
+event name:      174715B_69
+time shift:        32.0000
+half duration:      8.0000
+latitude:         -23.9319
+longitude:        -70.0099
+depth:          50.9800
+Mrr:         1.988000e+25
+Mtt:        -1.449000e+24
+Mpp:        -1.843000e+25
+Mrt:        -1.674000e+25
+Mrp:        -1.894000e+25
+Mtp:        -7.863000e+24
+
+event name:      174715B_70
+time shift:        32.0000
+half duration:      8.0000
+latitude:         -24.1568
+longitude:        -70.4926
+depth:          32.2500
+Mrr:         2.246000e+26
+Mtt:         1.187000e+25
+Mpp:        -2.364000e+26
+Mrt:         1.452000e+26
+Mrp:        -2.491000e+26
+Mtp:         4.403000e+25
+
+event name:      174715B_71
+time shift:        32.0000
+half duration:      8.0000
+latitude:         -24.1479
+longitude:        -70.5837
+depth:          28.8400
+Mrr:         2.362000e+26
+Mtt:         9.376000e+24
+Mpp:        -2.456000e+26
+Mrt:         1.420000e+26
+Mrp:        -3.419000e+26
+Mtp:         3.170000e+25
+
+event name:      174715B_72
+time shift:        32.0000
+half duration:      8.0000
+latitude:         -24.0047
+longitude:        -70.6620
+depth:          25.7500
+Mrr:         2.433000e+26
+Mtt:         7.260000e+24
+Mpp:        -2.506000e+26
+Mrt:         1.110000e+26
+Mrp:        -3.484000e+26
+Mtp:         2.137000e+25
+
+event name:      174715B_73
+time shift:        32.0000
+half duration:      8.0000
+latitude:         -23.3156
+longitude:        -70.7719
+depth:          19.5700
+Mrr:         1.528000e+25
+Mtt:        -1.466000e+24
+Mpp:        -1.382000e+25
+Mrt:        -2.132000e+25
+Mrp:        -1.891000e+25
+Mtp:        -7.699000e+24
+
+event name:      174715B_74
+time shift:        32.0000
+half duration:      8.0000
+latitude:         -23.4499
+longitude:        -70.7875
+depth:          19.5700
+Mrr:         2.869000e+25
+Mtt:        -2.157000e+24
+Mpp:        -2.653000e+25
+Mrt:        -3.127000e+25
+Mrp:        -3.641000e+25
+Mtp:        -1.166000e+25
+
+event name:      174715B_75
+time shift:        36.0000
+half duration:      4.0000
+latitude:         -23.0382
+longitude:        -70.8346
+depth:          16.4800
+Mrr:         2.548000e+25
+Mtt:        -1.552000e+24
+Mpp:        -2.392000e+25
+Mrt:        -2.241000e+25
+Mrp:        -3.290000e+25
+Mtp:        -8.640000e+24
+
+event name:      174715B_76
+time shift:        36.0000
+half duration:      4.0000
+latitude:         -23.5752
+longitude:        -70.8968
+depth:          16.4800
+Mrr:         4.918000e+25
+Mtt:        -3.418000e+24
+Mpp:        -4.577000e+25
+Mrt:        -4.949000e+25
+Mrp:        -6.287000e+25
+Mtp:        -1.867000e+25
+
+event name:      174715B_77
+time shift:        36.0000
+half duration:      8.0000
+latitude:         -24.0661
+longitude:        -70.0253
+depth:          50.9800
+Mrr:         4.761000e+25
+Mtt:         1.146000e+24
+Mpp:        -4.876000e+25
+Mrt:         1.458000e+25
+Mrp:        -5.111000e+25
+Mtp:         2.891000e+24
+
+event name:      174715B_78
+time shift:        36.0000
+half duration:      8.0000
+latitude:         -24.0574
+longitude:        -70.1157
+depth:          47.2400
+Mrr:         2.237000e+25
+Mtt:        -3.037000e+23
+Mpp:        -2.207000e+25
+Mrt:        -3.123000e+24
+Mrp:        -2.297000e+25
+Mtp:        -2.604000e+24
+
+event name:      174715B_79
+time shift:        36.0000
+half duration:      8.0000
+latitude:         -24.1390
+longitude:        -70.6775
+depth:          25.7500
+Mrr:         1.831000e+26
+Mtt:         1.014000e+25
+Mpp:        -1.932000e+26
+Mrt:         1.524000e+26
+Mrp:        -2.694000e+26
+Mtp:         3.808000e+25
+
+event name:      174715B_80
+time shift:        36.0000
+half duration:      8.0000
+latitude:         -23.5841
+longitude:        -70.8030
+depth:          19.5700
+Mrr:         5.796000e+25
+Mtt:        -1.660000e+24
+Mpp:        -5.630000e+25
+Mrt:        -2.345000e+25
+Mrp:        -7.775000e+25
+Mtp:        -1.085000e+25
+
+event name:      174715B_81
+time shift:        36.0000
+half duration:      8.0000
+latitude:         -23.7184
+longitude:        -70.8185
+depth:          19.5700
+Mrr:         1.078000e+26
+Mtt:        -4.649000e+24
+Mpp:        -1.032000e+26
+Mrt:        -6.661000e+25
+Mrp:        -1.422000e+26
+Mtp:        -2.754000e+25
+
+event name:      174715B_82
+time shift:        36.0000
+half duration:     12.0000
+latitude:         -23.8615
+longitude:        -70.7403
+depth:          22.6600
+Mrr:         1.415000e+26
+Mtt:         2.756000e+24
+Mpp:        -1.442000e+26
+Mrt:         4.298000e+25
+Mrp:        -2.003000e+26
+Mtp:         5.533000e+24
+
+event name:      174715B_83
+time shift:        36.0000
+half duration:     12.0000
+latitude:         -23.3067
+longitude:        -70.8658
+depth:          16.4800
+Mrr:         9.042000e+24
+Mtt:         3.496000e+23
+Mpp:        -9.392000e+24
+Mrt:         5.300000e+24
+Mrp:        -1.307000e+25
+Mtp:         1.169000e+24
+
+event name:      174715B_84
+time shift:        40.0000
+half duration:      4.0000
+latitude:         -23.7094
+longitude:        -70.9124
+depth:          16.4800
+Mrr:         1.016000e+26
+Mtt:        -5.323000e+24
+Mpp:        -9.629000e+25
+Mrt:        -7.663000e+25
+Mrp:        -1.326000e+26
+Mtp:        -3.038000e+25
+
+event name:      174715B_85
+time shift:        40.0000
+half duration:      8.0000
+latitude:         -24.1829
+longitude:        -70.2214
+depth:          43.4900
+Mrr:         2.370000e+25
+Mtt:        -2.601000e+22
+Mpp:        -2.367000e+25
+Mrt:         1.924000e+23
+Mrp:        -2.470000e+25
+Mtp:        -1.368000e+24
+
+event name:      174715B_86
+time shift:        40.0000
+half duration:      8.0000
+latitude:         -24.2997
+longitude:        -70.4176
+depth:          36.0000
+Mrr:         7.363000e+25
+Mtt:         1.112000e+24
+Mpp:        -7.474000e+25
+Mrt:         1.472000e+25
+Mrp:        -7.821000e+25
+Mtp:         1.362000e+24
+
+event name:      174715B_87
+time shift:        40.0000
+half duration:      8.0000
+latitude:         -24.2910
+longitude:        -70.5080
+depth:          32.2500
+Mrr:         1.078000e+26
+Mtt:         7.125000e+24
+Mpp:        -1.149000e+26
+Mrt:         8.663000e+25
+Mrp:        -1.214000e+26
+Mtp:         2.785000e+25
+
+event name:      174715B_88
+time shift:        40.0000
+half duration:      8.0000
+latitude:         -23.9958
+longitude:        -70.7558
+depth:          22.6600
+Mrr:         1.183000e+26
+Mtt:         7.218000e+24
+Mpp:        -1.255000e+26
+Mrt:         1.083000e+26
+Mrp:        -1.751000e+26
+Mtp:         2.774000e+25
+
+event name:      174715B_89
+time shift:        40.0000
+half duration:      8.0000
+latitude:         -23.5662
+longitude:        -70.9907
+depth:          13.3800
+Mrr:         5.015000e+25
+Mtt:         3.370000e+24
+Mpp:        -5.352000e+25
+Mrt:         5.046000e+25
+Mrp:        -7.470000e+25
+Mtp:         1.322000e+25
+
+event name:      174715B_90
+time shift:        40.0000
+half duration:     12.0000
+latitude:         -24.1742
+longitude:        -70.3118
+depth:          39.7500
+Mrr:         1.569000e+25
+Mtt:         9.910000e+23
+Mpp:        -1.668000e+25
+Mrt:         1.206000e+25
+Mrp:        -1.760000e+25
+Mtp:         3.838000e+24
+
+event name:      174715B_91
+time shift:        44.0000
+half duration:      4.0000
+latitude:         -24.2004
+longitude:        -70.0406
+depth:          50.9800
+Mrr:         6.540000e+25
+Mtt:        -6.696000e+24
+Mpp:        -5.870000e+25
+Mrt:        -7.790000e+25
+Mrp:        -5.991000e+25
+Mtp:        -3.494000e+25
+
+event name:      174715B_92
+time shift:        44.0000
+half duration:      8.0000
+latitude:         -24.1917
+longitude:        -70.1310
+depth:          47.2400
+Mrr:         3.200000e+25
+Mtt:        -3.192000e+24
+Mpp:        -2.881000e+25
+Mrt:        -3.711000e+25
+Mrp:        -2.942000e+25
+Mtp:        -1.670000e+25
+
+event name:      174715B_93
+time shift:        44.0000
+half duration:      8.0000
+latitude:         -24.4340
+longitude:        -70.4330
+depth:          36.0000
+Mrr:         3.312000e+25
+Mtt:        -1.189000e+24
+Mpp:        -3.193000e+25
+Mrt:        -1.337000e+25
+Mrp:        -3.308000e+25
+Mtp:        -7.333000e+24
+
+event name:      174715B_94
+time shift:        44.0000
+half duration:      8.0000
+latitude:         -24.4253
+longitude:        -70.5234
+depth:          32.2500
+Mrr:         6.131000e+25
+Mtt:        -1.756000e+23
+Mpp:        -6.114000e+25
+Mrt:        -7.838000e+23
+Mrp:        -6.376000e+25
+Mtp:        -4.048000e+24
+
+event name:      174715B_95
+time shift:        44.0000
+half duration:     12.0000
+latitude:         -24.2822
+longitude:        -70.5993
+depth:          28.8400
+Mrr:         1.139000e+26
+Mtt:         7.836000e+24
+Mpp:        -1.217000e+26
+Mrt:         1.173000e+26
+Mrp:        -1.699000e+26
+Mtp:         3.088000e+25
+
+event name:      174715B_96
+time shift:        44.0000
+half duration:     12.0000
+latitude:         -23.1635
+longitude:        -70.9440
+depth:          13.3800
+Mrr:         3.315000e+25
+Mtt:         2.478000e+24
+Mpp:        -3.562000e+25
+Mrt:         3.704000e+25
+Mrp:        -4.977000e+25
+Mtp:         9.916000e+24
+
+event name:      174715B_97
+time shift:        44.0000
+half duration:     12.0000
+latitude:         -23.2977
+longitude:        -70.9595
+depth:          13.3800
+Mrr:         2.800000e+25
+Mtt:         1.657000e+24
+Mpp:        -2.966000e+25
+Mrt:         2.486000e+25
+Mrp:        -4.137000e+25
+Mtp:         6.322000e+24
+
+event name:      174715B_98
+time shift:        48.0000
+half duration:      4.0000
+latitude:         -24.5507
+longitude:        -70.6304
+depth:          28.8400
+Mrr:         1.352000e+26
+Mtt:        -2.715000e+24
+Mpp:        -1.325000e+26
+Mrt:        -3.767000e+25
+Mrp:        -1.832000e+26
+Mtp:        -1.988000e+25
+
+event name:      174715B_99
+time shift:        48.0000
+half duration:      4.0000
+latitude:         -24.2643
+longitude:        -70.7869
+depth:          22.6600
+Mrr:         7.174000e+25
+Mtt:         5.150000e+24
+Mpp:        -7.689000e+25
+Mrt:         7.704000e+25
+Mrp:        -1.074000e+26
+Mtp:         2.046000e+25
+
+event name:      174715B_100
+time shift:        48.0000
+half duration:      8.0000
+latitude:         -24.4165
+longitude:        -70.6148
+depth:          28.8400
+Mrr:         1.269000e+26
+Mtt:         2.041000e+24
+Mpp:        -1.289000e+26
+Mrt:         3.220000e+25
+Mrp:        -1.789000e+26
+Mtp:         2.937000e+24
+
+event name:      174715B_101
+time shift:        48.0000
+half duration:      8.0000
+latitude:         -24.4075
+longitude:        -70.7087
+depth:          25.7500
+Mrr:         1.447000e+26
+Mtt:         4.437000e+24
+Mpp:        -1.491000e+26
+Mrt:         6.777000e+25
+Mrp:        -2.073000e+26
+Mtp:         1.327000e+25
+
+event name:      174715B_102
+time shift:        48.0000
+half duration:      8.0000
+latitude:         -24.1301
+longitude:        -70.7714
+depth:          22.6600
+Mrr:         8.759000e+25
+Mtt:         7.070000e+24
+Mpp:        -9.466000e+25
+Mrt:         1.056000e+26
+Mrp:        -1.323000e+26
+Mtp:         2.866000e+25
+
+event name:      174715B_103
+time shift:        48.0000
+half duration:      8.0000
+latitude:         -23.7005
+longitude:        -71.0062
+depth:          13.3800
+Mrr:         5.354000e+25
+Mtt:         3.853000e+24
+Mpp:        -5.740000e+25
+Mrt:         5.764000e+25
+Mrp:        -8.016000e+25
+Mtp:         1.532000e+25
+
+event name:      174715B_104
+time shift:        48.0000
+half duration:     12.0000
+latitude:         -23.0292
+longitude:        -70.9284
+depth:          13.3800
+Mrr:         1.527000e+25
+Mtt:         1.122000e+24
+Mpp:        -1.639000e+25
+Mrt:         1.677000e+25
+Mrp:        -2.290000e+25
+Mtp:         4.475000e+24
+
+event name:      174715B_105
+time shift:        52.0000
+half duration:      4.0000
+latitude:         -24.5417
+longitude:        -70.7242
+depth:          25.7500
+Mrr:         1.378000e+26
+Mtt:         1.785000e+23
+Mpp:        -1.380000e+26
+Mrt:         4.969000e+24
+Mrp:        -1.913000e+26
+Mtp:        -6.403000e+24
+
+event name:      174715B_106
+time shift:        52.0000
+half duration:      8.0000
+latitude:         -24.3986
+longitude:        -70.8025
+depth:          22.6600
+Mrr:         6.059000e+25
+Mtt:         2.565000e+24
+Mpp:        -6.315000e+25
+Mrt:         3.879000e+25
+Mrp:        -8.793000e+25
+Mtp:         8.883000e+24
+
+event name:      174715B_107
+time shift:        52.0000
+half duration:      8.0000
+latitude:         -23.9779
+longitude:        -70.9435
+depth:          16.4800
+Mrr:         7.230000e+25
+Mtt:        -7.217000e+24
+Mpp:        -6.508000e+25
+Mrt:        -1.050000e+26
+Mrp:        -8.902000e+25
+Mtp:        -3.775000e+25
+
+event name:      174715B_108
+time shift:        52.0000
+half duration:     12.0000
+latitude:         -24.2732
+longitude:        -70.6931
+depth:          25.7500
+Mrr:         1.219000e+26
+Mtt:         8.987000e+24
+Mpp:        -1.309000e+26
+Mrt:         1.344000e+26
+Mrp:        -1.829000e+26
+Mtp:         3.587000e+25
+
+event name:      174715B_109
+time shift:        52.0000
+half duration:     12.0000
+latitude:         -23.8526
+longitude:        -70.8341
+depth:          19.5700
+Mrr:         9.512000e+25
+Mtt:        -8.116000e+24
+Mpp:        -8.700000e+25
+Mrt:        -1.179000e+26
+Mrp:        -1.192000e+26
+Mtp:        -4.318000e+25
+
+event name:      174715B_110
+time shift:        56.0000
+half duration:      4.0000
+latitude:         -23.8347
+longitude:        -71.0218
+depth:          13.3800
+Mrr:         6.954000e+25
+Mtt:        -5.387000e+24
+Mpp:        -6.416000e+25
+Mrt:        -7.813000e+25
+Mrp:        -8.803000e+25
+Mtp:        -2.900000e+25
+
+event name:      174715B_111
+time shift:        56.0000
+half duration:      8.0000
+latitude:         -23.9869
+longitude:        -70.8496
+depth:          19.5700
+Mrr:         7.579000e+25
+Mtt:        -6.508000e+24
+Mpp:        -6.929000e+25
+Mrt:        -9.452000e+25
+Mrp:        -9.496000e+25
+Mtp:        -3.460000e+25
+
+event name:      174715B_112
+time shift:        56.0000
+half duration:      8.0000
+latitude:         -24.1211
+longitude:        -70.8652
+depth:          19.5700
+Mrr:         2.379000e+25
+Mtt:        -8.279000e+23
+Mpp:        -2.296000e+25
+Mrt:        -1.178000e+25
+Mrp:        -3.169000e+25
+Mtp:        -5.145000e+24
+
+event name:      174715B_113
+time shift:        56.0000
+half duration:      8.0000
+latitude:         -23.8437
+longitude:        -70.9279
+depth:          16.4800
+Mrr:         1.090000e+26
+Mtt:        -1.096000e+25
+Mpp:        -9.803000e+25
+Mrt:        -1.595000e+26
+Mrp:        -1.341000e+26
+Mtp:        -5.728000e+25
+
+event name:      174715B_114
+time shift:        60.0000
+half duration:      8.0000
+latitude:         -24.3346
+longitude:        -70.0560
+depth:          50.9800
+Mrr:         5.300000e+25
+Mtt:         2.079000e+24
+Mpp:        -5.508000e+25
+Mrt:         2.574000e+25
+Mrp:        -5.789000e+25
+Mtp:         6.998000e+24
+
+event name:      174715B_115
+time shift:        60.0000
+half duration:      8.0000
+latitude:         -24.5328
+longitude:        -70.8181
+depth:          22.6600
+Mrr:         4.910000e+25
+Mtt:         3.904000e+24
+Mpp:        -5.300000e+25
+Mrt:         5.830000e+25
+Mrp:        -7.407000e+25
+Mtp:         1.579000e+25
+
+event name:      174715B_116
+time shift:        60.0000
+half duration:      8.0000
+latitude:         -23.9690
+longitude:        -71.0373
+depth:          13.3800
+Mrr:         3.318000e+25
+Mtt:        -3.139000e+24
+Mpp:        -3.004000e+25
+Mrt:        -4.565000e+25
+Mrp:        -4.113000e+25
+Mtp:        -1.651000e+25
+
+event name:      174715B_117
+time shift:        60.0000
+half duration:     12.0000
+latitude:         -24.3259
+longitude:        -70.1464
+depth:          47.2400
+Mrr:         7.841000e+24
+Mtt:         5.127000e+23
+Mpp:        -8.354000e+24
+Mrt:         6.236000e+24
+Mrp:        -8.820000e+24
+Mtp:         2.000000e+24
+
+event name:      174715B_118
+time shift:        60.0000
+half duration:     12.0000
+latitude:         -24.5595
+longitude:        -70.5387
+depth:          32.2500
+Mrr:         1.469000e+25
+Mtt:         4.639000e+23
+Mpp:        -1.515000e+25
+Mrt:         5.802000e+24
+Mrp:        -1.590000e+25
+Mtp:         1.410000e+24
+
+event name:      174715B_119
+time shift:        64.0000
+half duration:      4.0000
+latitude:         -24.4689
+longitude:        -70.0714
+depth:          50.9800
+Mrr:         5.924000e+25
+Mtt:         4.208000e+24
+Mpp:        -6.344000e+25
+Mrt:         5.107000e+25
+Mrp:        -6.705000e+25
+Mtp:         1.668000e+25
+
+event name:      174715B_120
+time shift:        64.0000
+half duration:      4.0000
+latitude:         -24.5857
+longitude:        -70.2675
+depth:          43.4900
+Mrr:         6.093000e+25
+Mtt:         4.944000e+24
+Mpp:        -6.588000e+25
+Mrt:         5.982000e+25
+Mrp:        -6.973000e+25
+Mtp:         2.006000e+25
+
+event name:      174715B_121
+time shift:        64.0000
+half duration:      4.0000
+latitude:         -24.1032
+longitude:        -71.0529
+depth:          13.3800
+Mrr:         1.115000e+25
+Mtt:         4.291000e+23
+Mpp:        -1.158000e+25
+Mrt:         6.507000e+24
+Mrp:        -1.611000e+25
+Mtp:         1.433000e+24
+
+event name:      174715B_122
+time shift:        64.0000
+half duration:      8.0000
+latitude:         -24.4514
+longitude:        -70.2522
+depth:          43.4900
+Mrr:         1.446000e+25
+Mtt:         9.402000e+23
+Mpp:        -1.540000e+25
+Mrt:         1.144000e+25
+Mrp:        -1.625000e+25
+Mtp:         3.664000e+24
+
+event name:      174715B_123
+time shift:        64.0000
+half duration:      8.0000
+latitude:         -24.1122
+longitude:        -70.9591
+depth:          16.4800
+Mrr:         5.847000e+24
+Mtt:         4.452000e+23
+Mpp:        -6.292000e+24
+Mrt:         6.653000e+24
+Mrp:        -8.791000e+24
+Mtp:         1.787000e+24
+
+event name:      174715B_124
+time shift:        68.0000
+half duration:      8.0000
+latitude:         -24.5770
+longitude:        -70.3580
+depth:          39.7500
+Mrr:         1.982000e+25
+Mtt:        -8.728000e+23
+Mpp:        -1.895000e+25
+Mrt:        -9.915000e+24
+Mrp:        -1.960000e+25
+Mtp:        -5.148000e+24
+
+event name:      174715B_125
+time shift:        68.0000
+half duration:      8.0000
+latitude:         -24.7112
+longitude:        -70.3733
+depth:          39.7500
+Mrr:         4.132000e+25
+Mtt:        -3.949000e+24
+Mpp:        -3.737000e+25
+Mrt:        -4.588000e+25
+Mrp:        -3.820000e+25
+Mtp:        -2.075000e+25
+
+event name:      174715B_126
+time shift:        68.0000
+half duration:      8.0000
+latitude:         -24.7025
+longitude:        -70.4637
+depth:          36.0000
+Mrr:         5.426000e+25
+Mtt:        -4.268000e+24
+Mpp:        -5.000000e+25
+Mrt:        -4.939000e+25
+Mrp:        -5.131000e+25
+Mtp:        -2.293000e+25
+
+event name:      174715B_127
+time shift:        68.0000
+half duration:      8.0000
+latitude:         -24.6670
+longitude:        -70.8336
+depth:          22.6600
+Mrr:         2.567000e+25
+Mtt:         8.727000e+23
+Mpp:        -2.654000e+25
+Mrt:         1.328000e+25
+Mrp:        -3.692000e+25
+Mtp:         2.757000e+24
+
+event name:      174715B_128
+time shift:        68.0000
+half duration:      8.0000
+latitude:         -24.6581
+longitude:        -70.9274
+depth:          19.5700
+Mrr:         2.456000e+25
+Mtt:         5.858000e+23
+Mpp:        -2.514000e+25
+Mrt:         9.041000e+24
+Mrp:        -3.494000e+25
+Mtp:         1.466000e+24
+
+event name:      174715B_129
+time shift:        68.0000
+half duration:     12.0000
+latitude:         -24.6938
+longitude:        -70.5541
+depth:          32.2500
+Mrr:         2.121000e+25
+Mtt:        -1.588000e+24
+Mpp:        -1.962000e+25
+Mrt:        -1.835000e+25
+Mrp:        -2.016000e+25
+Mtp:        -8.585000e+24
+
+event name:      174715B_130
+time shift:        68.0000
+half duration:     12.0000
+latitude:         -24.6850
+longitude:        -70.6459
+depth:          28.8400
+Mrr:         2.170000e+25
+Mtt:        -1.915000e+24
+Mpp:        -1.979000e+25
+Mrt:        -2.782000e+25
+Mrp:        -2.711000e+25
+Mtp:        -1.015000e+25
+
+event name:      174715B_131
+time shift:        68.0000
+half duration:     12.0000
+latitude:         -24.6760
+longitude:        -70.7398
+depth:          25.7500
+Mrr:         2.865000e+25
+Mtt:        -1.469000e+24
+Mpp:        -2.719000e+25
+Mrt:        -2.114000e+25
+Mrp:        -3.744000e+25
+Mtp:        -8.416000e+24
+
+event name:      174715B_132
+time shift:        72.0000
+half duration:      4.0000
+latitude:         -24.3717
+longitude:        -71.0840
+depth:          13.3800
+Mrr:         3.226000e+25
+Mtt:         2.322000e+24
+Mpp:        -3.458000e+25
+Mrt:         3.473000e+25
+Mrp:        -4.829000e+25
+Mtp:         9.230000e+24
+
+event name:      174715B_133
+time shift:        72.0000
+half duration:      8.0000
+latitude:         -24.5238
+longitude:        -70.9119
+depth:          19.5700
+Mrr:         2.171000e+25
+Mtt:        -1.183000e+24
+Mpp:        -2.053000e+25
+Mrt:        -1.704000e+25
+Mrp:        -2.826000e+25
+Mtp:        -6.705000e+24
+
+event name:      174715B_134
+time shift:        72.0000
+half duration:     12.0000
+latitude:         -24.3896
+longitude:        -70.8963
+depth:          19.5700
+Mrr:         1.563000e+25
+Mtt:        -1.195000e+24
+Mpp:        -1.444000e+25
+Mrt:        -1.732000e+25
+Mrp:        -1.982000e+25
+Mtp:        -6.442000e+24
+
+event name:      174715B_135
+time shift:        76.0000
+half duration:      8.0000
+latitude:         -24.7374
+longitude:        -70.1021
+depth:          50.9800
+Mrr:         4.405000e+25
+Mtt:         3.606000e+24
+Mpp:        -4.766000e+25
+Mrt:         4.363000e+25
+Mrp:        -5.046000e+25
+Mtp:         1.465000e+25
+
+event name:      174715B_136
+time shift:        76.0000
+half duration:      8.0000
+latitude:         -24.7287
+longitude:        -70.1925
+depth:          47.2400
+Mrr:         6.421000e+25
+Mtt:         2.450000e+24
+Mpp:        -6.666000e+25
+Mrt:         3.036000e+25
+Mrp:        -7.005000e+25
+Mtp:         8.151000e+24
+
+event name:      174715B_137
+time shift:        76.0000
+half duration:      8.0000
+latitude:         -24.3807
+longitude:        -70.9901
+depth:          16.4800
+Mrr:         3.471000e+25
+Mtt:        -3.403000e+24
+Mpp:        -3.131000e+25
+Mrt:        -4.950000e+25
+Mrp:        -4.284000e+25
+Mtp:        -1.783000e+25
+
+event name:      174715B_138
+time shift:        76.0000
+half duration:      8.0000
+latitude:         -24.5149
+longitude:        -71.0057
+depth:          16.4800
+Mrr:         1.146000e+26
+Mtt:        -1.162000e+25
+Mpp:        -1.030000e+26
+Mrt:        -1.691000e+26
+Mrp:        -1.408000e+26
+Mtp:        -6.068000e+25
+
+event name:      174715B_139
+time shift:        76.0000
+half duration:     12.0000
+latitude:         -24.5944
+longitude:        -70.1772
+depth:          47.2400
+Mrr:         3.646000e+25
+Mtt:         2.973000e+24
+Mpp:        -3.943000e+25
+Mrt:         3.597000e+25
+Mrp:        -4.174000e+25
+Mtp:         1.207000e+25
+
+event name:      174715B_140
+time shift:        80.0000
+half duration:      8.0000
+latitude:         -24.7199
+longitude:        -70.2829
+depth:          43.4900
+Mrr:         7.637000e+25
+Mtt:         3.078000e+24
+Mpp:        -7.945000e+25
+Mrt:         3.805000e+25
+Mrp:        -8.352000e+25
+Mtp:         1.047000e+25
+
+event name:      174715B_141
+time shift:        80.0000
+half duration:     12.0000
+latitude:         -24.6031
+longitude:        -70.0868
+depth:          50.9800
+Mrr:         3.891000e+25
+Mtt:         2.555000e+24
+Mpp:        -4.146000e+25
+Mrt:         3.107000e+25
+Mrp:        -4.378000e+25
+Mtp:         9.975000e+24
+
+event name:      174715B_142
+time shift:        84.0000
+half duration:     16.0000
+latitude:         -24.6491
+longitude:        -71.0213
+depth:          16.4800
+Mrr:         7.467000e+25
+Mtt:        -7.249000e+24
+Mpp:        -6.742000e+25
+Mrt:        -1.055000e+26
+Mrp:        -9.226000e+25
+Mtp:        -3.803000e+25
+
+event name:      174715B_143
+time shift:        84.0000
+half duration:     16.0000
+latitude:         -24.5060
+longitude:        -71.0996
+depth:          13.3800
+Mrr:         8.985000e+25
+Mtt:        -6.799000e+24
+Mpp:        -8.305000e+25
+Mrt:        -9.857000e+25
+Mrp:        -1.140000e+26
+Mtp:        -3.671000e+25
+
+event name:      174715B_144
+time shift:        84.0000
+half duration:     16.0000
+latitude:         -24.6402
+longitude:        -71.1151
+depth:          13.3800
+Mrr:         7.332000e+25
+Mtt:        -6.098000e+24
+Mpp:        -6.722000e+25
+Mrt:        -8.853000e+25
+Mrp:        -9.217000e+25
+Mtp:        -3.254000e+25
