@@ -10,8 +10,9 @@ from fault.fault import Fault
 
 def test_fromFiles():
     homedir = os.path.dirname(os.path.abspath(__file__))
-    ts_directory = os.path.join(homedir, '..', 'data', 'timeseries')
-    fspfile = os.path.join(homedir, '..', 'data', 'timeseries', '1000dyad.fsp')
+    ts_directory = os.path.join(homedir, '..', 'data', 'products', '1000dyad')
+    fspfile = os.path.join(homedir, '..', 'data', 'products', '1000dyad',
+            '1000dyad.fsp')
     fault = Fault.fromFiles(fspfile, ts_directory)
     # Loop through segments
     for num in range(fault.getNumSegments()):

@@ -69,13 +69,20 @@ def read_from_file(fspfile, headers=DEFAULT_HEADERS):
             dz = float(parts[6])
             event['dx'] = dx
             event['dz'] = dz
-
         if 'MULTISEGMENT' in line:
             is_multi = True
         if 'Mech' in line:
             parts = line.split(':')[1].strip().split()
+            event['strike'] = float(parts[2])
+            event['dip'] = float(parts[5])
+            event['rake'] = float(parts[8])
+        if is_multi == True and '% SEGMENT # 1:' in line:
+            parts = line.split(':')[1].strip().split()
             strike = float(parts[2])
-            dip = float(parts[5])
+            dip = float(parts[6])
+    if is_multi == False:
+        strike = event['strike']
+        dip = event['dip']
 
     # Get segment dimensions
     _fspfile.close()
