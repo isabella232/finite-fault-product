@@ -46,7 +46,7 @@ product is designed to create eventpages and ShakeMap products.
 - latitude: Latitude of origin.
 - length11: Length (along strike) or first segment.
 - length_units: Units of the the length property. Always km.
-- location: Description of location. Either a property provided the place property available at: 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/<EVENTID>.geojson' or '<LATITUDE>, <LONGITUDE>'
+- location: Description of location. Either a property provided the place property available at: 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/[EVENTID].geojson' or '[LATITUDE], [LONGITUDE]'
 - longitude: Longitude of origin.
 - magnitude: Magnitude of origin.
 - max_depth: Maximum depth of all segments.
