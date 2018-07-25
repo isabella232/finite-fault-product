@@ -5,8 +5,10 @@ import copy
 from matplotlib import colors
 import matplotlib.cm as cm
 import matplotlib.colors as colors
+import os
 
 # third party imports
+from impactutils.colors.cpalette import ColorPalette
 import numpy as np
 from openquake.hazardlib.geo.geodetic import point_at
 from openquake.hazardlib.geo.utils import OrthographicProjection
@@ -14,6 +16,10 @@ from openquake.hazardlib.geo.utils import OrthographicProjection
 # local imports
 from fault.io.timeseries import read_from_directory
 from fault.io.fsp import read_from_file
+
+
+homedir = os.path.dirname(os.path.abspath(__file__))
+COLORS = ColorPalette.fromFile(os.path.join(homedir, 'fault2.cpt'))
 
 
 class Fault(object):
@@ -47,6 +53,12 @@ class Fault(object):
         """
         segment_cells = []
 
+        slips = np.asarray([])
+        for segment in self.segments:
+            slips = np.append(slips, segment['slip'].flatten())
+        max_slip = np.ceil(np.max(slips))
+        COLORS.vmax = max_slip
+
         for segment in self.segments:
             arr_size = len(segment['lat'].flatten())
             dx = [self.event['dx']/2] * arr_size
@@ -61,10 +73,177 @@ class Fault(object):
                 del optional_properties[key]
             for key in optional_properties:
                 optional_properties[key] = optional_properties[key].flatten()
-            polygons = self.cornersFromOrientation(segment['lon'].flatten(),
-                    segment['lat'].flatten(), segment['depth'].flatten(),
-                    dx, dy, length, width, strike, dip,
-                    segment['slip'].flatten(), optional_properties=optional_properties)
+
+            px = segment['lon'].flatten()
+            py = segment['lat'].flatten()
+            pz = segment['depth'].flatten()
+            slips = segment['slip'].flatten()
+
+            # Verify that all are numpy arrays
+            px = np.array(px, dtype='d')
+            py = np.array(py, dtype='d')
+            # depth should be in meters not in km
+            pz = np.array(pz, dtype='d') * 1000
+            dx = np.array(dx, dtype='d')
+            dy = np.array(dy, dtype='d')
+            length = np.array(length, dtype='d')
+            width = np.array(width, dtype='d')
+            strike = np.array(strike, dtype='d')
+            dip = np.array(dip, dtype='d')
+
+            # Get P1 and P2 (top horizontal points)
+            theta = np.rad2deg(np.arctan((dy * np.cos(np.deg2rad(dip))) / dx))
+            P1_direction = strike + 180 + theta
+            P1_distance = np.sqrt( dx**2 + (dy * np.cos(np.deg2rad(dip)))**2)
+            P2_direction = strike
+            P2_distance = length
+            P1_lon = np.asarray([])
+            P1_lat = np.asarray([])
+            P2_lon = np.asarray([])
+            P2_lat = np.asarray([])
+            for idx, value in enumerate(px):
+                P1_points = point_at(px[idx], py[idx],
+                        P1_direction[idx], P1_distance[idx])
+                P1_lon = np.append(P1_lon, P1_points[0])
+                P1_lat = np.append(P1_lat, P1_points[1])
+                P2_points = point_at(P1_points[0], P1_points[1],
+                        P2_direction[idx], P2_distance[idx])
+                P2_lon = np.append(P2_lon, P2_points[0])
+                P2_lat = np.append(P2_lat, P2_points[1])
+
+            # Get top depth
+            top_horizontal_depth = pz - 1000 * np.abs(dy * np.sin(np.deg2rad(dip)))
+
+            group_index = np.array(range(len(P1_lon)))
+
+            # Convert dip to radians
+            dip = np.radians(dip)
+
+
+            # Get a projection object
+            west = np.min((P1_lon.min(), P2_lon.min()))
+            east = np.max((P1_lon.max(), P2_lon.max()))
+            south = np.min((P1_lat.min(), P2_lat.min()))
+            north = np.max((P1_lat.max(), P2_lat.max()))
+
+            # Projected coordinates are in km
+            proj = OrthographicProjection(west, east, north, south)
+            xp2 = np.zeros_like(P1_lon)
+            xp3 = np.zeros_like(P1_lon)
+            yp2 = np.zeros_like(P1_lon)
+            yp3 = np.zeros_like(P1_lon)
+            zpdown = np.zeros_like(top_horizontal_depth)
+            for i, p1lon in enumerate(P1_lon):
+                # Project the top edge coordinates
+                p0x, p0y = proj(p1lon, P1_lat[i])
+                p1x, p1y = proj(P2_lon[i], P2_lat[i])
+
+                # Get the rotation angle defined by these two points
+                if strike is None:
+                    dx = p1x - p0x
+                    dy = p1y - p0y
+                    theta = np.arctan2(dx, dy)  # theta is angle from north
+                elif len(strike) == 1:
+                    theta = np.radians(strike[0])
+                else:
+                    theta = np.radians(strike[i])
+
+                R = np.array([[np.cos(theta), -np.sin(theta)],
+                              [np.sin(theta), np.cos(theta)]])
+
+                # Rotate the top edge points into a new coordinate system (vertical
+                # line)
+                p0 = np.array([p0x, p0y])
+                p1 = np.array([p1x, p1y])
+                p0p = np.dot(R, p0)
+                p1p = np.dot(R, p1)
+
+                # Get right side coordinates in project, rotated system
+                dz = np.sin(dip[i]) * width[i] * 1000
+                dx = np.cos(dip[i]) * width[i]
+                p3xp = p0p[0] + dx
+                p3yp = p0p[1]
+                p2xp = p1p[0] + dx
+                p2yp = p1p[1]
+
+                # Get right side coordinates in un-rotated projected system
+                p3p = np.array([p3xp, p3yp])
+                p2p = np.array([p2xp, p2yp])
+                Rback = np.array([[np.cos(-theta), -np.sin(-theta)],
+                                  [np.sin(-theta), np.cos(-theta)]])
+                p3 = np.dot(Rback, p3p)
+                p2 = np.dot(Rback, p2p)
+                p3x = np.array([p3[0]])
+                p3y = np.array([p3[1]])
+                p2x = np.array([p2[0]])
+                p2y = np.array([p2[1]])
+
+                # project lower edge points back to lat/lon coordinates
+                lon3, lat3 = proj(p3x, p3y, reverse=True)
+                lon2, lat2 = proj(p2x, p2y, reverse=True)
+
+                xp2[i] = lon2
+                xp3[i] = lon3
+                yp2[i] = lat2
+                yp3[i] = lat3
+                zpdown[i] = top_horizontal_depth[i] + dz
+
+            # ---------------------------------------------------------------------
+            # Create GeoJSON object
+            # ---------------------------------------------------------------------
+
+            u_groups = np.unique(group_index)
+            n_groups = len(u_groups)
+            polygons = []
+
+            for i in range(n_groups):
+                ind = np.where(u_groups[i] == group_index)[0]
+                lons = np.concatenate(
+                    [P1_lon[ind[0]].reshape((1,)),
+                     P2_lon[ind], xp2[ind][::-1],
+                     xp3[ind][::-1][-1].reshape((1,)),
+                     P1_lon[ind[0]].reshape((1,))
+                     ])
+                lats = np.concatenate(
+                    [P1_lat[ind[0]].reshape((1,)),
+                     P2_lat[ind],
+                     yp2[ind][::-1],
+                     yp3[ind][::-1][-1].reshape((1,)),
+                     P1_lat[ind[0]].reshape((1,))
+                     ])
+                deps = np.concatenate(
+                    [top_horizontal_depth[ind[0]].reshape((1,)),
+                     top_horizontal_depth[ind],
+                     zpdown[ind][::-1],
+                     zpdown[ind][::-1][-1].reshape((1,)),
+                     top_horizontal_depth[ind[0]].reshape((1,))])
+
+                poly = []
+                for lon, lat, dep in zip(lons, lats, deps):
+                    lon = np.around(lon, decimals=4)
+                    lat = np.around(lat, decimals=4)
+                    deps = np.around(deps, decimals=4)
+                    coordinates = np.around(np.asarray([lon, lat, dep]),
+                            decimals=5)
+                    poly.append(coordinates.tolist())
+
+                properties = {}
+                for property in optional_properties:
+                    properties[property] = optional_properties[property][i]
+                h = COLORS.getDataColor(slips[i], color_format='hex')
+                properties["slip"] = slips[i]
+                properties["fill"] = h
+                properties["stroke-width"] = 1.5
+                properties["fill-opacity"] = 1
+                d = {
+                         "type": "Feature",
+                         "properties": properties,
+                         "geometry": {
+                             "type": "Polygon",
+                             "coordinates": [poly]
+                         }
+                     }
+                polygons += [d]
             segment_cells += polygons
         features = {"type": "FeatureCollection",
              "metadata": {
@@ -81,289 +260,6 @@ class Fault(object):
              "features": segment_cells
              }
         self.corners = features
-
-
-    def cornersFromOrientation(self, px, py, pz, dx, dy, length, width,
-                        strike, dip, slips, optional_properties=None):
-        """
-        Create a set of polygons from a known point, shape, and orientation.
-        A point is defined as a set of latitude, longitude, and depth, which
-        is located in the corner between the tail of the vector pointing in
-        the strike direction and the dip direction (nearest to the surface).
-        The shape is defined by length, width, dx, and dy. The length is the
-        measurement of the quadrilateral in the direction of strike, and
-        width is the measurement of quadrilateral in the direction of dip.
-        Dx is the measurement on the plane in the strike direction between
-        the known point and the corner between the tail of the vector pointing
-        in the strike direction and the dip direction (nearest to the surface).
-        Dy is the measurement on the plane in the dip direction between
-        the known point and the corner between the tail of the vector pointing
-        in the strike direction and the dip direction (nearest to the surface).
-        The orientation is defined by azimuth and angle from
-        horizontal, strike and dip respectively. For example in plane view:
-            ::
-                            strike direction
-                        p1*------------------->>p2
-                        *        | dy           |
-                 dip    |--------o              |
-              direction |   dx    known point   | Width
-                        V                       |
-                        V                       |
-                        p4----------------------p3
-                                Length
-        Args:
-            px (array): Array or list of longitudes (floats) of the known point.
-            py (array): Array or list of latitudes (floats) of the known point.
-            pz (array): Array or list of depths (floats) of the known point.
-            dx (array): Array or list of distances (floats), in the strike
-                direction, between the known point and P1. dx must be less than
-                length.
-            dy (array): Array or list of distances (floats), in the dip
-                direction, between the known point and P1. dy must be less than
-                width.
-            length (array): Array or list of widths (floats) of the plane in
-                the strike direction.
-            width (array): Array or list of widths (floats) of the plane in the
-                dip direction.
-            strike (array): Array or list of strike angles (floats).
-            dip (array): Array or list of dip angles (floats).
-        Returns:
-            list: list of polygons (dict).
-        """
-        # Verify that arrays are of equal length
-        if len(px) == len(py) == len(pz) == len(
-                dx) == len(dy) == len(length) == len(width) == len(
-                strike) == len(dip):
-            pass
-        else:
-            raise Exception(
-                'Number of px, py, pz, dx, dy, length, width, '
-                'strike, dip points must be '
-                'equal.')
-
-        # Verify that all are numpy arrays
-        px = np.array(px, dtype='d')
-        py = np.array(py, dtype='d')
-        # depth should be in meters not in km
-        pz = np.array(pz, dtype='d') * 1000
-        dx = np.array(dx, dtype='d')
-        dy = np.array(dy, dtype='d')
-        length = np.array(length, dtype='d')
-        width = np.array(width, dtype='d')
-        strike = np.array(strike, dtype='d')
-        dip = np.array(dip, dtype='d')
-
-        # Get P1 and P2 (top horizontal points)
-        theta = np.rad2deg(np.arctan((dy * np.cos(np.deg2rad(dip))) / dx))
-        P1_direction = strike + 180 + theta
-        P1_distance = np.sqrt( dx**2 + (dy * np.cos(np.deg2rad(dip)))**2)
-        P2_direction = strike
-        P2_distance = length
-        P1_lon = []
-        P1_lat = []
-        P2_lon = []
-        P2_lat = []
-        for idx, value in enumerate(px):
-            P1_points = point_at(px[idx], py[idx],
-                    P1_direction[idx], P1_distance[idx])
-            P1_lon += [P1_points[0]]
-            P1_lat += [P1_points[1]]
-            P2_points = point_at(P1_points[0], P1_points[1],
-                    P2_direction[idx], P2_distance[idx])
-            P2_lon += [P2_points[0]]
-            P2_lat += [P2_points[1]]
-
-        # Get top depth
-        top_horizontal_depth = pz - np.abs(dy * np.sin(np.deg2rad(dip)))
-        # Get polygons
-        corners = self.cornersFromTrace(P1_lon, P1_lat, P2_lon, P2_lat,
-                top_horizontal_depth, width, dip, strike=strike, slips=slips,
-                optional_properties=optional_properties)
-        return corners
-
-    def cornersFromTrace(self, xp0, yp0, xp1, yp1, zp, widths, dips,
-                  strike, slips, optional_properties=None):
-        """
-        Create a list of polygons from a set of vertices that define the
-        top of the rupture, and an array of widths/dips.
-        Each rupture quadrilaterial is defined by specifying the latitude,
-        longitude, and depth of the two vertices on the top edges, which must
-        have the dame depths. The other verticies are then constructed from
-        the top edges and the width and dip of the quadrilateral.
-        Args:
-            xp0 (array): Array or list of longitudes (floats) of p0.
-            yp0 (array): Array or list of latitudes (floats) of p0.
-            xp1 (array): Array or list of longitudes (floats) of p1.
-            yp1 (array): Array or list of latitudes (floats) of p1.
-            zp (array): Array or list of depths for each of the top of rupture
-                rectangles (km).
-            widths (array): Array of widths for each of rectangle (km).
-            dips (array): Array of dips for each of rectangle (degrees).
-            origin (Origin): Reference to a ShakeMap origin object.
-            strike (array): If None then strike is computed from verticies of
-                top edge of each quadrilateral. If a scalar, then all
-                quadrilaterals are constructed assuming this strike direction.
-                If an array with the same length as the trace coordinates then
-                it specifies the strike for each quadrilateral.
-        Returns:
-            list: list of polygons (dict).
-        """
-        if len(xp0) == len(yp0) == len(xp1) == len(
-                yp1) == len(zp) == len(dips) == len(widths):
-            pass
-        else:
-            raise ShakeLibException(
-                'Number of xp0,yp0,xp1,yp1,zp,widths,dips points must be '
-                'equal.')
-        if strike is None:
-            pass
-        else:
-            if (len(xp0) == len(strike)) | (len(strike) == 1):
-                pass
-            else:
-                raise ShakeLibException(
-                    'Strike must be None, scalar, or same length as '
-                    'trace coordinates.')
-
-        group_index = np.array(range(len(xp0)))
-
-        # Convert dips to radians
-        dips = np.radians(dips)
-
-        # Ensure that all input sequences are numpy arrays
-        xp0 = np.array(xp0, dtype='d')
-        xp1 = np.array(xp1, dtype='d')
-        yp0 = np.array(yp0, dtype='d')
-        yp1 = np.array(yp1, dtype='d')
-        zp = np.array(zp, dtype='d')
-        widths = np.array(widths, dtype='d')
-        dips = np.array(dips, dtype='d')
-
-        # Get a projection object
-        west = np.min((xp0.min(), xp1.min()))
-        east = np.max((xp0.max(), xp1.max()))
-        south = np.min((yp0.min(), yp1.min()))
-        north = np.max((yp0.max(), yp1.max()))
-
-        # Projected coordinates are in km
-        proj = OrthographicProjection(west, east, north, south)
-        xp2 = np.zeros_like(xp0)
-        xp3 = np.zeros_like(xp0)
-        yp2 = np.zeros_like(xp0)
-        yp3 = np.zeros_like(xp0)
-        zpdown = np.zeros_like(zp)
-        for i in range(0, len(xp0)):
-            # Project the top edge coordinates
-            p0x, p0y = proj(xp0[i], yp0[i])
-            p1x, p1y = proj(xp1[i], yp1[i])
-
-            # Get the rotation angle defined by these two points
-            if strike is None:
-                dx = p1x - p0x
-                dy = p1y - p0y
-                theta = np.arctan2(dx, dy)  # theta is angle from north
-            elif len(strike) == 1:
-                theta = np.radians(strike[0])
-            else:
-                theta = np.radians(strike[i])
-
-            R = np.array([[np.cos(theta), -np.sin(theta)],
-                          [np.sin(theta), np.cos(theta)]])
-
-            # Rotate the top edge points into a new coordinate system (vertical
-            # line)
-            p0 = np.array([p0x, p0y])
-            p1 = np.array([p1x, p1y])
-            p0p = np.dot(R, p0)
-            p1p = np.dot(R, p1)
-
-            # Get right side coordinates in project, rotated system
-            dz = np.sin(dips[i]) * widths[i]
-            dx = np.cos(dips[i]) * widths[i]
-            p3xp = p0p[0] + dx
-            p3yp = p0p[1]
-            p2xp = p1p[0] + dx
-            p2yp = p1p[1]
-
-            # Get right side coordinates in un-rotated projected system
-            p3p = np.array([p3xp, p3yp])
-            p2p = np.array([p2xp, p2yp])
-            Rback = np.array([[np.cos(-theta), -np.sin(-theta)],
-                              [np.sin(-theta), np.cos(-theta)]])
-            p3 = np.dot(Rback, p3p)
-            p2 = np.dot(Rback, p2p)
-            p3x = np.array([p3[0]])
-            p3y = np.array([p3[1]])
-            p2x = np.array([p2[0]])
-            p2y = np.array([p2[1]])
-
-            # project lower edge points back to lat/lon coordinates
-            lon3, lat3 = proj(p3x, p3y, reverse=True)
-            lon2, lat2 = proj(p2x, p2y, reverse=True)
-
-            xp2[i] = lon2
-            xp3[i] = lon3
-            yp2[i] = lat2
-            yp3[i] = lat3
-            zpdown[i] = zp[i] + dz
-
-        # ---------------------------------------------------------------------
-        # Create GeoJSON object
-        # ---------------------------------------------------------------------
-
-        u_groups = np.unique(group_index)
-        n_groups = len(u_groups)
-        polygons = []
-        norm = colors.Normalize(vmin=0, vmax=np.max(slips) + 0.5)
-        f2rgb = cm.ScalarMappable(norm=norm, cmap=cm.get_cmap('cubehelix_r'))
-        for i in range(n_groups):
-            ind = np.where(u_groups[i] == group_index)[0]
-            lons = np.concatenate(
-                [xp0[ind[0]].reshape((1,)),
-                 xp1[ind], xp2[ind][::-1],
-                 xp3[ind][::-1][-1].reshape((1,)),
-                 xp0[ind[0]].reshape((1,))
-                 ])
-            lats = np.concatenate(
-                [yp0[ind[0]].reshape((1,)),
-                 yp1[ind],
-                 yp2[ind][::-1],
-                 yp3[ind][::-1][-1].reshape((1,)),
-                 yp0[ind[0]].reshape((1,))
-                 ])
-            deps = np.concatenate(
-                [zp[ind[0]].reshape((1,)),
-                 zp[ind],
-                 zpdown[ind][::-1],
-                 zpdown[ind][::-1][-1].reshape((1,)),
-                 zp[ind[0]].reshape((1,))])
-
-            poly = []
-            for lon, lat, dep in zip(lons, lats, deps):
-                coordinates = np.around(np.asarray([lon, lat, dep]),
-                        decimals=5)
-                poly.append(coordinates.tolist())
-
-            properties = {}
-            for property in optional_properties:
-                properties[property] = optional_properties[property][i]
-            rgb = f2rgb.to_rgba(slips[i])[:3]
-            h = '#%02x%02x%02x' % tuple([int(255*fc) for fc in rgb])
-            properties["slip"] = slips[i]
-            properties["fill"] = h
-            properties["stroke-width"] = 1.5
-            properties["fill-opacity"] = 1
-            d = {
-                     "type": "Feature",
-                     "properties": properties,
-                     "geometry": {
-                         "type": "Polygon",
-                         "coordinates": [poly]
-                     }
-                 }
-            polygons += [d]
-
-        return polygons
 
 
     @property

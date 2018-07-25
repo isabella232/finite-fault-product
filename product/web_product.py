@@ -384,6 +384,7 @@ class WebProduct(object):
         product.event = fault.event
         product.segments = fault.segments
         fault.createGeoJSON()
+        fault.corners['metadata']['eventid'] = eventid
         product.grid = fault.corners
         product._timeseries_dict = fault.timeseries_dict
         product.writeGrid(directory)
