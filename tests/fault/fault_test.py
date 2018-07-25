@@ -1,8 +1,11 @@
 #!/usr/bin/env python
 
-#stdlib imports
+# stdlib imports
 import os
 import glob
+
+# third party imports
+import numpy as np
 
 # local imports
 from fault.fault import Fault
@@ -41,6 +44,27 @@ def test_fromFiles():
                 segment['length'], sum_rows, sum_columns)
     assert isinstance(fault.timeseries_dict, dict)
     fault.createGeoJSON()
+
+    corner_file = ts_directory = os.path.join(homedir, '..', 'data',
+            'ffm_data', '1000dyad_slip.out')
+    target_lon, target_lat, target_depth = np.loadtxt(corner_file,
+            unpack=True, usecols=(0,1,3), comments='>')
+
+    calc_corners = fault.corners
+    calc_lat = np.asarray([])
+    calc_lon = np.asarray([])
+    calc_depth = np.asarray([])
+
+    for corner in calc_corners["features"]:
+        for idx, coord in enumerate(corner['geometry']['coordinates'][0]):
+            if idx != len(corner['geometry']['coordinates'][0]) - 1:
+                calc_lon = np.append(calc_lon, [coord[0]])
+                calc_lat = np.append(calc_lat, [coord[1]])
+                calc_depth = np.append(calc_depth, [coord[2]/1000])
+    np.testing.assert_allclose(calc_lat, target_lat, rtol=1e-04)
+    np.testing.assert_allclose(calc_lon, target_lon, rtol=1e-04)
+    np.testing.assert_allclose(calc_depth, target_depth)
+
     fault = Fault.fromFsp(fspfile)
     fault = Fault.fromTimeseries(ts_directory)
 

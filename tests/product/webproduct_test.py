@@ -9,6 +9,7 @@ import warnings
 
 # third party imports
 from lxml import etree
+import numpy as np
 
 # local imports
 from fault.fault import Fault
@@ -60,7 +61,7 @@ def test_fromFault():
     tree = etree.tostring(tree).decode()
     tree = tree.strip().replace('\n', '').replace('\t', '').replace(' ', '')
     target_xml = xml.strip().replace('\n', '').replace('\t', '').replace(' ', '')
-    #assert tree == target_xml
+
 
 def test_exceptions():
     homedir = os.path.dirname(os.path.abspath(__file__))
@@ -73,6 +74,7 @@ def test_exceptions():
     product.createTimeseriesGeoJSON()
     product.writeTimeseries(ts_directory)
 
+
     os.remove(ts_directory + '/FFM.geojson')
     try:
         product.writeContents(ts_directory)
@@ -81,6 +83,7 @@ def test_exceptions():
         success = False
     assert success == False
     product.writeGrid(ts_directory)
+
 
 if __name__ == '__main__':
     test_fromFault()

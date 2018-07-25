@@ -76,6 +76,7 @@ def read_from_file(fspfile, headers=DEFAULT_HEADERS):
             event['strike'] = float(parts[2])
             event['dip'] = float(parts[5])
             event['rake'] = float(parts[8])
+            event['htop'] = float(parts[11])
         if is_multi == True and '% SEGMENT # 1:' in line:
             parts = line.split(':')[1].strip().split()
             strike = float(parts[2])
