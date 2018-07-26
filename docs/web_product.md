@@ -52,7 +52,7 @@ Failure to include these files will result in an error
     <td>Readlp.das</td>
   </tr>
   <tr>
-    <td colspan="3">* These files may be substituted with a properties.json file. See the example below.</td>
+    <td colspan="3">* These files may be substituted with a wave_properties.json file. See the example below.</td>
   </tr>
 </table>
 
@@ -105,9 +105,9 @@ These files are note required, but are recommended and will be looked for.
     <td>1000dyad.mr</td>
   </tr>
   <tr>
-    <td>*Substitute property file</td>
-    <td>properties.json</td>
-    <td>properties.json</td>
+    <td>*Substitute wave property file</td>
+    <td>wave_properties.json</td>
+    <td>wave_properties.json</td>
   </tr>
   <tr>
     <td colspan="3">* This file may be used as a substitute for the </td>
