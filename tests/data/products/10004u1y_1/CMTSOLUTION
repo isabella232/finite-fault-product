@@ -1,0 +1,728 @@
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_1
+time shift:         0.0000
+half duration:      1.8000
+latitude:          -4.8956
+longitude:         94.2367
+depth:          33.9500
+Mrr:         8.489000e+24
+Mtt:        -1.931000e+25
+Mpp:         1.082000e+25
+Mrt:        -3.927000e+25
+Mrp:         1.097000e+25
+Mtp:        -7.669000e+25
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_2
+time shift:         4.4000
+half duration:      4.6000
+latitude:          -4.8909
+longitude:         94.2370
+depth:          38.9200
+Mrr:         1.433000e+24
+Mtt:        -2.825000e+24
+Mpp:         1.392000e+24
+Mrt:        -6.651000e+24
+Mrp:         1.524000e+24
+Mtp:        -9.855000e+24
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_3
+time shift:         5.8000
+half duration:      2.4000
+latitude:          -4.9128
+longitude:         94.1449
+depth:           9.0820
+Mrr:         4.657000e+24
+Mtt:        -2.877000e+25
+Mpp:         2.412000e+25
+Mrt:        -2.058000e+25
+Mrp:         1.972000e+25
+Mtp:        -1.714000e+26
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_4
+time shift:         5.8000
+half duration:      2.4000
+latitude:          -4.8925
+longitude:         94.3274
+depth:          43.8900
+Mrr:         3.087000e+24
+Mtt:        -7.506000e+24
+Mpp:         4.419000e+24
+Mrt:        -1.425000e+25
+Mrp:         4.353000e+24
+Mtp:        -3.133000e+25
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_5
+time shift:         6.0000
+half duration:      3.0000
+latitude:          -4.9035
+longitude:         94.4172
+depth:          38.9200
+Mrr:         1.794000e+24
+Mtt:        -6.126000e+24
+Mpp:         4.333000e+24
+Mrt:        -8.189000e+24
+Mrp:         3.859000e+24
+Mtp:        -3.077000e+25
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_6
+time shift:         6.2000
+half duration:      2.6000
+latitude:          -4.8972
+longitude:         94.3271
+depth:          38.9200
+Mrr:         1.936000e+24
+Mtt:        -7.180000e+24
+Mpp:         5.244000e+24
+Mrt:        -8.809000e+24
+Mrp:         4.593000e+24
+Mtp:        -3.725000e+25
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_7
+time shift:         6.2000
+half duration:      3.2000
+latitude:          -4.9019
+longitude:         94.3268
+depth:          33.9500
+Mrr:         2.882000e+24
+Mtt:        -1.555000e+25
+Mpp:         1.267000e+25
+Mrt:        -1.286000e+25
+Mrp:         1.050000e+25
+Mtp:        -9.007000e+25
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_8
+time shift:         6.6000
+half duration:      8.2000
+latitude:          -4.9050
+longitude:         94.2360
+depth:          24.0000
+Mrr:         2.744000e+24
+Mtt:         1.852000e+25
+Mpp:        -2.127000e+25
+Mrt:        -1.400000e+25
+Mrp:        -1.511000e+25
+Mtp:         1.514000e+26
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_9
+time shift:         6.8000
+half duration:      3.0000
+latitude:          -4.9081
+longitude:         94.1452
+depth:          14.0500
+Mrr:         3.849000e+24
+Mtt:         9.740000e+24
+Mpp:        -1.359000e+25
+Mrt:        -1.878000e+25
+Mrp:        -8.960000e+24
+Mtp:         9.682000e+25
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_10
+time shift:         6.8000
+half duration:      3.6000
+latitude:          -4.9034
+longitude:         94.1456
+depth:          19.0300
+Mrr:         2.290000e+24
+Mtt:         4.191000e+24
+Mpp:        -6.481000e+24
+Mrt:        -1.109000e+25
+Mrp:        -4.123000e+24
+Mtp:         4.620000e+25
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_11
+time shift:         7.2000
+half duration:      1.8000
+latitude:          -4.9097
+longitude:         94.2357
+depth:          19.0300
+Mrr:         6.230000e+24
+Mtt:         1.361000e+25
+Mpp:        -1.984000e+25
+Mrt:        -3.028000e+25
+Mrp:        -1.288000e+25
+Mtp:         1.414000e+26
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_12
+time shift:         7.2000
+half duration:      3.4000
+latitude:          -4.9018
+longitude:         94.0551
+depth:          14.0500
+Mrr:         2.459000e+24
+Mtt:         4.170000e+24
+Mpp:        -6.629000e+24
+Mrt:        -1.189000e+25
+Mrp:        -4.178000e+24
+Mtp:         4.726000e+25
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_13
+time shift:         7.2000
+half duration:      3.6000
+latitude:          -4.8924
+longitude:         94.0558
+depth:          24.0000
+Mrr:         2.371000e+24
+Mtt:         3.116000e+24
+Mpp:        -5.488000e+24
+Mrt:        -1.142000e+25
+Mrp:        -3.347000e+24
+Mtp:         3.913000e+25
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_14
+time shift:         7.4000
+half duration:      3.2000
+latitude:          -4.8893
+longitude:         94.1466
+depth:          33.9500
+Mrr:         9.150000e+23
+Mtt:         2.723000e+24
+Mpp:        -3.638000e+24
+Mrt:        -4.485000e+24
+Mrp:        -2.437000e+24
+Mtp:         2.592000e+25
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_15
+time shift:         7.6000
+half duration:      3.4000
+latitude:          -4.9082
+longitude:         94.4169
+depth:          33.9500
+Mrr:         1.093000e+23
+Mtt:         8.125000e+24
+Mpp:        -8.235000e+24
+Mrt:        -9.469000e+23
+Mrp:        -6.167000e+24
+Mtp:         5.860000e+25
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_16
+time shift:         7.6000
+half duration:      3.8000
+latitude:          -4.8987
+longitude:         94.1459
+depth:          24.0000
+Mrr:         6.882000e+24
+Mtt:         6.490000e+24
+Mpp:        -1.337000e+25
+Mrt:        -3.300000e+25
+Mrp:        -7.790000e+24
+Mtp:         9.539000e+25
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_17
+time shift:         7.6000
+half duration:      4.2000
+latitude:          -4.8878
+longitude:         94.0561
+depth:          28.9700
+Mrr:         1.976000e+24
+Mtt:         3.157000e+24
+Mpp:        -5.133000e+24
+Mrt:        -9.545000e+24
+Mrp:        -3.211000e+24
+Mtp:         3.659000e+25
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_18
+time shift:         7.8000
+half duration:      6.4000
+latitude:          -4.9003
+longitude:         94.2363
+depth:          28.9700
+Mrr:         2.153000e+24
+Mtt:         1.662000e+25
+Mpp:        -1.877000e+25
+Mrt:        -1.109000e+25
+Mrp:        -1.343000e+25
+Mtp:         1.336000e+26
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_19
+time shift:         8.0000
+half duration:      3.6000
+latitude:          -4.8862
+longitude:         93.9657
+depth:          24.0000
+Mrr:         3.485000e+24
+Mtt:         3.578000e+24
+Mpp:        -7.063000e+24
+Mrt:        -1.673000e+25
+Mrp:        -4.164000e+24
+Mtp:         5.038000e+25
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_20
+time shift:         8.2000
+half duration:      3.4000
+latitude:          -4.9285
+longitude:         94.5060
+depth:          19.0300
+Mrr:         6.987000e+24
+Mtt:         1.704000e+25
+Mpp:        -2.402000e+25
+Mrt:        -3.405000e+25
+Mrp:        -1.578000e+25
+Mtp:         1.712000e+26
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_21
+time shift:         8.2000
+half duration:      3.6000
+latitude:          -4.8831
+longitude:         94.0565
+depth:          33.9500
+Mrr:         9.816000e+23
+Mtt:         9.963000e+23
+Mpp:        -1.978000e+24
+Mrt:        -4.711000e+24
+Mrp:        -1.164000e+24
+Mtp:         1.411000e+25
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_22
+time shift:         8.2000
+half duration:      3.6000
+latitude:          -4.9176
+longitude:         94.4162
+depth:          24.0000
+Mrr:         5.970000e+24
+Mtt:         2.488000e+25
+Mpp:        -3.085000e+25
+Mrt:        -2.964000e+25
+Mrp:        -2.126000e+25
+Mtp:         2.197000e+26
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_23
+time shift:         8.4000
+half duration:      3.4000
+latitude:          -4.9066
+longitude:         94.3264
+depth:          28.9700
+Mrr:         2.721000e+24
+Mtt:         2.467000e+25
+Mpp:        -2.739000e+25
+Mrt:        -1.421000e+25
+Mrp:        -1.973000e+25
+Mtp:         1.950000e+26
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_24
+time shift:         8.4000
+half duration:      4.0000
+latitude:          -4.8940
+longitude:         94.1462
+depth:          28.9700
+Mrr:         4.057000e+24
+Mtt:         7.042000e+24
+Mpp:        -1.110000e+25
+Mrt:        -1.963000e+25
+Mrp:        -7.015000e+24
+Mtp:         7.912000e+25
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_25
+time shift:         8.6000
+half duration:      3.4000
+latitude:          -4.9332
+longitude:         94.5057
+depth:          14.0500
+Mrr:         4.909000e+23
+Mtt:         3.083000e+25
+Mpp:        -3.132000e+25
+Mrt:        -3.954000e+24
+Mrp:        -2.343000e+25
+Mtp:         2.229000e+26
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_26
+time shift:         8.6000
+half duration:      3.6000
+latitude:          -4.9113
+longitude:         94.3261
+depth:          24.0000
+Mrr:         6.213000e+24
+Mtt:         2.638000e+25
+Mpp:        -3.259000e+25
+Mrt:        -3.087000e+25
+Mrp:        -2.249000e+25
+Mtp:         2.321000e+26
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_27
+time shift:         8.6000
+half duration:      3.8000
+latitude:          -4.9129
+longitude:         94.4165
+depth:          28.9700
+Mrr:         4.769000e+24
+Mtt:         1.508000e+25
+Mpp:        -1.985000e+25
+Mrt:        -2.343000e+25
+Mrp:        -1.337000e+25
+Mtp:         1.414000e+26
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_28
+time shift:         8.8000
+half duration:      3.4000
+latitude:          -4.9223
+longitude:         94.4159
+depth:          19.0300
+Mrr:         4.786000e+24
+Mtt:         3.433000e+25
+Mpp:        -3.912000e+25
+Mrt:        -2.452000e+25
+Mrp:        -2.788000e+25
+Mtp:         2.785000e+26
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_29
+time shift:         8.8000
+half duration:      4.0000
+latitude:          -4.9207
+longitude:         94.3254
+depth:          14.0500
+Mrr:         4.390000e+24
+Mtt:         3.436000e+25
+Mpp:        -3.875000e+25
+Mrt:        -2.264000e+25
+Mrp:        -2.774000e+25
+Mtp:         2.759000e+26
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_30
+time shift:         9.2000
+half duration:      3.2000
+latitude:          -4.9160
+longitude:         94.3257
+depth:          19.0300
+Mrr:         6.203000e+24
+Mtt:         2.774000e+25
+Mpp:        -3.395000e+25
+Mrt:        -3.090000e+25
+Mrp:        -2.352000e+25
+Mtp:         2.418000e+26
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_31
+time shift:         9.2000
+half duration:      3.6000
+latitude:          -4.9269
+longitude:         94.4156
+depth:          14.0500
+Mrr:         3.892000e+24
+Mtt:         3.932000e+25
+Mpp:        -4.322000e+25
+Mrt:        -2.054000e+25
+Mrp:        -3.127000e+25
+Mtp:         3.076000e+26
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_32
+time shift:         9.4000
+half duration:      3.0000
+latitude:          -4.9316
+longitude:         94.4152
+depth:           9.0820
+Mrr:         1.336000e+24
+Mtt:        -3.731000e+25
+Mpp:         3.597000e+25
+Mrt:        -4.373000e+24
+Mrp:         2.754000e+25
+Mtp:        -2.559000e+26
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_33
+time shift:         9.4000
+half duration:      3.2000
+latitude:          -4.9379
+longitude:         94.5053
+depth:           9.0820
+Mrr:         9.422000e+23
+Mtt:        -2.920000e+25
+Mpp:         2.825000e+25
+Mrt:        -2.933000e+24
+Mrp:         2.160000e+25
+Mtp:        -2.010000e+26
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_34
+time shift:        10.6000
+half duration:      3.6000
+latitude:          -4.9238
+longitude:         94.5063
+depth:          24.0000
+Mrr:         5.759000e+24
+Mtt:         8.658000e+24
+Mpp:        -1.442000e+25
+Mrt:        -2.779000e+25
+Mrp:        -8.950000e+24
+Mtp:         1.028000e+26
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_35
+time shift:        10.8000
+half duration:      4.4000
+latitude:          -4.9002
+longitude:         93.9647
+depth:           9.0820
+Mrr:         3.617000e+24
+Mtt:        -1.361000e+25
+Mpp:         9.994000e+24
+Mrt:        -1.645000e+25
+Mrp:         8.729000e+24
+Mtp:        -7.098000e+25
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_36
+time shift:        10.8000
+half duration:      4.4000
+latitude:          -4.8956
+longitude:         93.9650
+depth:          14.0500
+Mrr:         1.021000e+24
+Mtt:        -2.855000e+24
+Mpp:         1.833000e+24
+Mrt:        -4.696000e+24
+Mrp:         1.720000e+24
+Mtp:        -1.301000e+25
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_37
+time shift:        11.2000
+half duration:      3.2000
+latitude:          -4.9144
+longitude:         94.2353
+depth:          14.0500
+Mrr:         2.176000e+24
+Mtt:         2.391000e+25
+Mpp:        -2.609000e+25
+Mrt:        -1.159000e+25
+Mrp:        -1.893000e+25
+Mtp:         1.857000e+26
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_38
+time shift:        12.4000
+half duration:      3.6000
+latitude:          -4.8799
+longitude:         93.8756
+depth:          24.0000
+Mrr:         9.095000e+23
+Mtt:        -2.467000e+24
+Mpp:         1.557000e+24
+Mrt:        -4.186000e+24
+Mrp:         1.475000e+24
+Mtp:        -1.105000e+25
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_39
+time shift:        13.4000
+half duration:      3.4000
+latitude:          -4.8658
+longitude:         93.8766
+depth:          38.9200
+Mrr:         6.119000e+24
+Mtt:        -1.120000e+25
+Mpp:         5.082000e+24
+Mrt:        -2.845000e+25
+Mrp:         5.859000e+24
+Mtp:        -3.594000e+25
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_40
+time shift:        14.0000
+half duration:      3.6000
+latitude:          -4.9442
+longitude:         94.5954
+depth:           9.0820
+Mrr:         4.516000e+23
+Mtt:        -1.340000e+25
+Mpp:         1.295000e+25
+Mrt:        -1.437000e+24
+Mrp:         9.908000e+24
+Mtp:        -9.215000e+25
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_41
+time shift:        14.2000
+half duration:      8.0000
+latitude:          -4.9065
+longitude:         94.0548
+depth:           9.0820
+Mrr:         3.627000e+24
+Mtt:        -1.980000e+25
+Mpp:         1.618000e+25
+Mrt:        -1.617000e+25
+Mrp:         1.339000e+25
+Mtp:        -1.150000e+26
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_42
+time shift:        14.4000
+half duration:      4.4000
+latitude:          -4.9254
+longitude:         94.3251
+depth:           9.0820
+Mrr:         1.824000e+24
+Mtt:         3.136000e+25
+Mpp:        -3.318000e+25
+Mrt:        -1.031000e+25
+Mrp:        -2.439000e+25
+Mtp:         2.362000e+26
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_43
+time shift:        14.6000
+half duration:      5.6000
+latitude:          -4.9191
+longitude:         94.2350
+depth:           9.0820
+Mrr:         1.577000e+24
+Mtt:         2.880000e+25
+Mpp:        -3.037000e+25
+Mrt:        -9.003000e+24
+Mrp:        -2.236000e+25
+Mtp:         2.162000e+26
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_44
+time shift:        15.2000
+half duration:      5.0000
+latitude:          -4.9426
+longitude:         94.5050
+depth:           4.1100
+Mrr:         5.845000e+22
+Mtt:        -2.546000e+24
+Mpp:         2.488000e+24
+Mrt:        -1.432000e+23
+Mrp:         1.894000e+24
+Mtp:        -1.770000e+25
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_45
+time shift:        15.8000
+half duration:      5.0000
+latitude:          -4.9112
+longitude:         94.0545
+depth:           4.1100
+Mrr:         2.841000e+23
+Mtt:        -2.175000e+24
+Mpp:         1.891000e+24
+Mrt:        -1.234000e+24
+Mrp:         1.519000e+24
+Mtp:        -1.345000e+25
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_46
+time shift:        16.2000
+half duration:      3.4000
+latitude:          -4.9395
+longitude:         94.5957
+depth:          14.0500
+Mrr:         8.812000e+24
+Mtt:        -2.136000e+25
+Mpp:         1.254000e+25
+Mrt:        -4.069000e+25
+Mrp:         1.237000e+25
+Mtp:        -8.894000e+25
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_47
+time shift:        16.2000
+half duration:      3.6000
+latitude:          -4.9191
+longitude:         94.5066
+depth:          28.9700
+Mrr:         3.490000e+24
+Mtt:        -6.415000e+24
+Mpp:         2.925000e+24
+Mrt:        -1.622000e+25
+Mrp:         3.362000e+24
+Mtp:        -2.069000e+25
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_48
+time shift:        16.2000
+half duration:      5.0000
+latitude:          -4.9363
+longitude:         94.4149
+depth:           4.1100
+Mrr:         2.549000e+22
+Mtt:        -3.168000e+24
+Mpp:         3.143000e+24
+Mrt:         4.592000e+22
+Mrp:         2.376000e+24
+Mtp:        -2.236000e+25
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_49
+time shift:        16.4000
+half duration:      3.6000
+latitude:          -4.9348
+longitude:         94.5961
+depth:          19.0300
+Mrr:         6.172000e+24
+Mtt:        -1.109000e+25
+Mpp:         4.914000e+24
+Mrt:        -2.871000e+25
+Mrp:         5.750000e+24
+Mtp:        -3.475000e+25
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_50
+time shift:        16.8000
+half duration:      3.4000
+latitude:          -4.9145
+longitude:         94.5070
+depth:          33.9500
+Mrr:         3.939000e+24
+Mtt:        -7.117000e+24
+Mpp:         3.178000e+24
+Mrt:        -1.832000e+25
+Mrp:         3.701000e+24
+Mtp:        -2.247000e+25
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_51
+time shift:        16.8000
+half duration:      6.0000
+latitude:          -4.9300
+longitude:         94.3248
+depth:           4.1100
+Mrr:         1.682000e+23
+Mtt:        -3.166000e+24
+Mpp:         2.997000e+24
+Mrt:        -6.313000e+23
+Mrp:         2.314000e+24
+Mtp:        -2.132000e+25
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_52
+time shift:        17.0000
+half duration:      3.8000
+latitude:          -4.9175
+longitude:         94.1446
+depth:           4.1100
+Mrr:         5.495000e+23
+Mtt:        -3.037000e+24
+Mpp:         2.487000e+24
+Mrt:        -2.448000e+24
+Mrp:         2.056000e+24
+Mtp:        -1.768000e+25
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_53
+time shift:        17.2000
+half duration:      2.6000
+latitude:          -4.9238
+longitude:         94.2347
+depth:           4.1100
+Mrr:         1.383000e+23
+Mtt:        -3.038000e+24
+Mpp:         2.900000e+24
+Mrt:        -4.964000e+23
+Mrp:         2.231000e+24
+Mtp:        -2.063000e+25
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_54
+time shift:        17.2000
+half duration:      3.6000
+latitude:          -4.8940
+longitude:         93.8746
+depth:           9.0820
+Mrr:         2.901000e+24
+Mtt:        -8.008000e+24
+Mpp:         5.106000e+24
+Mrt:        -1.335000e+25
+Mrp:         4.810000e+24
+Mtp:        -3.623000e+25
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_55
+time shift:        58.6000
+half duration:      3.8000
+latitude:          -4.9364
+longitude:         94.9581
+depth:          43.8900
+Mrr:         1.654000e+24
+Mtt:        -2.973000e+24
+Mpp:         1.319000e+24
+Mrt:        -7.691000e+24
+Mrp:         1.543000e+24
+Mtp:        -9.329000e+24
+ PDE 2016  3  2 12 49 46.00  -4.9050   94.2360  12.0 7.9 7.9 nowhere
+event name:      174715B_56
+time shift:        61.8000
+half duration:      7.2000
+latitude:          -4.8564
+longitude:         93.6056
+depth:          28.9700
+Mrr:         3.298000e+24
+Mtt:        -6.073000e+24
+Mpp:         2.775000e+24
+Mrt:        -1.533000e+25
+Mrp:         3.185000e+24
+Mtp:        -1.963000e+25

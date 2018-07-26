@@ -40,7 +40,7 @@ def test_sendproduct():
             __file__))  # where is this script?
         indir = os.path.join(homedir, '..', 'data', 'products', '1000dyad')
         send_product = os.path.join(homedir, '..', '..', 'bin', 'sendproduct')
-        eventid = '100dyad'
+        eventid = '100dyad_test'
         net = 'us'
         try:
             cmd = '%s %s %s %s' % (send_product, net, eventid, indir)

@@ -100,5 +100,4 @@ def send_product(eventid, network, product, pdlfolder, number=None):
 if __name__ == '__main__':
     parser = get_parser()
     pargs, unknown = parser.parse_known_args()
-    print(pargs)
     main(pargs)

@@ -118,7 +118,7 @@ class WebProduct(object):
                 etree.SubElement(file_tree, 'format', format_attrib)
 
         # Coulomb inp
-        coul = self._checkDownload(directory, "*_coulomb.inp")
+        coul = self._checkDownload(directory, "*coulomb.inp")
         if len(coul) > 0:
             self._paths['coulomb'] = (coul[0], "coulomb.inp")
             file_attrib, format_attrib = self._getAttributes('coulomb',
@@ -227,30 +227,30 @@ class WebProduct(object):
                 row = row.replace('[DIP]', '%.1f' % props['dip' + idx])
                 segments += row
             result = result.replace('[SEGMENTS]', segments)
-            result = result.replace('[DD]','%.1f' % props['mechanism_strike'])
-            result = result.replace('[EE]','%.1f' % props['mechanism_dip'])
-            result = result.replace('[FF]','%.1e' % props['moment'])
-            result = result.replace('[GG]','%.1f' % props['magnitude'])
-            result = result.replace('[HH]','%i' % props['num_segments'])
+            result = result.replace('[DD]', '%.1f' % props['mechanism_strike'])
+            result = result.replace('[EE]', '%.1f' % props['mechanism_dip'])
+            result = result.replace('[FF]', '%.2e' % props['moment'])
+            result = result.replace('[GG]', '%.1f' % props['magnitude'])
+            result = result.replace('[HH]', '%i' % props['num_segments'])
         else:
             result = """After comparing waveform fits based on the two planes of the input
             moment tensor, we find that the nodal plane (strike= [DD] deg., dip= [EE]
             deg.) fits the data better. The seismic moment release based upon this
             plane is [FF] dyne.cm (Mw = [GG]) using a 1D crustal model interpolated
             from CRUST2.0 (Bassin et al., 2000)."""
-            result = result.replace('[DD]','%.1f' % props['mechanism_strike'])
-            result = result.replace('[EE]','%.1f' % props['mechanism_dip'])
-            result = result.replace('[FF]','%.1e' % props['moment'])
-            result = result.replace('[GG]','%.1f' % props['magnitude'])
+            result = result.replace('[DD]', '%.1f' % props['mechanism_strike'])
+            result = result.replace('[EE]', '%.1f' % props['mechanism_dip'])
+            result = result.replace('[FF]', '%.1e' % props['moment'])
+            result = result.replace('[GG]', '%.1f' % props['magnitude'])
         page = PAGE_TEMPLATE
         page = page.replace('[DATE]', props['date'].strftime('%b %d, %Y'))
         page = page.replace('[MAG]', '%.1f' % props['magnitude'])
         page = page.replace('[LOCATION]', props['location'])
         if version == 1:
-                page = page.replace('[STATUS]','Preliminary')
+                page = page.replace('[STATUS]', 'Preliminary')
         else:
-            page = page.replace('[STATUS]','Updated')
-        page = page.replace('[VERSION]',str(version))
+            page = page.replace('[STATUS]', 'Updated')
+        page = page.replace('[VERSION]', str(version))
         page = page.replace('[LAT]', str(props['latitude']))
         page = page.replace('[LON]', str(props['longitude']))
         page = page.replace('[PWAVE]', str(props['num_pwaves']))
@@ -332,8 +332,7 @@ class WebProduct(object):
         self._grid = grid
 
     @classmethod
-    def fromDirectory(cls, directory, eventid, version=1, pwaves=None,
-        shwaves=None, longwaves=None):
+    def fromDirectory(cls, directory, eventid, version=1):
         """
         Create instance based upon a directory and eventid.
 
@@ -356,16 +355,21 @@ class WebProduct(object):
             WebProduct: Instance set for information for the web product.
         """
         product = cls()
-        if (pwaves is not None and shwaves is not None and
-            longwaves is not None and
-            isinstance(pwaves, (int, float, complex)) and
-            isinstance(shwaves, (int, float, complex)) and
-            isinstance(longwaves, (int, float, complex))):
-            provided = True
-            product._properties = {}
-            product._properties['num_pwaves'] = pwaves
-            product._properties['num_shwaves'] = shwaves
-            product._properties['num_longwaves'] = longwaves
+        wave_prop = os.path.join(directory, "wave_properties.json")
+        if os.path.exists(wave_prop):
+            with open(wave_prop, 'r') as f:
+                wave_dict = json.loads(f.read())
+            if ('num_pwaves' not in wave_dict or
+                    'num_shwaves' not in wave_dict or
+                    'num_longwaves' not in wave_dict):
+                    raise Exception('Missing one of the required properties: '
+                            'num_pwaves, num_shwaves, num_longwaves.')
+            else:
+                product._properties = {}
+                product._properties['num_pwaves'] = wave_dict['num_pwaves']
+                product._properties['num_shwaves'] = wave_dict['num_shwaves']
+                product._properties['num_longwaves'] = wave_dict['num_longwaves']
+                provided = True
         else:
             provided = False
         unavailable, files = product._files_unavailable(directory,
@@ -454,7 +458,7 @@ class WebProduct(object):
             except:
                 props['num_longwaves'] = 0
         URL_TEMPLATE = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/[EVENTID].geojson'
-        url = URL_TEMPLATE.replace('[EVENTID]','us'+eventid)
+        url = URL_TEMPLATE.replace('[EVENTID]', 'us'+eventid)
         try:
             fh = urlopen(url)
             data = fh.read()
@@ -555,8 +559,6 @@ class WebProduct(object):
                     written.
         """
         outfile = os.path.join(directory, 'analysis.html')
-        if os.path.exists(outfile):
-            return
         with open(outfile, 'w') as analysis_file:
             analysis_file.write('<h3>Scientific Analysis</h3>')
             analysis_file.write(analysis)
@@ -579,6 +581,11 @@ class WebProduct(object):
             self._paths = {}
         self._paths['contents'] = (outdir, "contents.xml")
         # Add other files
+        slip = self._checkDownload(directory, "*slip*.png")
+        if len(slip) > 0:
+            self._paths['slip'] = (slip[0], "slip.png")
+        else:
+            raise Exception('No slip image provided.')
         kmls = self._checkDownload(directory, "*.kml")
         kmzs = self._checkDownload(directory, "*.kmz")
         if len(kmls) > 0:
@@ -603,7 +610,7 @@ class WebProduct(object):
             raise Exception('The FFM grid dictionary has not been set.')
         write_path = os.path.join(directory, 'FFM.geojson')
         with open(write_path, 'w') as outfile:
-            json.dump(self.grid, outfile, indent=4)
+            json.dump(self.grid, outfile, indent=4, sort_keys=True)
         if self.paths is None:
             self._paths = {}
         self._paths['geojson'] = (write_path, "FFM.geojson")
@@ -619,7 +626,7 @@ class WebProduct(object):
             raise Exception('The time series geojson has not been set.')
         write_path = os.path.join(directory, 'timeseries.geojson')
         with open(write_path, 'w') as outfile:
-            json.dump(self.timeseries_dict, outfile, indent=4)
+            json.dump(self.timeseries_dict, outfile, indent=4, sort_keys=True)
 
     def _checkDownload(self, directory, pattern):
         """
@@ -644,7 +651,7 @@ class WebProduct(object):
         Args:
             filename (str): Path to wave file.
         """
-        with open(filename,'rt') as f:
+        with open(filename, 'rt') as f:
             lines = f.readlines()
         num_lines = int(lines[4].strip())
         ns = 0
@@ -657,7 +664,7 @@ class WebProduct(object):
                 ns += 1
             else:
                 np += 1
-        return (np,ns)
+        return (np, ns)
 
     def _files_unavailable(self, directory, waves_provided=False):
         """
