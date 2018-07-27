@@ -42,8 +42,10 @@ def test_sendproduct():
         send_product = os.path.join(homedir, '..', '..', 'bin', 'sendproduct')
         eventid = '100dyad_test'
         net = 'us'
+        source = 'us'
         try:
-            cmd = '%s %s %s %s' % (send_product, net, eventid, indir)
+            cmd = '%s %s %s %s %s' % (send_product, net, source,
+                    eventid, indir)
             res, stdout, stderr = get_command_output(cmd)
             if not res:
                 raise AssertionError(
@@ -55,8 +57,8 @@ def test_sendproduct():
 
         # Send multiple products
         try:
-            cmd = '%s %s %s %s -ffm2 %s -v 2 -r' % (send_product, net, eventid,
-                    indir, indir)
+            cmd = '%s %s %s %s %s -ffm2 %s -v 2 -r' % (send_product, net,
+                    source, eventid, indir, indir)
             res, stdout, stderr = get_command_output(cmd)
             if not res:
                 raise AssertionError(

@@ -1,60 +1,31 @@
-# stdlib imports
-import getpass
-import os
-import shutil
-
-USER = getpass.getuser()
-
-# Folder that is sent
-BASE_PDL_FOLDER = '/Users/%s/pdloutput/' % USER
-
-# Config locations
-JARFILE = 'ProductClient.jar'
-CONFIGFILE = 'dev_config.ini'
-
-#depending on whether user is "gavin", "hschovanec", or "mhearne", choose one of these
-DEVPDLPATH = '/Users/%s/ProductClient' % USER
-PRODPDLPATH = '/Users/%s/Desktop/ProductClient' % USER
-
-if USER == 'mhearne' or USER == 'hschovanec' :
-        PDLPATH = DEVPDLPATH
-else:
-    PDLPATH = PRODPDLPATH
-
-PRIVATEKEY = PDLPATH + '/id_dsa_ffm'
-PRODUCT_TYPE = 'finite-fault'
-
-JAR = os.path.join(PDLPATH, JARFILE)
-CFG = os.path.join(PDLPATH, CONFIGFILE)
-
-JAVA = shutil.which("java")
-
-TIMEFMT = "%Y-%m-%dT%H:%M:%S.%fZ"
-
-PAGE_TEMPLATE = """<html>
+<html>
 <head>
 </head>
-<h1>[STATUS] Finite Fault Results for the [DATE] Mw [MAG] [LOCATION]
-Earthquake (Version [VERSION]) </h1>
+<h1>Updated Finite Fault Results for the Mar 02, 2016 Mw 7.8 Southwest of Sumatra, Indonesia
+Earthquake (Version None) </h1>
 <hr/>
 
 <h1>DATA Process and Inversion </h1>
 <p>
 We used GSN broadband waveforms downloaded from the NEIC waveform server.
-We analyzed [PWAVE] teleseismic broadband P waveforms, [SHWAVE] broadband SH waveforms,
-and [LONGWAVE] long period surface waves selected based on data quality and azimuthal
+We analyzed 50 teleseismic broadband P waveforms, 17 broadband SH waveforms,
+and 72 long period surface waves selected based on data quality and azimuthal
 distribution. Waveforms are first converted to displacement by removing the
 instrument response and are then used to constrain the slip history using a finite
 fault inverse algorithm (Ji et al., 2002). We begin modeling using a hypocenter
-matching or adjusted slightly from the initial NEIC solution (Lon. = [LON] deg.; Lat. =
-[LAT] deg., Dep. = [DEPTH] km), and a fault plane defined using either the rapid W-Phase
+matching or adjusted slightly from the initial NEIC solution (Lon. = 94.236 deg.; Lat. =
+-4.905 deg., Dep. = 23.0 km), and a fault plane defined using either the rapid W-Phase
 moment tensor (for near-real time solutions), or the gCMT moment tensor (for
 historic solutions).
 </p>
 <hr />
 <h2>Result</h2>
 <p>
-[RESULT]
+After comparing waveform fits based on the two planes of the input
+            moment tensor, we find that the nodal plane (strike= 5.0 deg., dip= 79.0
+            deg.) fits the data better. The seismic moment release based upon this
+            plane is 6.0e+27 dyne.cm (Mw = 7.8) using a 1D crustal model interpolated
+            from CRUST2.0 (Bassin et al., 2000).
 </p>
 
 <img SRC="basemap.png"><br /><br />
@@ -85,7 +56,7 @@ the top right corner of the plot).
 
 
 <h2>Scientific Analysis:</h2>
-[ANALYSIS]
+Not available yet.
 <hr />
 
 <h2>Slip Distribution:</h2>
@@ -130,4 +101,3 @@ Planets Space</em>, 63(7), 559-564.
 This work is supported by the National Earthquake Information Center (NEIC) of United States Geological Survey. This web page is built and maintained by <a href="mailto:ghayes@usgs.gov"> Dr. G. Hayes </a> at the NEIC. </p>
 </body>
 </html>
-"""

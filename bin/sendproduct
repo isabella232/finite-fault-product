@@ -14,7 +14,10 @@ from product.web_product import WebProduct
 def get_parser():
     description = '''Send a finite fault product for event pages.'''
     parser = argparse.ArgumentParser(description=description)
-    parser.add_argument('net', help='Network code (example: us).')
+    parser.add_argument('eventsource',
+            help='Source of the original event ID. (example: us, usp, ci)')
+    parser.add_argument('source',
+            help='Source of this product (i.e., contributor of the product. example: us).')
     parser.add_argument('eventid', help='Event identification code.')
     parser.add_argument('ffm1', help='Directory where all files are '
             'contained for the finite fault model.')
@@ -44,7 +47,7 @@ def main(args):
         multiple = True
     else:
         multiple = False
-
+    source = args.source
     ffm1dir = args.ffm1
     product1 = WebProduct.fromDirectory(ffm1dir, args.eventid,
             version=args.version)
@@ -67,12 +70,20 @@ def main(args):
 
     if not args.doReview:
         if multiple:
-            send_product(args.eventid, args.net, product1, pdlfolder1, 1)
-            send_product(args.eventid, args.net, product2, pdlfolder2, 2)
+            f1 = os.path.join(pdlfolder1, args.eventid + '.html')
+            f2 = os.path.join(pdlfolder2,  args.eventid + '.html')
+            add_double_comment(f1, 1, 2)
+            add_double_comment(f2, 2, 2)
+            send_product(args.eventid, args.eventsource, product1, pdlfolder1,
+                    source, 1)
+            send_product(args.eventid, args.eventsource, product2, pdlfolder2,
+                    source, 2)
         else:
-            send_product(args.eventid, args.net, product1, pdlfolder1)
+            send_product(args.eventid, args.eventsource, product1, pdlfolder1,
+                    source)
+        print('Sent product files were written to %s' % folders)
     else:
-        print('Output was written to %s' % folders)
+        print('Product files were written to %s' % folders)
 
 def copy_files(file_directory, pdl_directory):
     for key in file_directory:
@@ -80,7 +91,7 @@ def copy_files(file_directory, pdl_directory):
         future = os.path.join(pdl_directory, file_directory[key][1])
         shutil.copy2(current, future)
 
-def send_product(eventid, network, product, pdlfolder, number=None):
+def send_product(eventid, network, product, pdlfolder, source, number=None):
     """
     Configure pdl and send product directory.
     """
@@ -93,9 +104,26 @@ def send_product(eventid, network, product, pdlfolder, number=None):
     if not os.path.exists(PRIVATEKEY):
         raise FileNotFoundError("File does not exist %r." % PRIVATEKEY)
     files, msg = store_fault(CFG, network, eventid, JAR, JAVA,
-            pdlfolder, PRIVATEKEY, 'us', product.properties,
+            pdlfolder, PRIVATEKEY, source, product.properties,
             number=number)
     print(files, msg)
+
+def add_double_comment(file, number, total):
+    comment = ('<h3>The solutions of two nodal planes explain the '
+            'data equally well. This solution is %s of %s.</h3>' % (number,
+                    total))
+    with open(file, 'r') as infile:
+        html = infile.readlines()
+    search_line = '<h2>Result</h2>'
+    with open(file, 'w') as outfile:
+        for line in html:
+            line = line.strip()
+            if line == search_line:
+                outfile.write(line)
+                outfile.write(comment)
+            else:
+                outfile.write(line)
+
 
 if __name__ == '__main__':
     parser = get_parser()

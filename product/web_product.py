@@ -51,17 +51,37 @@ class WebProduct(object):
         if self.paths is None:
             self._paths = {}
         contents = etree.Element('contents')
-        # Look for  and add basemap
+
+        # Look for  and add basemaps
+        if not os.path.exists(os.path.join(directory, 'FFM.geojson')):
+            raise FileNotFoundError('Missing FFM geojson file.')
+        file_attrib, format_attrib = self._getAttributes('modelmaps',
+                "Finite Fault Model Maps ", 'FFM.geojson', "text/plain")
+        maps = etree.SubElement(contents, 'file',
+                file_attrib)
+        grid_caption = etree.SubElement(maps, 'caption')
+        caption_str = ("Map representation of the finite fault model ")
+        grid_caption.text = etree.CDATA(caption_str)
+        etree.SubElement(maps, 'format', format_attrib)
+
         basemap = self._checkDownload(directory, "*_basemap.png")
+        kmls = self._checkDownload(directory, "*.kml")
+        kmzs = self._checkDownload(directory, "*.kmz")
+        if len(kmls) > 0:
+            self._paths['kmls'] = (kmls[0], "finite_fault.kml")
+            file_attrib, format_attrib = self._getAttributes('', '',
+                    "finite_fault.kml", "application/vnd.google-earth.kml+xml")
+            etree.SubElement(maps, 'format', format_attrib)
+        if len(kmzs) > 0:
+            self._paths['kmzs'] = (kmzs[0], "finite_fault.kmz")
+            file_attrib, format_attrib = self._getAttributes('', '',
+                    "finite_fault.kmz", "application/vnd.google-earth.kmz")
+            etree.SubElement(maps, 'format', format_attrib)
         if len(basemap) > 0:
             self._paths['basemap'] = (basemap[0], "basemap.png")
             file_attrib, format_attrib = self._getAttributes('basemap',
                     "Base Map ", "basemap.png", "image/png")
-            file_tree = etree.SubElement(contents, 'file', file_attrib)
-            caption = etree.SubElement(file_tree, 'caption')
-            caption.text = etree.CDATA(
-                    "Map of finite fault showing it's geographic context ")
-            etree.SubElement(file_tree, 'format', format_attrib)
+            etree.SubElement(maps, 'format', format_attrib)
 
         # Look for body and surace wave plots
         plots = self._checkDownload(directory, "waveplots.zip")
@@ -175,25 +195,13 @@ class WebProduct(object):
                     "calculated using Okada-style deformation codes ")
             etree.SubElement(file_tree, 'format', format_attrib)
 
-        # GeoJSON grid
-        if not os.path.exists(os.path.join(directory, 'FFM.geojson')):
-            raise FileNotFoundError('Missing FFM geojson file.')
-        file_attrib, format_attrib = self._getAttributes('geojson',
-                "FFM GeoJSON ", 'FFM.geojson', "text/plain")
-        grid_file = etree.SubElement(contents, 'file',
-                file_attrib)
-        grid_caption = etree.SubElement(grid_file, 'caption')
-        caption_str = ("GeoJSON file of the finite fault model grid ")
-        grid_caption.text = etree.CDATA(caption_str)
-        etree.SubElement(grid_file, 'format', format_attrib)
-
         tree = etree.ElementTree(contents)
         self._contents = tree
         return tree
 
     def createPage(self, analysis, directory, eventid, version):
         """
-        Create the finite_fault.html file.
+        Create the <EVENTID>.html file.
 
         Args:
             analysis (str): Analysis paragraph.
@@ -243,7 +251,7 @@ class WebProduct(object):
             result = result.replace('[FF]', '%.1e' % props['moment'])
             result = result.replace('[GG]', '%.1f' % props['magnitude'])
         page = PAGE_TEMPLATE
-        page = page.replace('[DATE]', props['date'].strftime('%b %d, %Y'))
+        page = page.replace('[DATE]', props['eventtime'].strftime('%b %d, %Y'))
         page = page.replace('[MAG]', '%.1f' % props['magnitude'])
         page = page.replace('[LOCATION]', props['location'])
         if version == 1:
@@ -260,12 +268,12 @@ class WebProduct(object):
         page = page.replace('[DEPTH]', str(props['depth']))
         page = page.replace('[RESULT]', result)
         page = page.replace('[ANALYSIS]', analysis)
-        filename = os.path.join(directory, "finite_fault.html")
+        filename = os.path.join(directory, eventid + ".html")
         with open(filename, 'w') as f:
             f.write(page)
         if self.paths is None:
             self._paths = {}
-        self._paths['webpage'] = (filename, "finite_fault.html")
+        self._paths['webpage'] = (filename, eventid + ".html")
 
     def createTimeseriesGeoJSON(self):
         """
@@ -380,9 +388,10 @@ class WebProduct(object):
         try:
             with open(directory + '/analysis.txt', 'r') as f:
                     analysis = "".join(f.readlines())
+
+            product.writeAnalysis(analysis, directory, eventid)
         except:
             analysis = "Not available yet."
-        product.writeAnalysis(analysis, directory)
         fsp_file = glob.glob(directory + "/" + "*.fsp")[0]
         fault = Fault.fromFiles(fsp_file, directory)
         product.event = fault.event
@@ -475,7 +484,7 @@ class WebProduct(object):
         props['moment'] = self.event['moment'] * 10000000
         props['moment_units'] = 'dyne.cm'
         props['depth'] = self.event['depth']
-        props['date'] = self.event['date']
+        props['eventtime'] = self.event['date']
         props['mechanism_strike'] = self.event['strike']
         props['mechanism_dip'] = self.event['dip']
         props['mechanism_rake'] = self.event['rake']
@@ -549,7 +558,7 @@ class WebProduct(object):
         """
         self._timeseries_dict = timeseries_dict
 
-    def writeAnalysis(self, analysis, directory):
+    def writeAnalysis(self, analysis, directory, eventid):
         """
         Write the analysis.html file.
 
@@ -558,7 +567,7 @@ class WebProduct(object):
             directory (str): Path to directory where contents.xml will be
                     written.
         """
-        outfile = os.path.join(directory, 'analysis.html')
+        outfile = os.path.join(directory, "analysis.html")
         with open(outfile, 'w') as analysis_file:
             analysis_file.write('<h3>Scientific Analysis</h3>')
             analysis_file.write(analysis)
@@ -586,12 +595,6 @@ class WebProduct(object):
             self._paths['slip'] = (slip[0], "slip.png")
         else:
             raise Exception('No slip image provided.')
-        kmls = self._checkDownload(directory, "*.kml")
-        kmzs = self._checkDownload(directory, "*.kmz")
-        if len(kmls) > 0:
-            self._paths['kmls'] = (kmls[0], "finite_fault.kml")
-        if len(kmzs) > 0:
-            self._paths['kmzs'] = (kmzs[0], "finite_fault.kmz")
         # Write property json for review
         prop_file = os.path.join(directory, "properties.json")
         serialized_prop = self._serialize(self.properties)

@@ -1,0 +1,51 @@
+#!/usr/bin/env python
+
+# stdlib imports
+import argparse
+import os
+import shutil
+
+# local imports
+from product.constants import BASE_PDL_FOLDER, CFG, JAR, JAVA, PRIVATEKEY
+from product.pdl import delete_fault
+from product.web_product import WebProduct
+
+
+def get_parser():
+    description = '''Send a finite fault product for event pages.'''
+    parser = argparse.ArgumentParser(description=description)
+    parser.add_argument('eventsource',
+            help='Source of the original event ID. (example: us, usp, ci)')
+    parser.add_argument('source',
+            help='Source of this product (i.e., contributor of the product. example: us).')
+    parser.add_argument('eventid', help='Event identification code.')
+    parser.add_argument("-t", "--two-model", action="store_true",
+                      dest="two_model", default=False,
+                      help="This finite fault has two solutions.")
+    parser.add_argument("-m", "--model-number", dest="model", type=int,
+            default=None,
+            help="Model number to delete.")
+    return parser
+
+def main(args):
+    source = args.source
+    network = args.eventsource
+
+    if not os.path.exists(JAVA):
+        raise FileNotFoundError("File does not exist %r." % JAVA)
+    if not os.path.exists(JAR):
+        raise FileNotFoundError("File does not exist %r." % JAR)
+    if not os.path.exists(CFG):
+        raise FileNotFoundError("File does not exist %r." % CFG)
+    if not os.path.exists(PRIVATEKEY):
+        raise FileNotFoundError("File does not exist %r." % PRIVATEKEY)
+
+    msg = delete_fault(CFG, network, args.eventid, JAR, JAVA,
+            PRIVATEKEY, source, two_solution=args.two_model, number=args.model)
+    print(msg)
+
+
+if __name__ == '__main__':
+    parser = get_parser()
+    pargs, unknown = parser.parse_known_args()
+    main(pargs)

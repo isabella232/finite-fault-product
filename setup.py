@@ -9,5 +9,8 @@ setup(name='finite-fault-product',
       url='',
       packages=['fault',
                 'fault/io',
-                'product']
+                'product'],
+      scripts=['bin/deleteproduct',
+               'bin/getproduct',
+               'bin/sendproduct']
       )
