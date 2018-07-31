@@ -1,10 +1,38 @@
 # Web Product
 
+- [Introduction](#introduction)
+- [Instructions](#instructions)
+- [Requirements](#requirements)
+  * [Required Files](#required-files)
+  * [Optional Files](#optional-files)
+- [Property List Created](#property-list-created)
+  * [Standard Properties](#standard-properties)
+  * [Variable Properties](#variable-properties)
+
+
 ## Introduction
 
 Web product takes a directory of finite fault model files and creates a product for the U.S.G.S. 
-[earthquake event pages](https://github.com/usgs/earthquake-eventpages). 
+[earthquake event pages](https://github.com/usgs/earthquake-eventpages). See the provided [notebooks](https://github.com/hschovanec-usgs/finite-fault-product/tree/master/notebooks) for examples of API use.
 
+## Instructions
+
+1. [Install](https://github.com/hschovanec-usgs/finite-fault-product#installing) the finite-fault-product packages.
+2. Create a directory containing all finite fault model files.
+  - Note: If the model includes two equally valid solutions, create two directories.
+3. Review the product created. Product files will be written to ~/pdlout/[EVENTCODE]
+  - One product example: `sendproduct us us 1000dyad test/data/products/1000dyad -r`
+  - Two product example: `sendproduct us us 10004u1y test/data/products/10004u1y_1 -ffm2 test/data/products/10004u1y_2 -r`
+4. Delete the folders and send the product.
+  - One product example: `sendproduct us 1000dyad test/data/products/1000dyad`
+  - Two product example: `sendproduct us 10004u1y test/data/products/10004u1y_1 -ffm2 test/data/products/10004u1y_2`
+5 (opt). Check that the product was send correctly.
+  - One product example: `getproduct us 1000dyad ./output_events`
+  - Two product example: `getproduct us 10004u1y ./output_events -t`
+6 (opt). Delete an outdated product.
+  - One product example: `deleteproduct us us 1000dyad`
+  - Two product example (Delete the seconds model): `getproduct us us 10004u1y -t -m 2`
+  
 ## Requirements
 In order to create the web product a folder containing the folowing files is required. Note: Duplicates of files will not be sent.
 
@@ -195,9 +223,9 @@ File names are standardized for each event.
   </tr>
 </table>
 
-## Property list created
+## Property List Created
 
-### Standard properties
+### Standard Properties
 
 - area11: Area of the first segment.
 - area_units: Units of the the area property. Always km*km.
@@ -234,7 +262,7 @@ File names are standardized for each event.
 - width11: Width of first segment.
 - width_units: Units of width property. Always km.
     
-### Variable properties
+### Variable Properties
 Variables that may not be contained within other networks' fsp files.
 - max_rake: Maximum rake of all segments.
 - max_rise: Maximum rise of all segments.
