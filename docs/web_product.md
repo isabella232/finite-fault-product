@@ -227,59 +227,72 @@ File names are standardized for each event.
 
 ### Standard Properties
 
-- area11: Area of the first segment.
+- area11: Calculated effective length of first subfault segment. See Comments.
 - area_units: Units of the the area property. Always km*km.
-- date: Date of the origin in the format `%Y-%m-%dT%H:%M:%S.%fZ`.
 - depth: Depth of the origin.
 - depth_units: Units of segment depth. Always km.
-- dip11: Dip of the first segment.
+- derived-magnitude: Magnitude calculated and available in the fsp file.
+- derived-moment: Moment calculated and available in the fsp file.
 - dip_units: Units of the dip property Always deg.
 - eventsource: Event source network. Always us.
 - eventsourcecode: Event id code. Example 1000dyad.
+- eventtime: Date of the origin in the format %Y-%m-%dT%H:%M:%S.%fZ.
 - latitude: Latitude of origin.
-- length11: Length (along strike) or first segment.
 - length_units: Units of the the length property. Always km.
+- length11: Calculated effective length of subfault segment. See Comments.
 - location: Description of location. Either a property provided the place property available at: 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/[EVENTID].geojson' or '[LATITUDE], [LONGITUDE]'
 - longitude: Longitude of origin.
-- magnitude: Magnitude of origin.
-- max_depth: Maximum depth of all segments.
 - max_slip: Maximum slip of all segments.
 - mechanism_dip: Overall dip of finite fault model.
 - mechanism_rake: Overall rake of finite fault model.
 - mechanism_strike: Overall strike of finite fault model.
-- moment: Origin moment.
+- model_area11: Area of the first segment.
+- model_dip11: Dip of the first segment.
+- model_length11: Length (along strike) or first segment.
+- model_max_depth: Maximum depth of all segments.
+- model_strike11: Strike of the first segment.
+- model_width11: Width of first segment.
 - moment_units: Units or moment property. Always dyne.cm.
-- num_longwaves:  Number of long period surface waves selected.
+- num_longwaves: Number of long period surface waves selected.
 - num_pwaves: Number of teleseismic broadband P waveforms.
 - num_segments: Number of segments in the model.
 - num_shwaves: Number of broadband SH waveforms.
 - rake_units: Units of rake property. Always deg.
 - rise_units: Units of rise property. Always s.
 - slip_units: Units of slip property. Always m.
-- strike11: Strike of the first segment.
 - strike_units: Units of strike property. Always deg.
-- trup_units: Units of trup property. Always s.
-- width11: Width of first segment.
 - width_units: Units of width property. Always km.
-    
-### Variable Properties
-Variables that may not be contained within other networks' fsp files.
-- max_rake: Maximum rake of all segments.
-- max_rise: Maximum rise of all segments.
-- max_sf_moment: Maximum sf_moment of all segments.
-- max_trup: Maximum trup of all segments.
-For multisegment models, segment parameters will have different numbers. Two segment example:
-- area12: Area of the first segment.
-- area22: Area of the second segment.
-- dip12: Dip of the first segment.
-- dip22: Dip of the second segment.
-- length12: Length (along strike) or first segment.
-- length22: Length (along strike) or second segment.
-- strike12: Strike of the first segment.
-- strike22: Strike of the second segment.
-- width12: Width of first segment.
-- width22: Width of first segment.
+- width11: Calculated effective width of first subfault segment. See Comments.
+- Variable Properties
+- Variables that may not be contained within other networks' fsp files.
 
-For a single segment solution the mechanism properties and segment properties are synonymous.
-For a two segment model, the segment properties are taken from each individual segment line, while the
-mechanism is found in the mechanism line of the fsp file.
+- max_rise: Maximum rise of all segments. For multisegment models, segment parameters will have different numbers. Two segment example:
+- area12: Calculated effective area of the first subfault segment. See Comments.
+- area22: Calculated effective area of the second subfault segment. See Comments.
+- model_area12: Area of the first segment.
+- model_area22: Area of the second segment.
+- model_dip12: Dip of the first segment.
+- model_dip22: Dip of the second segment.
+- model_length12: Length (along strike) or first segment.
+- model_length22: Length (along strike) or second segment.
+- length12: Calculated effective length (along strike) of first subfault segment. See Comments.
+- length22: Calculated effective length (along strike) of second subfault segment. See Comments.
+- model_strike12: Strike of the first segment.
+- model_strike22: Strike of the second segment.
+- model_width12: Width of first segment.
+- model_width22: Width of first segment.
+- width12: Calculated effective width of first subfault segment. See Comments
+- width22: Calculated effective width of second subfault segment. See Comments.
+
+### Comments
+**Calculated and Model Properties**
+Properties prefixed with model_ are set model parameters. For example, model_width11 is the set width of segment 1 of the model space, while width11 is the calculated width of the rupture.
+
+[Calculations of effective length, width](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/fault/fault.py#L337), and area properties were derived from the autocorrelation width given by [Mai et al](https://www.researchgate.net/publication/228607551_Source_scaling_properties_from_finite-fault-rupture_models):
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=W^{ACF}_{equivalent}&space;=&space;\frac{\int^{\infty}_{-\infty}(f*f)dx}{f&space;*&space;f|_{x=0}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?W^{ACF}_{equivalent}&space;=&space;\frac{\int^{\infty}_{-\infty}(f*f)dx}{f&space;*&space;f|_{x=0}}" title="W^{ACF}_{equivalent} = \frac{\int^{\infty}_{-\infty}(f*f)dx}{f * f|_{x=0}}" /></a>
+
+Note: For the effective length/width the slip is [thresholded](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/fault/fault.py#L531).
+
+**Mechanism and Segment Properties**
+For a single segment solution the mechanism properties and model_segment properties are synonymous. For a two segment model, the model_segment properties are taken from each individual segment line, while the mechanism is found in the mechanism line of the fsp file.
