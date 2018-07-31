@@ -263,10 +263,15 @@ File names are standardized for each event.
 - strike_units: Units of strike property. Always deg.
 - width_units: Units of width property. Always km.
 - width11: Calculated effective width of first subfault segment. See Comments.
-- Variable Properties
-- Variables that may not be contained within other networks' fsp files.
 
-- max_rise: Maximum rise of all segments. For multisegment models, segment parameters will have different numbers. Two segment example:
+
+### Variable Properties
+Variables that may not be contained within other networks' fsp files.
+
+- max_rise: Maximum rise of all segments. 
+
+For multisegment models, segment parameters will have different numbers. Two segment example:
+
 - area12: Calculated effective area of the first subfault segment. See Comments.
 - area22: Calculated effective area of the second subfault segment. See Comments.
 - model_area12: Area of the first segment.
