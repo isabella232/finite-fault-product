@@ -19,19 +19,19 @@ Web product takes a directory of finite fault model files and creates a product 
 
 1. [Install](https://github.com/hschovanec-usgs/finite-fault-product#installing) the finite-fault-product packages.
 2. Create a directory containing all finite fault model files.
-  - Note: If the model includes two equally valid solutions, create two directories.
+    - Note: If the model includes two equally valid solutions, create two directories.
 3. Review the product created. Product files will be written to ~/pdlout/[EVENTCODE]
-  - One product example: `sendproduct us us 1000dyad test/data/products/1000dyad -r`
-  - Two product example: `sendproduct us us 10004u1y test/data/products/10004u1y_1 -ffm2 test/data/products/10004u1y_2 -r`
+   - One product example: `sendproduct us us 1000dyad test/data/products/1000dyad -r`
+   - Two product example: `sendproduct us us 10004u1y test/data/products/10004u1y_1 -ffm2 test/data/products/10004u1y_2 -r`
 4. Delete the folders and send the product.
-  - One product example: `sendproduct us 1000dyad test/data/products/1000dyad`
-  - Two product example: `sendproduct us 10004u1y test/data/products/10004u1y_1 -ffm2 test/data/products/10004u1y_2`
+   - One product example: `sendproduct us 1000dyad test/data/products/1000dyad`
+   - Two product example: `sendproduct us 10004u1y test/data/products/10004u1y_1 -ffm2 test/data/products/10004u1y_2`
 5 (opt). Check that the product was send correctly.
-  - One product example: `getproduct us 1000dyad ./output_events`
-  - Two product example: `getproduct us 10004u1y ./output_events -t`
+   - One product example: `getproduct us 1000dyad ./output_events`
+   - Two product example: `getproduct us 10004u1y ./output_events -t`
 6 (opt). Delete an outdated product.
-  - One product example: `deleteproduct us us 1000dyad`
-  - Two product example (Delete the seconds model): `getproduct us us 10004u1y -t -m 2`
+   - One product example: `deleteproduct us us 1000dyad`
+    - Two product example (Delete the seconds model): `getproduct us us 10004u1y -t -m 2`
   
 ## Requirements
 In order to create the web product a folder containing the folowing files is required. Note: Duplicates of files will not be sent.
