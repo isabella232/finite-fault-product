@@ -10,7 +10,33 @@ Status
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/hschovanec-usgs/finite-fault-product.svg?columns=all)](https://waffle.io/hschovanec-usgs/finite-fault-product)
 
 
-# finite-fault-product
+# Introduction
+
+finite-fault-product is a project designed to provide a number of functions in support of the ShakeMap
+project and earthquake event pages.
+
+# Installing
+
+If you already have a miniconda or anaconda Python 3.X environment:
+
+ - `conda install impactutils`
+ - `conda install libcomcat`
+ - `conda install lxml`
+ - `conda install numpy`
+ - `conda install openquake.engine`
+ - `conda install openpyxl`
+ - `conda install pandas`
+ - `pip install git+https://github.com/hschovanec-usgs/finite-fault-product.git`
+ 
+ Automatic environment creation using miniconda:
+ 
+ - `git clone https://github.com/hschovanec-usgs/finite-fault-product.git`
+ - `cd finite-fault-product`
+ - `bash install.sh`
+ - `conda activate faultproduct`
+
+
+# Tools
 
 Load finite fault data and create products.
 
@@ -42,12 +68,18 @@ Send a finite fault product for event pages.
     <th colspan="2">Positional arguments</th>
   </tr>
   <tr>
-    <td>net</td>
-    <td>Network code (example: us)</td>
+    <td>eventsource</td>
+    <td>Source of the original event ID. (example: us, usp,
+                        ci).</td>
+  </tr>
+  <tr>
+    <td>source</td>
+    <td>Source of this product (i.e., contributor of the
+                        product. example: us).</td>
   </tr>
   <tr>
     <td>eventid</td>
-    <td>Event identification code</td>
+    <td>Event identification code.</td>
   </tr>
   <tr>
     <td>ffm1</td>
@@ -74,6 +106,94 @@ Send a finite fault product for event pages.
   <tr>
     <td>-r, --review</td>
     <td>Create product, but do not send to PDL</td>
+  </tr>
+</table>
+
+## getproduct
+Includes functionality to view a finite fault product.
+
+usage: getproduct [-h] [-t] [-c HOST] source eventid directory
+
+Get the latest finite-fault product for an event.
+
+<table>
+  <tr>
+    <th colspan="2">Positional arguments</th>
+  </tr>
+  <tr>
+    <td>source</td>
+    <td>Source code (example: us).</td>
+  </tr>
+  <tr>
+    <td>eventid</td>
+    <td>Event identification code.</td>
+  </tr>
+  <tr>
+    <td>directory</td>
+    <td>Directory where all files will be written.</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2">Optional arguments</th>
+  </tr>
+  <tr>
+    <td>-h, --help</td>
+    <td>Show the help message and exit</td>
+  </tr>
+  <tr>
+    <td> -t, --two-model</td>
+    <td>This finite fault has two solutions.</td>
+  </tr>
+  <tr>
+    <td>-c HOST, --comcat-host HOST</td>
+    <td>Comcat host. Default is earthquake.usgs.gov</td>
+  </tr>
+</table>
+
+
+## deleteproduct
+Includes functionality to delete a finite fault product.
+usage: deleteproduct [-h] [-t] [-m MODEL] eventsource source eventid
+
+Delete a finite-fault product for an event.
+
+<table>
+  <tr>
+    <th colspan="2">Positional arguments</th>
+  </tr>
+  <tr>
+    <td>eventsource</td>
+    <td>Source of the original event ID. (example: us, usp,
+                        ci).</td>
+  </tr>
+  <tr>
+    <td>source</td>
+    <td>Source of this product (i.e., contributor of the
+                        product. example: us).</td>
+  </tr>
+  <tr>
+    <td>eventid</td>
+    <td>Event identification code.</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2">Optional arguments</th>
+  </tr>
+  <tr>
+    <td>-h, --help</td>
+    <td>Show the help message and exit</td>
+  </tr>
+  <tr>
+    <td> -t, --two-model</td>
+    <td>This finite fault has two solutions.</td>
+  </tr>
+  <tr>
+    <td>-m MODEL, --model-number MODEL</td>
+    <td>Model number to delete.</td>
   </tr>
 </table>
 
