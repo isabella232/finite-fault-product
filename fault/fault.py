@@ -59,7 +59,9 @@ class Fault(object):
         max_slip = np.ceil(np.max(slips))
         COLORS.vmax = max_slip
 
-        for segment in self.segments:
+        for num in range(self.getNumSegments()):
+            # Get segment
+            segment = self.getSegment(num)
             arr_size = len(segment['lat'].flatten())
             dx = [self.event['dx']/2] * arr_size
             dy = [self.event['dz']/2] * arr_size
@@ -301,6 +303,22 @@ class Fault(object):
             warnings.warn('Time series files unavailable.')
         fault.segments = segments
         fault.event = event
+        fault._segment_sizes = {}
+        for num in range(fault.getNumSegments()):
+            # Get segment
+            segment = fault.getSegment(num)
+            # Threshold slip
+            thresholded_slip = fault.thresholdSlip(segment['slip'])
+            # Sum rows and columns
+            sum_rows, sum_columns = fault.sumSlip(thresholded_slip)
+            # Autocorrelate summed rows and columns
+            arows, acolumns = fault.autocorrelateSums(sum_rows,sum_columns)
+            # Get rupture dimensions
+            length, width = fault.getRuptureSize(arows, acolumns)
+            area = length * width
+            fault._segment_sizes[num] = {'length': length,
+                    'width': width,
+                    'area': area}
         return fault
 
     @classmethod
@@ -317,6 +335,22 @@ class Fault(object):
         fault = cls()
         fault.segments = segments
         fault.event = event
+        fault._segment_sizes = {}
+        for num in range(fault.getNumSegments()):
+            # Get segment
+            segment = fault.getSegment(num)
+            # Threshold slip
+            thresholded_slip = fault.thresholdSlip(segment['slip'])
+            # Sum rows and columns
+            sum_rows, sum_columns = fault.sumSlip(thresholded_slip)
+            # Autocorrelate summed rows and columns
+            arows, acolumns = fault.autocorrelateSums(sum_rows,sum_columns)
+            # Get rupture dimensions
+            length, width = fault.getRuptureSize(arows, acolumns)
+            area = length * width
+            fault._segment_sizes[num] = {'length': length,
+                    'width': width,
+                    'area:': area}
         return fault
 
     @classmethod
@@ -505,6 +539,16 @@ class Fault(object):
             list: List of segments (dict)
         """
         return self._segments
+
+    @property
+    def segment_sizes(self):
+        """
+        Helper to return segment sizes.
+
+        Returns:
+            Dictionary: Segment sizes
+        """
+        return self._segment_sizes
 
     @segments.setter
     def segments(self, segments):

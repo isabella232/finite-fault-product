@@ -231,14 +231,14 @@ class WebProduct(object):
                 idx = str(seg) + str(props['num_segments'])
                 row = """<tr><td>[SEG]</td><td>[STRIKE]</td><td>[DIP]</td></tr>"""
                 row = row.replace('[SEG]', str(seg))
-                row = row.replace('[STRIKE]', '%.1f' % props['strike' + idx])
-                row = row.replace('[DIP]', '%.1f' % props['dip' + idx])
+                row = row.replace('[STRIKE]', '%.1f' % props['model_strike' + idx])
+                row = row.replace('[DIP]', '%.1f' % props['model_dip' + idx])
                 segments += row
             result = result.replace('[SEGMENTS]', segments)
             result = result.replace('[DD]', '%.1f' % props['mechanism_strike'])
             result = result.replace('[EE]', '%.1f' % props['mechanism_dip'])
-            result = result.replace('[FF]', '%.2e' % props['moment'])
-            result = result.replace('[GG]', '%.1f' % props['magnitude'])
+            result = result.replace('[FF]', '%.2e' % props['derived-moment'])
+            result = result.replace('[GG]', '%.1f' % props['derived-magnitude'])
             result = result.replace('[HH]', '%i' % props['num_segments'])
         else:
             result = """After comparing waveform fits based on the two planes of the input
@@ -248,11 +248,11 @@ class WebProduct(object):
             from CRUST2.0 (Bassin et al., 2000)."""
             result = result.replace('[DD]', '%.1f' % props['mechanism_strike'])
             result = result.replace('[EE]', '%.1f' % props['mechanism_dip'])
-            result = result.replace('[FF]', '%.1e' % props['moment'])
-            result = result.replace('[GG]', '%.1f' % props['magnitude'])
+            result = result.replace('[FF]', '%.1e' % props['derived-moment'])
+            result = result.replace('[GG]', '%.1f' % props['derived-magnitude'])
         page = PAGE_TEMPLATE
         page = page.replace('[DATE]', props['eventtime'].strftime('%b %d, %Y'))
-        page = page.replace('[MAG]', '%.1f' % props['magnitude'])
+        page = page.replace('[MAG]', '%.1f' % props['derived-magnitude'])
         page = page.replace('[LOCATION]', props['location'])
         if version == 1:
                 page = page.replace('[STATUS]', 'Preliminary')
@@ -400,8 +400,9 @@ class WebProduct(object):
         fault.corners['metadata']['eventid'] = eventid
         product.grid = fault.corners
         product._timeseries_dict = fault.timeseries_dict
+        calculated_sizes = fault.segment_sizes
         product.writeGrid(directory)
-        product.storeProperties(directory, eventid)
+        product.storeProperties(directory, eventid, calculated_sizes)
         product.createPage(analysis, directory, eventid, version)
         product.writeContents(directory)
         return product
@@ -445,13 +446,14 @@ class WebProduct(object):
         """
         self._segments = segments
 
-    def storeProperties(self, directory, eventid):
+    def storeProperties(self, directory, eventid, calculated_sizes=None):
         """
         Store PDL properties and writes to properties.json.
 
         Args:
             directory (string): Path to directory.
             eventid (string): Eventid used for file naming.
+            calculated_sizes (dict): Dictionary of calculated sizes.
         """
         props = {}
         props['eventsourcecode'] = eventid
@@ -479,9 +481,9 @@ class WebProduct(object):
         props['latitude'] = self.event['lat']
         props['longitude'] = self.event['lon']
         props['location'] = locstr
-        props['magnitude'] = self.event['mag']
+        props['derived-magnitude'] = self.event['mag']
         # convert from Nm to dyn cm
-        props['moment'] = self.event['moment'] * 10000000
+        props['derived-moment'] = self.event['moment'] * 10000000
         props['moment_units'] = 'dyne.cm'
         props['depth'] = self.event['depth']
         props['eventtime'] = self.event['date']
@@ -500,26 +502,28 @@ class WebProduct(object):
         props['area_units'] = 'km*km'
         props['depth_units'] = 'km'
         counter = 1
-        max_vals = {}
-        for segment in self.segments:
+        max_vals = {'slip': [], 'depth': [], 'rise': []}
+        for i, segment in enumerate(self.segments):
             idx = str(counter) + str(len(self.segments))
-            props['strike' + idx] = segment['strike']
-            props['dip' + idx] = segment['dip']
-            props['width' + idx] = segment['width']
-            props['length' + idx] = segment['length']
-            props['area' + idx] = segment['length'] * segment['length']
+            if calculated_sizes is not None:
+                props['width' + idx] = calculated_sizes[i]['width']
+                props['length' + idx] = calculated_sizes[i]['length']
+                props['area' + idx] = calculated_sizes[i]['area']
+            props['model_strike' + idx] = segment['strike']
+            props['model_dip' + idx] = segment['dip']
+            props['model_width' + idx] = segment['width']
+            props['model_length' + idx] = segment['length']
+            props['model_area' + idx] = segment['length'] * segment['length']
             counter += 1
-            for key in segment.keys():
-                key = key.lower()
-                if (key != 'lat' and key != 'lon' and key != 'x==ew' and
-                    key != 'y==ns' and key != 'z' and key != 'strike' and
-                    key != 'dip' and key != 'length' and key != 'width'):
-                    if key not in max_vals:
-                        max_vals[key] = []
-                    values = segment[key].flatten()
-                    max_vals[key] += [values[np.argmax(values)]]
-        for key in max_vals:
-            props['max_' + key] = max_vals[key][np.argmax(max_vals[key])]
+            slips = values = segment['slip'].flatten()
+            depths = values = segment['depth'].flatten()
+            rises = values = segment['rise'].flatten()
+            max_vals['slip'] += [values[np.argmax(slips)]]
+            max_vals['depth'] += [values[np.argmax(depths)]]
+            max_vals['rise'] += [values[np.argmax(rises)]]
+        props['model_max_depth'] = max_vals['depth'][np.argmax(max_vals['depth'])]
+        props['max_slip'] = max_vals['slip'][np.argmax(max_vals['slip'])]
+        props['max_rise'] = max_vals['rise'][np.argmax(max_vals['rise'])]
         if self.properties is None:
             self._properties = props
         else:

@@ -23,8 +23,8 @@ def test_fromFault():
         warnings.simplefilter("ignore")
         product = WebProduct.fromDirectory(directory, '10004u1y_1')
     product.writeContents(directory)
-    assert '%.1f' % product.properties['magnitude'] == '7.8'
-    assert '%.2e' % product.properties['moment'] == '6.02e+27'
+    assert '%.1f' % product.properties['derived-magnitude'] == '7.8'
+    assert '%.2e' % product.properties['derived-moment'] == '6.02e+27'
     assert product.properties['mechanism_strike'] == 274
     assert product.properties['mechanism_dip'] == 84
     assert product.properties['mechanism_rake'] == 164
