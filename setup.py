@@ -1,4 +1,5 @@
 from distutils.core import setup
+import glob
 
 setup(name='finite-fault-product',
       version='0.1dev',
@@ -10,6 +11,9 @@ setup(name='finite-fault-product',
       packages=['fault',
                 'fault/io',
                 'product'],
+      package_data={
+          'fault': glob.glob('fault/*.cpt')
+      },
       scripts=['bin/deleteproduct',
                'bin/getproduct',
                'bin/sendproduct']

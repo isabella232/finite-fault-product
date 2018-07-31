@@ -12,7 +12,7 @@ from product.web_product import WebProduct
 
 
 def get_parser():
-    description = '''Send a finite fault product for event pages.'''
+    description = '''Delete a finite-fault product for a event.'''
     parser = argparse.ArgumentParser(description=description)
     parser.add_argument('eventsource',
             help='Source of the original event ID. (example: us, usp, ci)')

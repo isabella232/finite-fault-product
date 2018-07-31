@@ -10,44 +10,6 @@ import os
 from product.constants import BASE_PDL_FOLDER, PRODUCT_TYPE, TIMEFMT
 
 
-def store_fault (configfile, eventsource, eventsourcecode, jarfile, java,
-        pdlfolder, privatekey, product_source, properties,
-        number=None):
-    """Store parametric data.
-
-    Args:
-        configfile (str): Location of PDL config file.
-        eventsource (str): Network that originated the event.
-        eventsourcecode (str): Event code.
-        jarfile (str): Location of PDL jar file.
-        java (str): Location of Java binary.
-        pdlfolder (str): Folder to send.
-        privatekey (str): Location of PDL private key.
-        product_source (str): Network contributing this product to ComCat.
-        properties (str): Dictionary of product properties.
-        number (int): Number of product (used for two plane solutions).
-                Default is None.
-    Returns:
-        int: Number of files transferred
-        str: Message with any error information.
-    """
-    props = {}
-    props['java'] = java
-    props['jarfile'] = jarfile
-    props['privatekey'] = privatekey
-    props['configfile'] = configfile
-    props['source'] = product_source
-    props['eventsource'] = eventsource
-    props['eventsourcecode'] = eventsourcecode
-    props['code'] = eventsource + eventsourcecode
-    if number is not None:
-        props['code'] += '_' + str(number)
-    props['type'] = 'finite-fault'
-    sender = PDLSender(properties=props, local_directory=pdlfolder,
-                       product_properties=properties)
-    nfiles, msg = sender.send()
-    return (nfiles, msg)
-
 def delete_fault(configfile, eventsource, eventsourcecode, jarfile, java,
         privatekey, product_source, two_solution=False, number=None):
     """Store parametric data.
@@ -64,7 +26,6 @@ def delete_fault(configfile, eventsource, eventsourcecode, jarfile, java,
         number (int): Number of product (used for two plane solutions).
                 Default is None.
     Returns:
-        int: Number of files transferred
         str: Message with any error information.
     """
     props = {}
@@ -86,6 +47,20 @@ def delete_fault(configfile, eventsource, eventsourcecode, jarfile, java,
     msg = sender.cancel()
     return (msg)
 
+def get_date(milliseconds):
+    """Helper function to convert from java ms timestamp to datetime.
+
+    Args:
+        milliseconds (float, int): Timestamp in milliseconds.
+
+    Returns:
+        datetime.datetime: Datetime object.
+    """
+    seconds = milliseconds / 1000
+    sub_seconds  = (milliseconds % 1000.0) / 1000.0
+    date = datetime.datetime.fromtimestamp(seconds + sub_seconds)
+    return date
+
 def get_fault(eventsource, eventsourcecode, comcat_host='earthquake.usgs.gov',
         two_model=False, write_directory=None):
     """Retrieve the latest finite_fault data for a given event.
@@ -94,8 +69,10 @@ def get_fault(eventsource, eventsourcecode, comcat_host='earthquake.usgs.gov',
         eventsourcecode (str): Event code from network that originated
                                the event.
         comcat_host (str): (for testing) Specify an alternate comcat host.
-    Returns:
-        Dictionary data structure containing parametric data for event.
+        two_model (bool): Whether the ffm has two equally valid solutions.
+                Default is False.
+        write_directory (str): Path to directory where files will be written.
+                Default is None.
     """
     eventid = eventsource + eventsourcecode
     try:
@@ -151,15 +128,40 @@ def get_fault(eventsource, eventsourcecode, comcat_host='earthquake.usgs.gov',
                 filename = os.path.join(dir, os.path.basename(file))
                 mod1.getContent(file, filename)
 
+def store_fault (configfile, eventsource, eventsourcecode, jarfile, java,
+        pdlfolder, privatekey, product_source, properties,
+        number=None):
+    """Store parametric data.
 
-def get_date(milliseconds):
-    seconds = milliseconds / 1000
-    sub_seconds  = (milliseconds % 1000.0) / 1000.0
-    date = datetime.datetime.fromtimestamp(seconds + sub_seconds)
-    return date
-
-
-if __name__ == '__main__':
-    from product.constants import BASE_PDL_FOLDER, CFG, JAR, JAVA, PRIVATEKEY
-    delete_fault(CFG, 'us', '1000dyad', JAR, JAVA,
-            PRIVATEKEY, 'us', two_solution=False, number=None)
+    Args:
+        configfile (str): Location of PDL config file.
+        eventsource (str): Network that originated the event.
+        eventsourcecode (str): Event code.
+        jarfile (str): Location of PDL jar file.
+        java (str): Location of Java binary.
+        pdlfolder (str): Folder to send.
+        privatekey (str): Location of PDL private key.
+        product_source (str): Network contributing this product to ComCat.
+        properties (str): Dictionary of product properties.
+        number (int): Number of product (used for two plane solutions).
+                Default is None.
+    Returns:
+        int: Number of files transferred
+        str: Message with any error information.
+    """
+    props = {}
+    props['java'] = java
+    props['jarfile'] = jarfile
+    props['privatekey'] = privatekey
+    props['configfile'] = configfile
+    props['source'] = product_source
+    props['eventsource'] = eventsource
+    props['eventsourcecode'] = eventsourcecode
+    props['code'] = eventsource + eventsourcecode
+    if number is not None:
+        props['code'] += '_' + str(number)
+    props['type'] = 'finite-fault'
+    sender = PDLSender(properties=props, local_directory=pdlfolder,
+                       product_properties=properties)
+    nfiles, msg = sender.send()
+    return (nfiles, msg)

@@ -1,0 +1,15 @@
+<contents>
+  <file id="modelmaps" title="Finite Fault Model Maps ">
+    <caption><![CDATA[Map representation of the finite fault model ]]></caption>
+    <format href="FFM.geojson" type="text/plain"/>
+    <format href="basemap.png" type="image/png"/>
+  </file>
+  <file id="inpfiles" title="Inversion Parameters ">
+    <caption><![CDATA[Files of inversion parameters for the finite fault ]]></caption>
+    <format href="complete_inversion.fsp" type="text/plain"/>
+  </file>
+  <file id="momentrate" title="Moment Rate Function Files ">
+    <caption><![CDATA[Files of time vs. moment rate for source time functions ]]></caption>
+    <format href="moment_rate.png" type="image/png"/>
+  </file>
+</contents>
