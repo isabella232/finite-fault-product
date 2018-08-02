@@ -227,67 +227,49 @@ File names are standardized for each event.
 
 ### Standard Properties
 
-- area11: Calculated effective length of first subfault segment. See Comments.
-- area_units: Units of the the area property. Always km*km.
-- depth: Depth of the origin.
-- depth_units: Units of segment depth. Always km.
+- depth: Depth of the origin. Units are km.
 - derived-magnitude: Magnitude calculated and available in the fsp file.
-- derived-moment: Moment calculated and available in the fsp file.
-- dip_units: Units of the dip property Always deg.
 - eventsource: Event source network. Always us.
 - eventsourcecode: Event id code. Example 1000dyad.
 - eventtime: Date of the origin in the format %Y-%m-%dT%H:%M:%S.%fZ.
 - latitude: Latitude of origin.
-- length_units: Units of the the length property. Always km.
-- length11: Calculated effective length of subfault segment. See Comments.
 - location: Description of location. Either a property provided the place property available at: 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/[EVENTID].geojson' or '[LATITUDE], [LONGITUDE]'
 - longitude: Longitude of origin.
-- max_slip: Maximum slip of all segments.
-- mechanism_dip: Overall dip of finite fault model.
-- mechanism_rake: Overall rake of finite fault model.
-- mechanism_strike: Overall strike of finite fault model.
-- model_area11: Area of the first segment.
-- model_dip11: Dip of the first segment.
-- model_length11: Length (along strike) or first segment.
-- model_max_depth: Maximum depth of all segments.
-- model_strike11: Strike of the first segment.
-- model_width11: Width of first segment.
-- moment_units: Units or moment property. Always dyne.cm.
-- num_longwaves: Number of long period surface waves selected.
-- num_pwaves: Number of teleseismic broadband P waveforms.
-- num_segments: Number of segments in the model.
-- num_shwaves: Number of broadband SH waveforms.
-- rake_units: Units of rake property. Always deg.
-- rise_units: Units of rise property. Always s.
-- slip_units: Units of slip property. Always m.
-- strike_units: Units of strike property. Always deg.
-- width_units: Units of width property. Always km.
-- width11: Calculated effective width of first subfault segment. See Comments.
+- max-depth: Maximum depth of all segments in the model space. Units are km.
+- max-slip: Maximum slip of all segments. Inits are m.
+- mechanism-dip: Overall dip of finite fault model.
+- mechanism-rake: Overall rake of finite fault model.
+- mechanism-strike: Overall strike of finite fault model.
+- number-longwaves: Number of long period surface waves selected.
+- number-pwaves: Number of teleseismic broadband P waveforms.
+- number-shwaves: Number of broadband SH waveform
+- scalar-moment: Moment calculated and available in the fsp file.
+- segments: Number of segments in the model. There may be two or more segments.
+- segment-1-area: Model area of the first segment. Units are km*km.
+- segment-1-dip: Model dip of the first segment. Units are degrees.
+- segment-1-length: Model length (along strike) or first segment. Units are km.
+- segment-1-strike: Model strike of the first segment. Units are degrees.
+- segment-1-width: Width of first segment. Units are km.
+- subfault-1-area: Calculated effective area of first subfault. See Comments. Units are km*km.
+- subfault-1-length: Calculated effective length of subfault. See Comments. Units are km*km.
+- subfault-1-width: Calculated effective width of first subfault. See Comments.
 
 
 ### Variable Properties
 Variables that may not be contained within other networks' fsp files.
 
-- max_rise: Maximum rise of all segments. 
+- max-rise: Maximum rise of all segments. Units are seconds.
 
 For multisegment models, segment parameters will have different numbers. Two segment example:
 
-- area12: Calculated effective area of the first subfault segment. See Comments.
-- area22: Calculated effective area of the second subfault segment. See Comments.
-- model_area12: Area of the first segment.
-- model_area22: Area of the second segment.
-- model_dip12: Dip of the first segment.
-- model_dip22: Dip of the second segment.
-- model_length12: Length (along strike) or first segment.
-- model_length22: Length (along strike) or second segment.
-- length12: Calculated effective length (along strike) of first subfault segment. See Comments.
-- length22: Calculated effective length (along strike) of second subfault segment. See Comments.
-- model_strike12: Strike of the first segment.
-- model_strike22: Strike of the second segment.
-- model_width12: Width of first segment.
-- model_width22: Width of first segment.
-- width12: Calculated effective width of first subfault segment. See Comments
-- width22: Calculated effective width of second subfault segment. See Comments.
+- segment-2-area: Area of the second segment.
+- segment-2-dip: Dip of the second segment.
+- segment-2-length: Length (along strike) or second segment.
+- segment-2-strike: Strike of the second segment.
+- segment-2-width: Width of first segment.
+- subfault-2-area: Calculated effective area of the second subfault. See Comments.
+- subfault-2-length: Calculated effective length (along strike) of second subfault. See Comments.
+- subfault-2-width: Calculated effective width of second subfault. See Comments.
 
 ### Comments
 **Calculated and Model Properties**
