@@ -24,13 +24,13 @@ def test_fromFault():
         product = WebProduct.fromDirectory(directory, '10004u1y_1')
     product.writeContents(directory)
     assert '%.1f' % product.properties['derived-magnitude'] == '7.8'
-    assert '%.2e' % product.properties['derived-moment'] == '6.02e+27'
-    assert product.properties['mechanism_strike'] == 274
-    assert product.properties['mechanism_dip'] == 84
-    assert product.properties['mechanism_rake'] == 164
-    assert product.properties['num_pwaves'] == 50
-    assert product.properties['num_shwaves'] == 17
-    assert product.properties['num_longwaves'] == 72
+    assert '%.2e' % product.properties['scalar-moment'] == '6.02e+20'
+    assert product.properties['model-strike'] == 274
+    assert product.properties['model-dip'] == 84
+    assert product.properties['model-rake'] == 164
+    assert product.properties['number-pwaves'] == 50
+    assert product.properties['number-shwaves'] == 17
+    assert product.properties['number-longwaves'] == 72
 
     target_contents_str = """
     <contents>

@@ -210,7 +210,7 @@ class WebProduct(object):
             version (int): Version number.
         """
         props = self.properties
-        if props['num_segments'] > 1:
+        if props['segments'] > 1:
             result = """After comparing waveform fits based on the two planes of the input
             moment tensor, we find that a solution adjusted from the nodal plane
             striking towards [DD] deg. fits the data better. The adjusted solution
@@ -227,28 +227,30 @@ class WebProduct(object):
             <i>Table 1. Multi-Segment Parameters.</i>
             """
             segments = ""
-            for seg in range(1, props['num_segments'] + 1):
-                idx = str(seg) + str(props['num_segments'])
+            for seg in range(1, props['segments'] + 1):
+                idx = str(seg)
                 row = """<tr><td>[SEG]</td><td>[STRIKE]</td><td>[DIP]</td></tr>"""
                 row = row.replace('[SEG]', str(seg))
-                row = row.replace('[STRIKE]', '%.1f' % props['model_strike' + idx])
-                row = row.replace('[DIP]', '%.1f' % props['model_dip' + idx])
+                row = row.replace('[STRIKE]', '%.1f' % props['segment-' + idx + '-strike'])
+                row = row.replace('[DIP]', '%.1f' % props['segment-' + idx + '-dip'])
                 segments += row
             result = result.replace('[SEGMENTS]', segments)
-            result = result.replace('[DD]', '%.1f' % props['mechanism_strike'])
-            result = result.replace('[EE]', '%.1f' % props['mechanism_dip'])
-            result = result.replace('[FF]', '%.2e' % props['derived-moment'])
+            result = result.replace('[DD]', '%.1f' % props['model-strike'])
+            result = result.replace('[EE]', '%.1f' % props['model-dip'])
+            moment =  props['scalar-moment'] * 10000000
+            result = result.replace('[FF]', '%.2e' % moment)
             result = result.replace('[GG]', '%.1f' % props['derived-magnitude'])
-            result = result.replace('[HH]', '%i' % props['num_segments'])
+            result = result.replace('[HH]', '%i' % props['segments'])
         else:
             result = """After comparing waveform fits based on the two planes of the input
             moment tensor, we find that the nodal plane (strike= [DD] deg., dip= [EE]
             deg.) fits the data better. The seismic moment release based upon this
             plane is [FF] dyne.cm (Mw = [GG]) using a 1D crustal model interpolated
             from CRUST2.0 (Bassin et al., 2000)."""
-            result = result.replace('[DD]', '%.1f' % props['mechanism_strike'])
-            result = result.replace('[EE]', '%.1f' % props['mechanism_dip'])
-            result = result.replace('[FF]', '%.1e' % props['derived-moment'])
+            result = result.replace('[DD]', '%.1f' % props['model-strike'])
+            result = result.replace('[EE]', '%.1f' % props['model-dip'])
+            moment =  props['scalar-moment'] * 10000000
+            result = result.replace('[FF]', '%.1e' % moment)
             result = result.replace('[GG]', '%.1f' % props['derived-magnitude'])
         page = PAGE_TEMPLATE
         page = page.replace('[DATE]', props['eventtime'].strftime('%b %d, %Y'))
@@ -261,10 +263,9 @@ class WebProduct(object):
         page = page.replace('[VERSION]', str(version))
         page = page.replace('[LAT]', str(props['latitude']))
         page = page.replace('[LON]', str(props['longitude']))
-        page = page.replace('[PWAVE]', str(props['num_pwaves']))
-        page = page.replace('[SHWAVE]', str(props['num_shwaves']))
-        page = page.replace('[LONGWAVE]', str(props['num_longwaves']))
-        page = page.replace('[LONGWAVE]', str(props['num_longwaves']))
+        page = page.replace('[PWAVE]', str(props['number-pwaves']))
+        page = page.replace('[SHWAVE]', str(props['number-shwaves']))
+        page = page.replace('[LONGWAVE]', str(props['number-longwaves']))
         page = page.replace('[DEPTH]', str(props['depth']))
         page = page.replace('[RESULT]', result)
         page = page.replace('[ANALYSIS]', analysis)
@@ -374,9 +375,9 @@ class WebProduct(object):
                             'num_pwaves, num_shwaves, num_longwaves.')
             else:
                 product._properties = {}
-                product._properties['num_pwaves'] = wave_dict['num_pwaves']
-                product._properties['num_shwaves'] = wave_dict['num_shwaves']
-                product._properties['num_longwaves'] = wave_dict['num_longwaves']
+                product._properties['number-pwaves'] = wave_dict['num_pwaves']
+                product._properties['number-shwaves'] = wave_dict['num_shwaves']
+                product._properties['number-longwaves'] = wave_dict['num_longwaves']
                 provided = True
         else:
             provided = False
@@ -460,14 +461,14 @@ class WebProduct(object):
         props['eventsource'] = 'us'
         if os.path.exists(os.path.join(directory, 'Readlp.das')):
             wave_file = os.path.join(directory, 'Readlp.das')
-            props['num_pwaves'], props['num_shwaves'] = self._countWaveforms(
+            props['number-pwaves'], props['number-shwaves'] = self._countWaveforms(
                     wave_file)
         if os.path.exists(os.path.join(directory, 'synm.str_low')):
             try:
                 with open(os.path.join(directory, 'synm.str_low'), 'rt') as f:
-                    props['num_longwaves'] = int(f.readline().strip())
+                    props['number-longwaves'] = int(f.readline().strip())
             except:
-                props['num_longwaves'] = 0
+                props['number-longwaves'] = 0
         URL_TEMPLATE = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/[EVENTID].geojson'
         url = URL_TEMPLATE.replace('[EVENTID]', 'us'+eventid)
         try:
@@ -482,48 +483,42 @@ class WebProduct(object):
         props['longitude'] = self.event['lon']
         props['location'] = locstr
         props['derived-magnitude'] = self.event['mag']
-        # convert from Nm to dyn cm
-        props['derived-moment'] = self.event['moment'] * 10000000
-        props['moment_units'] = 'dyne.cm'
+        props['scalar-moment'] = self.event['moment']
+        props['derived-magnitude-type'] = 'Mw'
         props['depth'] = self.event['depth']
         props['eventtime'] = self.event['date']
-        props['mechanism_strike'] = self.event['strike']
-        props['mechanism_dip'] = self.event['dip']
-        props['mechanism_rake'] = self.event['rake']
-        props['num_segments'] = len(self.segments)
-        props['slip_units'] = 'm'
-        props['rake_units'] = 'deg'
-        props['rise_units'] = 's'
-        props['trup_units'] = 's'
-        props['strike_units'] = 'deg'
-        props['width_units'] = 'km'
-        props['dip_units'] = 'deg'
-        props['length_units'] = 'km'
-        props['area_units'] = 'km*km'
-        props['depth_units'] = 'km'
-        counter = 1
+        props['average-rise-time'] = self.event['avTr']
+        props['average-rupture-velocity'] = self.event['avVr']
+        props['hypocenter-x'] = float(self.event['Hypx'])
+        props['hypocenter-z'] = float(self.event['Hypz'])
+        props['maximum-frequency'] = float(self.event['Fmax'])
+        props['minimum-frequency'] = float(self.event['Fmin'])
+        props['model-dip'] = self.event['dip']
+        props['model-length'] = self.event['length']
+        props['model-rake'] = self.event['rake']
+        props['model-strike'] = self.event['strike']
+        props['model-top'] = self.event['htop']
+        props['model-width'] = self.event['width']
+        props['time-windows'] = int(self.event['time_windows'])
+        props['velocity-function'] = self.event['velocity_func']
+        props['segments'] = len(self.segments)
         max_vals = {'slip': [], 'depth': [], 'rise': []}
         for i, segment in enumerate(self.segments):
-            idx = str(counter) + str(len(self.segments))
+            idx = str(i + 1)
             if calculated_sizes is not None:
-                props['width' + idx] = calculated_sizes[i]['width']
-                props['length' + idx] = calculated_sizes[i]['length']
-                props['area' + idx] = calculated_sizes[i]['area']
-            props['model_strike' + idx] = segment['strike']
-            props['model_dip' + idx] = segment['dip']
-            props['model_width' + idx] = segment['width']
-            props['model_length' + idx] = segment['length']
-            props['model_area' + idx] = segment['length'] * segment['length']
-            counter += 1
+                props['subfault-' + idx + '-width']= calculated_sizes[i]['width']
+                props['subfault-' + idx + '-length'] = calculated_sizes[i]['length']
+                props['subfault-' + idx + '-area'] = calculated_sizes[i]['area']
+            props['segment-' + idx + '-strike'] = segment['strike']
+            props['segment-' + idx + '-dip'] = segment['dip']
             slips = values = segment['slip'].flatten()
             depths = values = segment['depth'].flatten()
             rises = values = segment['rise'].flatten()
             max_vals['slip'] += [values[np.argmax(slips)]]
             max_vals['depth'] += [values[np.argmax(depths)]]
             max_vals['rise'] += [values[np.argmax(rises)]]
-        props['model_max_depth'] = max_vals['depth'][np.argmax(max_vals['depth'])]
-        props['max_slip'] = max_vals['slip'][np.argmax(max_vals['slip'])]
-        props['max_rise'] = max_vals['rise'][np.argmax(max_vals['rise'])]
+        props['maximum-slip'] = max_vals['slip'][np.argmax(max_vals['slip'])]
+        props['maximum-rise'] = max_vals['rise'][np.argmax(max_vals['rise'])]
         if self.properties is None:
             self._properties = props
         else:

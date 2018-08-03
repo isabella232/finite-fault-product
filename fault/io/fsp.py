@@ -61,6 +61,8 @@ def read_from_file(fspfile, headers=DEFAULT_HEADERS):
             parts = line.split(':')[1].strip().split()
             length = float(parts[2])
             width = float(parts[6])
+            event['length'] = length
+            event['width'] = width
             event['mag'] = float(parts[10])
             event['moment'] = float(parts[13])
         if 'Dx' in line:
@@ -77,6 +79,22 @@ def read_from_file(fspfile, headers=DEFAULT_HEADERS):
             event['dip'] = float(parts[5])
             event['rake'] = float(parts[8])
             event['htop'] = float(parts[11])
+        if 'SVF' in line:
+            parts = line.split(':')[1].strip().split()
+            event['velocity_func'] = parts[0]
+        if 'Ntw' in line:
+            parts = line.split(':')[1].strip().split()
+            event['time_windows'] = parts[2]
+        if 'Fmin' in line:
+            parts = line.split(':')[1].strip().split()
+            event['Fmin'] = parts[8]
+            event['Fmax'] = parts[12]
+        if 'Rupt' in line:
+            parts = line.split(':')[1].strip().split()
+            event['Hypx'] = parts[2]
+            event['Hypz'] = parts[6]
+            event['avTr'] = parts[10]
+            event['avVr'] = parts[14]
         if is_multi == True and '% SEGMENT # 1:' in line:
             parts = line.split(':')[1].strip().split()
             strike = float(parts[2])

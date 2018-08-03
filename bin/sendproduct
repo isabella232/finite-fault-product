@@ -50,7 +50,7 @@ def main(args):
     source = args.source
     ffm1dir = args.ffm1
     product1 = WebProduct.fromDirectory(ffm1dir, args.eventid,
-            version=args.version)
+            version=version)
 
     folders = ''
     if multiple:
@@ -58,7 +58,7 @@ def main(args):
         pdlfolder2 = os.path.join(BASE_PDL_FOLDER, args.eventid + '_2')
         ffm2dir = args.ffm2
         product2 = WebProduct.fromDirectory(ffm2dir, args.eventid,
-                version=args.version)
+                version=version)
         os.makedirs(pdlfolder2, exist_ok=True)
         copy_files(product2.paths, pdlfolder2)
         folders += pdlfolder2 + ' and '
