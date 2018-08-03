@@ -227,46 +227,51 @@ File names are standardized for each event.
 
 ### Standard Properties
 
-- depth: Depth of the origin. Units are km.
-- derived-magnitude: Magnitude calculated and available in the fsp file.
+- average-rise-time: [Average rise in seconds](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L9).
+- average-rupture-velocity: [Average ruptrue velocity in kilometers per second](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L9).
+- depth: Depth of the rupture plane in kilometers.
+- derived-magnitude: Magnitude calculated and available in the [fsp file](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L7).
+- derived-magnitude-type: Magnitude type. Always [Mw](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L7).
 - eventsource: Event source network. Always us.
 - eventsourcecode: Event id code. Example 1000dyad.
 - eventtime: Date of the origin in the format %Y-%m-%dT%H:%M:%S.%fZ.
+- hypocenter-x: rupture nucleation point in the fault plane (starting at top-left corner)
+- hypocenter-z: rupture nucleation point in the fault plane (starting at top-left corner)
 - latitude: Latitude of origin.
 - location: Description of location. Either a property provided the place property available at: 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/[EVENTID].geojson' or '[LATITUDE], [LONGITUDE]'
 - longitude: Longitude of origin.
-- max-depth: Maximum depth of all segments in the model space. Units are km.
-- max-slip: Maximum slip of all segments. Inits are m.
-- mechanism-dip: Overall dip of finite fault model.
-- mechanism-rake: Overall rake of finite fault model.
-- mechanism-strike: Overall strike of finite fault model.
+- maximum-frequency: [Maximum frequency of bandpass filtered seismic data](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L13).
+- maximum-slip: Maximum slip of all segments. Inits are m.
+- minimum-frequency: [Minimum frequency of bandpass filtered seismic data](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L13).
+- model-dip: [Dip of the fault plane in degrees](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L8).
+- model-length: [Length of the rupture plane in kilometers](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L7).
+- model-rake: [Rake of the model in degrees](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L8). 
+- model-strike: [Strike of the fault plane in degrees](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L8).
+- model-top: [Vertical depth to the top of the rupture plane](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L8).
+- model-width: [Width of the rupture plane in kilometers](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L7).
 - number-longwaves: Number of long period surface waves selected.
 - number-pwaves: Number of teleseismic broadband P waveforms.
 - number-shwaves: Number of broadband SH waveform
-- scalar-moment: Moment calculated and available in the fsp file.
-- segments: Number of segments in the model. There may be two or more segments.
-- segment-1-area: Model area of the first segment. Units are km*km.
+- scalar-moment: Moment calculated and available in the [fsp file](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L7) in Newton * meter.
+- segments: Number of segments in the model. [There may be two or more segments](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/tests/data/fsp/usp000714t_us_4_p000714t.fsp#L15).
 - segment-1-dip: Model dip of the first segment. Units are degrees.
-- segment-1-length: Model length (along strike) or first segment. Units are km.
-- segment-1-strike: Model strike of the first segment. Units are degrees.
-- segment-1-width: Width of first segment. Units are km.
+- segment-1-strike: [Model strike of the first segment](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/tests/data/fsp/usp000714t_us_4_p000714t.fsp#L52). Units are degrees.
 - subfault-1-area: Calculated effective area of first subfault. See Comments. Units are km*km.
 - subfault-1-length: Calculated effective length of subfault. See Comments. Units are km*km.
 - subfault-1-width: Calculated effective width of first subfault. See Comments.
+- time-windows: [Number of time windows used in the inversion](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/tests/data/fsp/usp000714t_us_4_p000714t.fsp#L15).
+- velocity-function: [Type](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/tests/data/fsp/usp000714t_us_4_p000714t.fsp#L17) of velocity funtion used in the inversion.
 
 
 ### Variable Properties
 Variables that may not be contained within other networks' fsp files.
 
-- max-rise: Maximum rise of all segments. Units are seconds.
+- maximum-rise: Maximum rise of all segments. Units are seconds.
 
 For multisegment models, segment parameters will have different numbers. Two segment example:
 
-- segment-2-area: Area of the second segment.
-- segment-2-dip: Dip of the second segment.
-- segment-2-length: Length (along strike) or second segment.
+- segment-2-dip: [Dip of the second segment](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/tests/data/fsp/usp000714t_us_4_p000714t.fsp#L168).
 - segment-2-strike: Strike of the second segment.
-- segment-2-width: Width of first segment.
 - subfault-2-area: Calculated effective area of the second subfault. See Comments.
 - subfault-2-length: Calculated effective length (along strike) of second subfault. See Comments.
 - subfault-2-width: Calculated effective width of second subfault. See Comments.
@@ -281,5 +286,5 @@ Properties prefixed with model_ are set model parameters. For example, model_wid
 
 Note: For the effective length/width the slip is [thresholded](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/fault/fault.py#L531).
 
-**Mechanism and Segment Properties**
-For a single segment solution the mechanism properties and model_segment properties are synonymous. For a two segment model, the model_segment properties are taken from each individual segment line, while the mechanism is found in the mechanism line of the fsp file.
+**Model and Segment Properties**
+For a single segment solution the model properties and model_segment properties are synonymous. For a two segment model, the model_segment properties are taken from each individual segment line, while the model is found in the mechanism line of the fsp file.
