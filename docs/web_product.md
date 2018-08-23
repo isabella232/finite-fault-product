@@ -278,7 +278,7 @@ For multisegment models, segment parameters will have different numbers. Two seg
 
 ### Comments
 **Calculated and Model Properties**
-Properties prefixed with model_ are set model parameters. For example, model_width11 is the set width of segment 1 of the model space, while width11 is the calculated width of the rupture.
+Properties prefixed with model- are set model parameters. For example, model-strike is the strike used to [create the model](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/tests/data/products/000714t/p000714t.fsp#L8), while segment-1-strike is the strike of the individual [segment](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/tests/data/products/000714t/p000714t.fsp#L52).
 
 [Calculations of effective length, width](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/fault/fault.py#L337), and area properties were derived from the autocorrelation width given by [Mai et al](https://www.researchgate.net/publication/228607551_Source_scaling_properties_from_finite-fault-rupture_models):
 
@@ -287,4 +287,4 @@ Properties prefixed with model_ are set model parameters. For example, model_wid
 Note: For the effective length/width the slip is [thresholded](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/fault/fault.py#L531).
 
 **Model and Segment Properties**
-For a single segment solution the model properties and model_segment properties are synonymous. For a two segment model, the model_segment properties are taken from each individual segment line, while the model is found in the mechanism line of the fsp file.
+For a single segment solution the model properties and segment-1 properties are synonymous. For a two segment model, the model properties are taken from each individual segment line, while the model is found in the mechanism line of the fsp file.
