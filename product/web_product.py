@@ -568,7 +568,6 @@ class WebProduct(object):
         """
         outfile = os.path.join(directory, "analysis.html")
         with open(outfile, 'w') as analysis_file:
-            analysis_file.write('<h3>Scientific Analysis</h3>')
             analysis_file.write(analysis)
         if self.paths is None:
             self._paths = {}
