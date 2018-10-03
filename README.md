@@ -26,11 +26,11 @@ If you already have a miniconda or anaconda Python 3.X environment:
  - `conda install openquake.engine`
  - `conda install openpyxl`
  - `conda install pandas`
- - `pip install git+https://github.com/hschovanec-usgs/finite-fault-product.git`
+ - `pip install git+https://github.com/usgs/finite-fault-product.git`
  
  Automatic environment creation using miniconda:
  
- - `git clone https://github.com/hschovanec-usgs/finite-fault-product.git`
+ - `git clone https://github.com/usgs/finite-fault-product.git`
  - `cd finite-fault-product`
  - `bash install.sh`
  - `conda activate faultproduct`
@@ -197,4 +197,4 @@ Delete a finite-fault product for an event.
   </tr>
 </table>
 
-See [docs](https://github.com/hschovanec-usgs/finite-fault-product/tree/master/docs) for more detailed explanations.
+See [docs](https://github.com/usgs/finite-fault-product/tree/master/docs) for more detailed explanations.
