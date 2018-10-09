@@ -35,6 +35,21 @@ If you already have a miniconda or anaconda Python 3.X environment:
  - `bash install.sh`
  - `conda activate faultproduct`
 
+## Updating
+
+Updating automated install:
+- `cd shakemap-amp-tools`
+- `git pull --ff-only https://github.com/usgs/finite-fault-product.git master`
+- `bash install.sh`
+
+If no new dependencies have been added, `pip install -e .` may be used instead of `bash install.sh`.
+
+
+Updating manually installed:
+ - `pip install --upgrade git+https://github.com/usgs/finite-fault-product.git`
+
+ If new dependencies have been added, they must be installed first.
+
 
 # Tools
 
@@ -105,7 +120,11 @@ Send a finite fault product for event pages.
   </tr>
   <tr>
     <td>-r, --review</td>
-    <td>Create product, but do not send to PDL</td>
+    <td>Don't send products to PDL. Only create the product folder</td>
+  </tr>
+  <tr>
+    <td>-x, --not-reviewed</td>
+    <td>Mark that the sent product was not reviewed by a scientist. This will cause a flag to be displayed on the web page</td>
   </tr>
 </table>
 
