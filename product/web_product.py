@@ -7,6 +7,7 @@ import datetime
 import glob
 import json
 import os
+import shutil
 from urllib.request import urlopen
 import warnings
 
@@ -94,6 +95,18 @@ class WebProduct(object):
             caption.text = etree.CDATA(
                     "Body and surface wave plots ")
             etree.SubElement(file_tree, 'format', format_attrib)
+        else:
+            zipped = self.zip_waveplots(directory)
+            if zipped != '':
+                self._paths['waveplots'] = (zipped, "waveplots.zip")
+                file_attrib, format_attrib = self._getAttributes('waveplots',
+                        "Wave Plots ", "waveplots.zip", "application/zip")
+                file_tree = etree.SubElement(contents, 'file', file_attrib)
+                caption = etree.SubElement(file_tree, 'caption')
+                caption.text = etree.CDATA(
+                        "Body and surface wave plots ")
+                etree.SubElement(file_tree, 'format', format_attrib)
+
 
         # CMT solution
         cmt = self._checkDownload(directory, "*CMTSOLUTION*")
@@ -628,6 +641,32 @@ class WebProduct(object):
         write_path = os.path.join(directory, 'timeseries.geojson')
         with open(write_path, 'w') as outfile:
             json.dump(self.timeseries_dict, outfile, indent=4, sort_keys=True)
+
+    def zip_waveplots(self, directory):
+        """
+        Zips up wave plot images into "waveplots.zip".
+
+        Args:
+            directory (str): Directory where the file will be written.
+
+        Returns:
+            string: path to directory if wave plots are found or '' if they
+                    are not.
+        """
+        wave_plots = glob.glob(os.path.join(directory, '*wave_*.png'))
+        if len(wave_plots) > 0:
+            path = os.path.join(directory, 'waveplots')
+            if not os.path.exists(path):
+                os.makedirs(path)
+            for plot_path in wave_plots:
+                base_file = os.path.basename(plot_path)
+                new_file = os.path.join(path, base_file)
+                shutil.copy(plot_path, new_file)
+            shutil.make_archive(path, 'zip', path)
+            shutil.rmtree(path)
+            return path + '.zip'
+        else:
+            return ''
 
     def _checkDownload(self, directory, pattern):
         """

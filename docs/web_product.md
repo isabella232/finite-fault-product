@@ -12,7 +12,7 @@
 
 ## Introduction
 
-Web product takes a directory of finite fault model files and creates a product for the U.S.G.S. 
+Web product takes a directory of finite fault model files and creates a product for the U.S.G.S.
 [earthquake event pages](https://github.com/usgs/earthquake-eventpages). See the provided [notebooks](https://github.com/hschovanec-usgs/finite-fault-product/tree/master/notebooks) for examples of API use.
 
 ## Instructions
@@ -25,14 +25,14 @@ Web product takes a directory of finite fault model files and creates a product 
    - Two product example: `sendproduct us us 10004u1y tests/data/products/10004u1y_1 -ffm2 tests/data/products/10004u1y_2 -r`
 4. Delete the folders and send the product.
    - One product example: `sendproduct us us 1000dyad tests/data/products/1000dyad`
-   - Two product example: `sendproduct us us 10004u1y tests/data/products/10004u1y_1 -ffm2 test/data/products/10004u1y_2`
-5 (opt). Check that the product was send correctly.
+   - Two product example: `sendproduct us us 10004u1y tests/data/products/10004u1y_1 -ffm2 tests/data/products/10004u1y_2`
+5. (opt). Check that the product was sent correctly.
    - One product example: `getproduct us us 1000dyad ./output_events`
    - Two product example: `getproduct us us 10004u1y ./output_events -t`
-6 (opt). Delete an outdated product.
+6. (opt). Delete an outdated product.
    - One product example: `deleteproduct us us 1000dyad`
     - Two product example (Delete the seconds model): `getproduct us us 10004u1y -t -m 2`
-  
+
 ## Requirements
 In order to create the web product a folder containing the folowing files is required. Note: Duplicates of files will not be sent.
 
@@ -142,6 +142,8 @@ These files are note required, but are recommended and will be looked for.
   </tr>
 </table>
 
+Note: If waveplots.zip is not included but plot images are (files with the pattern "*wave_*.png"), a zip file will be created for these images.
+
 
 ## File name changes
 File names are standardized for each event.
@@ -245,7 +247,7 @@ File names are standardized for each event.
 - minimum-frequency: [Minimum frequency of bandpass filtered seismic data](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L13).
 - model-dip: [Dip of the fault plane in degrees](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L8).
 - model-length: [Length of the rupture plane in kilometers](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L7).
-- model-rake: [Rake of the model in degrees](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L8). 
+- model-rake: [Rake of the model in degrees](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L8).
 - model-strike: [Strike of the fault plane in degrees](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L8).
 - model-top: [Vertical depth to the top of the rupture plane](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L8).
 - model-width: [Width of the rupture plane in kilometers](https://github.com/hschovanec-usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L7).

@@ -12,7 +12,7 @@ from product.constants import BASE_PDL_FOLDER, PRODUCT_TYPE, TIMEFMT
 
 def delete_fault(configfile, eventsource, eventsourcecode, jarfile, java,
         privatekey, product_source, two_solution=False, number=None):
-    """Store parametric data.
+    """Delete finite fault product.
 
     Args:
         configfile (str): Location of PDL config file.
@@ -129,9 +129,9 @@ def get_fault(eventsource, eventsourcecode, comcat_host='earthquake.usgs.gov',
                 mod1.getContent(file, filename)
 
 def store_fault (configfile, eventsource, eventsourcecode, jarfile, java,
-        pdlfolder, privatekey, product_source, properties,
+        pdlfolder, privatekey, product_source, properties, reviewed,
         number=None):
-    """Store parametric data.
+    """Store finite fault product using pdl.
 
     Args:
         configfile (str): Location of PDL config file.
@@ -158,6 +158,8 @@ def store_fault (configfile, eventsource, eventsourcecode, jarfile, java,
     props['eventsource'] = eventsource
     props['eventsourcecode'] = eventsourcecode
     props['code'] = eventsource + eventsourcecode
+    if reviewed:
+        properties["review-status"] = "reviewed"
     if number is not None:
         props['code'] += '_' + str(number)
     props['type'] = 'finite-fault'

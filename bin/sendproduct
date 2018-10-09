@@ -29,7 +29,11 @@ def get_parser():
                       metavar="COMMENT")
     parser.add_argument("-r", "--review",action="store_true",
                       dest="doReview", default=False,
-                      help="don't send products to PDL")
+                      help="Don't send products to PDL. Only create the product folder.")
+    parser.add_argument("-x", "--not-reviewed",action="store_false",
+                      dest="reviewedByScientist", default=True,
+                      help="Mark that the sent product was not reviewed by a scientist. "
+                      "This will cause a flag to be displayed on the web page.")
     return parser
 
 def main(args):
@@ -68,6 +72,11 @@ def main(args):
     copy_files(product1.paths, pdlfolder1)
     folders += pdlfolder1
 
+    if args.reviewedByScientist:
+        reviewed = True
+    else:
+        reviewed = False
+
     if not args.doReview:
         if multiple:
             f1 = os.path.join(pdlfolder1, args.eventid + '.html')
@@ -75,12 +84,12 @@ def main(args):
             add_double_comment(f1, 1, 2)
             add_double_comment(f2, 2, 2)
             send_product(args.eventid, args.eventsource, product1, pdlfolder1,
-                    source, 1)
+                    source, reviewed, 1)
             send_product(args.eventid, args.eventsource, product2, pdlfolder2,
-                    source, 2)
+                    source, reviewed, 2)
         else:
             send_product(args.eventid, args.eventsource, product1, pdlfolder1,
-                    source)
+                    source, reviewed)
         print('Sent product files were written to %s' % folders)
     else:
         print('Product files were written to %s' % folders)
@@ -91,7 +100,8 @@ def copy_files(file_directory, pdl_directory):
         future = os.path.join(pdl_directory, file_directory[key][1])
         shutil.copy2(current, future)
 
-def send_product(eventid, network, product, pdlfolder, source, number=None):
+def send_product(eventid, network, product, pdlfolder, source, reviewed,
+        number=None):
     """
     Configure pdl and send product directory.
     """
@@ -104,7 +114,7 @@ def send_product(eventid, network, product, pdlfolder, source, number=None):
     if not os.path.exists(PRIVATEKEY):
         raise FileNotFoundError("File does not exist %r." % PRIVATEKEY)
     files, msg = store_fault(CFG, network, eventid, JAR, JAVA,
-            pdlfolder, PRIVATEKEY, source, product.properties,
+            pdlfolder, PRIVATEKEY, source, product.properties, reviewed,
             number=number)
     print(files, msg)
 
