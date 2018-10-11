@@ -27,9 +27,9 @@ If you already have a miniconda or anaconda Python 3.X environment:
  - `conda install openpyxl`
  - `conda install pandas`
  - `pip install git+https://github.com/usgs/finite-fault-product.git`
- 
+
  Automatic environment creation using miniconda:
- 
+
  - `git clone https://github.com/usgs/finite-fault-product.git`
  - `cd finite-fault-product`
  - `bash install.sh`
@@ -38,7 +38,8 @@ If you already have a miniconda or anaconda Python 3.X environment:
 ## Updating
 
 Updating automated install:
-- `cd shakemap-amp-tools`
+- `cd finite-fault-product`
+- `conda activate faultproduct`
 - `git pull --ff-only https://github.com/usgs/finite-fault-product.git master`
 - `bash install.sh`
 
