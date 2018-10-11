@@ -363,15 +363,6 @@ class WebProduct(object):
             eventid (string): Eventid used for file naming. Default is empty
                     string.
             version (int): Product version number. Default is 1.
-            pwaves (int): Number of teleseismic broadband P waveforms. Default
-                    is None.
-            shwaves (int): Number of broadband SH waveforms. Default is None.
-            longwaves (int): Number of long period surface waves selected
-                    based on data quality and azimuthal distribution. Default
-                    is None.
-        Notes:
-            pwaves, shwaves, longwaves should only be used when U.S.G.S.
-            specific files (synm.str_low and Readlp.das) are not included.
 
         Returns:
             WebProduct: Instance set for information for the web product.
@@ -482,6 +473,8 @@ class WebProduct(object):
                     props['number-longwaves'] = int(f.readline().strip())
             except:
                 props['number-longwaves'] = 0
+        elif not os.path.exists(os.path.join(directory, 'wave_properties.json')):
+            props['number-longwaves'] = 0
         URL_TEMPLATE = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/[EVENTID].geojson'
         url = URL_TEMPLATE.replace('[EVENTID]', 'us'+eventid)
         try:
@@ -727,7 +720,6 @@ class WebProduct(object):
                 'Base Map PNG': '*base*.png',
                 'Slip PNG': '*slip*.png',
                 'FSP File': '*.fsp',
-                'Low File': 'synm.str_low',
                 'Wave File': 'Readlp.das'
             }
         unavailable = []

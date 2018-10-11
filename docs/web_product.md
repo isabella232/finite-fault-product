@@ -80,7 +80,7 @@ Failure to include these files will result in an error
     <td>Readlp.das</td>
   </tr>
   <tr>
-    <td colspan="3">* These files may be substituted with a wave_properties.json file. See the example below.</td>
+    <td colspan="3">* These files may be substituted with a wave_properties.json file. `synm.str_low` may also be excluded if there are no surface waves. See the example below.</td>
   </tr>
 </table>
 
@@ -144,6 +144,14 @@ These files are note required, but are recommended and will be looked for.
 
 Note: If waveplots.zip is not included but plot images are (files with the pattern "*wave_*.png"), a zip file will be created for these images.
 
+Example of wave_properties.json:
+<pre>
+{
+  "num_longwaves": 72,
+  "num_pwaves": 50,
+  "num_shwaves": 17
+}
+</pre>
 
 ## File name changes
 File names are standardized for each event.
