@@ -27,13 +27,36 @@ If you already have a miniconda or anaconda Python 3.X environment:
  - `conda install openpyxl`
  - `conda install pandas`
  - `pip install git+https://github.com/usgs/finite-fault-product.git`
- 
+
  Automatic environment creation using miniconda:
- 
+
  - `git clone https://github.com/usgs/finite-fault-product.git`
  - `cd finite-fault-product`
  - `bash install.sh`
  - `conda activate faultproduct`
+
+
+## Config file for PDL constants
+A config file will automatically be created if one doesn't already exists.
+The file (~/.faultproduct.yaml) should look similary to:
+<pre>
+outputfolder: [path to folder where products will be written]
+pdl:
+    configfile: [path to PDL config]
+    jarfile: [path to PDL jar file]
+    privatekey: [path to PDL privatekey file]
+</pre>
+
+The locations of these files will default to:
+<pre>
+outputfolder: [home directory]/pdlout
+pdl:
+    configfile: [home directory]/ProductClient/config.ini
+    jarfile: [home directory]/ProductClient/ProductClient.jar
+    privatekey: [home directory]/ProductClient/id_dsa_ffm
+</pre>
+
+These paths can be updated in the config file.
 
 ## Updating
 
