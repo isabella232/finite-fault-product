@@ -15,10 +15,25 @@ else
     exit
 fi
 
+# create config file
+configfile=~/.faultproduct.yaml
+if [ -e  $configfile ]; then
+  echo "The configfile $configfile already exists. Please ensure that it has all the required keys"
+else
+  touch $configfile
+  echo "Creating the config file $configfile"
+  echo "outputfolder: $HOME/pdlout" >> $configfile
+  echo "pdl:" >> $configfile
+  echo "    configfile: $HOME/ProductClient/config.ini" >> $configfile
+  echo "    jarfile: $HOME/ProductClient/ProductClient.jar" >> $configfile
+  echo "    privatekey: $HOME/ProductClient/id_dsa_ffm" >> $configfile
+fi
+
 source $prof
 
 echo "Path:"
 echo $PATH
+
 
 VENV=faultproduct
 

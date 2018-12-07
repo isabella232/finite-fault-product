@@ -2,32 +2,28 @@
 import getpass
 import os
 import shutil
+import yaml
 
-USER = getpass.getuser()
+base = os.path.expanduser("~")
+yaml_config = os.path.join(base, ".faultproduct.yaml")
 
-# Folder that is sent
-BASE_PDL_FOLDER = '/Users/%s/pdloutput/' % USER
-
-# Config locations
-JARFILE = 'ProductClient.jar'
-CONFIGFILE = 'dev_config.ini'
-
-#depending on whether user is "gavin", "hschovanec", or "mhearne", choose one of these
-DEVPDLPATH = '/Users/%s/ProductClient' % USER
-PRODPDLPATH = '/Users/%s/Desktop/ProductClient' % USER
-
-if USER == 'mhearne' or USER == 'hschovanec' :
-        PDLPATH = DEVPDLPATH
-else:
-    PDLPATH = PRODPDLPATH
-
-PRIVATEKEY = PDLPATH + '/id_dsa_ffm'
-PRODUCT_TYPE = 'finite-fault'
-
-JAR = os.path.join(PDLPATH, JARFILE)
-CFG = os.path.join(PDLPATH, CONFIGFILE)
-
+with open(yaml_config, 'r') as config:
+    config_dict = yaml.load(config)
+try:
+    BASE_PDL_FOLDER = config_dict["outputfolder"]
+    JAR = config_dict["pdl"]["jarfile"]
+    CFG = config_dict["pdl"]["configfile"]
+    PRIVATEKEY = config_dict["pdl"]["privatekey"]
+except:
+    raise Exception("The following configuration keys are required in the "
+            "~/.faultproduct.yaml file."
+            "\noutputfolder: <path to folder where products will be written>"
+            "\npdl:"
+            "\n    configfile: <path to PDL config"
+            "\n    jarfile: <path to PDL jar file>"
+            "\n    privatekey: <path to PDL privatekey file>")
 JAVA = shutil.which("java")
+PRODUCT_TYPE = 'finite-fault'
 
 TIMEFMT = "%Y-%m-%dT%H:%M:%S.%fZ"
 

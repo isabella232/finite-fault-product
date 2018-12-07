@@ -6,7 +6,7 @@ import os
 import shutil
 
 # local imports
-from product.constants import BASE_PDL_FOLDER, CFG, JAR, JAVA, PRIVATEKEY
+from product.constants import CFG, JAR, JAVA, PRIVATEKEY
 from product.pdl import delete_fault
 from product.web_product import WebProduct
 
