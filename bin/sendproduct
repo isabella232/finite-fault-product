@@ -63,12 +63,18 @@ def main(args):
         ffm2dir = args.ffm2
         product2 = WebProduct.fromDirectory(ffm2dir, args.eventid,
                 version=version)
-        os.makedirs(pdlfolder2, exist_ok=True)
+        # overwrite the folder to stop conflicts
+        if os.path.exists(pdlfolder2):
+            shutil.rmtree(pdlfolder2)
+        os.makedirs(pdlfolder2)
         copy_files(product2.paths, pdlfolder2)
         folders += pdlfolder2 + ' and '
     else:
         pdlfolder1 = os.path.join(BASE_PDL_FOLDER, args.eventid)
-    os.makedirs(pdlfolder1, exist_ok=True)
+    # overwrite the folder to stop conflicts
+    if os.path.exists(pdlfolder1):
+        shutil.rmtree(pdlfolder1)
+    os.makedirs(pdlfolder1)
     copy_files(product1.paths, pdlfolder1)
     folders += pdlfolder1
 
