@@ -89,10 +89,10 @@ def main(args):
             f2 = os.path.join(pdlfolder2,  args.eventid + '.html')
             add_double_comment(f1, 1, 2)
             add_double_comment(f2, 2, 2)
-            send_product(args.eventid, args.eventsource, product1, pdlfolder1,
-                    source, reviewed, 1)
             send_product(args.eventid, args.eventsource, product2, pdlfolder2,
                     source, reviewed, 2)
+            send_product(args.eventid, args.eventsource, product1, pdlfolder1,
+                    source, reviewed, 1)
         else:
             send_product(args.eventid, args.eventsource, product1, pdlfolder1,
                     source, reviewed)
