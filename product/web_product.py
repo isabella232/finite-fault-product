@@ -453,7 +453,7 @@ class WebProduct(object):
 
     def storeProperties(self, directory, eventid, calculated_sizes=None):
         """
-        Store PDL properties and writes to properties.json.
+        Store PDL properties and creates properties.json.
 
         Args:
             directory (string): Path to directory.
@@ -517,12 +517,12 @@ class WebProduct(object):
                 props['subfault-' + idx + '-area'] = calculated_sizes[i]['area']
             props['segment-' + idx + '-strike'] = segment['strike']
             props['segment-' + idx + '-dip'] = segment['dip']
-            slips = values = segment['slip'].flatten()
-            depths = values = segment['depth'].flatten()
-            rises = values = segment['rise'].flatten()
-            max_vals['slip'] += [values[np.argmax(slips)]]
-            max_vals['depth'] += [values[np.argmax(depths)]]
-            max_vals['rise'] += [values[np.argmax(rises)]]
+            slips = segment['slip'].flatten()
+            depths = segment['depth'].flatten()
+            rises = segment['rise'].flatten()
+            max_vals['slip'] += [slips[np.argmax(slips)]]
+            max_vals['depth'] += [depths[np.argmax(depths)]]
+            max_vals['rise'] += [rises[np.argmax(rises)]]
         props['maximum-slip'] = max_vals['slip'][np.argmax(max_vals['slip'])]
         props['maximum-rise'] = max_vals['rise'][np.argmax(max_vals['rise'])]
         if self.properties is None:

@@ -31,6 +31,9 @@ def test_fromFault():
     assert product.properties['number-pwaves'] == 50
     assert product.properties['number-shwaves'] == 17
     assert product.properties['number-longwaves'] == 72
+    assert product.properties['number-longwaves'] == 72
+    assert product.properties['maximum-slip'] == 11.8709
+    assert product.properties['maximum-rise'] == 8.8
 
     target_contents_str = """
     <contents>
