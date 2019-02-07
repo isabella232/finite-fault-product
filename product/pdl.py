@@ -124,9 +124,9 @@ def get_fault(eventsource, eventsourcecode, comcat_host='earthquake.usgs.gov',
             dir = os.path.join(write_directory, eventid + '_' + date_str)
             if not os.path.exists(dir):
                 os.makedirs(dir, exist_ok=True)
-            for file in mod1.contents:
-                filename = os.path.join(dir, os.path.basename(file))
-                mod1.getContent(file, filename)
+            for download_file in mod1.contents:
+                filename = os.path.join(dir, os.path.basename(download_file))
+                mod1.getContent(download_file, filename)
 
 def store_fault (configfile, eventsource, eventsourcecode, jarfile, java,
         pdlfolder, privatekey, product_source, properties, reviewed,
