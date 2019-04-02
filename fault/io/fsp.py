@@ -7,19 +7,20 @@ from datetime import datetime
 # Third party imports
 import numpy as np
 
-DEFAULT_HEADERS = ['LAT', 'LON', 'X==EW', 'Y==NS', 'Z', 'SLIP', 'RAKE',
-        'TRUP', 'RISE', 'SF_MOMENT']
+DYNAMIC_HEADERS = ['LAT', 'LON', 'X==EW', 'Y==NS', 'Z', 'SLIP', 'RAKE',
+                   'TRUP', 'RISE', 'SF_MOMENT']
+STATIC_HEADERS = ['LAT', 'LON', 'X==EW', 'Y==NS', 'Z', 'SLIP', 'RAKE']
 
 
-def read_from_file(fspfile, headers=DEFAULT_HEADERS):
+def read_from_file(fspfile):
     """
     Read all relevant data from Finite Fault FSP file.
 
     Args:
         fspfile (str or file-like object): Input FSP file.
     """
-    if isinstance(fspfile,str):
-        _fspfile = open(fspfile,'r')
+    if isinstance(fspfile, str):
+        _fspfile = open(fspfile, 'r')
     else:
         _fspfile = fspfile
 
@@ -44,11 +45,11 @@ def read_from_file(fspfile, headers=DEFAULT_HEADERS):
             # remove stuff in between []
             try:
                 newline = re.sub("([\(\[]).*?([\)\]])", "\g<1>\g<2>", line)
-                newline = re.sub('[^a-zA-Z0-9\s\:]*','',newline)
+                newline = re.sub('[^a-zA-Z0-9\s\:]*', '', newline)
                 # get date string
-                datestring = re.search('[0-9]{8}',newline).group()
-                newline = newline.replace(datestring,'')
-                event['date'] = datetime.strptime(datestring,'%Y%m%d')
+                datestring = re.search('[0-9]{8}', newline).group()
+                newline = newline.replace(datestring, '')
+                event['date'] = datetime.strptime(datestring, '%Y%m%d')
             except:
                 event['date'] = 'UNK'
             event['location'] = newline.split(':')[1].strip()
@@ -108,21 +109,31 @@ def read_from_file(fspfile, headers=DEFAULT_HEADERS):
     nx = int(np.round_(length/dx, 2))
     nz = int(np.round_(width/dz, 2))
     # in some versions of numpy, you can't read open text files.
-    data = np.genfromtxt(fspfile,max_rows=nx*nz,skip_header=lc-1).T
+    data = np.genfromtxt(fspfile, max_rows=nx*nz, skip_header=lc-1).T
     lc += (nx*nz)-1
-    _fspfile = open(fspfile,'r')
+    _fspfile = open(fspfile, 'r')
     for _ in range(lc):
         line = next(_fspfile)
 
     # Store segment
-    segment = {'strike':strike,
-       'dip':dip,
-       'length': length,
-       'width': width}
+    segment = {'strike': strike,
+               'dip': dip,
+               'length': length,
+               'width': width}
+
+    # Pick the right headers
+    if data.shape[0] == 7:
+        headers = STATIC_HEADERS
+    elif data.shape[0] == 10:
+        headers = DYNAMIC_HEADERS
+    else:
+        raise ValueError(
+            'Data structure does not fit dynamic or static format.')
+
     for idx, header in enumerate(headers):
         if header.lower() == 'z':
             header = 'depth'
-        segment[header.lower()] = data[idx].reshape(nz,nx).copy()
+        segment[header.lower()] = data[idx].reshape(nz, nx).copy()
     segments = [segment]
 
     # Get multiple segments
@@ -147,23 +158,23 @@ def read_from_file(fspfile, headers=DEFAULT_HEADERS):
             nz = int(np.round_(width/dz, 2))
 
             # Import data
-            data = np.genfromtxt(fspfile,max_rows=nx*nz,skip_header=lc-1).T
+            data = np.genfromtxt(fspfile, max_rows=nx*nz, skip_header=lc-1).T
             lc += (nx*nz)-1
 
             # Reshape data into the proper dimensions
-            _fspfile = open(fspfile,'r')
+            _fspfile = open(fspfile, 'r')
             for _ in range(lc):
                 next(_fspfile)
 
             # Store segment
-            segment = {'strike':strike,
-               'dip':dip,
-               'length': length,
-               'width': width}
+            segment = {'strike': strike,
+                       'dip': dip,
+                       'length': length,
+                       'width': width}
             for idx, header in enumerate(headers):
                 if header.lower() == 'z':
                     header = 'depth'
-                segment[header.lower()] = data[idx].reshape(nz,nx).copy()
+                segment[header.lower()] = data[idx].reshape(nz, nx).copy()
             segments.append(segment)
 
     # close fspfile object when done
