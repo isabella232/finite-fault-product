@@ -15,26 +15,27 @@ def get_parser():
     description = '''Send a finite fault product for event pages.'''
     parser = argparse.ArgumentParser(description=description)
     parser.add_argument('eventsource',
-            help='Source of the original event ID. (example: us, usp, ci)')
+                        help='Source of the original event ID. (example: us, usp, ci)')
     parser.add_argument('source',
-            help='Source of this product (i.e., contributor of the product. example: us).')
+                        help='Source of this product (i.e., contributor of the product. example: us).')
     parser.add_argument('eventid', help='Event identification code.')
     parser.add_argument('ffm1', help='Directory where all files are '
-            'contained for the finite fault model.')
+                        'contained for the finite fault model.')
     parser.add_argument('-ffm2', dest="ffm2", type=str, default='',
-            help='Directory where all files are contained for the second '
-            'finite fault model.')
+                        help='Directory where all files are contained for the second '
+                        'finite fault model.')
     parser.add_argument("-v", "--version", dest="version",
-                      help="Add a version number to the finite fault output",
-                      metavar="COMMENT")
-    parser.add_argument("-r", "--review",action="store_true",
-                      dest="doReview", default=False,
-                      help="Don't send products to PDL. Only create the product folder.")
-    parser.add_argument("-x", "--not-reviewed",action="store_false",
-                      dest="reviewedByScientist", default=True,
-                      help="Mark that the sent product was not reviewed by a scientist. "
-                      "This will cause a flag to be displayed on the web page.")
+                        help="Add a version number to the finite fault output",
+                        metavar="COMMENT")
+    parser.add_argument("-r", "--review", action="store_true",
+                        dest="doReview", default=False,
+                        help="Don't send products to PDL. Only create the product folder.")
+    parser.add_argument("-x", "--not-reviewed", action="store_false",
+                        dest="reviewedByScientist", default=True,
+                        help="Mark that the sent product was not reviewed by a scientist. "
+                        "This will cause a flag to be displayed on the web page.")
     return parser
+
 
 def main(args):
     two_faults = False
@@ -46,7 +47,7 @@ def main(args):
         version = int(args.version)
         if version < 1:
             raise Exception(
-                    'Version number less than one %r.' % args.version)
+                'Version number less than one %r.' % args.version)
     if args.ffm2 != '':
         multiple = True
     else:
@@ -54,15 +55,16 @@ def main(args):
     source = args.source
     ffm1dir = args.ffm1
     product1 = WebProduct.fromDirectory(ffm1dir, args.eventid,
-            version=version)
+                                        version=version, multiple=multiple)
 
     folders = ''
     if multiple:
         pdlfolder1 = os.path.join(BASE_PDL_FOLDER, args.eventid + '_1')
         pdlfolder2 = os.path.join(BASE_PDL_FOLDER, args.eventid + '_2')
+
         ffm2dir = args.ffm2
         product2 = WebProduct.fromDirectory(ffm2dir, args.eventid,
-                version=version)
+                                            version=version, multiple=multiple)
         # overwrite the folder to stop conflicts
         if os.path.exists(pdlfolder2):
             shutil.rmtree(pdlfolder2)
@@ -90,15 +92,16 @@ def main(args):
             add_double_comment(f1, 1, 2)
             add_double_comment(f2, 2, 2)
             send_product(args.eventid, args.eventsource, product2, pdlfolder2,
-                    source, reviewed, 2)
+                         source, reviewed, 2)
             send_product(args.eventid, args.eventsource, product1, pdlfolder1,
-                    source, reviewed, 1)
+                         source, reviewed, 1)
         else:
             send_product(args.eventid, args.eventsource, product1, pdlfolder1,
-                    source, reviewed)
+                         source, reviewed)
         print('Sent product files were written to %s' % folders)
     else:
         print('Product files were written to %s' % folders)
+
 
 def copy_files(file_directory, pdl_directory):
     for key in file_directory:
@@ -106,8 +109,9 @@ def copy_files(file_directory, pdl_directory):
         future = os.path.join(pdl_directory, file_directory[key][1])
         shutil.copy2(current, future)
 
+
 def send_product(eventid, network, product, pdlfolder, source, reviewed,
-        number=None):
+                 number=None):
     """
     Configure pdl and send product directory.
     """
@@ -120,14 +124,15 @@ def send_product(eventid, network, product, pdlfolder, source, reviewed,
     if not os.path.exists(PRIVATEKEY):
         raise FileNotFoundError("File does not exist %r." % PRIVATEKEY)
     files, msg = store_fault(CFG, network, eventid, JAR, JAVA,
-            pdlfolder, PRIVATEKEY, source, product.properties, reviewed,
-            number=number)
+                             pdlfolder, PRIVATEKEY, source, product.properties, reviewed,
+                             number=number)
     print(files, msg)
+
 
 def add_double_comment(file, number, total):
     comment = ('<h3>The solutions of two nodal planes explain the '
-            'data equally well. This solution is %s of %s.</h3>' % (number,
-                    total))
+               'data equally well. This solution is %s of %s.</h3>' % (number,
+                                                                       total))
     with open(file, 'r') as infile:
         html = infile.readlines()
     search_line = '<h2>Result</h2>'
