@@ -22,6 +22,7 @@ from product.constants import PAGE_TEMPLATE, TIMEFMT
 
 class WebProduct(object):
     """Class for creating web products."""
+
     def __init__(self):
         self._contents = None
         self._event = None
@@ -57,9 +58,9 @@ class WebProduct(object):
         if not os.path.exists(os.path.join(directory, 'FFM.geojson')):
             raise FileNotFoundError('Missing FFM geojson file.')
         file_attrib, format_attrib = self._getAttributes('modelmaps',
-                "Finite Fault Model Maps ", 'FFM.geojson', "text/plain")
+                                                         "Finite Fault Model Maps ", 'FFM.geojson', "text/plain")
         maps = etree.SubElement(contents, 'file',
-                file_attrib)
+                                file_attrib)
         grid_caption = etree.SubElement(maps, 'caption')
         caption_str = ("Map representation of the finite fault model ")
         grid_caption.text = etree.CDATA(caption_str)
@@ -71,54 +72,63 @@ class WebProduct(object):
         if len(kmls) > 0:
             self._paths['kmls'] = (kmls[0], "finite_fault.kml")
             file_attrib, format_attrib = self._getAttributes('', '',
-                    "finite_fault.kml", "application/vnd.google-earth.kml+xml")
+                                                             "finite_fault.kml", "application/vnd.google-earth.kml+xml")
             etree.SubElement(maps, 'format', format_attrib)
         if len(kmzs) > 0:
             self._paths['kmzs'] = (kmzs[0], "finite_fault.kmz")
             file_attrib, format_attrib = self._getAttributes('', '',
-                    "finite_fault.kmz", "application/vnd.google-earth.kmz")
+                                                             "finite_fault.kmz", "application/vnd.google-earth.kmz")
             etree.SubElement(maps, 'format', format_attrib)
         if len(basemap) > 0:
             self._paths['basemap'] = (basemap[0], "basemap.png")
             file_attrib, format_attrib = self._getAttributes('basemap',
-                    "Base Map ", "basemap.png", "image/png")
+                                                             "Base Map ", "basemap.png", "image/png")
             etree.SubElement(maps, 'format', format_attrib)
 
-        # Look for body and surace wave plots
+        # look for shakemap rupture polygon
+        polygon = self._checkDownload(directory, "shakemap_polygon.txt")
+        if len(polygon) > 0:
+            self._paths['shakemap_polygon'] = (polygon[0],
+                                               "shakemap_polygon.txt")
+            file_attrib, format_attrib = self._getAttributes('shakemap_polygon',
+                                                             "ShakeMap Rupture Polygon",
+                                                             "basemap.png", "text/plain")
+            etree.SubElement(maps, 'format', format_attrib)
+
+        # Look for body and surface wave plots
         plots = self._checkDownload(directory, "waveplots.zip")
         if len(plots) > 0:
             self._paths['waveplots'] = (plots[0], "waveplots.zip")
             file_attrib, format_attrib = self._getAttributes('waveplots',
-                    "Wave Plots ", "waveplots.zip", "application/zip")
+                                                             "Wave Plots ", "waveplots.zip", "application/zip")
             file_tree = etree.SubElement(contents, 'file', file_attrib)
             caption = etree.SubElement(file_tree, 'caption')
             caption.text = etree.CDATA(
-                    "Body and surface wave plots ")
+                "Body and surface wave plots ")
             etree.SubElement(file_tree, 'format', format_attrib)
         else:
             zipped = self.zip_waveplots(directory)
             if zipped != '':
                 self._paths['waveplots'] = (zipped, "waveplots.zip")
                 file_attrib, format_attrib = self._getAttributes('waveplots',
-                        "Wave Plots ", "waveplots.zip", "application/zip")
+                                                                 "Wave Plots ", "waveplots.zip", "application/zip")
                 file_tree = etree.SubElement(contents, 'file', file_attrib)
                 caption = etree.SubElement(file_tree, 'caption')
                 caption.text = etree.CDATA(
-                        "Body and surface wave plots ")
+                    "Body and surface wave plots ")
                 etree.SubElement(file_tree, 'format', format_attrib)
-
 
         # CMT solution
         cmt = self._checkDownload(directory, "*CMTSOLUTION*")
         if len(cmt) > 0:
             self._paths['cmtsolution'] = (cmt[0], "CMTSOLUTION")
             file_attrib, format_attrib = self._getAttributes('cmtsolution',
-                    "CMT Solution ", "CMTSOLUTION", "text/plain")
+                                                             "CMT Solution ", "CMTSOLUTION", "text/plain")
             file_tree = etree.SubElement(contents, 'file', file_attrib)
             caption = etree.SubElement(file_tree, 'caption')
             caption.text = etree.CDATA(
-                    "Full CMT solution for every point in finite fault "
-                    "region ")
+                "Full CMT solution for every point in finite fault "
+                "region ")
             etree.SubElement(file_tree, 'format', format_attrib)
 
         # inversion files
@@ -128,26 +138,26 @@ class WebProduct(object):
             if len(param) > 0:
                 self._paths['inpfile1'] = (param[0], "basic_inversion.param")
                 file_attrib, format_attrib = self._getAttributes('inpfiles',
-                        "Inversion Parameters ", "basic_inversion.param", "text/plain")
+                                                                 "Inversion Parameters ", "basic_inversion.param", "text/plain")
                 file_tree = etree.SubElement(contents, 'file', file_attrib)
                 caption = etree.SubElement(file_tree, 'caption')
                 caption.text = etree.CDATA(
-                        "Files of inversion parameters for the finite fault ")
+                    "Files of inversion parameters for the finite fault ")
                 etree.SubElement(file_tree, 'format', format_attrib)
                 self._paths['inpfile2'] = (fsp[0], "complete_inversion.fsp")
                 file_attrib, format_attrib = self._getAttributes(
-                        'inpfiles', "Inversion Parameters ",
-                        "complete_inversion.fsp", "text/plain")
+                    'inpfiles', "Inversion Parameters ",
+                    "complete_inversion.fsp", "text/plain")
                 etree.SubElement(file_tree, 'format', format_attrib)
             else:
                 self._paths['inpfile2'] = (fsp[0], "complete_inversion.fsp")
                 file_attrib, format_attrib = self._getAttributes(
-                        'inpfiles', "Inversion Parameters ",
-                        "complete_inversion.fsp", "text/plain")
+                    'inpfiles', "Inversion Parameters ",
+                    "complete_inversion.fsp", "text/plain")
                 file_tree = etree.SubElement(contents, 'file', file_attrib)
                 caption = etree.SubElement(file_tree, 'caption')
                 caption.text = etree.CDATA(
-                        "Files of inversion parameters for the finite fault ")
+                    "Files of inversion parameters for the finite fault ")
                 etree.SubElement(file_tree, 'format', format_attrib)
 
         # Coulomb inp
@@ -155,12 +165,12 @@ class WebProduct(object):
         if len(coul) > 0:
             self._paths['coulomb'] = (coul[0], "coulomb.inp")
             file_attrib, format_attrib = self._getAttributes('coulomb',
-                    "Coulomb Input File ", "coulomb.inp", "text/plain")
+                                                             "Coulomb Input File ", "coulomb.inp", "text/plain")
             file_tree = etree.SubElement(contents, 'file', file_attrib)
             caption = etree.SubElement(file_tree, 'caption')
             caption.text = etree.CDATA(
-                    "Format necessary for compatibility with Coulomb3 "
-                    "(http://earthquake.usgs.gov/research/software/coulomb/) ")
+                "Format necessary for compatibility with Coulomb3 "
+                "(http://earthquake.usgs.gov/research/software/coulomb/) ")
             etree.SubElement(file_tree, 'format', format_attrib)
 
         # Moment rate
@@ -169,29 +179,29 @@ class WebProduct(object):
         if len(mr_ascii) > 0:
             self._paths['momentrate1'] = (mr_ascii[0], "moment_rate.mr")
             file_attrib, format_attrib = self._getAttributes(
-                    'momentrate', "Moment Rate Function Files ",
-                    "moment_rate.mr", "text/plain")
+                'momentrate', "Moment Rate Function Files ",
+                "moment_rate.mr", "text/plain")
             file_tree = etree.SubElement(contents, 'file', file_attrib)
             caption = etree.SubElement(file_tree, 'caption')
             caption.text = etree.CDATA(
-                    "Files of time vs. moment rate for source time "
-                    "functions ")
+                "Files of time vs. moment rate for source time "
+                "functions ")
             etree.SubElement(file_tree, 'format', format_attrib)
             self._paths['momentrate2'] = (mr_plot[0], "moment_rate.png")
             file_attrib, format_attrib = self._getAttributes('momentrate',
-                    "Moment Rate Function Files ", "moment_rate.png",
-                    "image/png")
+                                                             "Moment Rate Function Files ", "moment_rate.png",
+                                                             "image/png")
             etree.SubElement(file_tree, 'format', format_attrib)
         else:
             self._paths['momentrate2'] = (mr_plot[0], "moment_rate.png")
             file_attrib, format_attrib = self._getAttributes('momentrate',
-                    "Moment Rate Function Files ", "moment_rate.png",
-                    "image/png")
+                                                             "Moment Rate Function Files ", "moment_rate.png",
+                                                             "image/png")
             file_tree = etree.SubElement(contents, 'file', file_attrib)
             caption = etree.SubElement(file_tree, 'caption')
             caption.text = etree.CDATA(
-                    "Files of time vs. moment rate for source time "
-                    "functions ")
+                "Files of time vs. moment rate for source time "
+                "functions ")
             etree.SubElement(file_tree, 'format', format_attrib)
 
         # surface displacement
@@ -199,13 +209,13 @@ class WebProduct(object):
         if len(surf) > 0:
             self._paths['deformation'] = (surf[0], "surface_deformation.disp")
             file_attrib, format_attrib = self._getAttributes('surface',
-                    "Surface Deformation File ",
-                    "surface_deformation.disp", "text/plain")
+                                                             "Surface Deformation File ",
+                                                             "surface_deformation.disp", "text/plain")
             file_tree = etree.SubElement(contents, 'file', file_attrib)
             caption = etree.SubElement(file_tree, 'caption')
             caption.text = etree.CDATA(
-                    "Surface displacement resulting from finite fault, "
-                    "calculated using Okada-style deformation codes ")
+                "Surface displacement resulting from finite fault, "
+                "calculated using Okada-style deformation codes ")
             etree.SubElement(file_tree, 'format', format_attrib)
 
         tree = etree.ElementTree(contents)
@@ -244,15 +254,18 @@ class WebProduct(object):
                 idx = str(seg)
                 row = """<tr><td>[SEG]</td><td>[STRIKE]</td><td>[DIP]</td></tr>"""
                 row = row.replace('[SEG]', str(seg))
-                row = row.replace('[STRIKE]', '%.1f' % props['segment-' + idx + '-strike'])
-                row = row.replace('[DIP]', '%.1f' % props['segment-' + idx + '-dip'])
+                row = row.replace('[STRIKE]', '%.1f' %
+                                  props['segment-' + idx + '-strike'])
+                row = row.replace('[DIP]', '%.1f' %
+                                  props['segment-' + idx + '-dip'])
                 segments += row
             result = result.replace('[SEGMENTS]', segments)
             result = result.replace('[DD]', '%.1f' % props['model-strike'])
             result = result.replace('[EE]', '%.1f' % props['model-dip'])
-            moment =  props['scalar-moment'] * 10000000
+            moment = props['scalar-moment'] * 10000000
             result = result.replace('[FF]', '%.2e' % moment)
-            result = result.replace('[GG]', '%.1f' % props['derived-magnitude'])
+            result = result.replace('[GG]', '%.1f' %
+                                    props['derived-magnitude'])
             result = result.replace('[HH]', '%i' % props['segments'])
         else:
             result = """After comparing waveform fits based on the two planes of the input
@@ -262,15 +275,16 @@ class WebProduct(object):
             from CRUST2.0 (Bassin et al., 2000)."""
             result = result.replace('[DD]', '%.1f' % props['model-strike'])
             result = result.replace('[EE]', '%.1f' % props['model-dip'])
-            moment =  props['scalar-moment'] * 10000000
+            moment = props['scalar-moment'] * 10000000
             result = result.replace('[FF]', '%.1e' % moment)
-            result = result.replace('[GG]', '%.1f' % props['derived-magnitude'])
+            result = result.replace('[GG]', '%.1f' %
+                                    props['derived-magnitude'])
         page = PAGE_TEMPLATE
         page = page.replace('[DATE]', props['eventtime'].strftime('%b %d, %Y'))
         page = page.replace('[MAG]', '%.1f' % props['derived-magnitude'])
         page = page.replace('[LOCATION]', props['location'])
         if version == 1:
-                page = page.replace('[STATUS]', 'Preliminary')
+            page = page.replace('[STATUS]', 'Preliminary')
         else:
             page = page.replace('[STATUS]', 'Updated')
         page = page.replace('[VERSION]', str(version))
@@ -302,16 +316,16 @@ class WebProduct(object):
             props['metadata'] = station['data']
 
             station_points += [{
-              "type": "Feature",
-              "properties": props,
-              "geometry": {
-                "type": "Point",
-                "coordinates": []
-              }
+                "type": "Feature",
+                "properties": props,
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": []
+                }
             }]
         geo = {
-          "type": "FeatureCollection",
-          "features": station_points
+            "type": "FeatureCollection",
+            "features": station_points
         }
         self._timeseries_geojson = geo
 
@@ -375,8 +389,8 @@ class WebProduct(object):
             if ('num_pwaves' not in wave_dict or
                     'num_shwaves' not in wave_dict or
                     'num_longwaves' not in wave_dict):
-                    raise Exception('Missing one of the required properties: '
-                            'num_pwaves, num_shwaves, num_longwaves.')
+                raise Exception('Missing one of the required properties: '
+                                'num_pwaves, num_shwaves, num_longwaves.')
             else:
                 product._properties = {}
                 product._properties['number-pwaves'] = wave_dict['num_pwaves']
@@ -386,13 +400,13 @@ class WebProduct(object):
         else:
             provided = False
         unavailable, files = product._files_unavailable(directory,
-                waves_provided=provided)
+                                                        waves_provided=provided)
         file_strs = [f[0] + ': ' + f[1] for f in files]
         if unavailable is True:
             raise Exception('Missing required files %r' % file_strs)
         try:
             with open(directory + '/analysis.txt', 'r') as f:
-                    analysis = "".join(f.readlines())
+                analysis = "".join(f.readlines())
 
             product.writeAnalysis(analysis, directory, eventid)
         except:
@@ -466,7 +480,7 @@ class WebProduct(object):
         if os.path.exists(os.path.join(directory, 'Readlp.das')):
             wave_file = os.path.join(directory, 'Readlp.das')
             props['number-pwaves'], props['number-shwaves'] = self._countWaveforms(
-                    wave_file)
+                wave_file)
         if os.path.exists(os.path.join(directory, 'synm.str_low')):
             try:
                 with open(os.path.join(directory, 'synm.str_low'), 'rt') as f:
@@ -476,7 +490,7 @@ class WebProduct(object):
         elif not os.path.exists(os.path.join(directory, 'wave_properties.json')):
             props['number-longwaves'] = 0
         URL_TEMPLATE = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/[EVENTID].geojson'
-        url = URL_TEMPLATE.replace('[EVENTID]', 'us'+eventid)
+        url = URL_TEMPLATE.replace('[EVENTID]', 'us' + eventid)
         try:
             fh = urlopen(url)
             data = fh.read()
@@ -512,8 +526,9 @@ class WebProduct(object):
         for i, segment in enumerate(self.segments):
             idx = str(i + 1)
             if calculated_sizes is not None:
-                props['subfault-' + idx + '-width']= calculated_sizes[i]['width']
-                props['subfault-' + idx + '-length'] = calculated_sizes[i]['length']
+                props['subfault-' + idx + '-width'] = calculated_sizes[i]['width']
+                props['subfault-' + idx +
+                      '-length'] = calculated_sizes[i]['length']
                 props['subfault-' + idx + '-area'] = calculated_sizes[i]['area']
             props['segment-' + idx + '-strike'] = segment['strike']
             props['segment-' + idx + '-dip'] = segment['dip']
@@ -603,7 +618,7 @@ class WebProduct(object):
         prop_file = os.path.join(directory, "properties.json")
         serialized_prop = self._serialize(self.properties)
         with open(prop_file, 'w') as f:
-                json.dump(serialized_prop, f, indent=4, sort_keys=True)
+            json.dump(serialized_prop, f, indent=4, sort_keys=True)
         self._paths['properties'] = (prop_file, "properties.json")
 
     def writeGrid(self, directory):
@@ -689,7 +704,7 @@ class WebProduct(object):
         num_lines = int(lines[4].strip())
         ns = 0
         np = 0
-        #read the int value of the 8th column of each line.
+        # read the int value of the 8th column of each line.
         # if greater than 2, increment ns, otherwise increment np
         for i in range(5, num_lines):
             parts = lines[i].split()
@@ -726,7 +741,7 @@ class WebProduct(object):
         for file_type in required:
             path = os.path.join(directory, required[file_type])
             if len(glob.glob(path)) < 1:
-                unavailable += [(file_type, required[file_type] )]
+                unavailable += [(file_type, required[file_type])]
         if len(unavailable) > 0:
             return (True, unavailable)
         else:
