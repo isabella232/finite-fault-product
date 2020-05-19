@@ -1,13 +1,11 @@
 Status
 =======
 
-[![Build Status](https://travis-ci.org/hschovanec-usgs/finite-fault-product.svg?branch=master)](https://travis-ci.org/hschovanec-usgs/finite-fault-product)
+[![Build Status](https://travis-ci.org/usgs/finite-fault-product.svg?branch=master)](https://travis-ci.org/usgs/finite-fault-product)
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/81d612b63c864f3fb894f4e5bec90b49)](https://www.codacy.com/app/hschovanec-usgs/finite-fault-product?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=hschovanec-usgs/finite-fault-product&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/81d612b63c864f3fb894f4e5bec90b49)](https://www.codacy.com/app/usgs/finite-fault-product?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=usgs/finite-fault-product&amp;utm_campaign=Badge_Grade)
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Coverage/81d612b63c864f3fb894f4e5bec90b49)](https://www.codacy.com/app/hschovanec-usgs/finite-fault-product?utm_source=github.com&utm_medium=referral&utm_content=hschovanec-usgs/finite-fault-product&utm_campaign=Badge_Coverage)
-
-[![Waffle.io - Columns and their card count](https://badge.waffle.io/hschovanec-usgs/finite-fault-product.svg?columns=all)](https://waffle.io/hschovanec-usgs/finite-fault-product)
+[![Codacy Badge](https://api.codacy.com/project/badge/Coverage/81d612b63c864f3fb894f4e5bec90b49)](https://www.codacy.com/app/usgs/finite-fault-product?utm_source=github.com&utm_medium=referral&utm_content=usgs/finite-fault-product&utm_campaign=Badge_Coverage)
 
 
 # Introduction

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-#stdlib imports
+# stdlib imports
 import glob
 import os
 import shutil
@@ -21,7 +21,8 @@ def test_fromFault():
     directory = os.path.join(homedir, '..', 'data', 'products', '10004u1y_1')
     with warnings.catch_warnings():
         warnings.simplefilter("ignore")
-        product = WebProduct.fromDirectory(directory, '10004u1y_1')
+        product = WebProduct.fromDirectory(
+            directory, '10004u1y', multiple=True)
     product.writeContents(directory)
     assert '%.1f' % product.properties['derived-magnitude'] == '7.8'
     assert '%.2e' % product.properties['scalar-moment'] == '6.02e+20'
@@ -72,7 +73,8 @@ def test_fromFault():
 
     target_contents = etree.fromstring(target_contents_str)
     contents = etree.parse(os.path.join(directory, 'contents.xml'))
-    target_contents = etree.tostring(target_contents).decode().strip().replace(' ', '')
+    target_contents = etree.tostring(
+        target_contents).decode().strip().replace(' ', '')
     contents = etree.tostring(contents).decode().strip().replace(' ', '')
     assert contents == target_contents
 
@@ -82,6 +84,38 @@ def test_fromFault():
         product = WebProduct.fromDirectory(directory, '1000dyad')
     product.createTimeseriesGeoJSON()
     product.writeTimeseries(directory)
+
+
+def test_fromDirectory():
+    homedir = os.path.dirname(os.path.abspath(__file__))
+    directory1 = os.path.join(homedir, '..', 'data', 'products', '10004u1y_1')
+    directory2 = os.path.join(homedir, '..', 'data', 'products', '10004u1y_2')
+    # Fault 1
+    product = WebProduct.fromDirectory(directory1, '10004u1y', multiple=True)
+    html1 = os.path.join(directory1, '10004u1y.html')
+    with open(html1, 'r') as f1:
+        lines1 = f1.readlines()
+    join1 = ' '.join(lines1[24:30]).replace(' ', '').replace('\n', '')
+    target_str = """The solutions of two nodal planes explain the
+    data equally well. Both solutions are presented. Here we
+    present results for the nodal plane with strike = 274.0 deg.
+    and dip = 84.0 deg. The seismic moment release based upon
+    this plane is 6.0e+27 N.m (Mw = 7.8) using a 1D crustal model
+    interpolated from CRUST2.0 (Bassin et al., 2000).""".replace(' ', '').replace('\n', '')
+    assert join1 == target_str
+    # Fault 2
+    product = WebProduct.fromDirectory(directory2, '10004u1y', multiple=True)
+    html2 = os.path.join(directory2, '10004u1y.html')
+    with open(html2, 'r') as f2:
+        lines2 = f2.readlines()
+    join2 = ' '.join(lines2[24:30]).replace(' ', '').replace('\n', '')
+    target_str = """The solutions of two nodal planes explain the
+    data equally well. Both solutions are presented. Here we
+    present results for the nodal plane with strike = 5.0 deg.
+    and dip = 79.0 deg. The seismic moment release based upon
+    this plane is 6.0e+27 N.m (Mw = 7.8) using a 1D crustal model
+    interpolated from CRUST2.0 (Bassin et al., 2000).""".replace(' ', '').replace('\n', '')
+    assert join2 == target_str
 
 
 def test_exceptions():
@@ -105,3 +139,4 @@ def test_exceptions():
 if __name__ == '__main__':
     test_fromFault()
     test_exceptions()
+    test_fromDirectory()

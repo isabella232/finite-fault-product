@@ -66,7 +66,7 @@ class WebProduct(object):
         grid_caption.text = etree.CDATA(caption_str)
         etree.SubElement(maps, 'format', format_attrib)
 
-        basemap = self._checkDownload(directory, "*_basemap.png")
+        basemap = self._checkDownload(directory, "*base*.png")
         kmls = self._checkDownload(directory, "*.kml")
         kmzs = self._checkDownload(directory, "*.kmz")
         if len(kmls) > 0:
@@ -233,52 +233,115 @@ class WebProduct(object):
             version (int): Version number.
         """
         props = self.properties
-        if props['segments'] > 1:
-            result = """After comparing waveform fits based on the two planes of the input
-            moment tensor, we find that a solution adjusted from the nodal plane
-            striking towards [DD] deg. fits the data better. The adjusted solution
-            uses [HH] plane segments (see Table 1 below) designed to
-            match a priori knowledge of the fault (e.g., 3D slab geometry). The
-            seismic moment release based upon this solution is [FF] dyne.cm (Mw =
-            [GG]) using a 1D crustal model interpolated from CRUST2.0 (Bassin et
-            al., 2000).
-            <table border="1">
-            <tr><th>Segment</th><th>Strike (deg.)</th><th>Dip (deg.)</th></tr>
-            [SEGMENTS]
-            </table>
-            <br>
-            <i>Table 1. Multi-Segment Parameters.</i>
-            """
-            segments = ""
-            for seg in range(1, props['segments'] + 1):
-                idx = str(seg)
-                row = """<tr><td>[SEG]</td><td>[STRIKE]</td><td>[DIP]</td></tr>"""
-                row = row.replace('[SEG]', str(seg))
-                row = row.replace('[STRIKE]', '%.1f' %
-                                  props['segment-' + idx + '-strike'])
-                row = row.replace('[DIP]', '%.1f' %
-                                  props['segment-' + idx + '-dip'])
-                segments += row
-            result = result.replace('[SEGMENTS]', segments)
-            result = result.replace('[DD]', '%.1f' % props['model-strike'])
-            result = result.replace('[EE]', '%.1f' % props['model-dip'])
-            moment = props['scalar-moment'] * 10000000
-            result = result.replace('[FF]', '%.2e' % moment)
-            result = result.replace('[GG]', '%.1f' %
-                                    props['derived-magnitude'])
-            result = result.replace('[HH]', '%i' % props['segments'])
+        if self.multiple:
+            if props['segments'] > 1:
+                ### Multiple segments with multiple products ###
+                result = """
+                The solutions of two nodal planes explain the
+                data equally well. Both solutions are presented. Here we
+                present results  adjusted from the nodal plane striking
+                towards [DD] deg. The adjusted solution uses [HH] plane
+                segments (see Table 1 below) designed to match a priori
+                knowledge of the fault (e.g., 3D slab geometry). The seismic
+                moment release based upon this solution is [FF] N.m
+                (Mw = [GG])) using a 1D crustal model interpolated from
+                CRUST2.0 (Bassin et al., 2000).
+                <table border="1">
+                <tr><th>Segment</th><th>Strike (deg.)</th><th>Dip (deg.)</th></tr>
+                [SEGMENTS]
+                </table>
+                <br>
+                <i>Table 1. Multi-Segment Parameters.</i>
+                """
+                segments = ""
+                for seg in range(1, props['segments'] + 1):
+                    idx = str(seg)
+                    row = """<tr><td>[SEG]</td><td>[STRIKE]</td><td>[DIP]</td></tr>"""
+                    row = row.replace('[SEG]', str(seg))
+                    row = row.replace('[STRIKE]', '%.1f' %
+                                      props['segment-' + idx + '-strike'])
+                    row = row.replace('[DIP]', '%.1f' %
+                                      props['segment-' + idx + '-dip'])
+                    segments += row
+                result = result.replace('[SEGMENTS]', segments)
+                result = result.replace('[DD]', '%.1f' % props['model-strike'])
+                result = result.replace('[EE]', '%.1f' % props['model-dip'])
+                moment = props['scalar-moment'] * 10000000
+                result = result.replace('[FF]', '%.2e' % moment)
+                result = result.replace('[GG]', '%.1f' %
+                                        props['derived-magnitude'])
+                result = result.replace('[HH]', '%i' % props['segments'])
+            else:
+                ### One segment with multiple products ###
+                result = """
+                The solutions of two nodal planes explain the
+                data equally well. Both solutions are presented. Here we
+                present results for the nodal plane with strike = [DD] deg.
+                and dip = [EE] deg. The seismic moment release based upon
+                this plane is [FF] N.m (Mw = [GG]) using a 1D crustal model
+                interpolated from CRUST2.0 (Bassin et al., 2000).
+                """
+                result = result.replace('[DD]', '%.1f' % props['model-strike'])
+                result = result.replace('[EE]', '%.1f' % props['model-dip'])
+                moment = props['scalar-moment'] * 10000000
+                result = result.replace('[FF]', '%.1e' % moment)
+                result = result.replace('[GG]', '%.1f' %
+                                        props['derived-magnitude'])
         else:
-            result = """After comparing waveform fits based on the two planes of the input
-            moment tensor, we find that the nodal plane (strike= [DD] deg., dip= [EE]
-            deg.) fits the data better. The seismic moment release based upon this
-            plane is [FF] dyne.cm (Mw = [GG]) using a 1D crustal model interpolated
-            from CRUST2.0 (Bassin et al., 2000)."""
-            result = result.replace('[DD]', '%.1f' % props['model-strike'])
-            result = result.replace('[EE]', '%.1f' % props['model-dip'])
-            moment = props['scalar-moment'] * 10000000
-            result = result.replace('[FF]', '%.1e' % moment)
-            result = result.replace('[GG]', '%.1f' %
-                                    props['derived-magnitude'])
+            if props['segments'] > 1:
+                ### Multiple segments with one products ###
+                result = """
+                After comparing waveform fits based on the two
+                planes of the input moment tensor, we find that a solution
+                adjusted from the nodal plane striking towards [DD] deg.
+                fits the data better. The adjusted solution uses [HH] plane
+                segments (see Table 1 below) designed to match a priori
+                knowledge of the fault (e.g., 3D slab geometry). The seismic
+                moment release based upon this solution is [FF] newton-metre
+                N.m (Mw = [GG]) using a 1D crustal model interpolated
+                from CRUST2.0 (Bassin et al., 2000).
+                <table border="1">
+                <tr><th>Segment</th><th>Strike (deg.)</th><th>Dip (deg.)</th></tr>
+                [SEGMENTS]
+                </table>
+                <br>
+                <i>Table 1. Multi-Segment Parameters.</i>
+                """
+                segments = ""
+                for seg in range(1, props['segments'] + 1):
+                    idx = str(seg)
+                    row = """<tr><td>[SEG]</td><td>[STRIKE]</td><td>[DIP]</td></tr>"""
+                    row = row.replace('[SEG]', str(seg))
+                    row = row.replace('[STRIKE]', '%.1f' %
+                                      props['segment-' + idx + '-strike'])
+                    row = row.replace('[DIP]', '%.1f' %
+                                      props['segment-' + idx + '-dip'])
+                    segments += row
+                result = result.replace('[SEGMENTS]', segments)
+                result = result.replace('[DD]', '%.1f' % props['model-strike'])
+                result = result.replace('[EE]', '%.1f' % props['model-dip'])
+                moment = props['scalar-moment'] * 10000000
+                result = result.replace('[FF]', '%.2e' % moment)
+                result = result.replace('[GG]', '%.1f' %
+                                        props['derived-magnitude'])
+                result = result.replace('[HH]', '%i' % props['segments'])
+            else:
+                ### One segment with one products ###
+                result = """
+                After comparing waveform fits based on the two
+                planes of the input moment tensor, we find that the nodal
+                plane (strike = [DD] deg., dip = [EE] deg.) fits the data
+                better. The seismic moment release based upon this plane
+                is [FF] N.m (Mw = [GG]) using a 1D crustal model
+                interpolated from CRUST2.0 (Bassin et al., 2000)
+                """
+                result = result.replace('[DD]', '%.1f' % props['model-strike'])
+                result = result.replace('[EE]', '%.1f' % props['model-dip'])
+                moment = props['scalar-moment'] * 10000000
+                result = result.replace('[FF]', '%.1e' % moment)
+                result = result.replace('[GG]', '%.1f' %
+                                        props['derived-magnitude'])
+        result = result.replace('                ', '')
         page = PAGE_TEMPLATE
         page = page.replace('[DATE]', props['eventtime'].strftime('%b %d, %Y'))
         page = page.replace('[MAG]', '%.1f' % props['derived-magnitude'])
@@ -368,7 +431,7 @@ class WebProduct(object):
         self._grid = grid
 
     @classmethod
-    def fromDirectory(cls, directory, eventid, version=1):
+    def fromDirectory(cls, directory, eventid, version=1, multiple=False):
         """
         Create instance based upon a directory and eventid.
 
@@ -419,6 +482,7 @@ class WebProduct(object):
         fault.corners['metadata']['eventid'] = eventid
         product.grid = fault.corners
         product._timeseries_dict = fault.timeseries_dict
+        product.multiple = multiple
         calculated_sizes = fault.segment_sizes
         product.writeGrid(directory)
         product.storeProperties(directory, eventid, calculated_sizes)

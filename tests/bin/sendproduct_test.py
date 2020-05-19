@@ -44,13 +44,13 @@ def test_sendproduct():
         net = 'us'
         source = 'us'
         try:
-            cmd = '%s %s %s %s %s' % (send_product, net, source,
-                    eventid, indir)
+            cmd = '%s %s %s %s %s -r' % (send_product, net, source,
+                                         eventid, indir)
             res, stdout, stderr = get_command_output(cmd)
             if not res:
                 raise AssertionError(
                     'sendproduct command %s failed with errors "%s"' % (cmd,
-                            stderr))
+                                                                        stderr))
             print(stdout)
         except Exception as e:
             raise(e)
@@ -58,12 +58,30 @@ def test_sendproduct():
         # Send multiple products
         try:
             cmd = '%s %s %s %s %s -ffm2 %s -v 2 -r' % (send_product, net,
-                    source, eventid, indir, indir)
+                                                       source, eventid, indir, indir)
             res, stdout, stderr = get_command_output(cmd)
             if not res:
                 raise AssertionError(
                     'sendproduct command %s failed with errors "%s"' % (cmd,
-                            stderr))
+                                                                        stderr))
+            print(stdout)
+        except Exception as e:
+            raise(e)
+
+        ndir1 = os.path.join(homedir, '..', 'data', 'products', '10004u1y_1')
+        ndir2 = os.path.join(homedir, '..', 'data', 'products', '10004u1y_2')
+        send_product = os.path.join(homedir, '..', '..', 'bin', 'sendproduct')
+        eventid = '10004u1y_test'
+        net = 'us'
+        source = 'us'
+        try:
+            cmd = '%s %s %s %s %s -ffm2 %s -r' % (send_product, net, source,
+                                                  eventid, ndir1, ndir2)
+            res, stdout, stderr = get_command_output(cmd)
+            if not res:
+                raise AssertionError(
+                    'sendproduct command %s failed with errors "%s"' % (cmd,
+                                                                        stderr))
             print(stdout)
         except Exception as e:
             raise(e)
