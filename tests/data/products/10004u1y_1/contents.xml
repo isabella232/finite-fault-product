@@ -6,10 +6,6 @@
     <format href="finite_fault.kmz" type="application/vnd.google-earth.kmz"/>
     <format href="basemap.png" type="image/png"/>
   </file>
-  <file id="waveplots" title="Wave Plots ">
-    <caption><![CDATA[Body and surface wave plots ]]></caption>
-    <format href="waveplots.zip" type="application/zip"/>
-  </file>
   <file id="cmtsolution" title="CMT Solution ">
     <caption><![CDATA[Full CMT solution for every point in finite fault region ]]></caption>
     <format href="CMTSOLUTION" type="text/plain"/>
