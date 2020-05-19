@@ -236,15 +236,16 @@ class WebProduct(object):
         if self.multiple:
             if props['segments'] > 1:
                 ### Multiple segments with multiple products ###
-                result = """The solutions of two nodal planes explain the
-                 data equally well. Both solutions are presented. Here we
-                 present results  adjusted from the nodal plane striking
-                 towards [DD] deg. The adjusted solution uses [HH] plane
-                 segments (see Table 1 below) designed to match a priori
-                 knowledge of the fault (e.g., 3D slab geometry). The seismic
-                 moment release based upon this solution is [FF] N.m
-                 (Mw = [GG])) using a 1D crustal model interpolated from
-                 CRUST2.0 (Bassin et al., 2000).
+                result = """
+                The solutions of two nodal planes explain the
+                data equally well. Both solutions are presented. Here we
+                present results  adjusted from the nodal plane striking
+                towards [DD] deg. The adjusted solution uses [HH] plane
+                segments (see Table 1 below) designed to match a priori
+                knowledge of the fault (e.g., 3D slab geometry). The seismic
+                moment release based upon this solution is [FF] N.m
+                (Mw = [GG])) using a 1D crustal model interpolated from
+                CRUST2.0 (Bassin et al., 2000).
                 <table border="1">
                 <tr><th>Segment</th><th>Strike (deg.)</th><th>Dip (deg.)</th></tr>
                 [SEGMENTS]
@@ -272,12 +273,14 @@ class WebProduct(object):
                 result = result.replace('[HH]', '%i' % props['segments'])
             else:
                 ### One segment with multiple products ###
-                result = """The solutions of two nodal planes explain the
-                 data equally well. Both solutions are presented. Here we
-                 present results for the nodal plane with strike = [DD] deg.
-                 and dip = [EE] deg. The seismic moment release based upon
-                 this plane is [FF] N.m (Mw = [GG]) using a 1D crustal model
-                 interpolated from CRUST2.0 (Bassin et al., 2000)."""
+                result = """
+                The solutions of two nodal planes explain the
+                data equally well. Both solutions are presented. Here we
+                present results for the nodal plane with strike = [DD] deg.
+                and dip = [EE] deg. The seismic moment release based upon
+                this plane is [FF] N.m (Mw = [GG]) using a 1D crustal model
+                interpolated from CRUST2.0 (Bassin et al., 2000).
+                """
                 result = result.replace('[DD]', '%.1f' % props['model-strike'])
                 result = result.replace('[EE]', '%.1f' % props['model-dip'])
                 moment = props['scalar-moment'] * 10000000
@@ -287,15 +290,16 @@ class WebProduct(object):
         else:
             if props['segments'] > 1:
                 ### Multiple segments with one products ###
-                result = """After comparing waveform fits based on the two
-                 planes of the input moment tensor, we find that a solution
-                 adjusted from the nodal plane striking towards [DD] deg.
-                 fits the data better. The adjusted solution uses [HH] plane
-                 segments (see Table 1 below) designed to match a priori
-                 knowledge of the fault (e.g., 3D slab geometry). The seismic
-                 moment release based upon this solution is [FF] newton-metre
-                 N.m (Mw = [GG]) using a 1D crustal model interpolated
-                 from CRUST2.0 (Bassin et al., 2000).
+                result = """
+                After comparing waveform fits based on the two
+                planes of the input moment tensor, we find that a solution
+                adjusted from the nodal plane striking towards [DD] deg.
+                fits the data better. The adjusted solution uses [HH] plane
+                segments (see Table 1 below) designed to match a priori
+                knowledge of the fault (e.g., 3D slab geometry). The seismic
+                moment release based upon this solution is [FF] newton-metre
+                N.m (Mw = [GG]) using a 1D crustal model interpolated
+                from CRUST2.0 (Bassin et al., 2000).
                 <table border="1">
                 <tr><th>Segment</th><th>Strike (deg.)</th><th>Dip (deg.)</th></tr>
                 [SEGMENTS]
@@ -323,18 +327,21 @@ class WebProduct(object):
                 result = result.replace('[HH]', '%i' % props['segments'])
             else:
                 ### One segment with one products ###
-                result = """After comparing waveform fits based on the two
-                 planes of the input moment tensor, we find that the nodal
-                 plane (strike = [DD] deg., dip = [EE] deg.) fits the data
-                 better. The seismic moment release based upon this plane
-                 is [FF] N.m (Mw = [GG]) using a 1D crustal model
-                 interpolated from CRUST2.0 (Bassin et al., 2000)"""
+                result = """
+                After comparing waveform fits based on the two
+                planes of the input moment tensor, we find that the nodal
+                plane (strike = [DD] deg., dip = [EE] deg.) fits the data
+                better. The seismic moment release based upon this plane
+                is [FF] N.m (Mw = [GG]) using a 1D crustal model
+                interpolated from CRUST2.0 (Bassin et al., 2000)
+                """
                 result = result.replace('[DD]', '%.1f' % props['model-strike'])
                 result = result.replace('[EE]', '%.1f' % props['model-dip'])
                 moment = props['scalar-moment'] * 10000000
                 result = result.replace('[FF]', '%.1e' % moment)
                 result = result.replace('[GG]', '%.1f' %
                                         props['derived-magnitude'])
+        result = result.replace('                ', '')
         page = PAGE_TEMPLATE
         page = page.replace('[DATE]', props['eventtime'].strftime('%b %d, %Y'))
         page = page.replace('[MAG]', '%.1f' % props['derived-magnitude'])
