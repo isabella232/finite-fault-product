@@ -21,17 +21,15 @@ Web product takes a directory of finite fault model files and creates a product 
 2. Create a directory containing all finite fault model files.
     - Note: If the model includes two equally valid solutions, create two directories.
 3. Review the product created. Product files will be written to ~/pdlout/[EVENTCODE]
-   - One product example: `sendproduct us us 1000dyad tests/data/products/1000dyad -r`
-   - Two product example: `sendproduct us us 10004u1y tests/data/products/10004u1y_1 -ffm2 tests/data/products/10004u1y_2 -r`
+   - One product example: `sendproduct us us 1000dyad tests/data/products/1000dyad 1 -d`
 4. Delete the folders and send the product.
-   - One product example: `sendproduct us us 1000dyad tests/data/products/1000dyad`
-   - Two product example: `sendproduct us us 10004u1y tests/data/products/10004u1y_1 -ffm2 tests/data/products/10004u1y_2`
+   - One product example: `sendproduct us us 1000dyad tests/data/products/1000dyad 1`
 5. (opt). Check that the product was sent correctly.
-   - One product example: `getproduct us us 1000dyad ./output_events`
-   - Two product example: `getproduct us us 10004u1y ./output_events -t`
+   - Product without model number: `getproduct us us 1000dyad ./output_events`
+   - Product with model number: `getproduct us us 10004u1y ./output_events -m 2`
 6. (opt). Delete an outdated product.
-   - One product example: `deleteproduct us us 1000dyad`
-    - Two product example (Delete the seconds model): `getproduct us us 10004u1y -t -m 2`
+   - Product without model number: `deleteproduct us us 1000dyad`
+   - Product with model number: `getproduct us us 10004u1y -t -m 2`
 
 ## Requirements
 In order to create the web product a folder containing the folowing files is required. Note: Duplicates of files will not be sent.
@@ -239,6 +237,8 @@ File names are standardized for each event.
 
 - average-rise-time: [Average rise in seconds](https://github.com/usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L9).
 - average-rupture-velocity: [Average ruptrue velocity in kilometers per second](https://github.com/usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L9).
+- comment: A comment to be added to the "View all finite-fault products" table. This property is optional and only sent if specified by the user. Due to limited space this comment should have a maximum of 32 characters.
+- crustal-model: A description of the model used to calculate the seismic moment release. If not specified, the default model is substituted: "1D crustal model interpolated from CRUST2.0 (Bassin et al., 2000)."
 - depth: Depth of the rupture plane in kilometers.
 - derived-magnitude: Magnitude calculated and available in the [fsp file](https://github.com/usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L7).
 - derived-magnitude-type: Magnitude type. Always [Mw](https://github.com/usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L7).
@@ -255,6 +255,7 @@ File names are standardized for each event.
 - minimum-frequency: [Minimum frequency of bandpass filtered seismic data](https://github.com/usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L13).
 - model-dip: [Dip of the fault plane in degrees](https://github.com/usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L8).
 - model-length: [Length of the rupture plane in kilometers](https://github.com/usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L7).
+- model-number: The number of the model/solution. This is equivalent to the number tacked onto the code property. For example, us10004u1y has two solutions with codes us10004u1y_1 and us10004u1y_2. The model-number for these two solutions are 1 and 2 respectively. This property (and the number attached to the code) can be suppressed using the -s tag in send_product. This would allow for updating older events that don't include the model number or code tag.
 - model-rake: [Rake of the model in degrees](https://github.com/usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L8).
 - model-strike: [Strike of the fault plane in degrees](https://github.com/usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L8).
 - model-top: [Vertical depth to the top of the rupture plane](https://github.com/usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L8).

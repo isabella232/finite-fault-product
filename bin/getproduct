@@ -15,18 +15,19 @@ def get_parser():
     parser.add_argument('source', help='Source code (example: us).')
     parser.add_argument('eventid', help='Event identification code.')
     parser.add_argument('directory', help='Directory where all files will '
-            'be written.')
-    parser.add_argument("-t", "--two-model", action="store_true",
-                      dest="two_model", default=False,
-                      help="This finite fault has two solutions.")
+                        'be written.')
+    parser.add_argument("-m", "--model",
+                        dest="model_number",
+                        help="Specify model number.")
     parser.add_argument("-c", "--comcat-host", dest="host", type=str,
-            default='earthquake.usgs.gov',
-            help="Comcat host. Default is ""earthquake.usgs.gov")
+                        default='earthquake.usgs.gov',
+                        help="Comcat host. Default is ""earthquake.usgs.gov")
     return parser
+
 
 def main(args):
     get_fault(args.source, args.eventid, comcat_host=args.host,
-            two_model=args.two_model, write_directory=args.directory)
+              model=args.model_number, write_directory=args.directory)
 
 
 if __name__ == '__main__':
