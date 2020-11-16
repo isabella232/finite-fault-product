@@ -2,6 +2,10 @@
 
 - [Introduction](#introduction)
 - [Instructions](#instructions)
+- [Example Use Cases](#example-use-cases)
+  * [Sending Products](#sending-products)
+  * [Getting Products](#getting-products)
+  * [Deleting Products](#deleting-products)
 - [Requirements](#requirements)
   * [Required Files](#required-files)
   * [Optional Files](#optional-files)
@@ -21,18 +25,72 @@ Web product takes a directory of finite fault model files and creates a product 
 2. Create a directory containing all finite fault model files.
     - Note: If the model includes two equally valid solutions, create two directories.
 3. Review the product created. Product files will be written to ~/pdlout/[EVENTCODE]
-   - One product example: `sendproduct us us 1000dyad tests/data/products/1000dyad 1 -d`
-4. Delete the folders and send the product.
-   - One product example: `sendproduct us us 1000dyad tests/data/products/1000dyad 1`
-5. (opt). Check that the product was sent correctly.
-   - Product without model number: `getproduct us us 1000dyad ./output_events`
-   - Product with model number: `getproduct us us 10004u1y ./output_events -m 2`
-6. (opt). Delete an outdated product.
-   - Product without model number: `deleteproduct us us 1000dyad`
-   - Product with model number: `getproduct us us 10004u1y -t -m 2`
+    - Perform a dry run of send product to see the resultant web product (call the sendproduct command with the dry run, -d, tag).
+4. Send the product.
+    - If everything looks satisfactory (e.g. properties in properties.json are all correct) then use the sendproduct command again without the dry run tag.
+5. Check that the product was sent correctly.
+    - Check the product on the event pages.
+    - (optional) Get the product using the getproduct command.
+6. If necessary, delete an outdated product.
+    - This would be in the case that you have switched from the old sendproduct method to the new method where the code property includes the model number (e.g 1000dyad vs 1000dyad_1) suffix.
+
+## Example Use Cases
+
+### Sending products
+**Note:** You can perform a dry run of any `sendproduct` command by including the `-d` flag in the command. This will create the web product under pdlout/[EVENTCODE] and print the pdl command without sending anything to COMCAT.
+
+**Example 1**
+First submission (or update of product that includes the model number property and model number suffix in the code property) of the product (Fake example event event id: ab1234cdef, event code: 1234cdef, event source: ab, product source: us)
+`sendproduct ab us 1234cdef ./product_directory 1`
+
+**Example 2**
+Update submission of a product that used the deprecated method of sending (doesn't include the model number property or model number suffix in the code property) for an event with 1 solution. The -s tag suppresses the model number and code tag:
+`sendproduct ab us 1234cdef ./product_directory 1 -s`
+NOTE: Alternately you can delete the old product and then send the product without suppressing the model number.
+
+**Example 3**
+Submission of a second (or n number) solution:
+`sendproduct ab us 1234cdef ./product_directory 2`
+
+**Example 4**
+Adding a comment to the "View all finite-fault products" table:
+`sendproduct ab us 1234cdef ./product_directory 2 -c "Solution for nodal plane 2."`
+
+**Scenario 5**
+Updating the crustal model description. This changes the description of the seismic moment release calculation in the "Result" section ("The seismic moment release based upon this plane is ## (Mw = ##) using  a <CRUSTAL MODEL DESCRIPTION>"):
+`sendproduct ab us 1234cdef ./product_directory 2 -m "2D crustal model interpolated from a new algorithm."`
+
+### Getting products
+**Note:** You can change the comcat server using the `-c` flag.
+
+**Example 1**
+Getting a product that was sent with the deprecated `sendproduct` method. This means that the model-number property does not exist and the code property does not include the model number as a suffix. (Fake example event event id: ab1234cdef, event code: 1234cdef, event source: ab, product source: us):
+`getproduct us 1234cdef ./output_directory`
+
+**Example 2**
+Getting a product that includes the model-number property and suffix in the code property:
+`getproduct us 1234cdef ./output_directory -m 1`
+
+**Example 3**
+Getting another solution (e.g. getting the second solution):
+`getproduct us 1234cdef ./output_directory -m 2`
+
+### Deleting products
+
+**Example 1**
+Deleting a product that was sent with the deprecated `sendproduct` method. This means that the model-number property does not exist and the code property does not include the model number as a suffix. (Fake example event event id: ab1234cdef, event code: 1234cdef, event source: ab, product source: us):
+`deleteproduct ab us 1234cdef`
+
+**Example 2**
+Deleting a product that includes the model-number property and suffix in the code property:
+`deleteproduct ab us 1234cdef -m 1`
+
+**Example 3**
+Deleting another solution (e.g. deleting the second solution):
+`deleteproduct ab us 1234cdef -m 2`
 
 ## Requirements
-In order to create the web product a folder containing the folowing files is required. Note: Duplicates of files will not be sent.
+In order to create the web product a folder containing the following files is required. Note: Duplicates of files will not be sent.
 
 ### Required Files
 Failure to include these files will result in an error

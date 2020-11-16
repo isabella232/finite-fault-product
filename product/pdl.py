@@ -11,7 +11,7 @@ from product.constants import BASE_PDL_FOLDER, PRODUCT_TYPE, TIMEFMT
 
 
 def delete_fault(configfile, eventsource, eventsourcecode, jarfile, java,
-                 privatekey, product_source, two_solution=False, number=None):
+                 privatekey, product_source, number=None):
     """Delete finite fault product.
 
     Args:
@@ -22,7 +22,6 @@ def delete_fault(configfile, eventsource, eventsourcecode, jarfile, java,
         java (str): Location of Java binary.
         privatekey (str): Location of PDL private key.
         product_source (str): Network contributing this product to ComCat.
-        two_solution (bool): Is it a two solution finite fault product.
         number (int): Number of product (used for two plane solutions).
                 Default is None.
     Returns:
@@ -37,12 +36,8 @@ def delete_fault(configfile, eventsource, eventsourcecode, jarfile, java,
     props['eventsource'] = eventsource
     props['eventsourcecode'] = eventsourcecode
     props['code'] = eventsource + eventsourcecode
-    if two_solution:
-        if number is not None:
-            props['code'] += '_' + str(number)
-        else:
-            raise Exception(
-                'Number (model number) to delete must be specified.')
+    if number is not None:
+        props['code'] += '_' + str(number)
     props['type'] = 'finite-fault'
     sender = PDLSender(properties=props)
     msg = sender.cancel()
