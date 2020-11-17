@@ -15,17 +15,15 @@ def get_parser():
     description = '''Delete a finite-fault product for a event.'''
     parser = argparse.ArgumentParser(description=description)
     parser.add_argument('eventsource',
-            help='Source of the original event ID. (example: us, usp, ci)')
+                        help='Source of the original event ID. (example: us, usp, ci)')
     parser.add_argument('source',
-            help='Source of this product (i.e., contributor of the product. example: us).')
+                        help='Source of this product (i.e., contributor of the product. example: us).')
     parser.add_argument('eventid', help='Event identification code.')
-    parser.add_argument("-t", "--two-model", action="store_true",
-                      dest="two_model", default=False,
-                      help="This finite fault has two solutions.")
     parser.add_argument("-m", "--model-number", dest="model", type=int,
-            default=None,
-            help="Model number to delete.")
+                        default=None,
+                        help="Model number to delete.")
     return parser
+
 
 def main(args):
     source = args.source
@@ -41,7 +39,7 @@ def main(args):
         raise FileNotFoundError("File does not exist %r." % PRIVATEKEY)
 
     msg = delete_fault(CFG, network, args.eventid, JAR, JAVA,
-            PRIVATEKEY, source, two_solution=args.two_model, number=args.model)
+                       PRIVATEKEY, source, number=args.model)
     print(msg)
 
 

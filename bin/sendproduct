@@ -4,6 +4,7 @@
 import argparse
 import os
 import shutil
+import warnings
 
 # local imports
 from product.constants import BASE_PDL_FOLDER, CFG, JAR, JAVA, PRIVATEKEY
@@ -14,33 +15,88 @@ from product.web_product import WebProduct
 def get_parser():
     description = '''Send a finite fault product for event pages.'''
     parser = argparse.ArgumentParser(description=description)
+
+    # Required Arguments
+    event_source_description = ("Source of the original event ID. "
+                                "(example: us, usp, ci)")
     parser.add_argument('eventsource',
-                        help='Source of the original event ID. (example: us, usp, ci)')
+                        help=event_source_description, metavar="EVENT SOURCE")
+    source_description = ("Source of this product "
+                          "(i.e., contributor of the product. Example: us).")
     parser.add_argument('source',
-                        help='Source of this product (i.e., contributor of the product. example: us).')
-    parser.add_argument('eventid', help='Event identification code.')
-    parser.add_argument('ffm1', help='Directory where all files are '
-                        'contained for the finite fault model.')
-    parser.add_argument('-ffm2', dest="ffm2", type=str, default='',
-                        help='Directory where all files are contained for the second '
-                        'finite fault model.')
+                        help=source_description,
+                        metavar="FINITE FAULT MODEL SOURCE")
+    eid_description = ("Event identification code. For example, if the full "
+                       "event is us1000dyad, the source is us and the code "
+                       "is 1000dyad.")
+    parser.add_argument('eventid', help=eid_description,
+                        metavar="EVENT ID CODE")
+    ffm_description = ("Path to the directory where all of the files for the "
+                       "finite fault model are located.")
+    parser.add_argument('ffm', help=ffm_description, metavar="PATH TO FFM")
+    num_description = ("Number for this solution. Note: This is not "
+                       "used for versioning.This number specifies the number "
+                       "of the valid solutions submitted. For example, if "
+                       "two equally valid solutions for two different nodal "
+                       "planes are submitted, the first would be '1' and the "
+                       "other would be '2'. The last solution submitted will "
+                       "be the default model displayed on the event summary "
+                       "page.")
+    parser.add_argument('solution', help=num_description,
+                        metavar="SOLUTION NUMBER", type=int)
+    comment_description = ("Add a comment to the 'View all finite-fault "
+                           "products' table. This comment describes the "
+                           "solution. (Example: 'Solution 1, where slip is "
+                           "constrained.'). The comment length should not exceed 32 characters.")
+
+    # Optional Arguments
+    parser.add_argument("-c", "--comment", dest="comment",
+                        help=comment_description, metavar="SOLUTION COMMENT")
+    crustal_model_description = ("Updates the model description. By default, "
+                                 "the results section describes the seismic "
+                                 "moment release as '1D crustal model "
+                                 "interpolated from CRUST2.0 (Bassin et "
+                                 "al., 2000).'")
+    default_crustal_model = ("1D crustal model interpolated from "
+                             "CRUST2.0 (Bassin et al., 2000).")
+    parser.add_argument("-m", "--crustal-model", dest="crustal_model",
+                        help=crustal_model_description,
+                        default=default_crustal_model,
+                        metavar='CRUSTAL MODEL')
+    review_description = ("Perform a dry run, creating the product for "
+                          "review, without sending any files to comcat. "
+                          "Default is 'False' (the product is sent to "
+                          "comcat).")
+    parser.add_argument("-d", "--dry_run", action="store_true",
+                        dest="dry_run", default=False,
+                        help=review_description)
+    suppress_description = ("Suppress the model number. This allows for "
+                            "updates of older versions that did not "
+                            "include the model-number product property "
+                            "or the number tag at the end of the event "
+                            "code. Example: An old single solution product "
+                            "code would look like us1000dyad while the updated "
+                            "product code would look like us1000dyad_1.")
+    parser.add_argument("-s", "--suppress-number", dest="suppress_number",
+                        help=suppress_description,
+                        action="store_true", default=False)
+    version_description = ("Add a version number to the finite fault output. "
+                           "Default is 1.")
     parser.add_argument("-v", "--version", dest="version",
-                        help="Add a version number to the finite fault output",
-                        metavar="COMMENT")
-    parser.add_argument("-r", "--review", action="store_true",
-                        dest="doReview", default=False,
-                        help="Don't send products to PDL. Only create the product folder.")
+                        help=version_description,
+                        metavar="VERSION", default=1, type=int)
+    scientist_reviewed = ("Marks that the sent product was not reviewed by a "
+                          "scientist. This will cause a flag to be "
+                          "displayed on the web page. Default is 'True'.")
     parser.add_argument("-x", "--not-reviewed", action="store_false",
-                        dest="reviewedByScientist", default=True,
-                        help="Mark that the sent product was not reviewed by a scientist. "
-                        "This will cause a flag to be displayed on the web page.")
+                        dest="reviewed_by_scientist", default=True,
+                        help=scientist_reviewed)
     return parser
 
 
 def main(args):
-    two_faults = False
-    comment = 'Not available yet.'
-
+    # Specify the version number. Default is 1.
+    print(args.version)
     if args.version is None:
         version = 1
     else:
@@ -48,57 +104,49 @@ def main(args):
         if version < 1:
             raise Exception(
                 'Version number less than one %r.' % args.version)
-    if args.ffm2 != '':
-        multiple = True
-    else:
-        multiple = False
+
+    # Create product from directory
     source = args.source
-    ffm1dir = args.ffm1
-    product1 = WebProduct.fromDirectory(ffm1dir, args.eventid,
-                                        version=version, multiple=multiple)
+    eventid = args.eventid
+    event_source = args.eventsource
+    ffm_dir = args.ffm
+    crustal_model = args.crustal_model
+    solution_comment = args.comment
+    if solution_comment is not None:
+        if len(solution_comment) > 32:
+            warnings.warn('The comment length exceeds 32 characters!')
+    model_number = args.solution
+    dry_run = args.dry_run
+    suppress = args.suppress_number
+    product = WebProduct.fromDirectory(ffm_dir, eventid, model_number,
+                                       crustal_model=crustal_model,
+                                       comment=solution_comment,
+                                       version=version,
+                                       suppress_model=suppress)
+    folder = f"{eventid}_{model_number}"
+    pdlfolder = os.path.join(BASE_PDL_FOLDER, folder)
 
-    folders = ''
-    if multiple:
-        pdlfolder1 = os.path.join(BASE_PDL_FOLDER, args.eventid + '_1')
-        pdlfolder2 = os.path.join(BASE_PDL_FOLDER, args.eventid + '_2')
-
-        ffm2dir = args.ffm2
-        product2 = WebProduct.fromDirectory(ffm2dir, args.eventid,
-                                            version=version, multiple=multiple)
-        # overwrite the folder to stop conflicts
-        if os.path.exists(pdlfolder2):
-            shutil.rmtree(pdlfolder2)
-        os.makedirs(pdlfolder2)
-        copy_files(product2.paths, pdlfolder2)
-        folders += pdlfolder2 + ' and '
-    else:
-        pdlfolder1 = os.path.join(BASE_PDL_FOLDER, args.eventid)
     # overwrite the folder to stop conflicts
-    if os.path.exists(pdlfolder1):
-        shutil.rmtree(pdlfolder1)
-    os.makedirs(pdlfolder1)
-    copy_files(product1.paths, pdlfolder1)
-    folders += pdlfolder1
+    if os.path.exists(pdlfolder):
+        shutil.rmtree(pdlfolder)
+    os.makedirs(pdlfolder)
+    copy_files(product.paths, pdlfolder)
 
-    if args.reviewedByScientist:
+    if args.reviewed_by_scientist:
         reviewed = True
     else:
         reviewed = False
 
-    if not args.doReview:
-        if multiple:
-            f1 = os.path.join(pdlfolder1, args.eventid + '.html')
-            f2 = os.path.join(pdlfolder2,  args.eventid + '.html')
-            send_product(args.eventid, args.eventsource, product2, pdlfolder2,
-                         source, reviewed, 2)
-            send_product(args.eventid, args.eventsource, product1, pdlfolder1,
-                         source, reviewed, 1)
-        else:
-            send_product(args.eventid, args.eventsource, product1, pdlfolder1,
-                         source, reviewed)
-        print('Sent product files were written to %s' % folders)
+    num_files, message = send_product(eventid, event_source, product, pdlfolder,
+                                      source, reviewed, model_number, dry_run,
+                                      suppress)
+    if dry_run:
+        msg = ("Dry run performed. Product files were written to "
+               f"{pdlfolder}. Dry run pdl command: {message}")
     else:
-        print('Product files were written to %s' % folders)
+        msg = (f"{num_files} files sent to COMCAT. Sent product files "
+               f"were written to {pdlfolder}")
+    print(msg)
 
 
 def copy_files(file_directory, pdl_directory):
@@ -109,7 +157,7 @@ def copy_files(file_directory, pdl_directory):
 
 
 def send_product(eventid, network, product, pdlfolder, source, reviewed,
-                 number=None):
+                 number, dry_run, suppress):
     """
     Configure pdl and send product directory.
     """
@@ -123,8 +171,8 @@ def send_product(eventid, network, product, pdlfolder, source, reviewed,
         raise FileNotFoundError("File does not exist %r." % PRIVATEKEY)
     files, msg = store_fault(CFG, network, eventid, JAR, JAVA,
                              pdlfolder, PRIVATEKEY, source, product.properties, reviewed,
-                             number=number)
-    print(files, msg)
+                             number, dry_run, suppress=suppress)
+    return (files, msg)
 
 
 if __name__ == '__main__':
