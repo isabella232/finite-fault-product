@@ -85,16 +85,6 @@ class WebProduct(object):
                                                              "Base Map ", "basemap.png", "image/png")
             etree.SubElement(maps, 'format', format_attrib)
 
-        # look for shakemap rupture polygon
-        polygon = self._checkDownload(directory, "shakemap_polygon.txt")
-        if len(polygon) > 0:
-            self._paths['shakemap_polygon'] = (polygon[0],
-                                               "shakemap_polygon.txt")
-            file_attrib, format_attrib = self._getAttributes('shakemap_polygon',
-                                                             "ShakeMap Rupture Polygon",
-                                                             "basemap.png", "text/plain")
-            etree.SubElement(maps, 'format', format_attrib)
-
         # Look for body and surface wave plots
         plots = self._checkDownload(directory, "waveplots.zip")
         if len(plots) > 0:
@@ -218,6 +208,19 @@ class WebProduct(object):
                 "calculated using Okada-style deformation codes ")
             etree.SubElement(file_tree, 'format', format_attrib)
 
+        # shakemap polygon
+        poly = self._checkDownload(directory, "shakemap_polygon.txt")
+        if len(poly) > 0:
+            self._paths['shakemap_polygon'] = (
+                poly[0], "shakemap_polygon.txt")
+            file_attrib, format_attrib = self._getAttributes('shakemap_polygon',
+                                                             "ShakeMap Rupture Polygon File ", "shakemap_polygon.txt", "text/plain")
+            file_tree = etree.SubElement(contents, 'file', file_attrib)
+            caption = etree.SubElement(file_tree, 'caption')
+            caption.text = etree.CDATA(
+                "Geometry of finite fault slipped area ")
+            etree.SubElement(file_tree, 'format', format_attrib)
+
         tree = etree.ElementTree(contents)
         self._contents = tree
         return tree
@@ -303,6 +306,7 @@ class WebProduct(object):
             WebProduct: Instance set for information for the web product.
         """
         product = cls()
+        product._properties = {}
         wave_prop = os.path.join(directory, "wave_properties.json")
         if os.path.exists(wave_prop):
             with open(wave_prop, 'r') as f:
@@ -313,7 +317,6 @@ class WebProduct(object):
                 raise Exception('Missing one of the required properties: '
                                 'num_pwaves, num_shwaves, num_longwaves.')
             else:
-                product._properties = {}
                 product._properties['number-pwaves'] = wave_dict['num_pwaves']
                 product._properties['number-shwaves'] = wave_dict['num_shwaves']
                 product._properties['number-longwaves'] = wave_dict['num_longwaves']
@@ -341,6 +344,7 @@ class WebProduct(object):
         product.grid = fault.corners
         product.solution = model_number
         product.crustal_model = crustal_model
+        product._properties['version'] = version
         product.comment = comment
         product.suppress_model = suppress_model
         product._timeseries_dict = fault.timeseries_dict
@@ -656,7 +660,8 @@ class WebProduct(object):
                 'Moment Rate PNG': '*mr*.png',
                 'Base Map PNG': '*base*.png',
                 'Slip PNG': '*slip*.png',
-                'FSP File': '*.fsp'
+                'FSP File': '*.fsp',
+                'Shakemap Polygon': 'shakemap_polygon.txt'
             }
         else:
             required = {
@@ -664,7 +669,8 @@ class WebProduct(object):
                 'Base Map PNG': '*base*.png',
                 'Slip PNG': '*slip*.png',
                 'FSP File': '*.fsp',
-                'Wave File': 'Readlp.das'
+                'Wave File': 'Readlp.das',
+                'Shakemap Polygon': 'shakemap_polygon.txt'
             }
         unavailable = []
         for file_type in required:

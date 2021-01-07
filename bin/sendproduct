@@ -6,8 +6,12 @@ import os
 import shutil
 import warnings
 
+# third party imports
+from impactutils.transfer.emailsender import EmailSender
+
 # local imports
-from product.constants import BASE_PDL_FOLDER, CFG, JAR, JAVA, PRIVATEKEY
+from product.constants import (BASE_PDL_FOLDER, CFG, JAR, JAVA, PRIVATEKEY,
+                               EMAIL_SENDER, SMTP_SERVER)
 from product.pdl import store_fault
 from product.web_product import WebProduct
 
@@ -20,20 +24,20 @@ def get_parser():
     event_source_description = ("Source of the original event ID. "
                                 "(example: us, usp, ci)")
     parser.add_argument('eventsource',
-                        help=event_source_description, metavar="EVENT SOURCE")
+                        help=event_source_description, metavar="EVENT_SOURCE")
     source_description = ("Source of this product "
                           "(i.e., contributor of the product. Example: us).")
     parser.add_argument('source',
                         help=source_description,
-                        metavar="FINITE FAULT MODEL SOURCE")
+                        metavar="FINITE_FAULT_MODEL_SOURCE")
     eid_description = ("Event identification code. For example, if the full "
                        "event is us1000dyad, the source is us and the code "
                        "is 1000dyad.")
     parser.add_argument('eventid', help=eid_description,
-                        metavar="EVENT ID CODE")
+                        metavar="EVENT_ID_CODE")
     ffm_description = ("Path to the directory where all of the files for the "
                        "finite fault model are located.")
-    parser.add_argument('ffm', help=ffm_description, metavar="PATH TO FFM")
+    parser.add_argument('ffm', help=ffm_description, metavar="PATH_TO_FFM")
     num_description = ("Number for this solution. Note: This is not "
                        "used for versioning.This number specifies the number "
                        "of the valid solutions submitted. For example, if "
@@ -43,15 +47,25 @@ def get_parser():
                        "be the default model displayed on the event summary "
                        "page.")
     parser.add_argument('solution', help=num_description,
-                        metavar="SOLUTION NUMBER", type=int)
+                        metavar="SOLUTION_NUMBER", type=int)
     comment_description = ("Add a comment to the 'View all finite-fault "
                            "products' table. This comment describes the "
                            "solution. (Example: 'Solution 1, where slip is "
                            "constrained.'). The comment length should not exceed 32 characters.")
 
     # Optional Arguments
+    alert_description = ("Send an email alerting the specified emails a "
+                         "message stating that the model has been sent. "
+                         "Email information includes: eventid, version, etc. "
+                         "Example: -a johndoe@service.net janedoe@service.com")
+    parser.add_argument("-a", "--alert", dest="alert",
+                        help=alert_description, metavar="ALERT", nargs='+')
+    comment_description = ("Add a comment to the 'View all finite-fault "
+                           "products' table. This comment describes the "
+                           "solution. (Example: 'Solution 1, where slip is "
+                           "constrained.'). The comment length should not exceed 32 characters.")
     parser.add_argument("-c", "--comment", dest="comment",
-                        help=comment_description, metavar="SOLUTION COMMENT")
+                        help=comment_description, metavar="SOLUTION_COMMENT")
     crustal_model_description = ("Updates the model description. By default, "
                                  "the results section describes the seismic "
                                  "moment release as '1D crustal model "
@@ -62,7 +76,7 @@ def get_parser():
     parser.add_argument("-m", "--crustal-model", dest="crustal_model",
                         help=crustal_model_description,
                         default=default_crustal_model,
-                        metavar='CRUSTAL MODEL')
+                        metavar='CRUSTAL_MODEL')
     review_description = ("Perform a dry run, creating the product for "
                           "review, without sending any files to comcat. "
                           "Default is 'False' (the product is sent to "
@@ -96,7 +110,6 @@ def get_parser():
 
 def main(args):
     # Specify the version number. Default is 1.
-    print(args.version)
     if args.version is None:
         version = 1
     else:
@@ -123,7 +136,10 @@ def main(args):
                                        comment=solution_comment,
                                        version=version,
                                        suppress_model=suppress)
-    folder = f"{eventid}_{model_number}"
+
+    folder = eventid
+    if not suppress:
+        folder += f"_{model_number}"
     pdlfolder = os.path.join(BASE_PDL_FOLDER, folder)
 
     # overwrite the folder to stop conflicts
@@ -145,8 +161,16 @@ def main(args):
                f"{pdlfolder}. Dry run pdl command: {message}")
     else:
         msg = (f"{num_files} files sent to COMCAT. Sent product files "
-               f"were written to {pdlfolder}")
+               f"were written to {pdlfolder}. Comcat message: "
+               f"{message}")
+
     print(msg)
+
+    if args.alert is not None:
+        if num_files <= 0 and not dry_run:
+            print('No files were sent, so no emails will be sent.')
+        else:
+            send_email(args)
 
 
 def copy_files(file_directory, pdl_directory):
@@ -154,6 +178,30 @@ def copy_files(file_directory, pdl_directory):
         current = file_directory[key][0]
         future = os.path.join(pdl_directory, file_directory[key][1])
         shutil.copy2(current, future)
+
+
+def send_email(args):
+    props = {}
+    props['recipients'] = args.alert
+    props['message'] = (f'A finite fault model has been submitted for '
+                        f'{args.eventsource}{args.eventid} version {args.version}. '
+                        f'This is solution number {args.solution}.')
+    props['subject'] = 'Finite Fault Submission Notification'
+    props['smtp_servers'] = [SMTP_SERVER]
+    props['sender'] = EMAIL_SENDER
+    if EMAIL_SENDER is None or SMTP_SERVER is None:
+        arguments = ("\nemail:\n    smtp: <SMTP SERVER>\n    sender: "
+                     "<SENDER EMAIL ADDRESS>")
+        print(f"Email sender and/or SMTP server are not specified in "
+              ".faultproduct.yaml, so the email cannot be sent. Specify "
+              f"these parameters in the file as '{arguments}'.")
+    elif args.dry_run:
+        print(f"Dry run. Email(s) would be se sent to {props['recipients']} "
+              f"from {props['sender']}, with subject '{props['subject']}' "
+              f"and message '{props['message']}'.")
+    else:
+        sender = EmailSender(properties=props, local_files=[])
+        sender.send()
 
 
 def send_product(eventid, network, product, pdlfolder, source, reviewed,
