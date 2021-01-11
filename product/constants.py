@@ -14,6 +14,17 @@ try:
     JAR = config_dict["pdl"]["jarfile"]
     CFG = config_dict["pdl"]["configfile"]
     PRIVATEKEY = config_dict["pdl"]["privatekey"]
+    try:
+        SMTP_SERVER = config_dict['email']["smtp"]
+        EMAIL_SENDER = config_dict['email']["sender"]
+    except KeyError:
+        SMTP_SERVER = None
+        EMAIL_SENDER = None
+        arguments = ("\nemail:\n    smtp: <SMTP SERVER>\n    sender: "
+                     "<SENDER EMAIL ADDRESS>")
+        print("No SMTP server and/or sender specified, so email "
+              "functionality will not be available. Specify these "
+              f"arguments in .faultproduct.yaml as '{arguments}'")
 except:
     raise Exception("The following configuration keys are required in the "
                     "~/.faultproduct.yaml file."

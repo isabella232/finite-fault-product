@@ -59,7 +59,7 @@ def test_sendproduct():
                          '/ProductClient.jar --send --status=UPDATE '
                          '--source=us --type=finite-fault --code=us10'
                          '0dyad_test_1 --eventsource=us --eventsource'
-                         'code=100dyad_test --property-eventsourcecode'
+                         'code=100dyad_test --property-version=1 --property-eventsourcecode'
                          '="100dyad_test" --property-eventsource="us" '
                          '--property-number-pwaves=42 --property-number'
                          '-shwaves=28 --property-number-longwaves=75 --'
@@ -113,7 +113,7 @@ def test_sendproduct():
                          '/ProductClient.jar --send --status=UPDATE '
                          '--source=us --type=finite-fault --code=us10'
                          '0dyad_test --eventsource=us --eventsource'
-                         'code=100dyad_test --property-eventsourcecode'
+                         'code=100dyad_test --property-version=1 --property-eventsourcecode'
                          '="100dyad_test" --property-eventsource="us" '
                          '--property-number-pwaves=42 --property-number'
                          '-shwaves=28 --property-number-longwaves=75 --'
@@ -168,7 +168,7 @@ def test_sendproduct():
                          '/ProductClient.jar --send --status=UPDATE '
                          '--source=us --type=finite-fault --code=us10'
                          '0dyad_test --eventsource=us --eventsource'
-                         'code=100dyad_test --property-eventsourcecode'
+                         'code=100dyad_test --property-version=1 --property-eventsourcecode'
                          '="100dyad_test" --property-eventsource="us" '
                          '--property-number-pwaves=42 --property-number'
                          '-shwaves=28 --property-number-longwaves=75 --'
@@ -208,7 +208,7 @@ def test_sendproduct():
         source = 'us'
         try:
             cmd = (f'{send_product} {net} {source} {eventid} {indir} 1 -d -s'
-                   ' -c "comment here" -m "new crustal model"')
+                   ' -c "comment here" -m "new crustal model" -v 3')
             res, stdout, stderr = get_command_output(cmd)
             if not res:
                 raise AssertionError(
@@ -223,7 +223,7 @@ def test_sendproduct():
                          '/ProductClient.jar --send --status=UPDATE '
                          '--source=us --type=finite-fault --code=us10'
                          '0dyad_test --eventsource=us --eventsource'
-                         'code=100dyad_test --property-eventsourcecode'
+                         'code=100dyad_test --property-version=3 --property-eventsourcecode'
                          '="100dyad_test" --property-eventsource="us" '
                          '--property-number-pwaves=42 --property-number'
                          '-shwaves=28 --property-number-longwaves=75 --'

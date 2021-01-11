@@ -123,6 +123,12 @@ def test_fromDirectory():
         product.properties['model-number']
     assert str(e_info) == "<ExceptionInfo KeyError('model-number',) tblen=1>"
 
+    target_contents = {'geojson': ('/finite-fault-product/tests/product/../data/products/10004u1y_1/FFM.geojson', 'FFM.geojson'),
+                       'kmls': ('/finite-fault-product/tests/product/../data/products/10004u1y_1/10004u1y.kml', 'finite_fault.kml'), 'kmzs': ('/finite-fault-product/tests/product/../data/products/10004u1y_1/10004u1y.kmz', 'finite_fault.kmz'), 'basemap': ('/finite-fault-product/tests/product/../data/products/10004u1y_1/10004u1y_basemap.png', 'basemap.png'), 'shakemap_polygon': ('/finite-fault-product/tests/product/../data/products/10004u1y_1/shakemap_polygon.txt', 'shakemap_polygon.txt'), 'cmtsolution': ('/finite-fault-product/tests/product/../data/products/10004u1y_1/CMTSOLUTION', 'CMTSOLUTION'), 'inpfile1': ('/finite-fault-product/tests/product/../data/products/10004u1y_1/10004u1y.param', 'basic_inversion.param'), 'inpfile2': (
+        '/finite-fault-product/tests/product/../data/products/10004u1y_1/10004u1y.fsp', 'complete_inversion.fsp'), 'coulomb': ('/finite-fault-product/tests/product/../data/products/10004u1y_1/10004u1y_coulomb.inp', 'coulomb.inp'), 'momentrate1': ('/finite-fault-product/tests/product/../data/products/10004u1y_1/10004u1y.mr', 'moment_rate.mr'), 'momentrate2': ('/finite-fault-product/tests/product/../data/products/10004u1y_1/mr.png', 'moment_rate.png'), 'deformation': ('/finite-fault-product/tests/product/../data/products/10004u1y_1/10004u1y.disp', 'surface_deformation.disp'), 'contents': ('/finite-fault-product/tests/product/../data/products/10004u1y_1/contents.xml', 'contents.xml'), 'slip': ('/finite-fault-product/tests/product/../data/products/10004u1y_1/10004u1y_slip2.png', 'slip.png'), 'properties': ('/finite-fault-product/tests/product/../data/products/10004u1y_1/properties.json', 'properties.json')}
+    for key in target_contents:
+        assert product.paths[key][1] == target_contents[key][1]
+
 
 def test_exceptions():
     homedir = os.path.dirname(os.path.abspath(__file__))
