@@ -54,9 +54,8 @@ def test_sendproduct():
             raise(e)
 
         stdout = stdout.decode('utf8').split(
-            "command: ")[-1].split('--privateKey')[0]
-        target_stdout = ('/usr/bin/java -jar /Users/hschovanec/ProductClient'
-                         '/ProductClient.jar --send --status=UPDATE '
+            "command: ")[-1].split('--privateKey')[0].split('ProductClient.jar ')[-1]
+        target_stdout = ('--send --status=UPDATE '
                          '--source=us --type=finite-fault --code=us10'
                          '0dyad_test_1 --eventsource=us --eventsource'
                          'code=100dyad_test --property-version=1 --property-eventsourcecode'
@@ -108,9 +107,8 @@ def test_sendproduct():
             raise(e)
 
         stdout = stdout.decode('utf8').split(
-            "command: ")[-1].split('--privateKey')[0]
-        target_stdout = ('/usr/bin/java -jar /Users/hschovanec/ProductClient'
-                         '/ProductClient.jar --send --status=UPDATE '
+            "command: ")[-1].split('--privateKey')[0].split('ProductClient.jar ')[-1]
+        target_stdout = ('--send --status=UPDATE '
                          '--source=us --type=finite-fault --code=us10'
                          '0dyad_test --eventsource=us --eventsource'
                          'code=100dyad_test --property-version=1 --property-eventsourcecode'
@@ -163,9 +161,8 @@ def test_sendproduct():
             raise(e)
 
         stdout = stdout.decode('utf8').split(
-            "command: ")[-1].split('--privateKey')[0]
-        target_stdout = ('/usr/bin/java -jar /Users/hschovanec/ProductClient'
-                         '/ProductClient.jar --send --status=UPDATE '
+            "command: ")[-1].split('--privateKey')[0].split('ProductClient.jar ')[-1]
+        target_stdout = ('--send --status=UPDATE '
                          '--source=us --type=finite-fault --code=us10'
                          '0dyad_test --eventsource=us --eventsource'
                          'code=100dyad_test --property-version=1 --property-eventsourcecode'
@@ -218,9 +215,8 @@ def test_sendproduct():
             raise(e)
 
         stdout = stdout.decode('utf8').split(
-            "command: ")[-1].split('--privateKey')[0]
-        target_stdout = ('/usr/bin/java -jar /Users/hschovanec/ProductClient'
-                         '/ProductClient.jar --send --status=UPDATE '
+            "command: ")[-1].split('--privateKey')[0].split('ProductClient.jar ')[-1]
+        target_stdout = ('--send --status=UPDATE '
                          '--source=us --type=finite-fault --code=us10'
                          '0dyad_test --eventsource=us --eventsource'
                          'code=100dyad_test --property-version=3 --property-eventsourcecode'
