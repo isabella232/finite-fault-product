@@ -22,16 +22,36 @@ Web product takes a directory of finite fault model files and creates a product 
 ## Instructions
 
 1. [Install](https://github.com/usgs/finite-fault-product#installing) the finite-fault-product packages.
-2. Create a directory containing all finite fault model files.
+2. Check that the config file ($HOME/.faultproduct.yaml) created by the install script points to the correct directories. Example (without emailing):
+```
+outputfolder: /Users/username/pdlout
+pdl:
+    configfile: /Users/username/ProductClient/dev_config.ini
+    jarfile: /Users/username/ProductClient/ProductClient.jar
+    privatekey: /Users/username/ProductClient/ffm_key
+```
+Emailing (sending alerts when the sendproduct script is used) can be set up in the config file. Note: The default list of recipients is optional as the -a flag can be used to specify recipient emails in the sendproduct script. Example (with emailing):
+```
+outputfolder: /Users/username/pdlout
+pdl:
+    configfile: /Users/username/ProductClient/dev_config.ini
+    jarfile: /Users/username/ProductClient/ProductClient.jar
+    privatekey: /Users/username/ProductClient/ffm_key
+email:
+    sender: myemail@example.com
+    smtp: smtp.example.com
+    default_alert_recipients: recipient1@example.com,recipient2@example.com
+```
+3. Create a directory containing all finite fault model files.
     - Note: If the model includes two equally valid solutions, create two directories.
-3. Review the product created. Product files will be written to ~/pdlout/[EVENTCODE]
+4. Review the product created. Product files will be written to ~/pdlout/[EVENTCODE]
     - Perform a dry run of send product to see the resultant web product (call the sendproduct command with the dry run, -d, tag).
-4. Send the product.
+5. Send the product.
     - If everything looks satisfactory (e.g. properties in properties.json are all correct) then use the sendproduct command again without the dry run tag.
-5. Check that the product was sent correctly.
+6. Check that the product was sent correctly.
     - Check the product on the event pages.
     - (optional) Get the product using the getproduct command.
-6. If necessary, delete an outdated product.
+7. If necessary, delete an outdated product.
     - This would be in the case that you have switched from the old sendproduct method to the new method where the code property includes the model number (e.g 1000dyad vs 1000dyad_1) suffix.
 
 ## Example Use Cases
@@ -44,19 +64,23 @@ First submission (or update of product that includes the model number property a
 `sendproduct ab us 1234cdef ./product_directory 1`
 
 **Example 2**
+First submission (or update of product that includes the model number property and model number suffix in the code property) of the product (Fake example event event id: ab1234cdef, event code: 1234cdef, event source: ab, product source: us) and sending an alert email to two recipients. Note: A default list of recipients can be added to the config file.
+`sendproduct ab us 1234cdef ./product_directory 1 -a recipient1@example.com recipient2@example.com`
+
+**Example 3**
 Update submission of a product that used the deprecated method of sending (doesn't include the model number property or model number suffix in the code property) for an event with 1 solution. The -s tag suppresses the model number and code tag:
 `sendproduct ab us 1234cdef ./product_directory 1 -s`
 NOTE: Alternately you can delete the old product and then send the product without suppressing the model number.
 
-**Example 3**
+**Example 4**
 Submission of a second (or n number) solution:
 `sendproduct ab us 1234cdef ./product_directory 2`
 
-**Example 4**
+**Example 5**
 Adding a comment to the "View all finite-fault products" table:
 `sendproduct ab us 1234cdef ./product_directory 2 -c "Solution for nodal plane 2."`
 
-**Scenario 5**
+**Scenario 6**
 Updating the crustal model description. This changes the description of the seismic moment release calculation in the "Result" section ("The seismic moment release based upon this plane is ## (Mw = ##) using  a <CRUSTAL MODEL DESCRIPTION>"):
 `sendproduct ab us 1234cdef ./product_directory 2 -m "2D crustal model interpolated from a new algorithm."`
 
