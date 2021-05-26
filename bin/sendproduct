@@ -10,7 +10,7 @@ import warnings
 from impactutils.transfer.emailsender import EmailSender
 
 # local imports
-from product.constants import (BASE_PDL_FOLDER, CFG, JAR, JAVA, PRIVATEKEY,
+from product.constants import (BASE_PDL_FOLDER, CFG, DEFAULT_ALERT_RECIPIENTS, JAR, JAVA, PRIVATEKEY,
                                EMAIL_SENDER, SMTP_SERVER)
 from product.pdl import store_fault
 from product.web_product import WebProduct
@@ -170,7 +170,21 @@ def main(args):
         if num_files <= 0 and not dry_run:
             print('No files were sent, so no emails will be sent.')
         else:
-            send_email(args)
+            send_email(args, args.alert)
+    else:
+        if num_files <= 0 and not dry_run:
+            print('No files were sent, so no emails will be sent.')
+        else:
+            if DEFAULT_ALERT_RECIPIENTS is not None:
+                msg = (f"A list of default recipients was found in your config file: {DEFAULT_ALERT_RECIPIENTS}. "
+                   "Press 'y' or 'Y' then ENTER to send an alert; press any "
+                   "other key then ENTER to bypass the alert.\t")
+                decision = input(msg)
+                if decision == 'y' or decision == 'Y':
+                    print(f"Sending an alert to: {DEFAULT_ALERT_RECIPIENTS}.")
+                    send_email(args, DEFAULT_ALERT_RECIPIENTS)
+                else:
+                    print("Bypass chosen. No email will be sent.")
 
 
 def copy_files(file_directory, pdl_directory):
@@ -180,9 +194,9 @@ def copy_files(file_directory, pdl_directory):
         shutil.copy2(current, future)
 
 
-def send_email(args):
+def send_email(args, recipients):
     props = {}
-    props['recipients'] = args.alert
+    props['recipients'] = recipients
     props['message'] = (f'A finite fault model has been submitted for '
                         f'{args.eventsource}{args.eventid} version {args.version}. '
                         f'This is solution number {args.solution}.')

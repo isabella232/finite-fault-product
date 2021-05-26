@@ -25,6 +25,10 @@ try:
         print("No SMTP server and/or sender specified, so email "
               "functionality will not be available. Specify these "
               f"arguments in .faultproduct.yaml as '{arguments}'")
+    try:
+        DEFAULT_ALERT_RECIPIENTS = config_dict['email']["default_alert_recipients"].split(',')
+    except:
+        DEFAULT_ALERT_RECIPIENTS = None
 except:
     raise Exception("The following configuration keys are required in the "
                     "~/.faultproduct.yaml file."
