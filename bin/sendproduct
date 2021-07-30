@@ -131,7 +131,7 @@ def main(args):
     model_number = args.solution
     dry_run = args.dry_run
     suppress = args.suppress_number
-    product = WebProduct.fromDirectory(ffm_dir, eventid, model_number,
+    product = WebProduct.fromDirectory(ffm_dir, event_source, eventid, model_number,
                                        crustal_model=crustal_model,
                                        comment=solution_comment,
                                        version=version,

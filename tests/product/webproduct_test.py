@@ -22,7 +22,7 @@ def test_fromDirectory():
     print('Testing basic model...')
     homedir = os.path.dirname(os.path.abspath(__file__))
     directory = os.path.join(homedir, '..', 'data', 'products', '10004u1y_1')
-    product = WebProduct.fromDirectory(directory, '10004u1y', 1)
+    product = WebProduct.fromDirectory(directory, 'us', '10004u1y', 1)
     assert '%.1f' % product.properties['derived-magnitude'] == '7.8'
     assert '%.2e' % product.properties['scalar-moment'] == '6.02e+20'
     assert product.properties['model-strike'] == 274
@@ -45,7 +45,7 @@ def test_fromDirectory():
     print('Testing comment...')
     homedir = os.path.dirname(os.path.abspath(__file__))
     directory = os.path.join(homedir, '..', 'data', 'products', '10004u1y_1')
-    product = WebProduct.fromDirectory(directory, '10004u1y', 2,
+    product = WebProduct.fromDirectory(directory, 'us', '10004u1y', 2,
                                        comment="Nodal plane 1.",
                                        crustal_model="another model.")
     assert '%.1f' % product.properties['derived-magnitude'] == '7.8'
@@ -58,13 +58,13 @@ def test_fromDirectory():
     print('Testing suppressing the multisegment number...')
     homedir = os.path.dirname(os.path.abspath(__file__))
     directory = os.path.join(homedir, '..', 'data', 'products', '000714t')
-    product = WebProduct.fromDirectory(directory, '000714t', 1)
+    product = WebProduct.fromDirectory(directory, 'pt', '000714t', 1)
     assert product.properties["average-rise-time"] == "6.93"
     assert product.properties["average-rupture-velocity"] == "2.27"
     assert product.properties["depth"] == 36.0
     assert product.properties["derived-magnitude"] == 8.15
     assert product.properties["derived-magnitude-type"] == "Mw"
-    assert product.properties["eventsource"] == "us"
+    assert product.properties["eventsource"] == "pt"
     assert product.properties["eventsourcecode"] == "000714t"
     assert product.properties["eventtime"] == "1995-07-30T00:00:00.000000Z"
     assert product.properties["hypocenter-x"] == 172.5
@@ -117,7 +117,7 @@ def test_fromDirectory():
     print('Testing suppressing the model number...')
     homedir = os.path.dirname(os.path.abspath(__file__))
     directory = os.path.join(homedir, '..', 'data', 'products', '10004u1y_1')
-    product = WebProduct.fromDirectory(directory, '10004u1y', 1,
+    product = WebProduct.fromDirectory(directory, 'us', '10004u1y', 1,
                                        suppress_model=True)
     with pytest.raises(KeyError) as e_info:
         product.properties['model-number']
@@ -133,7 +133,7 @@ def test_fromDirectory():
 def test_exceptions():
     homedir = os.path.dirname(os.path.abspath(__file__))
     ts_directory = os.path.join(homedir, '..', 'data', 'products', '000714t')
-    product = WebProduct.fromDirectory(ts_directory, '000714t', 1)
+    product = WebProduct.fromDirectory(ts_directory, 'pt', '000714t', 1)
     product.writeContents(ts_directory)
 
     os.remove(ts_directory + '/FFM.geojson')
