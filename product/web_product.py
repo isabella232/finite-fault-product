@@ -290,7 +290,7 @@ class WebProduct(object):
         self._grid = grid
 
     @classmethod
-    def fromDirectory(cls, directory, eventid, model_number,
+    def fromDirectory(cls, directory, eventsource, eventid, model_number,
                       crustal_model=DEFAULT_MODEL,
                       comment=None, version=1, suppress_model=False):
         """
@@ -350,7 +350,7 @@ class WebProduct(object):
         product._timeseries_dict = fault.timeseries_dict
         calculated_sizes = fault.segment_sizes
         product.writeGrid(directory)
-        product.storeProperties(directory, eventid, calculated_sizes)
+        product.storeProperties(directory, eventsource, eventid, calculated_sizes)
         product.writeContents(directory)
         return product
 
@@ -393,18 +393,19 @@ class WebProduct(object):
         """
         self._segments = segments
 
-    def storeProperties(self, directory, eventid, calculated_sizes=None):
+    def storeProperties(self, directory, eventsource, eventsourcecode, calculated_sizes=None):
         """
         Store PDL properties and creates properties.json.
 
         Args:
             directory (string): Path to directory.
-            eventid (string): Eventid used for file naming.
+            eventsource (string): Eventid source used for file naming.
+            eventsourcecode (string): Eventid code used for file naming.
             calculated_sizes (dict): Dictionary of calculated sizes.
         """
         props = {}
-        props['eventsourcecode'] = eventid
-        props['eventsource'] = 'us'
+        props['eventsourcecode'] = eventsourcecode
+        props['eventsource'] = eventsource
         if os.path.exists(os.path.join(directory, 'Readlp.das')):
             wave_file = os.path.join(directory, 'Readlp.das')
             props['number-pwaves'], props['number-shwaves'] = self._countWaveforms(
@@ -418,7 +419,7 @@ class WebProduct(object):
         elif not os.path.exists(os.path.join(directory, 'wave_properties.json')):
             props['number-longwaves'] = 0
         URL_TEMPLATE = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/[EVENTID].geojson'
-        url = URL_TEMPLATE.replace('[EVENTID]', 'us' + eventid)
+        url = URL_TEMPLATE.replace('[EVENTID]', eventsource + eventsourcecode)
         try:
             fh = urlopen(url)
             data = fh.read()
