@@ -1,0 +1,8 @@
+# Resampled interferogram for event ID us7000g9zq
+#
+# Sensor: Sentinel-1
+# Path: 33 (ascending)
+# Date 1: 2021.12.29
+# Date 2: 2022.01.10
+#
+# lon lat displacement sx sy sx

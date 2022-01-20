@@ -1,0 +1,4212 @@
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       0.0000 
+half duration:    1.0000 
+latitude:        37.7840 
+longitude:      101.2660 
+depth:            6.0000 
+Mrr:        1.779912e+24 
+Mtt:       -1.788988e+24 
+Mpp:        9.075991e+21 
+Mrt:       -2.291363e+24 
+Mrp:       -1.397517e+23 
+Mtp:        2.747157e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       0.7036 
+half duration:    3.0000 
+latitude:        37.7822 
+longitude:      101.2652 
+depth:            4.0408 
+Mrr:        3.068740e+24 
+Mtt:       -3.083154e+24 
+Mpp:        1.441415e+22 
+Mrt:       -3.948739e+24 
+Mrp:       -2.353961e+23 
+Mtp:        4.753480e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       0.7036 
+half duration:    1.0000 
+latitude:        37.7858 
+longitude:      101.2668 
+depth:            7.9592 
+Mrr:        2.410141e+23 
+Mtt:       -2.513264e+23 
+Mpp:        1.031234e+22 
+Mrt:       -3.234586e+23 
+Mrp:       -5.978058e+22 
+Mtp:        2.459664e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       0.7143 
+half duration:    1.0000 
+latitude:        37.7899 
+longitude:      101.2445 
+depth:            6.0000 
+Mrr:        1.953993e+24 
+Mtt:       -1.954627e+24 
+Mpp:        6.341869e+20 
+Mrt:       -2.501918e+24 
+Mrp:       -1.114559e+23 
+Mtp:        3.145271e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       0.9143 
+half duration:    1.0000 
+latitude:        37.7781 
+longitude:      101.2875 
+depth:            6.0000 
+Mrr:        1.403949e+24 
+Mtt:       -1.405609e+24 
+Mpp:        1.660051e+21 
+Mrt:       -1.799383e+24 
+Mrp:       -8.549869e+22 
+Mtp:        2.243176e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       1.0026 
+half duration:    1.0000 
+latitude:        37.7916 
+longitude:      101.2452 
+depth:            7.9592 
+Mrr:        3.107158e+23 
+Mtt:       -3.224996e+23 
+Mpp:        1.178378e+22 
+Mrt:       -4.148094e+23 
+Mrp:       -7.027312e+22 
+Mtp:        3.380625e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       1.0026 
+half duration:    1.0000 
+latitude:        37.7881 
+longitude:      101.2437 
+depth:            4.0408 
+Mrr:        3.418588e+24 
+Mtt:       -3.455839e+24 
+Mpp:        3.725066e+22 
+Mrt:       -4.429686e+24 
+Mrp:       -3.575595e+23 
+Mtp:        5.001366e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       1.2026 
+half duration:    3.0000 
+latitude:        37.7764 
+longitude:      101.2868 
+depth:            4.0408 
+Mrr:        2.531246e+24 
+Mtt:       -2.533706e+24 
+Mpp:        2.459595e+21 
+Mrt:       -3.243419e+24 
+Mrp:       -1.517504e+23 
+Mtp:        4.051728e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       1.2026 
+half duration:    3.0000 
+latitude:        37.7799 
+longitude:      101.2883 
+depth:            7.9592 
+Mrr:       -6.224227e+20 
+Mtt:       -1.996666e+20 
+Mpp:        8.220893e+20 
+Mrt:       -3.970956e+20 
+Mrp:       -3.663167e+21 
+Mtp:       -1.241012e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       1.4286 
+half duration:    3.0000 
+latitude:        37.7957 
+longitude:      101.2229 
+depth:            6.0000 
+Mrr:        1.825686e+24 
+Mtt:       -1.826704e+24 
+Mpp:        1.018224e+21 
+Mrt:       -2.338250e+24 
+Mrp:       -1.060520e+23 
+Mtp:        2.932834e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       1.5781 
+half duration:    1.0000 
+latitude:        37.7934 
+longitude:      101.2460 
+depth:            9.9184 
+Mrr:       -5.445454e+21 
+Mtt:        2.448220e+21 
+Mpp:        2.997234e+21 
+Mrt:        2.617564e+21 
+Mrp:       -1.317891e+22 
+Mtp:       -5.037261e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       1.5924 
+half duration:    3.0000 
+latitude:        37.7940 
+longitude:      101.2222 
+depth:            4.0408 
+Mrr:        3.545276e+24 
+Mtt:       -3.551448e+24 
+Mpp:        6.171945e+21 
+Mrt:       -4.546709e+24 
+Mrp:       -2.248086e+23 
+Mtp:        5.637038e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       1.5924 
+half duration:    2.0000 
+latitude:        37.7975 
+longitude:      101.2237 
+depth:            7.9592 
+Mrr:        3.304434e+23 
+Mtt:       -3.481493e+23 
+Mpp:        1.770597e+22 
+Mrt:       -4.486591e+23 
+Mrp:       -9.800765e+22 
+Mtp:        2.877431e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       1.6071 
+half duration:    3.0000 
+latitude:        37.7805 
+longitude:      101.2645 
+depth:            2.0816 
+Mrr:        1.959688e+24 
+Mtt:       -2.341196e+24 
+Mpp:        3.815079e+23 
+Mrt:       -3.062275e+24 
+Mrp:       -1.824944e+24 
+Mtp:       -2.129665e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       1.6071 
+half duration:    2.0000 
+latitude:        37.7875 
+longitude:      101.2675 
+depth:            9.9184 
+Mrr:        1.320628e+20 
+Mtt:       -4.962546e+20 
+Mpp:        3.641917e+20 
+Mrt:       -6.978775e+20 
+Mrp:       -1.645476e+21 
+Mtp:       -4.839517e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       1.7781 
+half duration:    3.0000 
+latitude:        37.7864 
+longitude:      101.2429 
+depth:            2.0816 
+Mrr:        2.306483e+24 
+Mtt:       -2.747529e+24 
+Mpp:        4.410456e+23 
+Mrt:       -3.592609e+24 
+Mrp:       -2.112020e+24 
+Mtp:       -2.395888e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       1.9781 
+half duration:    3.0000 
+latitude:        37.7746 
+longitude:      101.2860 
+depth:            2.0816 
+Mrr:        1.550063e+24 
+Mtt:       -1.846656e+24 
+Mpp:        2.965921e+23 
+Mrt:       -2.414674e+24 
+Mrp:       -1.420226e+24 
+Mtp:       -1.612771e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       1.9781 
+half duration:    1.0000 
+latitude:        37.7816 
+longitude:      101.2891 
+depth:            9.9184 
+Mrr:       -4.085073e+22 
+Mtt:        2.505058e+22 
+Mpp:        1.580015e+22 
+Mrt:        2.934307e+22 
+Mrp:       -6.879863e+22 
+Mtp:       -2.851464e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       1.9924 
+half duration:    3.0000 
+latitude:        37.7705 
+longitude:      101.3083 
+depth:            4.0408 
+Mrr:        2.106257e+24 
+Mtt:       -2.106406e+24 
+Mpp:        1.489664e+20 
+Mrt:       -2.696102e+24 
+Mrp:       -1.177362e+23 
+Mtp:        3.397782e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       2.0052 
+half duration:    2.0000 
+latitude:        37.7992 
+longitude:      101.2245 
+depth:            9.9184 
+Mrr:       -1.521734e+22 
+Mtt:        2.827364e+20 
+Mpp:        1.493461e+22 
+Mrt:       -2.209313e+21 
+Mrp:       -6.633015e+22 
+Mtp:       -2.317617e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       2.0286 
+half duration:    1.0000 
+latitude:        37.7723 
+longitude:      101.3091 
+depth:            6.0000 
+Mrr:        9.320155e+23 
+Mtt:       -9.324577e+23 
+Mpp:        4.422148e+20 
+Mrt:       -1.193568e+24 
+Mrp:       -5.379070e+22 
+Mtp:        1.498293e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       2.1429 
+half duration:    3.0000 
+latitude:        37.8016 
+longitude:      101.2014 
+depth:            6.0000 
+Mrr:        1.208548e+24 
+Mtt:       -1.209904e+24 
+Mpp:        1.355976e+21 
+Mrt:       -1.548839e+24 
+Mrp:       -7.327051e+22 
+Mtp:        1.931984e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       2.1924 
+half duration:    2.0000 
+latitude:        37.7740 
+longitude:      101.3098 
+depth:            7.9592 
+Mrr:       -1.603262e+21 
+Mtt:       -7.689355e+20 
+Mpp:        2.372197e+21 
+Mrt:       -1.392599e+21 
+Mrp:       -1.058104e+22 
+Mtp:       -3.549909e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       2.2052 
+half duration:    3.0000 
+latitude:        37.7922 
+longitude:      101.2214 
+depth:            2.0816 
+Mrr:        3.017786e+24 
+Mtt:       -3.193888e+24 
+Mpp:        1.761023e+23 
+Mrt:       -4.118309e+24 
+Mrp:       -9.598381e+23 
+Mtp:        2.428017e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       2.2283 
+half duration:    1.0000 
+latitude:        37.7951 
+longitude:      101.2468 
+depth:           11.8776 
+Mrr:       -9.036364e+22 
+Mtt:        3.596763e+22 
+Mpp:        5.439600e+22 
+Mrt:        3.667144e+22 
+Mrp:       -2.396510e+23 
+Mtp:       -9.005360e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       2.2554 
+half duration:    3.0000 
+latitude:        37.7998 
+longitude:      101.2006 
+depth:            4.0408 
+Mrr:        2.664270e+24 
+Mtt:       -2.667275e+24 
+Mpp:        3.004721e+21 
+Mrt:       -3.414473e+24 
+Mrp:       -1.615959e+23 
+Mtp:        4.258888e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       2.2554 
+half duration:    3.0000 
+latitude:        37.8033 
+longitude:      101.2022 
+depth:            7.9592 
+Mrr:        8.226313e+21 
+Mtt:       -8.620071e+21 
+Mpp:        3.937577e+20 
+Mrt:       -1.110098e+22 
+Mrp:       -2.228344e+21 
+Mtp:        7.815760e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       2.3107 
+half duration:    1.0000 
+latitude:        37.7893 
+longitude:      101.2683 
+depth:           11.8776 
+Mrr:       -1.065480e+23 
+Mtt:        6.188027e+22 
+Mpp:        4.466772e+22 
+Mrt:        7.151296e+22 
+Mrp:       -1.949936e+23 
+Mtp:       -7.916930e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       2.4052 
+half duration:    3.0000 
+latitude:        37.7688 
+longitude:      101.3075 
+depth:            2.0816 
+Mrr:        1.457728e+24 
+Mtt:       -1.686365e+24 
+Mpp:        2.286367e+23 
+Mrt:       -2.197812e+24 
+Mrp:       -1.109430e+24 
+Mtp:       -8.190215e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       2.5107 
+half duration:    2.0000 
+latitude:        37.7787 
+longitude:      101.2637 
+depth:            0.1224 
+Mrr:        3.185610e+20 
+Mtt:       -1.430543e+21 
+Mpp:        1.111982e+21 
+Mrt:       -2.022455e+21 
+Mrp:       -5.019406e+21 
+Mtp:       -1.491310e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       2.5487 
+half duration:    1.0000 
+latitude:        37.8010 
+longitude:      101.2252 
+depth:           11.8776 
+Mrr:       -4.835909e+22 
+Mtt:        1.209488e+22 
+Mpp:        3.626420e+22 
+Mrt:        9.237359e+21 
+Mrp:       -1.604287e+23 
+Mtp:       -5.811784e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       2.5636 
+half duration:    1.0000 
+latitude:        37.8051 
+longitude:      101.2029 
+depth:            9.9184 
+Mrr:        6.225014e+19 
+Mtt:       -6.305930e+19 
+Mpp:        8.091564e+17 
+Mrt:       -8.085153e+19 
+Mrp:       -7.099465e+18 
+Mtp:        8.925609e+18 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       2.6283 
+half duration:    1.0000 
+latitude:        37.7846 
+longitude:      101.2422 
+depth:            0.1224 
+Mrr:        1.610299e+21 
+Mtt:       -2.895401e+21 
+Mpp:        1.285102e+21 
+Mrt:       -3.927193e+21 
+Mrp:       -5.869895e+21 
+Mtp:       -1.522984e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       2.6283 
+half duration:    3.0000 
+latitude:        37.7729 
+longitude:      101.2852 
+depth:            0.1224 
+Mrr:        1.401753e+21 
+Mtt:       -1.406048e+21 
+Mpp:        4.295591e+18 
+Mrt:       -1.800399e+21 
+Mrp:       -9.723128e+19 
+Mtp:        2.203066e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       2.7636 
+half duration:    3.0000 
+latitude:        37.7981 
+longitude:      101.1999 
+depth:            2.0816 
+Mrr:        2.559711e+24 
+Mtt:       -2.564381e+24 
+Mpp:        4.669340e+21 
+Mrt:       -3.283062e+24 
+Mrp:       -1.632720e+23 
+Mtp:        4.067019e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       2.8052 
+half duration:    1.0000 
+latitude:        37.7758 
+longitude:      101.3106 
+depth:            9.9184 
+Mrr:       -1.160317e+22 
+Mtt:       -3.850294e+20 
+Mpp:        1.198820e+22 
+Mrt:       -2.556749e+21 
+Mrp:       -5.327807e+22 
+Mtp:       -1.850502e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       2.8283 
+half duration:    2.0000 
+latitude:        37.7834 
+longitude:      101.2898 
+depth:           11.8776 
+Mrr:        1.584866e+21 
+Mtt:       -1.777236e+21 
+Mpp:        1.923700e+20 
+Mrt:       -2.307878e+21 
+Mrp:       -9.533681e+20 
+Mtp:       -1.106464e+19 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       2.8554 
+half duration:    3.0000 
+latitude:        37.7647 
+longitude:      101.3298 
+depth:            4.0408 
+Mrr:        1.661703e+24 
+Mtt:       -1.662850e+24 
+Mpp:        1.146114e+21 
+Mrt:       -2.128548e+24 
+Mrp:       -9.751304e+22 
+Mtp:        2.666365e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       2.8571 
+half duration:    3.0000 
+latitude:        37.8074 
+longitude:      101.1799 
+depth:            6.0000 
+Mrr:        4.885764e+23 
+Mtt:       -4.909991e+23 
+Mpp:        2.422666e+21 
+Mrt:       -6.288673e+23 
+Mrp:       -3.805234e+22 
+Mtp:        7.550323e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       2.9425 
+half duration:    1.0000 
+latitude:        37.8092 
+longitude:      101.1806 
+depth:            7.9592 
+Mrr:       -2.862898e+22 
+Mtt:        1.315643e+22 
+Mpp:        1.547256e+22 
+Mrt:        1.417565e+22 
+Mrp:       -6.800441e+22 
+Mtp:       -2.608736e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       2.9429 
+half duration:    2.0000 
+latitude:        37.7664 
+longitude:      101.3306 
+depth:            6.0000 
+Mrr:        4.241585e+23 
+Mtt:       -4.258210e+23 
+Mpp:        1.662503e+21 
+Mrt:       -5.453123e+23 
+Mrp:       -3.105276e+22 
+Mtp:        6.615974e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       2.9487 
+half duration:    2.0000 
+latitude:        37.7905 
+longitude:      101.2206 
+depth:            0.1224 
+Mrr:        1.239968e+21 
+Mtt:       -1.574914e+21 
+Mpp:        3.349466e+20 
+Mrt:       -2.073464e+21 
+Mrp:       -1.575509e+21 
+Mtp:       -2.645435e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       2.9487 
+half duration:    2.0000 
+latitude:        37.7670 
+longitude:      101.3068 
+depth:            0.1224 
+Mrr:        1.083325e+21 
+Mtt:       -1.284872e+21 
+Mpp:        2.015464e+20 
+Mrt:       -1.679260e+21 
+Mrp:       -9.667680e+20 
+Mtp:       -1.047528e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       2.9636 
+half duration:    2.0000 
+latitude:        37.7629 
+longitude:      101.3291 
+depth:            2.0816 
+Mrr:        1.659295e+24 
+Mtt:       -1.721042e+24 
+Mpp:        6.174673e+22 
+Mrt:       -2.213464e+24 
+Mrp:       -3.699610e+23 
+Mtp:        1.821723e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       3.0078 
+half duration:    2.0000 
+latitude:        37.8068 
+longitude:      101.2037 
+depth:           11.8776 
+Mrr:        2.363559e+21 
+Mtt:       -9.409640e+21 
+Mpp:        7.046081e+21 
+Mrt:       -1.325687e+22 
+Mrp:       -3.182467e+22 
+Mtp:       -9.394006e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       3.0554 
+half duration:    3.0000 
+latitude:        37.7682 
+longitude:      101.3314 
+depth:            7.9592 
+Mrr:       -6.077553e+21 
+Mtt:        2.251278e+21 
+Mpp:        3.826275e+21 
+Mrt:        2.222758e+21 
+Mrp:       -1.687281e+22 
+Mtp:       -6.289478e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       3.1035 
+half duration:    2.0000 
+latitude:        37.7969 
+longitude:      101.2475 
+depth:           13.8368 
+Mrr:       -1.910197e+21 
+Mtt:        9.362828e+20 
+Mpp:        9.739139e+20 
+Mrt:        1.030715e+21 
+Mrp:       -4.274500e+21 
+Mtp:       -1.659517e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       3.1425 
+half duration:    3.0000 
+latitude:        37.8057 
+longitude:      101.1791 
+depth:            4.0408 
+Mrr:        1.219682e+24 
+Mtt:       -1.220553e+24 
+Mpp:        8.705466e+20 
+Mrt:       -1.562386e+24 
+Mrp:       -7.170590e+22 
+Mtp:        1.956692e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       3.1561 
+half duration:    1.0000 
+latitude:        37.8027 
+longitude:      101.2260 
+depth:           13.8368 
+Mrr:       -6.752399e+20 
+Mtt:       -9.296911e+20 
+Mpp:        1.604931e+21 
+Mrt:       -1.466261e+21 
+Mrp:       -7.181456e+21 
+Mtp:       -2.335629e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       3.1849 
+half duration:    1.0000 
+latitude:        37.8109 
+longitude:      101.1814 
+depth:            9.9184 
+Mrr:       -2.002779e+22 
+Mtt:       -7.856478e+20 
+Mpp:        2.081344e+22 
+Mrt:       -4.588905e+21 
+Mrp:       -9.250580e+22 
+Mtp:       -3.210877e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       3.2143 
+half duration:    2.0000 
+latitude:        37.7910 
+longitude:      101.2691 
+depth:           13.8368 
+Mrr:       -6.410407e+20 
+Mtt:        1.252931e+20 
+Mpp:        5.157475e+20 
+Mrt:        7.157480e+19 
+Mrp:       -2.284205e+21 
+Mtp:       -8.190075e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       3.4078 
+half duration:    1.0000 
+latitude:        37.7612 
+longitude:      101.3283 
+depth:            0.1224 
+Mrr:       -3.906500e+21 
+Mtt:        1.782664e+21 
+Mpp:        2.123836e+21 
+Mrt:        1.916058e+21 
+Mrp:       -9.335898e+21 
+Mtp:       -3.577121e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       3.4078 
+half duration:    1.0000 
+latitude:        37.7963 
+longitude:      101.1991 
+depth:            0.1224 
+Mrr:       -8.219993e+20 
+Mtt:        2.840697e+20 
+Mpp:        5.379296e+20 
+Mrt:        2.709807e+20 
+Mrp:       -2.373922e+21 
+Mtp:       -8.789919e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       3.5372 
+half duration:    1.0000 
+latitude:        37.8086 
+longitude:      101.2045 
+depth:           13.8368 
+Mrr:       -6.700764e+21 
+Mtt:        3.032782e+21 
+Mpp:        3.667982e+21 
+Mrt:        3.250291e+21 
+Mrp:       -1.612617e+22 
+Mtp:       -6.170464e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       3.5487 
+half duration:    1.0000 
+latitude:        37.7775 
+longitude:      101.3114 
+depth:           11.8776 
+Mrr:        3.590634e+21 
+Mtt:       -5.555854e+21 
+Mpp:        1.965220e+21 
+Mrt:       -7.449509e+21 
+Mrp:       -9.039135e+21 
+Mtp:       -2.146900e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       3.5522 
+half duration:    1.0000 
+latitude:        37.8127 
+longitude:      101.1822 
+depth:           11.8776 
+Mrr:        2.522265e+20 
+Mtt:       -2.579856e+20 
+Mpp:        5.759093e+18 
+Mrt:       -3.311980e+20 
+Mrp:       -3.992323e+19 
+Mtp:        3.272356e+19 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       3.5636 
+half duration:    3.0000 
+latitude:        37.7699 
+longitude:      101.3321 
+depth:            9.9184 
+Mrr:        4.257325e+21 
+Mtt:       -4.501996e+21 
+Mpp:        2.446708e+20 
+Mrt:       -5.804415e+21 
+Mrp:       -1.337153e+21 
+Mtp:        3.477541e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       3.5714 
+half duration:    1.0000 
+latitude:        37.8133 
+longitude:      101.1583 
+depth:            6.0000 
+Mrr:        1.046561e+22 
+Mtt:       -2.308659e+22 
+Mpp:        1.262098e+22 
+Mrt:       -3.172237e+22 
+Mrp:       -5.735090e+22 
+Mtp:       -1.582065e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       3.5849 
+half duration:    3.0000 
+latitude:        37.8039 
+longitude:      101.1783 
+depth:            2.0816 
+Mrr:        1.277482e+24 
+Mtt:       -1.278604e+24 
+Mpp:        1.122273e+21 
+Mrt:       -1.636732e+24 
+Mrp:       -7.605071e+22 
+Mtp:        2.046499e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       3.5849 
+half duration:    1.0000 
+latitude:        37.7571 
+longitude:      101.3506 
+depth:            2.0816 
+Mrr:        1.618413e+24 
+Mtt:       -1.619029e+24 
+Mpp:        6.160553e+20 
+Mrt:       -2.072369e+24 
+Mrp:       -9.272277e+22 
+Mtp:        2.603841e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       3.6401 
+half duration:    1.0000 
+latitude:        37.8151 
+longitude:      101.1591 
+depth:            7.9592 
+Mrr:       -2.475163e+22 
+Mtt:        1.294496e+22 
+Mpp:        1.180667e+22 
+Mrt:        1.453611e+22 
+Mrp:       -5.173075e+22 
+Mtp:       -2.037555e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       3.7035 
+half duration:    2.0000 
+latitude:        37.7851 
+longitude:      101.2906 
+depth:           13.8368 
+Mrr:        1.557710e+22 
+Mtt:       -2.005189e+22 
+Mpp:        4.474796e+21 
+Mrt:       -2.643565e+22 
+Mrp:       -2.099343e+22 
+Mtp:       -3.693798e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       3.7425 
+half duration:    1.0000 
+latitude:        37.7588 
+longitude:      101.3514 
+depth:            4.0408 
+Mrr:        1.026318e+24 
+Mtt:       -1.026360e+24 
+Mpp:        4.130774e+19 
+Mrt:       -1.313688e+24 
+Mrp:       -5.722879e+22 
+Mtp:        1.656075e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       3.7522 
+half duration:    3.0000 
+latitude:        37.7553 
+longitude:      101.3498 
+depth:            0.1224 
+Mrr:        7.705098e+20 
+Mtt:       -7.981897e+20 
+Mpp:        2.767986e+19 
+Mrt:       -1.026402e+21 
+Mrp:       -1.673292e+20 
+Mtp:        8.597090e+19 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       3.8386 
+half duration:    1.0000 
+latitude:        37.8168 
+longitude:      101.1599 
+depth:            9.9184 
+Mrr:       -1.899998e+21 
+Mtt:       -3.461074e+21 
+Mpp:        5.361072e+21 
+Mrt:       -5.352955e+21 
+Mrp:       -2.400852e+22 
+Mtp:       -7.744483e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       3.8571 
+half duration:    3.0000 
+latitude:        37.7606 
+longitude:      101.3521 
+depth:            6.0000 
+Mrr:        6.550631e+20 
+Mtt:       -9.797270e+20 
+Mpp:        3.246639e+20 
+Mrt:       -1.309889e+21 
+Mrp:       -1.496748e+21 
+Mtp:       -3.446910e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       3.9425 
+half duration:    1.0000 
+latitude:        37.7623 
+longitude:      101.3529 
+depth:            7.9592 
+Mrr:       -5.310776e+20 
+Mtt:        2.418618e+20 
+Mpp:        2.892158e+20 
+Mrt:        2.597766e+20 
+Mrp:       -1.271376e+21 
+Mtp:       -4.869742e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       3.9896 
+half duration:    1.0000 
+latitude:        37.7986 
+longitude:      101.2483 
+depth:           15.7960 
+Mrr:        7.615328e+19 
+Mtt:       -8.381386e+20 
+Mpp:        7.619853e+20 
+Mrt:       -1.203955e+21 
+Mrp:       -3.431646e+21 
+Mtp:       -1.044863e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       3.9969 
+half duration:    1.0000 
+latitude:        37.8045 
+longitude:      101.2268 
+depth:           15.7960 
+Mrr:        1.640798e+22 
+Mtt:       -1.929320e+22 
+Mpp:        2.885219e+21 
+Mrt:       -2.519090e+22 
+Mrp:       -1.388969e+22 
+Mtp:       -1.354346e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       4.0104 
+half duration:    1.0000 
+latitude:        37.8144 
+longitude:      101.1829 
+depth:           13.8368 
+Mrr:       -6.094294e+21 
+Mtt:        2.206818e+21 
+Mpp:        3.887476e+21 
+Mrt:        2.155315e+21 
+Mrp:       -1.714716e+22 
+Mtp:       -6.377090e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       4.0401 
+half duration:    2.0000 
+latitude:        37.8115 
+longitude:      101.1576 
+depth:            4.0408 
+Mrr:        3.836279e+23 
+Mtt:       -3.853236e+23 
+Mpp:        1.695624e+21 
+Mrt:       -4.934836e+23 
+Mrp:       -2.894905e+22 
+Mtp:        5.957147e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       4.1485 
+half duration:    1.0000 
+latitude:        37.8186 
+longitude:      101.1606 
+depth:           11.8776 
+Mrr:       -5.961531e+20 
+Mtt:       -5.496955e+20 
+Mpp:        1.145849e+21 
+Mrt:       -9.008518e+20 
+Mrp:       -5.120897e+21 
+Mtp:       -1.685945e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       4.1522 
+half duration:    3.0000 
+latitude:        37.8022 
+longitude:      101.1776 
+depth:            0.1224 
+Mrr:       -1.278101e+20 
+Mtt:        6.323869e+19 
+Mpp:        6.457139e+19 
+Mrt:        6.982497e+19 
+Mrp:       -2.833387e+20 
+Mtp:       -1.102151e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       4.1849 
+half duration:    2.0000 
+latitude:        37.7641 
+longitude:      101.3537 
+depth:            9.9184 
+Mrr:        1.046570e+21 
+Mtt:       -1.193057e+21 
+Mpp:        1.464872e+20 
+Mrt:       -1.552263e+21 
+Mrp:       -7.170685e+20 
+Mtp:       -3.429822e+19 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       4.2078 
+half duration:    1.0000 
+latitude:        37.7717 
+longitude:      101.3329 
+depth:           11.8776 
+Mrr:        1.019454e+22 
+Mtt:       -1.140567e+22 
+Mpp:        1.211133e+21 
+Mrt:       -1.480711e+22 
+Mrp:       -6.014297e+21 
+Mtp:       -3.472240e+19 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       4.2386 
+half duration:    1.0000 
+latitude:        37.7512 
+longitude:      101.3721 
+depth:            2.0816 
+Mrr:        1.620642e+24 
+Mtt:       -1.621565e+24 
+Mpp:        9.230185e+20 
+Mrt:       -2.075667e+24 
+Mrp:       -9.422735e+22 
+Mtp:        2.603180e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       4.3179 
+half duration:    2.0000 
+latitude:        37.7928 
+longitude:      101.2698 
+depth:           15.7960 
+Mrr:        9.859562e+20 
+Mtt:       -2.532541e+21 
+Mpp:        1.546585e+21 
+Mrt:       -3.507771e+21 
+Mrp:       -7.011346e+21 
+Mtp:       -1.986537e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       4.3191 
+half duration:    1.0000 
+latitude:        37.8103 
+longitude:      101.2052 
+depth:           15.7960 
+Mrr:       -1.139511e+22 
+Mtt:        5.959764e+21 
+Mpp:        5.435346e+21 
+Mrt:        6.692381e+21 
+Mrp:       -2.381486e+22 
+Mtp:       -9.380198e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       4.3431 
+half duration:    1.0000 
+latitude:        37.8209 
+longitude:      101.1376 
+depth:            7.9592 
+Mrr:       -2.113177e+21 
+Mtt:       -1.211184e+21 
+Mpp:        3.324361e+21 
+Mrt:       -2.122580e+21 
+Mrp:       -1.483554e+22 
+Mtp:       -4.953223e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       4.3485 
+half duration:    1.0000 
+latitude:        37.7494 
+longitude:      101.3714 
+depth:            0.1224 
+Mrr:        1.838034e+21 
+Mtt:       -2.043618e+21 
+Mpp:        2.055836e+20 
+Mrt:       -2.651105e+21 
+Mrp:       -1.026874e+21 
+Mtp:        1.146872e+19 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       4.3561 
+half duration:    2.0000 
+latitude:        37.7793 
+longitude:      101.3121 
+depth:           13.8368 
+Mrr:        3.724131e+21 
+Mtt:       -3.951180e+21 
+Mpp:        2.270492e+20 
+Mrt:       -5.096369e+21 
+Mrp:       -1.228256e+21 
+Mtp:        2.861353e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       4.4401 
+half duration:    1.0000 
+latitude:        37.7529 
+longitude:      101.3729 
+depth:            4.0408 
+Mrr:        4.763415e+23 
+Mtt:       -4.789487e+23 
+Mpp:        2.607252e+21 
+Mrt:       -6.134753e+23 
+Mrp:       -3.820259e+22 
+Mtp:        7.327221e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       4.4857 
+half duration:    1.0000 
+latitude:        37.8192 
+longitude:      101.1368 
+depth:            6.0000 
+Mrr:        5.107497e+21 
+Mtt:       -1.381007e+22 
+Mpp:        8.702571e+21 
+Mrt:       -1.917435e+22 
+Mrp:       -3.942808e+22 
+Mtp:       -1.124925e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       4.5108 
+half duration:    2.0000 
+latitude:        37.8227 
+longitude:      101.1383 
+depth:            9.9184 
+Mrr:        2.238643e+21 
+Mtt:       -3.670087e+21 
+Mpp:        1.431444e+21 
+Mrt:       -4.943940e+21 
+Mrp:       -6.563066e+21 
+Mtp:       -1.624589e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       4.6386 
+half duration:    3.0000 
+latitude:        37.8098 
+longitude:      101.1568 
+depth:            2.0816 
+Mrr:        4.771977e+23 
+Mtt:       -4.773331e+23 
+Mpp:        1.354591e+20 
+Mrt:       -6.109819e+23 
+Mrp:       -2.713204e+22 
+Mtp:        7.683971e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       4.7320 
+half duration:    2.0000 
+latitude:        37.8162 
+longitude:      101.1837 
+depth:           15.7960 
+Mrr:       -1.972987e+20 
+Mtt:        7.179589e+19 
+Mpp:        1.255029e+20 
+Mrt:        7.028750e+19 
+Mrp:       -5.535464e+20 
+Mtp:       -2.059662e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       4.7470 
+half duration:    2.0000 
+latitude:        37.8203 
+longitude:      101.1614 
+depth:           13.8368 
+Mrr:       -7.139463e+21 
+Mtt:        4.095790e+21 
+Mpp:        3.043673e+21 
+Mrt:        4.718361e+21 
+Mrp:       -1.329364e+22 
+Mtp:       -5.375130e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       4.7522 
+half duration:    2.0000 
+latitude:        37.7658 
+longitude:      101.3544 
+depth:           11.8776 
+Mrr:       -1.412394e+22 
+Mtt:        8.149167e+21 
+Mpp:        5.974772e+21 
+Mrt:        9.401819e+21 
+Mrp:       -2.608954e+22 
+Mtp:       -1.056906e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       4.7714 
+half duration:    3.0000 
+latitude:        37.7547 
+longitude:      101.3737 
+depth:            6.0000 
+Mrr:        2.511473e+21 
+Mtt:       -3.175985e+21 
+Mpp:        6.645116e+20 
+Mrt:       -4.179480e+21 
+Mrp:       -3.128564e+21 
+Mtp:       -5.165302e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       4.7773 
+half duration:    2.0000 
+latitude:        37.8244 
+longitude:      101.1391 
+depth:           11.8776 
+Mrr:       -7.272959e+20 
+Mtt:        1.947946e+20 
+Mpp:        5.325012e+20 
+Mrt:        1.576483e+20 
+Mrp:       -2.354770e+21 
+Mtp:       -8.561741e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       4.7896 
+half duration:    2.0000 
+latitude:        37.7869 
+longitude:      101.2914 
+depth:           15.7960 
+Mrr:        1.623015e+21 
+Mtt:       -1.651166e+21 
+Mpp:        2.815034e+19 
+Mrt:       -2.118242e+21 
+Mrp:       -2.168279e+20 
+Mtp:        2.229267e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       4.8401 
+half duration:    1.0000 
+latitude:        37.7565 
+longitude:      101.3744 
+depth:            7.9592 
+Mrr:        7.428103e+21 
+Mtt:       -1.222306e+22 
+Mpp:        4.794958e+21 
+Mrt:       -1.647032e+22 
+Mrp:       -2.198060e+22 
+Mtp:       -5.453364e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       4.8566 
+half duration:    1.0000 
+latitude:        37.8062 
+longitude:      101.2275 
+depth:           17.7552 
+Mrr:        5.496259e+21 
+Mtt:       -1.071714e+22 
+Mpp:        5.220883e+21 
+Mrt:       -1.461616e+22 
+Mrp:       -2.378904e+22 
+Mtp:       -6.356110e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       4.8814 
+half duration:    1.0000 
+latitude:        37.8004 
+longitude:      101.2490 
+depth:           17.7552 
+Mrr:        1.225564e+21 
+Mtt:       -3.183001e+21 
+Mpp:        1.957438e+21 
+Mrt:       -4.411056e+21 
+Mrp:       -8.872679e+21 
+Mtp:       -2.517865e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       4.9342 
+half duration:    1.0000 
+latitude:        37.8121 
+longitude:      101.2060 
+depth:           17.7552 
+Mrr:        2.436064e+22 
+Mtt:       -2.884771e+22 
+Mpp:        4.487077e+21 
+Mrt:       -3.769590e+22 
+Mrp:       -2.153686e+22 
+Mtp:       -2.293026e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       4.9372 
+half duration:    2.0000 
+latitude:        37.7734 
+longitude:      101.3336 
+depth:           13.8368 
+Mrr:       -1.200069e+20 
+Mtt:       -4.551228e+20 
+Mpp:        5.751297e+20 
+Mrt:       -6.815471e+20 
+Mrp:       -2.580266e+21 
+Mtp:       -8.172890e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       4.9431 
+half duration:    1.0000 
+latitude:        37.8174 
+longitude:      101.1360 
+depth:            4.0408 
+Mrr:        1.264389e+22 
+Mtt:       -1.345934e+22 
+Mpp:        8.154445e+20 
+Mrt:       -1.736755e+22 
+Mrp:       -4.370623e+21 
+Mtp:        9.096108e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       5.0386 
+half duration:    1.0000 
+latitude:        37.7582 
+longitude:      101.3752 
+depth:            9.9184 
+Mrr:        9.367665e+19 
+Mtt:       -2.208888e+20 
+Mpp:        1.272121e+20 
+Mrt:       -3.046261e+20 
+Mrp:       -5.774073e+20 
+Mtp:       -1.613694e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       5.1108 
+half duration:    1.0000 
+latitude:        37.7453 
+longitude:      101.3937 
+depth:            2.0816 
+Mrr:        8.624363e+23 
+Mtt:       -8.629111e+23 
+Mpp:        4.747316e+20 
+Mrt:       -1.104558e+24 
+Mrp:       -5.006973e+22 
+Mtp:        1.385529e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       5.1485 
+half duration:    3.0000 
+latitude:        37.8080 
+longitude:      101.1560 
+depth:            0.1224 
+Mrr:        2.538277e+20 
+Mtt:       -6.997200e+20 
+Mpp:        4.458923e+20 
+Mrt:       -9.723673e+20 
+Mrp:       -2.019733e+21 
+Mtp:       -5.776458e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       5.1773 
+half duration:    2.0000 
+latitude:        37.7436 
+longitude:      101.3929 
+depth:            0.1224 
+Mrr:        4.033656e+21 
+Mtt:       -6.009677e+21 
+Mpp:        1.976021e+21 
+Mrt:       -8.032235e+21 
+Mrp:       -9.112343e+21 
+Mtp:       -2.090374e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       5.1969 
+half duration:    2.0000 
+latitude:        37.7810 
+longitude:      101.3129 
+depth:           15.7960 
+Mrr:        2.384981e+21 
+Mtt:       -4.632888e+21 
+Mpp:        2.247906e+21 
+Mrt:       -6.316834e+21 
+Mrp:       -1.024365e+22 
+Mtp:       -2.733703e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       5.2214 
+half duration:    1.0000 
+latitude:        37.7945 
+longitude:      101.2706 
+depth:           17.7552 
+Mrr:        2.122293e+21 
+Mtt:       -3.232869e+21 
+Mpp:        1.110576e+21 
+Mrt:       -4.329085e+21 
+Mrp:       -5.113333e+21 
+Mtp:       -1.198207e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       5.2493 
+half duration:    1.0000 
+latitude:        37.8268 
+longitude:      101.1160 
+depth:            7.9592 
+Mrr:       -4.404878e+21 
+Mtt:       -2.965660e+21 
+Mpp:        7.370539e+21 
+Mrt:       -5.064812e+21 
+Mrp:       -3.290789e+22 
+Mtp:       -1.093669e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       5.2974 
+half duration:    3.0000 
+latitude:        37.8180 
+longitude:      101.1844 
+depth:           17.7552 
+Mrr:       -1.670947e+22 
+Mtt:        1.026069e+22 
+Mpp:        6.448781e+21 
+Mrt:        1.202284e+22 
+Mrp:       -2.807793e+22 
+Mtp:       -1.164404e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       5.3271 
+half duration:    1.0000 
+latitude:        37.8262 
+longitude:      101.1399 
+depth:           13.8368 
+Mrr:       -1.113641e+21 
+Mtt:       -2.892976e+21 
+Mpp:        4.006617e+21 
+Mrt:       -4.392635e+21 
+Mrp:       -1.795988e+22 
+Mtp:       -5.738422e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       5.3431 
+half duration:    1.0000 
+latitude:        37.7471 
+longitude:      101.3944 
+depth:            4.0408 
+Mrr:        7.575684e+21 
+Mtt:       -1.264704e+22 
+Mpp:        5.071356e+21 
+Mrt:       -1.706058e+22 
+Mrp:       -2.323204e+22 
+Mtp:       -5.813008e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       5.3942 
+half duration:    1.0000 
+latitude:        37.8285 
+longitude:      101.1168 
+depth:            9.9184 
+Mrr:        3.813406e+21 
+Mtt:       -5.063994e+21 
+Mpp:        1.250587e+21 
+Mrt:       -6.696922e+21 
+Mrp:       -5.837097e+21 
+Mtp:       -1.119481e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       5.4000 
+half duration:    2.0000 
+latitude:        37.8250 
+longitude:      101.1153 
+depth:            6.0000 
+Mrr:       -1.019760e+21 
+Mtt:       -3.215392e+20 
+Mpp:        1.341299e+21 
+Mrt:       -6.424745e+20 
+Mrp:       -5.976490e+21 
+Mtp:       -2.025485e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       5.4104 
+half duration:    1.0000 
+latitude:        37.7676 
+longitude:      101.3552 
+depth:           13.8368 
+Mrr:       -3.016871e+21 
+Mtt:        1.706248e+21 
+Mpp:        1.310622e+21 
+Mrt:        1.958257e+21 
+Mrp:       -5.727506e+21 
+Mtp:       -2.305292e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       5.4130 
+half duration:    1.0000 
+latitude:        37.8221 
+longitude:      101.1622 
+depth:           15.7960 
+Mrr:        1.680443e+21 
+Mtt:       -5.040301e+21 
+Mpp:        3.359858e+21 
+Mrt:       -7.029737e+21 
+Mrp:       -1.520605e+22 
+Mtp:       -4.390115e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       5.5280 
+half duration:    3.0000 
+latitude:        37.8080 
+longitude:      101.2283 
+depth:           19.7145 
+Mrr:        1.141646e+22 
+Mtt:       -1.253378e+22 
+Mpp:        1.117315e+21 
+Mrt:       -1.623487e+22 
+Mrp:       -5.660219e+21 
+Mtp:        2.926770e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       5.5485 
+half duration:    2.0000 
+latitude:        37.7600 
+longitude:      101.3760 
+depth:           11.8776 
+Mrr:        2.376139e+21 
+Mtt:       -3.536878e+21 
+Mpp:        1.160739e+21 
+Mrt:       -4.726835e+21 
+Mrp:       -5.353077e+21 
+Mtp:       -1.226827e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       5.5710 
+half duration:    2.0000 
+latitude:        37.8138 
+longitude:      101.2067 
+depth:           19.7145 
+Mrr:       -8.056390e+20 
+Mtt:        2.972467e+20 
+Mpp:        5.083923e+20 
+Mrt:        2.929317e+20 
+Mrp:       -2.241973e+21 
+Mtp:       -8.353719e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       5.5765 
+half duration:    3.0000 
+latitude:        37.8021 
+longitude:      101.2498 
+depth:           19.7145 
+Mrr:        1.381138e+22 
+Mtt:       -1.440963e+22 
+Mpp:        5.982494e+20 
+Mrt:       -1.854648e+22 
+Mrp:       -3.458568e+21 
+Mtp:        1.399393e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       5.6273 
+half duration:    2.0000 
+latitude:        37.8303 
+longitude:      101.1176 
+depth:           11.8776 
+Mrr:       -5.795926e+21 
+Mtt:       -3.202372e+20 
+Mpp:        6.116163e+21 
+Mrt:       -1.462867e+21 
+Mrp:       -2.718839e+22 
+Mtp:       -9.420943e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       5.6814 
+half duration:    2.0000 
+latitude:        37.7887 
+longitude:      101.2921 
+depth:           17.7552 
+Mrr:        5.062697e+18 
+Mtt:       -7.766907e+18 
+Mpp:        2.704210e+18 
+Mrt:       -1.040675e+19 
+Mrp:       -1.244493e+19 
+Mtp:       -2.934537e+18 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       5.6857 
+half duration:    1.0000 
+latitude:        37.7488 
+longitude:      101.3952 
+depth:            6.0000 
+Mrr:       -1.954390e+20 
+Mtt:       -1.027990e+21 
+Mpp:        1.223429e+21 
+Mrt:       -1.526397e+21 
+Mrp:       -5.492126e+21 
+Mtp:       -1.728896e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       5.7108 
+half duration:    1.0000 
+latitude:        37.8157 
+longitude:      101.1353 
+depth:            2.0816 
+Mrr:        1.271355e+21 
+Mtt:       -3.551185e+21 
+Mpp:        2.279830e+21 
+Mrt:       -4.937814e+21 
+Mrp:       -1.032535e+22 
+Mtp:       -2.957751e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       5.7191 
+half duration:    3.0000 
+latitude:        37.7752 
+longitude:      101.3344 
+depth:           15.7960 
+Mrr:        1.792020e+21 
+Mtt:       -1.811808e+21 
+Mpp:        1.978813e+19 
+Mrt:       -2.322415e+21 
+Mrp:       -1.886079e+20 
+Mtp:        2.618083e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       5.8493 
+half duration:    3.0000 
+latitude:        37.8233 
+longitude:      101.1145 
+depth:            4.0408 
+Mrr:        2.410860e+22 
+Mtt:       -2.414393e+22 
+Mpp:        3.532941e+19 
+Mrt:       -3.090890e+22 
+Mrp:       -1.498873e+21 
+Mtp:        3.842514e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       5.8938 
+half duration:    3.0000 
+latitude:        37.8197 
+longitude:      101.1852 
+depth:           19.7145 
+Mrr:        8.471374e+21 
+Mtt:       -8.663487e+21 
+Mpp:        1.921131e+20 
+Mrt:       -1.112183e+22 
+Mrp:       -1.334966e+21 
+Mtp:        1.100889e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       5.9250 
+half duration:    3.0000 
+latitude:        37.7963 
+longitude:      101.2713 
+depth:           19.7145 
+Mrr:       -3.350638e+21 
+Mtt:        1.699992e+21 
+Mpp:        1.650646e+21 
+Mrt:        1.891709e+21 
+Mrp:       -7.238385e+21 
+Mtp:       -2.830907e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       5.9295 
+half duration:    3.0000 
+latitude:        37.8238 
+longitude:      101.1629 
+depth:           17.7552 
+Mrr:        7.965306e+19 
+Mtt:       -2.171552e+21 
+Mpp:        2.091899e+21 
+Mrt:       -3.139609e+21 
+Mrp:       -9.413797e+21 
+Mtp:       -2.889381e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       5.9431 
+half duration:    3.0000 
+latitude:        37.7506 
+longitude:      101.3960 
+depth:            7.9592 
+Mrr:        3.204483e+21 
+Mtt:       -3.991952e+21 
+Mpp:        7.874686e+20 
+Mrt:       -5.245039e+21 
+Mrp:       -3.720143e+21 
+Mtp:       -5.752537e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       5.9446 
+half duration:    2.0000 
+latitude:        37.8279 
+longitude:      101.1406 
+depth:           15.7960 
+Mrr:       -9.455045e+20 
+Mtt:       -1.326930e+21 
+Mpp:        2.272434e+21 
+Mrt:       -2.089623e+21 
+Mrp:       -1.016887e+22 
+Mtp:       -3.305328e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       5.9470 
+half duration:    1.0000 
+latitude:        37.7617 
+longitude:      101.3767 
+depth:           13.8368 
+Mrr:        1.803825e+22 
+Mtt:       -1.917836e+22 
+Mpp:        1.140106e+21 
+Mrt:       -2.474347e+22 
+Mrp:       -6.130770e+21 
+Mtp:        1.329925e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       6.1108 
+half duration:    2.0000 
+latitude:        37.7523 
+longitude:      101.3967 
+depth:            9.9184 
+Mrr:        4.204612e+21 
+Mtt:       -4.446131e+21 
+Mpp:        2.415191e+20 
+Mrt:       -5.732369e+21 
+Mrp:       -1.320047e+21 
+Mtp:        3.436179e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       6.1320 
+half duration:    1.0000 
+latitude:        37.7693 
+longitude:      101.3559 
+depth:           15.7960 
+Mrr:       -1.671634e+22 
+Mtt:        8.173716e+21 
+Mpp:        8.542627e+21 
+Mrt:        8.991148e+21 
+Mrp:       -3.749567e+22 
+Mtp:       -1.455008e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       6.1376 
+half duration:    2.0000 
+latitude:        37.8320 
+longitude:      101.1183 
+depth:           13.8368 
+Mrr:        1.371128e+22 
+Mtt:       -1.501039e+22 
+Mpp:        1.299109e+21 
+Mrt:       -1.943608e+22 
+Mrp:       -6.605472e+21 
+Mtp:        4.108836e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       6.1574 
+half duration:    3.0000 
+latitude:        37.8326 
+longitude:      101.0945 
+depth:            7.9592 
+Mrr:       -9.547654e+21 
+Mtt:        5.735127e+21 
+Mpp:        3.812527e+21 
+Mrt:        6.684248e+21 
+Mrp:       -1.661810e+22 
+Mtp:       -6.830537e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       6.1773 
+half duration:    1.0000 
+latitude:        37.8139 
+longitude:      101.1345 
+depth:            0.1224 
+Mrr:       -2.175785e+20 
+Mtt:       -1.878629e+20 
+Mpp:        4.054413e+20 
+Mrt:       -3.102558e+20 
+Mrp:       -1.811584e+21 
+Mtp:       -5.976181e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       6.1942 
+half duration:    3.0000 
+latitude:        37.7395 
+longitude:      101.4152 
+depth:            2.0816 
+Mrr:        7.862246e+23 
+Mtt:       -8.404099e+23 
+Mpp:        5.418533e+22 
+Mrt:       -1.085004e+24 
+Mrp:       -2.874244e+23 
+Mtp:        5.173461e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       6.2070 
+half duration:    3.0000 
+latitude:        37.8097 
+longitude:      101.2290 
+depth:           21.6737 
+Mrr:       -1.612710e+21 
+Mtt:       -1.661998e+21 
+Mpp:        3.274707e+21 
+Mrt:       -2.691046e+21 
+Mrp:       -1.464001e+22 
+Mtp:       -4.803550e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       6.2227 
+half duration:    1.0000 
+latitude:        37.8156 
+longitude:      101.2075 
+depth:           21.6737 
+Mrr:        1.593891e+21 
+Mtt:       -1.081306e+22 
+Mpp:        9.219165e+21 
+Mrt:       -1.542729e+22 
+Mrp:       -4.155643e+22 
+Mtp:       -1.253312e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       6.2273 
+half duration:    3.0000 
+latitude:        37.7377 
+longitude:      101.4144 
+depth:            0.1224 
+Mrr:        2.914681e+21 
+Mtt:       -8.290657e+21 
+Mpp:        5.375976e+21 
+Mrt:       -1.153711e+22 
+Mrp:       -2.434316e+22 
+Mtp:       -6.987992e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       6.2566 
+half duration:    3.0000 
+latitude:        37.7828 
+longitude:      101.3136 
+depth:           17.7552 
+Mrr:       -1.124734e+21 
+Mtt:       -2.088912e+21 
+Mpp:        3.213645e+21 
+Mrt:       -3.226959e+21 
+Mrp:       -1.439248e+22 
+Mtp:       -4.640067e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       6.2737 
+half duration:    1.0000 
+latitude:        37.8039 
+longitude:      101.2506 
+depth:           21.6737 
+Mrr:       -1.820524e+22 
+Mtt:        9.258924e+21 
+Mpp:        8.946312e+21 
+Mrt:        1.031065e+22 
+Mrp:       -3.922870e+22 
+Mtp:       -1.535048e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       6.2850 
+half duration:    3.0000 
+latitude:        37.8344 
+longitude:      101.0953 
+depth:            9.9184 
+Mrr:        2.298283e+21 
+Mtt:       -4.344631e+21 
+Mpp:        2.046348e+21 
+Mrt:       -5.913181e+21 
+Mrp:       -9.332221e+21 
+Mtp:       -2.468062e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       6.3143 
+half duration:    3.0000 
+latitude:        37.8309 
+longitude:      101.0937 
+depth:            6.0000 
+Mrr:       -6.067048e+21 
+Mtt:        3.488449e+21 
+Mpp:        2.578599e+21 
+Mrt:        4.021069e+21 
+Mrp:       -1.126134e+22 
+Mtp:       -4.556795e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       6.3773 
+half duration:    1.0000 
+latitude:        37.7541 
+longitude:      101.3975 
+depth:           11.8776 
+Mrr:        1.149902e+21 
+Mtt:       -1.843457e+21 
+Mpp:        6.935556e+20 
+Mrt:       -2.478923e+21 
+Mrp:       -3.183528e+21 
+Mtp:       -7.766053e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       6.4493 
+half duration:    3.0000 
+latitude:        37.7412 
+longitude:      101.4160 
+depth:            4.0408 
+Mrr:        2.554587e+22 
+Mtt:       -2.818129e+22 
+Mpp:        2.635423e+21 
+Mrt:       -3.652413e+22 
+Mrp:       -1.327399e+22 
+Mtp:        4.672206e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       6.4836 
+half duration:    1.0000 
+latitude:        37.8256 
+longitude:      101.1637 
+depth:           19.7145 
+Mrr:       -1.373955e+22 
+Mtt:        7.554965e+21 
+Mpp:        6.184583e+21 
+Mrt:        8.605153e+21 
+Mrp:       -2.705463e+22 
+Mtp:       -1.079810e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       6.4916 
+half duration:    3.0000 
+latitude:        37.8361 
+longitude:      101.0960 
+depth:           11.8776 
+Mrr:        1.068507e+21 
+Mtt:       -6.966691e+21 
+Mpp:        5.898185e+21 
+Mrt:       -9.932412e+21 
+Mrp:       -2.658945e+22 
+Mtp:       -8.010492e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       6.5122 
+half duration:    1.0000 
+latitude:        37.8215 
+longitude:      101.1860 
+depth:           21.6737 
+Mrr:        2.061648e+21 
+Mtt:       -2.169084e+21 
+Mpp:        1.074364e+20 
+Mrt:       -2.794798e+21 
+Mrp:       -5.978362e+20 
+Mtp:        1.837302e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       6.5765 
+half duration:    2.0000 
+latitude:        37.7904 
+longitude:      101.2929 
+depth:           19.7145 
+Mrr:       -3.778138e+19 
+Mtt:        1.085030e+19 
+Mpp:        2.693108e+19 
+Mrt:        9.251191e+18 
+Mrp:       -1.190362e+20 
+Mtp:       -4.346193e+19 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       6.5942 
+half duration:    3.0000 
+latitude:        37.8215 
+longitude:      101.1137 
+depth:            2.0816 
+Mrr:       -6.023698e+20 
+Mtt:       -1.836035e+20 
+Mpp:        7.859733e+20 
+Mrt:       -3.703179e+20 
+Mrp:       -3.501831e+21 
+Mtp:       -1.187669e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       6.6130 
+half duration:    3.0000 
+latitude:        37.7635 
+longitude:      101.3775 
+depth:           15.7960 
+Mrr:        3.412073e+20 
+Mtt:       -4.519019e+20 
+Mpp:        1.106946e+20 
+Mrt:       -5.974657e+20 
+Mrp:       -5.168690e+20 
+Mtp:       -9.849784e+19 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       6.6156 
+half duration:    2.0000 
+latitude:        37.8297 
+longitude:      101.1414 
+depth:           17.7552 
+Mrr:       -1.744387e+21 
+Mtt:        8.264047e+20 
+Mpp:        9.179821e+20 
+Mrt:        8.997065e+20 
+Mrp:       -4.032134e+21 
+Mtp:       -1.555154e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       6.6286 
+half duration:    3.0000 
+latitude:        37.7980 
+longitude:      101.2721 
+depth:           21.6737 
+Mrr:       -7.074351e+20 
+Mtt:       -4.506476e+18 
+Mpp:        7.119415e+20 
+Mrt:       -1.283386e+20 
+Mrp:       -3.162997e+21 
+Mtp:       -1.101918e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       6.7135 
+half duration:    2.0000 
+latitude:        37.8338 
+longitude:      101.1191 
+depth:           15.7960 
+Mrr:       -7.644114e+20 
+Mtt:       -4.818922e+20 
+Mpp:        1.246304e+21 
+Mrt:       -8.313622e+20 
+Mrp:       -5.563392e+21 
+Mtp:       -1.852473e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       6.7271 
+half duration:    2.0000 
+latitude:        37.7559 
+longitude:      101.3983 
+depth:           13.8368 
+Mrr:        4.733267e+20 
+Mtt:       -1.887950e+21 
+Mpp:        1.414624e+21 
+Mrt:       -2.660013e+21 
+Mrp:       -6.389291e+21 
+Mtp:       -1.886204e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       6.7342 
+half duration:    3.0000 
+latitude:        37.7769 
+longitude:      101.3352 
+depth:           17.7552 
+Mrr:        4.098165e+21 
+Mtt:       -5.671439e+21 
+Mpp:        1.573274e+21 
+Mrt:       -7.529972e+21 
+Mrp:       -7.304368e+21 
+Mtp:       -1.521201e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       6.7574 
+half duration:    1.0000 
+latitude:        37.8291 
+longitude:      101.0930 
+depth:            4.0408 
+Mrr:        5.016936e+21 
+Mtt:       -5.899057e+21 
+Mpp:        8.821218e+20 
+Mrt:       -7.702319e+21 
+Mrp:       -4.246630e+21 
+Mtp:       -4.140127e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       6.8000 
+half duration:    1.0000 
+latitude:        37.7430 
+longitude:      101.4167 
+depth:            6.0000 
+Mrr:       -3.623673e+19 
+Mtt:       -4.267260e+21 
+Mpp:        4.303497e+21 
+Mrt:       -6.202750e+21 
+Mrp:       -1.935513e+22 
+Mtp:       -5.976393e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       6.8670 
+half duration:    3.0000 
+latitude:        37.8385 
+longitude:      101.0730 
+depth:            7.9592 
+Mrr:       -3.896154e+21 
+Mtt:       -4.527851e+19 
+Mpp:        3.941432e+21 
+Mrt:       -7.365258e+20 
+Mrp:       -1.751203e+22 
+Mtp:       -6.097130e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       6.9697 
+half duration:    1.0000 
+latitude:        37.8379 
+longitude:      101.0968 
+depth:           13.8368 
+Mrr:       -2.742768e+20 
+Mtt:       -1.862367e+20 
+Mpp:        4.605135e+20 
+Mrt:       -3.176558e+20 
+Mrp:       -2.056147e+21 
+Mtp:       -6.831756e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       6.9808 
+half duration:    1.0000 
+latitude:        37.8402 
+longitude:      101.0737 
+depth:            9.9184 
+Mrr:        3.714861e+21 
+Mtt:       -4.616109e+21 
+Mpp:        9.012479e+20 
+Mrt:       -6.063512e+21 
+Mrp:       -4.260289e+21 
+Mtp:       -6.507242e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.0273 
+half duration:    2.0000 
+latitude:        37.8198 
+longitude:      101.1130 
+depth:            0.1224 
+Mrr:        3.851503e+21 
+Mtt:       -7.694208e+21 
+Mpp:        3.842706e+21 
+Mrt:       -1.050971e+22 
+Mrp:       -1.749857e+22 
+Mtp:       -4.709559e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.0286 
+half duration:    2.0000 
+latitude:        37.8367 
+longitude:      101.0722 
+depth:            6.0000 
+Mrr:       -5.316275e+22 
+Mtt:        2.783882e+22 
+Mpp:        2.532393e+22 
+Mrt:        3.127220e+22 
+Mrp:       -1.109523e+23 
+Mtp:       -4.371502e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.0493 
+half duration:    1.0000 
+latitude:        37.7447 
+longitude:      101.4175 
+depth:            7.9592 
+Mrr:       -1.063422e+22 
+Mtt:        4.065265e+21 
+Mpp:        6.568954e+21 
+Mrt:        4.072366e+21 
+Mrp:       -2.895613e+22 
+Mtp:       -1.083011e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.0660 
+half duration:    3.0000 
+latitude:        37.8273 
+longitude:      101.1644 
+depth:           21.6737 
+Mrr:       -3.755740e+21 
+Mtt:       -1.435682e+21 
+Mpp:        5.191422e+21 
+Mrt:       -2.731364e+21 
+Mrp:       -2.314229e+22 
+Mtp:       -7.808664e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.0974 
+half duration:    1.0000 
+latitude:        37.7711 
+longitude:      101.3567 
+depth:           17.7552 
+Mrr:       -2.368064e+21 
+Mtt:       -1.197241e+21 
+Mpp:        3.565305e+21 
+Mrt:       -2.146215e+21 
+Mrp:       -1.590514e+22 
+Mtp:       -5.328643e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.1280 
+half duration:    3.0000 
+latitude:        37.7845 
+longitude:      101.3144 
+depth:           19.7145 
+Mrr:       -1.788009e+22 
+Mtt:        9.605429e+21 
+Mpp:        8.274663e+21 
+Mrt:        1.086979e+22 
+Mrp:       -3.622569e+22 
+Mtp:       -1.436617e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.1662 
+half duration:    3.0000 
+latitude:        37.8420 
+longitude:      101.0745 
+depth:           11.8776 
+Mrr:        1.110928e+22 
+Mtt:       -1.372344e+22 
+Mpp:        2.614164e+21 
+Mrt:       -1.801527e+22 
+Mrp:       -1.237598e+22 
+Mtp:       -1.833591e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.1942 
+half duration:    2.0000 
+latitude:        37.7465 
+longitude:      101.4183 
+depth:            9.9184 
+Mrr:        3.189149e+21 
+Mtt:       -7.222838e+21 
+Mpp:        4.033689e+21 
+Mrt:       -9.939267e+21 
+Mrp:       -1.832080e+22 
+Mtp:       -5.081439e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.2273 
+half duration:    1.0000 
+latitude:        37.7482 
+longitude:      101.4190 
+depth:           11.8776 
+Mrr:       -6.436948e+21 
+Mtt:        3.744892e+21 
+Mpp:        2.692055e+21 
+Mrt:        4.329769e+21 
+Mrp:       -1.175111e+22 
+Mtp:       -4.773909e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.2737 
+half duration:    1.0000 
+latitude:        37.7922 
+longitude:      101.2936 
+depth:           21.6737 
+Mrr:        7.287657e+21 
+Mtt:       -8.258963e+21 
+Mpp:        9.713062e+20 
+Mrt:       -1.073821e+22 
+Mrp:       -4.773989e+21 
+Mtp:       -1.712123e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.2850 
+half duration:    2.0000 
+latitude:        37.8274 
+longitude:      101.0922 
+depth:            2.0816 
+Mrr:       -2.341818e+22 
+Mtt:        6.497827e+21 
+Mpp:        1.692035e+22 
+Mrt:        5.403767e+21 
+Mrp:       -7.480622e+22 
+Mtp:       -2.725488e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.3286 
+half duration:    2.0000 
+latitude:        37.8314 
+longitude:      101.1421 
+depth:           19.7145 
+Mrr:       -9.648045e+21 
+Mtt:        3.701271e+21 
+Mpp:        5.946774e+21 
+Mrt:        3.713592e+21 
+Mrp:       -2.621237e+22 
+Mtp:       -9.807733e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.3446 
+half duration:    3.0000 
+latitude:        37.7576 
+longitude:      101.3990 
+depth:           15.7960 
+Mrr:        8.487802e+21 
+Mtt:       -8.885399e+21 
+Mpp:        3.975964e+20 
+Mrt:       -1.144124e+22 
+Mrp:       -2.260144e+21 
+Mtp:        8.184590e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.4670 
+half duration:    1.0000 
+latitude:        37.8350 
+longitude:      101.0714 
+depth:            4.0408 
+Mrr:        1.603578e+22 
+Mtt:       -1.714859e+22 
+Mpp:        1.112813e+21 
+Mrt:       -2.214078e+22 
+Mrp:       -5.896710e+21 
+Mtp:        1.044557e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.4850 
+half duration:    3.0000 
+latitude:        37.7336 
+longitude:      101.4367 
+depth:            2.0816 
+Mrr:        5.332144e+23 
+Mtt:       -6.373572e+23 
+Mpp:        1.041428e+23 
+Mrt:       -8.337097e+23 
+Mrp:       -4.980710e+23 
+Mtp:       -5.841500e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.4916 
+half duration:    2.0000 
+latitude:        37.7319 
+longitude:      101.4360 
+depth:            0.1224 
+Mrr:        1.898345e+22 
+Mtt:       -3.124663e+22 
+Mpp:        1.226318e+22 
+Mrt:       -4.210514e+22 
+Mrp:       -5.621493e+22 
+Mtp:       -1.394933e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.5103 
+half duration:    1.0000 
+latitude:        37.8396 
+longitude:      101.0976 
+depth:           15.7960 
+Mrr:       -3.109353e+21 
+Mtt:       -2.296512e+21 
+Mpp:        5.405865e+21 
+Mrt:       -3.870096e+21 
+Mrp:       -2.414278e+22 
+Mtp:       -8.001838e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.5295 
+half duration:    1.0000 
+latitude:        37.7652 
+longitude:      101.3782 
+depth:           17.7552 
+Mrr:        4.848289e+21 
+Mtt:       -5.709140e+21 
+Mpp:        8.608505e+20 
+Mrt:       -7.455573e+21 
+Mrp:       -4.141578e+21 
+Mtp:       -4.117239e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.5376 
+half duration:    2.0000 
+latitude:        37.7500 
+longitude:      101.4198 
+depth:           13.8368 
+Mrr:        3.437285e+20 
+Mtt:       -4.106051e+20 
+Mpp:        6.687664e+19 
+Mrt:       -5.370643e+20 
+Mrp:       -3.199159e+20 
+Mtp:       -3.729918e+19 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.5437 
+half duration:    1.0000 
+latitude:        37.8355 
+longitude:      101.1198 
+depth:           17.7552 
+Mrr:        1.311871e+22 
+Mtt:       -1.431509e+22 
+Mpp:        1.196381e+21 
+Mrt:       -1.852845e+22 
+Mrp:       -6.110466e+21 
+Mtp:        4.577547e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.5710 
+half duration:    1.0000 
+latitude:        37.7787 
+longitude:      101.3359 
+depth:           19.7145 
+Mrr:        4.029789e+21 
+Mtt:       -4.662133e+21 
+Mpp:        6.323445e+20 
+Mrt:       -6.076125e+21 
+Mrp:       -3.068265e+21 
+Mtp:       -2.268211e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.5774 
+half duration:    2.0000 
+latitude:        37.8443 
+longitude:      101.0514 
+depth:            7.9592 
+Mrr:        5.075409e+20 
+Mtt:       -1.055117e+21 
+Mpp:        5.475765e+20 
+Mrt:       -1.444762e+21 
+Mrp:       -2.491211e+21 
+Mtp:       -6.777659e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.6176 
+half duration:    1.0000 
+latitude:        37.8437 
+longitude:      101.0753 
+depth:           13.8368 
+Mrr:        2.748916e+21 
+Mtt:       -3.009253e+21 
+Mpp:        2.603370e+20 
+Mrt:       -3.896488e+21 
+Mrp:       -1.323782e+21 
+Mtp:        8.253690e+19 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.6801 
+half duration:    3.0000 
+latitude:        37.8461 
+longitude:      101.0522 
+depth:            9.9184 
+Mrr:        1.373734e+21 
+Mtt:       -1.855080e+21 
+Mpp:        4.813456e+20 
+Mrt:       -2.457264e+21 
+Mrp:       -2.241447e+21 
+Mtp:       -4.460610e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.6916 
+half duration:    2.0000 
+latitude:        37.8256 
+longitude:      101.0914 
+depth:            0.1224 
+Mrr:        5.151767e+21 
+Mtt:       -1.209616e+22 
+Mpp:        6.944389e+21 
+Mrt:       -1.667795e+22 
+Mrp:       -3.152223e+22 
+Mtp:       -8.802858e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.7429 
+half duration:    2.0000 
+latitude:        37.8426 
+longitude:      101.0507 
+depth:            6.0000 
+Mrr:       -4.639228e+22 
+Mtt:        2.734188e+22 
+Mpp:        1.905041e+22 
+Mrt:        3.171621e+22 
+Mrp:       -8.311032e+22 
+Mtp:       -3.391846e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.7574 
+half duration:    1.0000 
+latitude:        37.7354 
+longitude:      101.4375 
+depth:            4.0408 
+Mrr:        9.311271e+21 
+Mtt:       -1.417819e+22 
+Mpp:        4.866922e+21 
+Mrt:       -1.898517e+22 
+Mrp:       -2.240896e+22 
+Mtp:       -5.249229e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.8070 
+half duration:    3.0000 
+latitude:        37.7863 
+longitude:      101.3152 
+depth:           21.6737 
+Mrr:       -4.646927e+21 
+Mtt:        2.286311e+21 
+Mpp:        2.360617e+21 
+Mrt:        2.519932e+21 
+Mrp:       -1.035979e+22 
+Mtp:       -4.025141e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.8482 
+half duration:    2.0000 
+latitude:        37.8479 
+longitude:      101.0530 
+depth:           11.8776 
+Mrr:        4.636196e+21 
+Mtt:       -6.796950e+21 
+Mpp:        2.160753e+21 
+Mrt:       -9.071702e+21 
+Mrp:       -9.976758e+21 
+Mtp:       -2.249406e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.8745 
+half duration:    1.0000 
+latitude:        37.8332 
+longitude:      101.1429 
+depth:           21.6737 
+Mrr:       -5.595158e+20 
+Mtt:        3.296306e+20 
+Mpp:        2.298852e+20 
+Mrt:        3.823300e+20 
+Mrp:       -1.002927e+21 
+Mtp:       -4.092511e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.8938 
+half duration:    1.0000 
+latitude:        37.7728 
+longitude:      101.3575 
+depth:           19.7145 
+Mrr:       -3.311767e+21 
+Mtt:        1.346903e+21 
+Mpp:        1.964864e+21 
+Mrt:        1.385679e+21 
+Mrp:       -8.653897e+21 
+Mtp:       -3.260568e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.9135 
+half duration:    2.0000 
+latitude:        37.7517 
+longitude:      101.4205 
+depth:           15.7960 
+Mrr:       -9.164565e+20 
+Mtt:        5.364459e+20 
+Mpp:        3.800105e+20 
+Mrt:        6.211954e+20 
+Mrp:       -1.658352e+21 
+Mtp:       -6.751467e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.9143 
+half duration:    1.0000 
+latitude:        37.7371 
+longitude:      101.4383 
+depth:            6.0000 
+Mrr:       -4.485860e+21 
+Mtt:       -6.236811e+20 
+Mpp:        5.109541e+21 
+Mrt:       -1.677953e+21 
+Mrp:       -2.273341e+22 
+Mtp:       -7.812918e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       7.9808 
+half duration:    2.0000 
+latitude:        37.8332 
+longitude:      101.0707 
+depth:            2.0816 
+Mrr:        4.110967e+20 
+Mtt:       -9.024992e+20 
+Mpp:        4.914026e+20 
+Mrt:       -1.239748e+21 
+Mrp:       -2.233180e+21 
+Mtp:       -6.153995e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.0156 
+half duration:    1.0000 
+latitude:        37.7594 
+longitude:      101.3998 
+depth:           17.7552 
+Mrr:       -2.690413e+21 
+Mtt:       -7.610577e+20 
+Mpp:        3.451470e+21 
+Mrt:       -1.568328e+21 
+Mrp:       -1.537519e+22 
+Mtp:       -5.222745e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.1282 
+half duration:    2.0000 
+latitude:        37.8455 
+longitude:      101.0760 
+depth:           15.7960 
+Mrr:       -2.046045e+21 
+Mtt:        4.183014e+20 
+Mpp:        1.627744e+21 
+Mrt:        2.551628e+20 
+Mrp:       -7.207880e+21 
+Mtp:       -2.588550e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.1574 
+half duration:    3.0000 
+latitude:        37.7389 
+longitude:      101.4390 
+depth:            7.9592 
+Mrr:        4.658549e+21 
+Mtt:       -5.531197e+21 
+Mpp:        8.726484e+20 
+Mrt:       -7.229848e+21 
+Mrp:       -4.184099e+21 
+Mtp:       -4.587193e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.1774 
+half duration:    1.0000 
+latitude:        37.8408 
+longitude:      101.0499 
+depth:            4.0408 
+Mrr:       -3.401905e+22 
+Mtt:        1.962035e+22 
+Mpp:        1.439870e+22 
+Mrt:        2.263396e+22 
+Mrp:       -6.287464e+22 
+Mtp:       -2.546758e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.2182 
+half duration:    1.0000 
+latitude:        37.8373 
+longitude:      101.1206 
+depth:           19.7145 
+Mrr:        2.927421e+21 
+Mtt:       -3.456489e+21 
+Mpp:        5.290682e+20 
+Mrt:       -4.515191e+21 
+Mrp:       -2.542458e+21 
+Mtp:       -2.614791e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.2227 
+half duration:    1.0000 
+latitude:        37.7804 
+longitude:      101.3367 
+depth:           21.6737 
+Mrr:       -7.707119e+20 
+Mtt:        3.319725e+19 
+Mpp:        7.375147e+20 
+Mrt:       -8.448279e+19 
+Mrp:       -3.274508e+21 
+Mtp:       -1.147612e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.2773 
+half duration:    3.0000 
+latitude:        37.8496 
+longitude:      101.0537 
+depth:           13.8368 
+Mrr:        2.384253e+21 
+Mtt:       -3.388606e+21 
+Mpp:        1.004353e+21 
+Mrt:       -4.510131e+21 
+Mrp:       -4.650103e+21 
+Mtp:       -1.008552e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.2836 
+half duration:    1.0000 
+latitude:        37.7670 
+longitude:      101.3790 
+depth:           19.7145 
+Mrr:        1.472010e+21 
+Mtt:       -1.775778e+21 
+Mpp:        3.037675e+20 
+Mrt:       -2.325190e+21 
+Mrp:       -1.448162e+21 
+Mtp:       -1.838310e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.2850 
+half duration:    3.0000 
+latitude:        37.7406 
+longitude:      101.4398 
+depth:            9.9184 
+Mrr:        1.588892e+21 
+Mtt:       -1.770722e+21 
+Mpp:        1.818303e+20 
+Mrt:       -2.297725e+21 
+Mrp:       -9.061845e+20 
+Mtp:        4.207534e+18 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.2886 
+half duration:    1.0000 
+latitude:        37.8502 
+longitude:      101.0299 
+depth:            7.9592 
+Mrr:       -1.519977e+23 
+Mtt:        8.679317e+22 
+Mpp:        6.520457e+22 
+Mrt:        9.986432e+22 
+Mrp:       -2.848424e+23 
+Mtp:       -1.149979e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.2916 
+half duration:    3.0000 
+latitude:        37.7424 
+longitude:      101.4406 
+depth:           11.8776 
+Mrr:        2.034301e+22 
+Mtt:       -2.130904e+22 
+Mpp:        9.660311e+20 
+Mrt:       -2.744064e+22 
+Mrp:       -5.475880e+21 
+Mtp:        1.943457e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.3045 
+half duration:    3.0000 
+latitude:        37.8414 
+longitude:      101.0983 
+depth:           17.7552 
+Mrr:       -9.949529e+21 
+Mtt:        3.557114e+21 
+Mpp:        6.392416e+21 
+Mrt:        3.452355e+21 
+Mrp:       -2.820012e+22 
+Mtp:       -1.047467e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.3662 
+half duration:    2.0000 
+latitude:        37.8315 
+longitude:      101.0699 
+depth:            0.1224 
+Mrr:       -5.651535e+21 
+Mtt:        1.981494e+21 
+Mpp:        3.670041e+21 
+Mrt:        1.904348e+21 
+Mrp:       -1.619375e+22 
+Mtp:       -6.003958e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.3697 
+half duration:    2.0000 
+latitude:        37.7441 
+longitude:      101.4413 
+depth:           13.8368 
+Mrr:       -5.652873e+20 
+Mtt:       -1.050599e+20 
+Mpp:        6.703471e+20 
+Mrt:       -2.498800e+20 
+Mrp:       -2.983805e+21 
+Mtp:       -1.021267e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.3822 
+half duration:    2.0000 
+latitude:        37.8520 
+longitude:      101.0307 
+depth:            9.9184 
+Mrr:       -3.812723e+22 
+Mtt:        2.249548e+22 
+Mpp:        1.563175e+22 
+Mrt:        2.610168e+22 
+Mrp:       -6.819255e+22 
+Mtp:       -2.784139e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.4571 
+half duration:    1.0000 
+latitude:        37.8485 
+longitude:      101.0291 
+depth:            6.0000 
+Mrr:       -2.472876e+23 
+Mtt:        1.422445e+23 
+Mpp:        1.050431e+23 
+Mrt:        1.639801e+23 
+Mrp:       -4.587398e+23 
+Mtp:       -1.856499e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.4801 
+half duration:    1.0000 
+latitude:        37.8391 
+longitude:      101.0491 
+depth:            2.0816 
+Mrr:       -3.127983e+22 
+Mtt:        1.874048e+22 
+Mpp:        1.253935e+22 
+Mrt:        2.182790e+22 
+Mrp:       -5.466352e+22 
+Mtp:       -2.244581e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.5122 
+half duration:    1.0000 
+latitude:        37.7746 
+longitude:      101.3582 
+depth:           21.6737 
+Mrr:        4.212402e+21 
+Mtt:       -6.100562e+21 
+Mpp:        1.888160e+21 
+Mrt:       -8.133436e+21 
+Mrp:       -8.727077e+21 
+Mtp:       -1.939625e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.5357 
+half duration:    2.0000 
+latitude:        37.8537 
+longitude:      101.0314 
+depth:           11.8776 
+Mrr:       -3.118906e+22 
+Mtt:        1.906831e+22 
+Mpp:        1.212074e+22 
+Mrt:        2.231958e+22 
+Mrp:       -5.278566e+22 
+Mtp:       -2.185039e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.5437 
+half duration:    1.0000 
+latitude:        37.7535 
+longitude:      101.4213 
+depth:           17.7552 
+Mrr:       -4.467311e+20 
+Mtt:        2.247924e+20 
+Mpp:        2.219387e+20 
+Mrt:        2.495113e+20 
+Mrp:       -9.734516e+20 
+Mtp:       -3.800210e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.6886 
+half duration:    1.0000 
+latitude:        37.8467 
+longitude:      101.0284 
+depth:            4.0408 
+Mrr:       -2.174029e+23 
+Mtt:        1.286270e+23 
+Mpp:        8.877589e+22 
+Mrt:        1.493511e+23 
+Mrp:       -3.872310e+23 
+Mtp:       -1.582575e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.7103 
+half duration:    2.0000 
+latitude:        37.7459 
+longitude:      101.4421 
+depth:           15.7960 
+Mrr:        2.239167e+21 
+Mtt:       -2.541339e+21 
+Mpp:        3.021714e+20 
+Mrt:       -3.304788e+21 
+Mrp:       -1.483621e+21 
+Mtp:       -5.778471e+19 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.7286 
+half duration:    3.0000 
+latitude:        37.7611 
+longitude:      101.4005 
+depth:           19.7145 
+Mrr:        4.937982e+20 
+Mtt:       -4.976331e+20 
+Mpp:        3.834929e+18 
+Mrt:       -6.376016e+20 
+Mrp:       -4.469493e+19 
+Mtp:        7.438677e+19 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.7287 
+half duration:    2.0000 
+latitude:        37.8390 
+longitude:      101.1214 
+depth:           21.6737 
+Mrr:        8.528546e+20 
+Mtt:       -8.847000e+20 
+Mpp:        3.184540e+19 
+Mrt:       -1.137847e+21 
+Mrp:       -1.906426e+20 
+Mtp:        9.348357e+19 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.7460 
+half duration:    2.0000 
+latitude:        37.8555 
+longitude:      101.0322 
+depth:           13.8368 
+Mrr:       -4.891980e+21 
+Mtt:        2.989037e+21 
+Mpp:        1.902943e+21 
+Mrt:        3.498176e+21 
+Mrp:       -8.287547e+21 
+Mtp:       -3.429733e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.7621 
+half duration:    2.0000 
+latitude:        37.8514 
+longitude:      101.0545 
+depth:           15.7960 
+Mrr:       -1.596784e+22 
+Mtt:        9.481815e+21 
+Mpp:        6.486029e+21 
+Mrt:        1.101951e+22 
+Mrp:       -2.828669e+22 
+Mtp:       -1.157600e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.7662 
+half duration:    3.0000 
+latitude:        37.7260 
+longitude:      101.4575 
+depth:            0.1224 
+Mrr:        1.791641e+22 
+Mtt:       -2.615651e+22 
+Mpp:        8.240103e+21 
+Mrt:       -3.489746e+22 
+Mrp:       -3.805982e+22 
+Mtp:       -8.540068e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.7808 
+half duration:    3.0000 
+latitude:        37.7278 
+longitude:      101.4583 
+depth:            2.0816 
+Mrr:        2.232784e+23 
+Mtt:       -2.675605e+23 
+Mpp:        4.428202e+22 
+Mrt:       -3.500855e+23 
+Mrp:       -2.115906e+23 
+Mtp:       -2.539471e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.8482 
+half duration:    3.0000 
+latitude:        37.8373 
+longitude:      101.0484 
+depth:            0.1224 
+Mrr:        6.733867e+19 
+Mtt:       -1.104616e+20 
+Mpp:        4.312297e+19 
+Mrt:       -1.488087e+20 
+Mrp:       -1.977100e+20 
+Mtp:       -4.895796e+19 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.8660 
+half duration:    3.0000 
+latitude:        37.7687 
+longitude:      101.3798 
+depth:           21.6737 
+Mrr:        2.106439e+21 
+Mtt:       -2.131093e+21 
+Mpp:        2.465411e+19 
+Mrt:       -2.731920e+21 
+Mrp:       -2.279706e+20 
+Mtp:        3.058100e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.8670 
+half duration:    1.0000 
+latitude:        37.7295 
+longitude:      101.4590 
+depth:            4.0408 
+Mrr:        2.669405e+21 
+Mtt:       -3.225789e+21 
+Mpp:        5.563846e+20 
+Mrt:       -4.224612e+21 
+Mrp:       -2.650986e+21 
+Mtp:       -3.410252e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.8862 
+half duration:    1.0000 
+latitude:        37.8578 
+longitude:      101.0091 
+depth:            9.9184 
+Mrr:       -7.003615e+22 
+Mtt:        3.546325e+22 
+Mpp:        3.457290e+22 
+Mrt:        3.943869e+22 
+Mrp:       -1.516164e+23 
+Mtp:       -5.927042e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.8907 
+half duration:    2.0000 
+latitude:        37.8473 
+longitude:      101.0768 
+depth:           17.7552 
+Mrr:       -1.826700e+21 
+Mtt:        9.560051e+20 
+Mpp:        8.706949e+20 
+Mrt:        1.073729e+21 
+Mrp:       -3.814861e+21 
+Mtp:       -1.502836e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.9438 
+half duration:    3.0000 
+latitude:        37.8431 
+longitude:      101.0991 
+depth:           19.7145 
+Mrr:       -6.775341e+21 
+Mtt:        3.995307e+21 
+Mpp:        2.780034e+21 
+Mrt:        4.635139e+21 
+Mrp:       -1.212803e+22 
+Mtp:       -4.950590e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       8.9822 
+half duration:    1.0000 
+latitude:        37.8450 
+longitude:      101.0276 
+depth:            2.0816 
+Mrr:       -1.290266e+23 
+Mtt:        6.222555e+22 
+Mpp:        6.680106e+22 
+Mrt:        6.814434e+22 
+Mrp:       -2.933001e+23 
+Mtp:       -1.135049e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.0003 
+half duration:    1.0000 
+latitude:        37.8561 
+longitude:      101.0084 
+depth:            7.9592 
+Mrr:       -1.543762e+23 
+Mtt:        8.730546e+22 
+Mpp:        6.707077e+22 
+Mrt:        1.001987e+23 
+Mrp:       -2.931043e+23 
+Mtp:       -1.179709e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.0275 
+half duration:    1.0000 
+latitude:        37.8596 
+longitude:      101.0099 
+depth:           11.8776 
+Mrr:       -3.506618e+22 
+Mtt:        1.424157e+22 
+Mpp:        2.082461e+22 
+Mrt:        1.464313e+22 
+Mrp:       -9.172019e+22 
+Mtp:       -3.455171e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.0286 
+half duration:    3.0000 
+latitude:        37.7313 
+longitude:      101.4598 
+depth:            6.0000 
+Mrr:       -5.490814e+21 
+Mtt:        1.802772e+21 
+Mpp:        3.688041e+21 
+Mrt:        1.672496e+21 
+Mrp:       -1.628365e+22 
+Mtp:       -6.002988e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.1045 
+half duration:    3.0000 
+latitude:        37.7476 
+longitude:      101.4428 
+depth:           17.7552 
+Mrr:        2.635893e+21 
+Mtt:       -3.799103e+21 
+Mpp:        1.163210e+21 
+Mrt:       -5.062893e+21 
+Mrp:       -5.378627e+21 
+Mtp:       -1.188326e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.1714 
+half duration:    1.0000 
+latitude:        37.8543 
+longitude:      101.0076 
+depth:            6.0000 
+Mrr:       -2.281441e+23 
+Mtt:        1.286936e+23 
+Mpp:        9.945051e+22 
+Mrt:        1.475985e+23 
+Mrp:       -4.346485e+23 
+Mtp:       -1.748009e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.2087 
+half duration:    1.0000 
+latitude:        37.8572 
+longitude:      101.0330 
+depth:           15.7960 
+Mrr:        4.572465e+20 
+Mtt:       -5.563429e+20 
+Mpp:        9.909639e+19 
+Mrt:       -7.291473e+20 
+Mrp:       -4.711498e+20 
+Mtp:       -6.367620e+19 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.2182 
+half duration:    3.0000 
+latitude:        37.7552 
+longitude:      101.4221 
+depth:           19.7145 
+Mrr:       -6.816675e+21 
+Mtt:        3.053762e+21 
+Mpp:        3.762913e+21 
+Mrt:        3.260800e+21 
+Mrp:       -1.654673e+22 
+Mtp:       -6.320879e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.2216 
+half duration:    1.0000 
+latitude:        37.8613 
+longitude:      101.0107 
+depth:           13.8368 
+Mrr:        1.524505e+22 
+Mtt:       -2.124666e+22 
+Mpp:        6.001607e+21 
+Mrt:       -2.822774e+22 
+Mrp:       -2.784258e+22 
+Mtp:       -5.865646e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.2670 
+half duration:    1.0000 
+latitude:        37.7330 
+longitude:      101.4606 
+depth:            7.9592 
+Mrr:       -1.948082e+20 
+Mtt:       -6.502619e+20 
+Mpp:        8.450700e+20 
+Mrt:       -9.777877e+20 
+Mrp:       -3.790301e+21 
+Mtp:       -1.203870e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.2745 
+half duration:    2.0000 
+latitude:        37.7629 
+longitude:      101.4013 
+depth:           21.6737 
+Mrr:        1.935672e+20 
+Mtt:       -4.674152e+20 
+Mpp:        2.738480e+20 
+Mrt:       -6.454109e+20 
+Mrp:       -1.242528e+21 
+Mtp:       -3.486837e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.3357 
+half duration:    1.0000 
+latitude:        37.8432 
+longitude:      101.0268 
+depth:            0.1224 
+Mrr:       -3.265590e+21 
+Mtt:        1.008390e+21 
+Mpp:        2.257199e+21 
+Mrt:        9.020729e+20 
+Mrp:       -9.971390e+21 
+Mtp:       -3.658692e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.3662 
+half duration:    3.0000 
+latitude:        37.7365 
+longitude:      101.4621 
+depth:           11.8776 
+Mrr:        1.582608e+21 
+Mtt:       -2.089126e+21 
+Mpp:        5.065177e+20 
+Mrt:       -2.761164e+21 
+Mrp:       -2.366280e+21 
+Mtp:       -4.472683e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.3808 
+half duration:    3.0000 
+latitude:        37.7348 
+longitude:      101.4613 
+depth:            9.9184 
+Mrr:       -8.927940e+20 
+Mtt:       -2.580946e+20 
+Mpp:        1.150889e+21 
+Mrt:       -5.284874e+20 
+Mrp:       -5.127080e+21 
+Mtp:       -1.740821e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.3917 
+half duration:    1.0000 
+latitude:        37.8637 
+longitude:      100.9876 
+depth:            9.9184 
+Mrr:       -2.120189e+23 
+Mtt:        1.291737e+23 
+Mpp:        8.284522e+22 
+Mrt:        1.510719e+23 
+Mrp:       -3.608541e+23 
+Mtp:       -1.491604e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.4003 
+half duration:    1.0000 
+latitude:        37.8526 
+longitude:      101.0068 
+depth:            4.0408 
+Mrr:       -1.040639e+23 
+Mtt:        5.417406e+22 
+Mpp:        4.988986e+22 
+Mrt:        6.075041e+22 
+Mrp:       -2.186209e+23 
+Mtp:       -8.601336e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.4176 
+half duration:    1.0000 
+latitude:        37.7383 
+longitude:      101.4629 
+depth:           13.8368 
+Mrr:        2.905730e+21 
+Mtt:       -3.253852e+21 
+Mpp:        3.481220e+20 
+Mrt:       -4.224675e+21 
+Mrp:       -1.727356e+21 
+Mtp:       -1.394102e+19 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.4208 
+half duration:    3.0000 
+latitude:        37.8449 
+longitude:      101.0998 
+depth:           21.6737 
+Mrr:       -2.885666e+21 
+Mtt:       -5.166248e+20 
+Mpp:        3.402291e+21 
+Mrt:       -1.247001e+21 
+Mrp:       -1.514313e+22 
+Mtp:       -5.186033e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.4970 
+half duration:    3.0000 
+latitude:        37.8531 
+longitude:      101.0553 
+depth:           17.7552 
+Mrr:        1.513017e+21 
+Mtt:       -2.762195e+21 
+Mpp:        1.249178e+21 
+Mrt:       -3.750512e+21 
+Mrp:       -5.702900e+21 
+Mtp:       -1.488846e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.4983 
+half duration:    2.0000 
+latitude:        37.8490 
+longitude:      101.0775 
+depth:           19.7145 
+Mrr:        1.798474e+21 
+Mtt:       -2.293078e+21 
+Mpp:        4.946039e+20 
+Mrt:       -3.020159e+21 
+Mrp:       -2.324690e+21 
+Mtp:       -3.958952e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.5123 
+half duration:    1.0000 
+latitude:        37.8619 
+longitude:      100.9868 
+depth:            7.9592 
+Mrr:       -1.760219e+23 
+Mtt:        1.031209e+23 
+Mpp:        7.290096e+22 
+Mrt:        1.194379e+23 
+Mrp:       -3.181255e+23 
+Mtp:       -1.295535e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.5226 
+half duration:    1.0000 
+latitude:        37.8654 
+longitude:      100.9884 
+depth:           11.8776 
+Mrr:       -1.029411e+23 
+Mtt:        5.837399e+22 
+Mpp:        4.456714e+22 
+Mrt:        6.704245e+22 
+Mrp:       -1.947417e+23 
+Mtp:       -7.844754e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.5282 
+half duration:    1.0000 
+latitude:        37.7400 
+longitude:      101.4636 
+depth:           15.7960 
+Mrr:       -2.054140e+21 
+Mtt:        5.631351e+20 
+Mpp:        1.491005e+21 
+Mrt:        4.640829e+20 
+Mrp:       -6.592378e+21 
+Mtp:       -2.400149e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.5438 
+half duration:    1.0000 
+latitude:        37.7494 
+longitude:      101.4436 
+depth:           19.7145 
+Mrr:        4.896302e+21 
+Mtt:       -9.909116e+21 
+Mpp:        5.012814e+21 
+Mrt:       -1.354612e+22 
+Mrp:       -2.281979e+22 
+Mtp:       -6.164284e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.6482 
+half duration:    2.0000 
+latitude:        37.7201 
+longitude:      101.4790 
+depth:            0.1224 
+Mrr:        8.167034e+20 
+Mtt:       -1.124452e+21 
+Mpp:        3.077489e+20 
+Mrt:       -1.492216e+21 
+Mrp:       -1.429648e+21 
+Mtp:       -2.951321e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.6652 
+half duration:    2.0000 
+latitude:        37.8631 
+longitude:      101.0114 
+depth:           15.7960 
+Mrr:        9.896739e+21 
+Mtt:       -1.075275e+22 
+Mpp:        8.560147e+20 
+Mrt:       -1.391027e+22 
+Mrp:       -4.400421e+21 
+Mtp:        4.098889e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.6801 
+half duration:    3.0000 
+latitude:        37.7219 
+longitude:      101.4798 
+depth:            2.0816 
+Mrr:        1.860483e+21 
+Mtt:       -2.210353e+22 
+Mpp:        2.024305e+22 
+Mrt:       -3.177635e+22 
+Mrp:       -9.115672e+22 
+Mtp:       -2.778429e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.6862 
+half duration:    1.0000 
+latitude:        37.8508 
+longitude:      101.0061 
+depth:            2.0816 
+Mrr:       -9.987933e+22 
+Mtt:        5.817208e+22 
+Mpp:        4.170725e+22 
+Mrt:        6.727638e+22 
+Mrp:       -1.820481e+23 
+Mtp:       -7.398560e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.6907 
+half duration:    2.0000 
+latitude:        37.7418 
+longitude:      101.4644 
+depth:           17.7552 
+Mrr:       -6.460578e+21 
+Mtt:        2.428809e+21 
+Mpp:        4.031769e+21 
+Mrt:        2.414609e+21 
+Mrp:       -1.777583e+22 
+Mtp:       -6.636401e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.7028 
+half duration:    2.0000 
+latitude:        37.8672 
+longitude:      100.9891 
+depth:           13.8368 
+Mrr:        6.718906e+21 
+Mtt:       -1.477296e+22 
+Mpp:        8.054056e+21 
+Mrt:       -2.029515e+22 
+Mrp:       -3.660061e+22 
+Mtp:       -1.008942e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.7287 
+half duration:    3.0000 
+latitude:        37.7570 
+longitude:      101.4228 
+depth:           21.6737 
+Mrr:        2.021061e+20 
+Mtt:       -6.305898e+20 
+Mpp:        4.284836e+20 
+Mrt:       -8.808875e+20 
+Mrp:       -1.938554e+21 
+Mtp:       -5.618422e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.7774 
+half duration:    3.0000 
+latitude:        37.7237 
+longitude:      101.4806 
+depth:            4.0408 
+Mrr:        2.304500e+21 
+Mtt:       -2.850966e+21 
+Mpp:        5.464659e+20 
+Mrt:       -3.743152e+21 
+Mrp:       -2.586091e+21 
+Mtp:       -3.861660e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.8857 
+half duration:    1.0000 
+latitude:        37.8602 
+longitude:      100.9861 
+depth:            6.0000 
+Mrr:       -9.873094e+22 
+Mtt:        5.285096e+22 
+Mpp:        4.587998e+22 
+Mrt:        5.974727e+22 
+Mrp:       -2.008809e+23 
+Mtp:       -7.958935e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.8983 
+half duration:    3.0000 
+latitude:        37.7435 
+longitude:      101.4651 
+depth:           19.7145 
+Mrr:        6.093293e+19 
+Mtt:       -4.755710e+20 
+Mpp:        4.146380e+20 
+Mrt:       -6.800887e+20 
+Mrp:       -1.868430e+21 
+Mtp:       -5.654209e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:       9.9194 
+half duration:    2.0000 
+latitude:        37.8590 
+longitude:      101.0337 
+depth:           17.7552 
+Mrr:       -1.216118e+22 
+Mtt:        2.314587e+20 
+Mpp:        1.192972e+22 
+Mrt:       -1.757613e+21 
+Mrp:       -5.298403e+22 
+Mtp:       -1.851396e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.0208 
+half duration:    3.0000 
+latitude:        37.7511 
+longitude:      101.4444 
+depth:           21.6737 
+Mrr:       -1.841309e+20 
+Mtt:        4.028535e+18 
+Mpp:        1.801024e+20 
+Mrt:       -2.585082e+19 
+Mrp:       -7.998671e+20 
+Mtp:       -2.795905e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.0275 
+half duration:    2.0000 
+latitude:        37.8491 
+longitude:      101.0053 
+depth:            0.1224 
+Mrr:       -7.616045e+21 
+Mtt:        2.358474e+21 
+Mpp:        5.257571e+21 
+Mrt:        2.113545e+21 
+Mrp:       -2.322528e+22 
+Mtp:       -8.523555e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.0762 
+half duration:    1.0000 
+latitude:        37.8549 
+longitude:      101.0560 
+depth:           19.7145 
+Mrr:       -2.445491e+22 
+Mtt:        1.326921e+22 
+Mpp:        1.118570e+22 
+Mrt:        1.505804e+22 
+Mrp:       -4.895411e+22 
+Mtp:       -1.946614e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.0985 
+half duration:    1.0000 
+latitude:        37.8695 
+longitude:      100.9661 
+depth:            9.9184 
+Mrr:       -1.402805e+23 
+Mtt:        7.030891e+22 
+Mpp:        6.997162e+22 
+Mrt:        7.794471e+22 
+Mrp:       -3.069358e+23 
+Mtp:       -1.197202e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.1297 
+half duration:    1.0000 
+latitude:        37.8689 
+longitude:      100.9899 
+depth:           15.7960 
+Mrr:        6.420542e+21 
+Mtt:       -6.457633e+21 
+Mpp:        3.709168e+19 
+Mrt:       -8.271780e+21 
+Mrp:       -5.236936e+20 
+Mtp:        9.849224e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.1429 
+half duration:    2.0000 
+latitude:        37.7254 
+longitude:      101.4813 
+depth:            6.0000 
+Mrr:       -1.266136e+22 
+Mtt:        7.441437e+21 
+Mpp:        5.219925e+21 
+Mrt:        8.625922e+21 
+Mrp:       -2.277552e+22 
+Mtp:       -9.285724e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.1444 
+half duration:    3.0000 
+latitude:        37.8508 
+longitude:      101.0783 
+depth:           21.6737 
+Mrr:        1.117333e+22 
+Mtt:       -1.230834e+22 
+Mpp:        1.135010e+21 
+Mrt:       -1.594937e+22 
+Mrp:       -5.726294e+21 
+Mtp:        2.288827e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.1546 
+half duration:    2.0000 
+latitude:        37.8648 
+longitude:      101.0122 
+depth:           17.7552 
+Mrr:       -3.491984e+21 
+Mtt:       -1.642263e+21 
+Mpp:        5.134247e+21 
+Mrt:       -2.985932e+21 
+Mrp:       -2.289978e+22 
+Mtp:       -7.686767e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.2203 
+half duration:    1.0000 
+latitude:        37.8713 
+longitude:      100.9668 
+depth:           11.8776 
+Mrr:       -1.332386e+23 
+Mtt:        7.574460e+22 
+Mpp:        5.749400e+22 
+Mrt:        8.705029e+22 
+Mrp:       -2.512028e+23 
+Mtp:       -1.012724e+23 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.2247 
+half duration:    2.0000 
+latitude:        37.8678 
+longitude:      100.9653 
+depth:            7.9592 
+Mrr:       -5.947087e+21 
+Mtt:        1.357693e+21 
+Mpp:        4.589394e+21 
+Mrt:        9.476401e+20 
+Mrp:       -2.031257e+22 
+Mtp:       -7.327149e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.3123 
+half duration:    1.0000 
+latitude:        37.8584 
+longitude:      100.9853 
+depth:            4.0408 
+Mrr:       -1.018652e+21 
+Mtt:        3.254008e+20 
+Mpp:        6.932515e+20 
+Mrt:        2.971412e+20 
+Mrp:       -3.061631e+21 
+Mtp:       -1.126224e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.3357 
+half duration:    3.0000 
+latitude:        37.7143 
+longitude:      101.5006 
+depth:            0.1224 
+Mrr:        1.936185e+21 
+Mtt:       -2.013314e+21 
+Mpp:        7.712916e+19 
+Mrt:       -2.590203e+21 
+Mrp:       -4.545408e+20 
+Mtp:        2.055258e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.3444 
+half duration:    1.0000 
+latitude:        37.7453 
+longitude:      101.4659 
+depth:           21.6737 
+Mrr:       -1.528573e+22 
+Mtt:        8.645480e+21 
+Mpp:        6.640249e+21 
+Mrt:        9.922499e+21 
+Mrp:       -2.901828e+22 
+Mtp:       -1.167986e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.3774 
+half duration:    3.0000 
+latitude:        37.7272 
+longitude:      101.4821 
+depth:            7.9592 
+Mrr:        9.354863e+20 
+Mtt:       -1.029969e+21 
+Mpp:        9.448286e+19 
+Mrt:       -1.334567e+21 
+Mrp:       -4.769788e+20 
+Mtp:        1.992034e+19 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.3822 
+half duration:    1.0000 
+latitude:        37.7160 
+longitude:      101.5013 
+depth:            2.0816 
+Mrr:       -1.409138e+22 
+Mtt:       -2.899272e+21 
+Mpp:        1.699065e+22 
+Mrt:       -6.636074e+21 
+Mrp:       -7.564081e+22 
+Mtp:       -2.584691e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.3885 
+half duration:    1.0000 
+latitude:        37.8730 
+longitude:      100.9676 
+depth:           13.8368 
+Mrr:       -2.793441e+21 
+Mtt:        9.847135e+20 
+Mpp:        1.808728e+21 
+Mrt:        9.489783e+20 
+Mrp:       -7.980406e+21 
+Mtp:       -2.960284e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.4731 
+half duration:    1.0000 
+latitude:        37.8607 
+longitude:      101.0345 
+depth:           19.7145 
+Mrr:        8.488850e+21 
+Mtt:       -8.533255e+21 
+Mpp:        4.440472e+19 
+Mrt:       -1.092971e+22 
+Mrp:       -6.715446e+20 
+Mtp:        1.308636e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.4762 
+half duration:    2.0000 
+latitude:        37.7377 
+longitude:      101.4867 
+depth:           19.7145 
+Mrr:       -1.470436e+21 
+Mtt:       -5.604482e+20 
+Mpp:        2.030884e+21 
+Mrt:       -1.066986e+21 
+Mrp:       -9.053200e+21 
+Mtp:       -3.054942e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.4801 
+half duration:    3.0000 
+latitude:        37.7289 
+longitude:      101.4829 
+depth:            9.9184 
+Mrr:       -5.625768e+21 
+Mtt:       -7.447270e+20 
+Mpp:        6.370495e+21 
+Mrt:       -2.049976e+21 
+Mrp:       -2.834183e+22 
+Mtp:       -9.746329e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.4886 
+half duration:    3.0000 
+latitude:        37.7178 
+longitude:      101.5021 
+depth:            4.0408 
+Mrr:        1.090689e+22 
+Mtt:       -1.229225e+22 
+Mpp:        1.385360e+21 
+Mrt:       -1.597187e+22 
+Mrp:       -6.837564e+21 
+Mtp:       -1.614552e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.4970 
+half duration:    2.0000 
+latitude:        37.7359 
+longitude:      101.4859 
+depth:           17.7552 
+Mrr:       -1.661810e+20 
+Mtt:       -6.178311e+20 
+Mpp:        7.840122e+20 
+Mrt:       -9.257663e+20 
+Mrp:       -3.517254e+21 
+Mtp:       -1.114540e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.5621 
+half duration:    2.0000 
+latitude:        37.7342 
+longitude:      101.4851 
+depth:           15.7960 
+Mrr:       -2.996149e+21 
+Mtt:        1.684502e+21 
+Mpp:        1.311648e+21 
+Mrt:        1.930245e+21 
+Mrp:       -5.733270e+21 
+Mtp:       -2.303369e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.5917 
+half duration:    2.0000 
+latitude:        37.8567 
+longitude:      100.9845 
+depth:            2.0816 
+Mrr:       -2.033122e+22 
+Mtt:        6.380490e+21 
+Mpp:        1.395073e+22 
+Mrt:        5.764843e+21 
+Mrp:       -6.162044e+22 
+Mtp:       -2.263663e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.6000 
+half duration:    3.0000 
+latitude:        37.8660 
+longitude:      100.9645 
+depth:            6.0000 
+Mrr:        9.386537e+21 
+Mtt:       -1.206571e+22 
+Mpp:        2.679176e+21 
+Mrt:       -1.590467e+22 
+Mrp:       -1.257265e+22 
+Mtp:       -2.201867e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.6002 
+half duration:    2.0000 
+latitude:        37.8707 
+longitude:      100.9907 
+depth:           17.7552 
+Mrr:        1.926794e+20 
+Mtt:       -2.403064e+21 
+Mpp:        2.210385e+21 
+Mrt:       -3.456330e+21 
+Mrp:       -9.953028e+21 
+Mtp:       -3.035521e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.6007 
+half duration:    2.0000 
+latitude:        37.8748 
+longitude:      100.9684 
+depth:           15.7960 
+Mrr:       -9.198562e+20 
+Mtt:       -1.426998e+21 
+Mpp:        2.346854e+21 
+Mrt:       -2.230518e+21 
+Mrp:       -1.050503e+22 
+Mtp:       -3.404436e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.6482 
+half duration:    1.0000 
+latitude:        37.7307 
+longitude:      101.4836 
+depth:           11.8776 
+Mrr:        3.610778e+21 
+Mtt:       -4.162983e+21 
+Mpp:        5.522044e+20 
+Mrt:       -5.423444e+21 
+Mrp:       -2.684506e+21 
+Mtp:       -1.832724e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.6773 
+half duration:    1.0000 
+latitude:        37.7324 
+longitude:      101.4844 
+depth:           13.8368 
+Mrr:       -7.137663e+21 
+Mtt:        3.784420e+21 
+Mpp:        3.353242e+21 
+Mrt:        4.266530e+21 
+Mrp:       -1.468618e+22 
+Mtp:       -5.804326e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.6856 
+half duration:    1.0000 
+latitude:        37.8666 
+longitude:      101.0129 
+depth:           19.7145 
+Mrr:       -1.080977e+22 
+Mtt:        5.632902e+21 
+Mpp:        5.176867e+21 
+Mrt:        6.318516e+21 
+Mrp:       -2.268476e+22 
+Mtp:       -8.927108e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.6940 
+half duration:    3.0000 
+latitude:        37.8566 
+longitude:      101.0568 
+depth:           21.6737 
+Mrr:        4.944634e+21 
+Mtt:       -5.170996e+21 
+Mpp:        2.263615e+20 
+Mrt:       -6.657544e+21 
+Mrp:       -1.292999e+21 
+Mtp:        4.840990e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.6940 
+half duration:    3.0000 
+latitude:        37.7394 
+longitude:      101.4874 
+depth:           21.6737 
+Mrr:       -6.880568e+20 
+Mtt:        3.464433e+20 
+Mpp:        3.416135e+20 
+Mrt:        3.846137e+20 
+Mrp:       -1.498337e+21 
+Mtp:       -5.850083e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.8571 
+half duration:    1.0000 
+latitude:        37.7195 
+longitude:      101.5029 
+depth:            6.0000 
+Mrr:        5.620366e+21 
+Mtt:       -6.993331e+21 
+Mpp:        1.372965e+21 
+Mrt:       -9.187431e+21 
+Mrp:       -6.487986e+21 
+Mtp:       -9.975911e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      10.9226 
+half duration:    1.0000 
+latitude:        37.8549 
+longitude:      100.9838 
+depth:            0.1224 
+Mrr:       -6.695853e+20 
+Mtt:       -5.322883e+18 
+Mpp:        6.749082e+20 
+Mrt:       -1.230077e+20 
+Mrp:       -2.998524e+21 
+Mtp:       -1.044430e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      11.0247 
+half duration:    1.0000 
+latitude:        37.8643 
+longitude:      100.9638 
+depth:            4.0408 
+Mrr:       -1.562096e+22 
+Mtt:        8.240510e+21 
+Mpp:        7.380454e+21 
+Mrt:        9.276725e+21 
+Mrp:       -3.232910e+22 
+Mtp:       -1.276091e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      11.0275 
+half duration:    1.0000 
+latitude:        37.7084 
+longitude:      101.5221 
+depth:            0.1224 
+Mrr:       -7.369291e+20 
+Mtt:       -1.243136e+20 
+Mpp:        8.612427e+20 
+Mrt:       -3.073890e+20 
+Mrp:       -3.832915e+21 
+Mtp:       -1.313815e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      11.0545 
+half duration:    3.0000 
+latitude:        37.8765 
+longitude:      100.9691 
+depth:           17.7552 
+Mrr:       -1.067882e+21 
+Mtt:        5.687883e+20 
+Mpp:        4.990933e+20 
+Mrt:        6.420901e+20 
+Mrp:       -2.185571e+21 
+Mtp:       -8.648012e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      11.0652 
+half duration:    3.0000 
+latitude:        37.8625 
+longitude:      101.0352 
+depth:           21.6737 
+Mrr:        7.663687e+21 
+Mtt:       -8.048197e+21 
+Mpp:        3.845106e+20 
+Mrt:       -1.036742e+22 
+Mrp:       -2.155480e+21 
+Mtp:        7.035878e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      11.0731 
+half duration:    1.0000 
+latitude:        37.7318 
+longitude:      101.5082 
+depth:           19.7145 
+Mrr:       -2.326360e+22 
+Mtt:        1.416251e+22 
+Mpp:        9.101086e+21 
+Mrt:        1.656031e+22 
+Mrp:       -3.964373e+22 
+Mtp:       -1.638171e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      11.0862 
+half duration:    3.0000 
+latitude:        37.7102 
+longitude:      101.5229 
+depth:            2.0816 
+Mrr:       -8.501044e+20 
+Mtt:       -5.181288e+20 
+Mpp:        1.368233e+21 
+Mrt:       -8.987348e+20 
+Mrp:       -6.107070e+21 
+Mtp:       -2.035467e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      11.1110 
+half duration:    1.0000 
+latitude:        37.8724 
+longitude:      100.9914 
+depth:           19.7145 
+Mrr:       -1.966079e+22 
+Mtt:        1.176734e+22 
+Mpp:        7.893452e+21 
+Mrt:        1.370254e+22 
+Mrp:       -3.441203e+22 
+Mtp:       -1.412472e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      11.1194 
+half duration:    1.0000 
+latitude:        37.7301 
+longitude:      101.5074 
+depth:           17.7552 
+Mrr:       -4.855493e+20 
+Mtt:        2.849393e+20 
+Mpp:        2.006100e+20 
+Mrt:        3.301679e+20 
+Mrp:       -8.753578e+20 
+Mtp:       -3.566962e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      11.2003 
+half duration:    2.0000 
+latitude:        37.7119 
+longitude:      101.5236 
+depth:            4.0408 
+Mrr:        1.430031e+20 
+Mtt:       -2.403498e+20 
+Mpp:        9.734668e+19 
+Mrt:       -3.243933e+20 
+Mrp:       -4.458139e+20 
+Mtp:       -1.119728e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      11.2543 
+half duration:    3.0000 
+latitude:        37.8683 
+longitude:      101.0137 
+depth:           21.6737 
+Mrr:        4.668401e+21 
+Mtt:       -4.904308e+21 
+Mpp:        2.359069e+20 
+Mrt:       -6.317843e+21 
+Mrp:       -1.320581e+21 
+Mtp:        4.262674e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      11.2652 
+half duration:    1.0000 
+latitude:        37.7336 
+longitude:      101.5090 
+depth:           21.6737 
+Mrr:       -1.208947e+20 
+Mtt:       -6.119666e+19 
+Mpp:        1.820914e+20 
+Mrt:       -1.096777e+20 
+Mrp:       -8.123284e+20 
+Mtp:       -2.721426e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      11.2886 
+half duration:    2.0000 
+latitude:        37.7213 
+longitude:      101.5036 
+depth:            7.9592 
+Mrr:       -7.501002e+21 
+Mtt:        2.654380e+21 
+Mpp:        4.846622e+21 
+Mrt:        2.563039e+21 
+Mrp:       -2.138322e+22 
+Mtp:       -7.934846e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      11.4087 
+half duration:    2.0000 
+latitude:        37.7283 
+longitude:      101.5067 
+depth:           15.7960 
+Mrr:       -2.397693e+21 
+Mtt:        1.132829e+21 
+Mpp:        1.264864e+21 
+Mrt:        1.232191e+21 
+Mrp:       -5.556101e+21 
+Mtp:       -2.141863e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      11.4584 
+half duration:    1.0000 
+latitude:        37.8742 
+longitude:      100.9922 
+depth:           21.6737 
+Mrr:        2.555886e+21 
+Mtt:       -3.252673e+21 
+Mpp:        6.967878e+20 
+Mrt:       -4.283194e+21 
+Mrp:       -3.276211e+21 
+Mtp:       -5.541404e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      11.4985 
+half duration:    3.0000 
+latitude:        37.8625 
+longitude:      100.9630 
+depth:            2.0816 
+Mrr:       -1.250881e+21 
+Mtt:       -6.200735e+20 
+Mpp:        1.870955e+21 
+Mrt:       -1.115769e+21 
+Mrp:       -8.346037e+21 
+Mtp:       -2.797620e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      11.5470 
+half duration:    2.0000 
+latitude:        37.8783 
+longitude:      100.9699 
+depth:           19.7145 
+Mrr:       -2.282774e+22 
+Mtt:        1.139658e+22 
+Mpp:        1.143116e+22 
+Mrt:        1.261892e+22 
+Mrp:       -5.014865e+22 
+Mtp:       -1.954403e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      11.5714 
+half duration:    2.0000 
+latitude:        37.7137 
+longitude:      101.5244 
+depth:            6.0000 
+Mrr:       -1.455595e+22 
+Mtt:        6.251133e+21 
+Mpp:        8.304817e+21 
+Mrt:        6.571297e+21 
+Mrp:       -3.654608e+22 
+Mtp:       -1.387143e+22 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      11.5822 
+half duration:    3.0000 
+latitude:        37.7230 
+longitude:      101.5044 
+depth:            9.9184 
+Mrr:       -4.010693e+21 
+Mtt:       -1.251972e+21 
+Mpp:        5.262666e+21 
+Mrt:       -2.508492e+21 
+Mrp:       -2.344858e+22 
+Mtp:       -7.948659e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      11.7357 
+half duration:    1.0000 
+latitude:        37.7248 
+longitude:      101.5052 
+depth:           11.8776 
+Mrr:       -5.467778e+20 
+Mtt:       -5.309131e+20 
+Mpp:        1.077691e+21 
+Mrt:       -8.650771e+20 
+Mrp:       -4.817068e+21 
+Mtp:       -1.583415e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      11.7460 
+half duration:    2.0000 
+latitude:        37.7266 
+longitude:      101.5059 
+depth:           13.8368 
+Mrr:        9.440207e+21 
+Mtt:       -1.308216e+22 
+Mpp:        3.641956e+21 
+Mrt:       -1.737142e+22 
+Mrp:       -1.690622e+22 
+Mtp:       -3.528936e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      11.8203 
+half duration:    2.0000 
+latitude:        37.8608 
+longitude:      100.9622 
+depth:            0.1224 
+Mrr:       -4.032477e+20 
+Mtt:        2.042994e+20 
+Mpp:        1.989483e+20 
+Mrt:        2.272396e+20 
+Mrp:       -8.724579e+20 
+Mtp:       -3.411059e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      11.8752 
+half duration:    1.0000 
+latitude:        37.8801 
+longitude:      100.9707 
+depth:           21.6737 
+Mrr:        3.941473e+21 
+Mtt:       -4.305180e+21 
+Mpp:        3.637071e+20 
+Mrt:       -5.572996e+21 
+Mrp:       -1.855024e+21 
+Mtp:        1.316229e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      11.8856 
+half duration:    3.0000 
+latitude:        37.7259 
+longitude:      101.5297 
+depth:           19.7145 
+Mrr:       -5.501801e+21 
+Mtt:        1.771265e+21 
+Mpp:        3.730536e+21 
+Mrt:        1.624853e+21 
+Mrp:       -1.647417e+22 
+Mtp:       -6.063717e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      11.9546 
+half duration:    3.0000 
+latitude:        37.7242 
+longitude:      101.5290 
+depth:           17.7552 
+Mrr:        2.457432e+21 
+Mtt:       -5.038169e+21 
+Mpp:        2.580737e+21 
+Mrt:       -6.892871e+21 
+Mrp:       -1.174475e+22 
+Mtp:       -3.183768e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      12.0003 
+half duration:    2.0000 
+latitude:        37.7154 
+longitude:      101.5252 
+depth:            7.9592 
+Mrr:       -7.179698e+21 
+Mtt:        1.621709e+21 
+Mpp:        5.557989e+21 
+Mrt:        1.118809e+21 
+Mrp:       -2.460081e+22 
+Mtp:       -8.869912e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      12.0543 
+half duration:    2.0000 
+latitude:        37.7277 
+longitude:      101.5305 
+depth:           21.6737 
+Mrr:        1.746387e+21 
+Mtt:       -1.772600e+21 
+Mpp:        2.621318e+19 
+Mrt:       -2.273338e+21 
+Mrp:       -2.149716e+20 
+Mtp:        2.455285e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      12.2652 
+half duration:    2.0000 
+latitude:        37.7224 
+longitude:      101.5282 
+depth:           15.7960 
+Mrr:       -2.778400e+21 
+Mtt:       -2.291624e+21 
+Mpp:        5.070025e+21 
+Mrt:       -3.806020e+21 
+Mrp:       -2.265057e+22 
+Mtp:       -7.482482e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      12.4862 
+half duration:    3.0000 
+latitude:        37.7172 
+longitude:      101.5259 
+depth:            9.9184 
+Mrr:        9.041162e+19 
+Mtt:       -2.510028e+20 
+Mpp:        1.605912e+20 
+Mrt:       -3.489169e+20 
+Mrp:       -7.273650e+20 
+Mtp:       -2.082055e+20 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      12.6216 
+half duration:    1.0000 
+latitude:        37.7207 
+longitude:      101.5275 
+depth:           13.8368 
+Mrr:       -1.471987e+21 
+Mtt:       -5.222454e+21 
+Mpp:        6.694441e+21 
+Mrt:       -7.836977e+21 
+Mrp:       -3.002981e+22 
+Mtp:       -9.525273e+21 
+PDE 2022  1 7  17 45 30.125  37.811 101.275  10.0  6.6 6.6 Jinchang China
+event name:      202201071745
+time shift:      12.6275 
+half duration:    3.0000 
+latitude:        37.7189 
+longitude:      101.5267 
+depth:           11.8776 
+Mrr:       -6.863895e+21 
+Mtt:       -3.568338e+21 
+Mpp:        1.043223e+22 
+Mrt:       -6.363317e+21 
+Mrp:       -4.654273e+22 
+Mtp:       -1.558132e+22 
