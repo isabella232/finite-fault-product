@@ -1,18 +1,19 @@
 # Web Product
 
-- [Introduction](#introduction)
-- [Instructions](#instructions)
-- [Example Use Cases](#example-use-cases)
-  * [Sending Products](#sending-products)
-  * [Getting Products](#getting-products)
-  * [Deleting Products](#deleting-products)
-- [Requirements](#requirements)
-  * [Required Files](#required-files)
-  * [Optional Files](#optional-files)
-- [Property List Created](#property-list-created)
-  * [Standard Properties](#standard-properties)
-  * [Variable Properties](#variable-properties)
-
+  - [Introduction](#introduction)
+  - [Instructions](#instructions)
+  - [Example Use Cases](#example-use-cases)
+    - [Sending products](#sending-products)
+    - [Getting products](#getting-products)
+    - [Deleting products](#deleting-products)
+  - [Requirements](#requirements)
+    - [Required Files](#required-files)
+    - [Optional Files](#optional-files)
+  - [File name changes](#file-name-changes)
+  - [Property List Created](#property-list-created)
+    - [Standard Properties](#standard-properties)
+    - [Variable Properties](#variable-properties)
+    - [Comments](#comments)
 
 ## Introduction
 
@@ -23,6 +24,7 @@ Web product takes a directory of finite fault model files and creates a product 
 
 1. [Install](https://github.com/usgs/finite-fault-product#installing) the finite-fault-product packages.
 2. Check that the config file ($HOME/.faultproduct.yaml) created by the install script points to the correct directories. Example (without emailing):
+
 ```
 outputfolder: /Users/username/pdlout
 pdl:
@@ -30,7 +32,9 @@ pdl:
     jarfile: /Users/username/ProductClient/ProductClient.jar
     privatekey: /Users/username/ProductClient/ffm_key
 ```
+
 Emailing (sending alerts when the sendproduct script is used) can be set up in the config file. Note: The default list of recipients is optional as the -a flag can be used to specify recipient emails in the sendproduct script. Example (with emailing):
+
 ```
 outputfolder: /Users/username/pdlout
 pdl:
@@ -42,21 +46,23 @@ email:
     smtp: smtp.example.com
     default_alert_recipients: recipient1@example.com,recipient2@example.com
 ```
+
 3. Create a directory containing all finite fault model files.
-    - Note: If the model includes two equally valid solutions, create two directories.
+   - Note: If the model includes two equally valid solutions, create two directories.
 4. Review the product created. Product files will be written to ~/pdlout/[EVENTCODE]
-    - Perform a dry run of send product to see the resultant web product (call the sendproduct command with the dry run, -d, tag).
+   - Perform a dry run of send product to see the resultant web product (call the sendproduct command with the dry run, -d, tag).
 5. Send the product.
-    - If everything looks satisfactory (e.g. properties in properties.json are all correct) then use the sendproduct command again without the dry run tag.
+   - If everything looks satisfactory (e.g. properties in properties.json are all correct) then use the sendproduct command again without the dry run tag.
 6. Check that the product was sent correctly.
-    - Check the product on the event pages.
-    - (optional) Get the product using the getproduct command.
+   - Check the product on the event pages.
+   - (optional) Get the product using the getproduct command.
 7. If necessary, delete an outdated product.
-    - This would be in the case that you have switched from the old sendproduct method to the new method where the code property includes the model number (e.g 1000dyad vs 1000dyad_1) suffix.
+   - This would be in the case that you have switched from the old sendproduct method to the new method where the code property includes the model number (e.g 1000dyad vs 1000dyad_1) suffix.
 
 ## Example Use Cases
 
 ### Sending products
+
 **Note:** You can perform a dry run of any `sendproduct` command by including the `-d` flag in the command. This will create the web product under pdlout/[EVENTCODE] and print the pdl command without sending anything to COMCAT.
 
 **Example 1**
@@ -81,10 +87,11 @@ Adding a comment to the "View all finite-fault products" table:
 `sendproduct ab us 1234cdef ./product_directory 2 -c "Solution for nodal plane 2."`
 
 **Scenario 6**
-Updating the crustal model description. This changes the description of the seismic moment release calculation in the "Result" section ("The seismic moment release based upon this plane is ## (Mw = ##) using  a <CRUSTAL MODEL DESCRIPTION>"):
+Updating the crustal model description. This changes the description of the seismic moment release calculation in the "Result" section ("The seismic moment release based upon this plane is ## (Mw = ##) using a <CRUSTAL MODEL DESCRIPTION>"):
 `sendproduct ab us 1234cdef ./product_directory 2 -m "2D crustal model interpolated from a new algorithm."`
 
 ### Getting products
+
 **Note:** You can change the comcat server using the `-c` flag.
 
 **Example 1**
@@ -114,10 +121,13 @@ Deleting another solution (e.g. deleting the second solution):
 `deleteproduct ab us 1234cdef -m 2`
 
 ## Requirements
+
 In order to create the web product a folder containing the following files is required. Note: Duplicates of files will not be sent.
 
 ### Required Files
+
 Failure to include these files will result in an error
+
 <table>
   <tr>
     <th>File Description</th>
@@ -159,13 +169,19 @@ Failure to include these files will result in an error
     <td>Readlp.das</td>
     <td>Readlp.das</td>
   </tr>
+  <tr>ShakeMap Polygon</td>
+    <td>shakemap_polygon.txt</td>
+    <td>shakemap_polygon.txt</td>
+  </tr>
   <tr>
     <td colspan="3">* These files may be substituted with a wave_properties.json file. `synm.str_low` may also be excluded if there are no surface waves. See the example below.</td>
   </tr>
 </table>
 
 ### Optional Files
+
 These files are note required, but are recommended and will be looked for.
+
 <table>
   <tr>
     <th>File Description</th>
@@ -222,9 +238,10 @@ These files are note required, but are recommended and will be looked for.
   </tr>
 </table>
 
-Note: If waveplots.zip is not included but plot images are (files with the pattern "*wave_*.png"), a zip file will be created for these images.
+Note: If waveplots.zip is not included but plot images are (files with the pattern "\*wave\*.png"), a zip file will be created for these images.
 
 Example of wave_properties.json:
+
 <pre>
 {
   "num_longwaves": 72,
@@ -234,7 +251,9 @@ Example of wave_properties.json:
 </pre>
 
 ## File name changes
+
 File names are standardized for each event.
+
 <table>
   <tr>
     <th>Product File Description</th>
@@ -345,18 +364,18 @@ File names are standardized for each event.
 - number-longwaves: Number of long period surface waves selected.
 - number-pwaves: Number of teleseismic broadband P waveforms.
 - number-shwaves: Number of broadband SH waveform
-- scalar-moment: Moment calculated and available in the [fsp file](https://github.com/usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L7) in Newton * meter.
+- scalar-moment: Moment calculated and available in the [fsp file](https://github.com/usgs/finite-fault-product/blob/master/tests/data/fsp/usp000482z_us_3_p000482z.fsp#L7) in Newton \* meter.
 - segments: Number of segments in the model. [There may be two or more segments](https://github.com/usgs/finite-fault-product/blob/master/tests/data/fsp/usp000714t_us_4_p000714t.fsp#L15).
 - segment-1-dip: Model dip of the first segment. Units are degrees.
 - segment-1-strike: [Model strike of the first segment](https://github.com/usgs/finite-fault-product/blob/master/tests/data/fsp/usp000714t_us_4_p000714t.fsp#L52). Units are degrees.
-- subfault-1-area: Calculated effective area of first subfault. See Comments. Units are km*km.
-- subfault-1-length: Calculated effective length of subfault. See Comments. Units are km*km.
+- subfault-1-area: Calculated effective area of first subfault. See Comments. Units are km\*km.
+- subfault-1-length: Calculated effective length of subfault. See Comments. Units are km\*km.
 - subfault-1-width: Calculated effective width of first subfault. See Comments.
 - time-windows: [Number of time windows used in the inversion](https://github.com/usgs/finite-fault-product/blob/master/tests/data/fsp/usp000714t_us_4_p000714t.fsp#L15).
 - velocity-function: [Type](https://github.com/usgs/finite-fault-product/blob/master/tests/data/fsp/usp000714t_us_4_p000714t.fsp#L17) of velocity funtion used in the inversion.
 
-
 ### Variable Properties
+
 Variables that may not be contained within other networks' fsp files.
 
 - maximum-rise: Maximum rise of all segments. Units are seconds.
@@ -370,6 +389,7 @@ For multisegment models, segment parameters will have different numbers. Two seg
 - subfault-2-width: Calculated effective width of second subfault. See Comments.
 
 ### Comments
+
 **Calculated and Model Properties**
 Properties prefixed with model- are set model parameters. For example, model-strike is the strike used to [create the model](https://github.com/usgs/finite-fault-product/blob/master/tests/data/products/000714t/p000714t.fsp#L8), while segment-1-strike is the strike of the individual [segment](https://github.com/usgs/finite-fault-product/blob/master/tests/data/products/000714t/p000714t.fsp#L52).
 
