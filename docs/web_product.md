@@ -1,6 +1,5 @@
 # Web Product
 
-- [Web Product](#web-product)
   - [Introduction](#introduction)
   - [Instructions](#instructions)
   - [Example Use Cases](#example-use-cases)
@@ -240,7 +239,7 @@ These files are note required, but are recommended and will be looked for.
   </tr>
 </table>
 
-Note: If waveplots.zip is not included but plot images are (files with the pattern "\_wave\_\_.png"), a zip file will be created for these images.
+Note: If waveplots.zip is not included but plot images are (files with the pattern "\*wave\*.png"), a zip file will be created for these images.
 
 Example of wave_properties.json:
 
