@@ -169,7 +169,8 @@ Failure to include these files will result in an error
     <td>Readlp.das</td>
     <td>Readlp.das</td>
   </tr>
-  <tr>ShakeMap Polygon</td>
+  <tr>
+    <td>ShakeMap Polygon</td>
     <td>shakemap_polygon.txt</td>
     <td>shakemap_polygon.txt</td>
   </tr>
