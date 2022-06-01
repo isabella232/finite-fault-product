@@ -1,6 +1,5 @@
 # Web Product
 
-- [Web Product](#web-product)
   - [Introduction](#introduction)
   - [Instructions](#instructions)
   - [Example Use Cases](#example-use-cases)
